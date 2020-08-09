@@ -1,0 +1,1089 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!------------------------SWIPER JS-------------------------->
+    <link rel="stylesheet" href="{% static 'swiperjs.css' %}">
+    <!------------------------SWIPER JS-------------------------->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="{% static 'js_libraries/fontawesome.js' %}" crossorigin="anonymous"></script>
+    <script src="{% static 'js_libraries/jquery.js' %}"></script>
+    <!----------------------------360 photo library------------------------>
+</head>
+
+<body class="home-body" id="homeBody">
+    <!--------------------------HOME1 HEADER----------------------------->
+
+
+    <header class="home-desktop-header" id="desktopHeader">
+        <div class="header-inner">
+            <div class="__left">
+                <div class="desktop-logo-container">
+                    <img src="{% static 'assets/nh_logo.png' %}" alt="logo">
+                </div>
+                <nav class="desktop-nav">
+
+                    <li><a href="{% url 'index' %}#home">нүүр</a></li>
+
+                    <li><a href="{% url 'index' %}#miniBlog">Сүүлийн үеийн мэдээ</a></li>
+
+                    <li><a href="{% url 'index' %}#buildingIntro">танилцуулга</a></li>
+
+                    <li><a href="{% url 'index' %}#service">үйлчилгээ</a></li>
+
+                    <li><a href="{% url 'index' %}#floorInfo">давхарийн мэдээлэл</a></li>
+
+                    <li><a href="{% url 'index' %}#sevenReason">Давуу тал</a></li>
+
+                    <li><a href="{% url 'index' %}#panaromaSection">360 зураг</a></li>
+
+                    <li><a href="{% url 'index' %}#nearbyPlaces">Ойр хавийн барилгууд</a></li>
+
+                </nav>
+            </div>
+            <div class="__right">
+                <div class="select-language"><a href="#">mn</a></div>
+                <div class="select-language"><a href="#">en</a></div>
+            </div>
+        </div>
+    </header>
+    <header class="mobile-header">
+        <div class="side-nav">
+            <div onclick="showMobileNav()" class="menu-container">
+                <i class="fas fa-bars menu-icon" id="mobileBarsIcon"></i>
+            </div>
+            <nav id="mobileNav" onclick="showMobileNav()">
+                <img src="{% static 'assets/nh_logo.png' %}" alt="logo">
+
+                <li><a href="./home.html#home">нүүр</a></li>
+
+                <li><a href="{% url 'index' %}#miniBlog">Сүүлийн үеийн мэдээ</a></li>
+
+                <li><a href="./home.html#buildingIntro">танилцуулга</a></li>
+
+                <li><a href="./home.html#service">үйлчилгээ</a></li>
+
+                <li><a href="./home.html#floorInfo">давхарийн мэдээлэл</a></li>
+
+                <li><a href="./home.html#sevenReason">7 шалтгаан</a></li>
+
+                <li><a href="./home.html#panaromaSection">360 зураг</a></li>
+
+                <li><a href="./home.html#nearbyPlaces">Ойр хавийн барилгууд</a></li>
+                <div class="__right">
+                    <a href="#">mn</a>
+                    <a href="#">en</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <div class="send-information" id="sendInformationForm">
+
+        <form class="inner-send-information">
+            <div class="close-button" onclick="hideSendInformationForm()"></div>
+            <div class="group">
+                <input type="email"><span class="highlight"></span><span class="bar"></span>
+                <label>Цахим хаяг</label>
+            </div>
+            <button type="button" class="button buttonBlue">Илгээх
+                <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
+            </button>
+        </form>
+    </div>
+    <!--------------------------HOME1 HEADER END----------------------------->
+    <section class="home-section" id="home">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="inner-swiper-slide">
+                        <img src="{% static 'assets/IMG_7256.JPG' %}" alt="building">
+                        <p>Lorem, ipsum.</p>
+                        <h3>Lorem ipsum dolor sit.</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, assumenda.</p>
+                        <a href="#"  onclick="showSendInformationForm()">Боршуур авах</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="inner-swiper-slide">
+                        <img src="{% static 'ssets/IMG_7249.JPG' %}" alt="building">
+                        <p>Lorem, ipsum.</p>
+                        <h3>Lorem ipsum dolor sit.</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, assumenda.</p>
+                        <a href="#">Lorem, ipsum.</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="inner-swiper-slide">
+                        <img src="{% static 'assets/IMG_72491.jpg' %}" alt="building">
+                        <p>Lorem, ipsum.</p>
+                        <h3>Lorem ipsum dolor sit.</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, assumenda.</p>
+                        <a href="#">Lorem, ipsum.</a>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+        </div>
+    </section>
+
+    <section class="building-features-section" id="buildingFeature">
+        <div class="inner-features">
+            <div class="feature-card">
+                <i class="far fa-building"></i>
+                <p>Байгаа талбай</p>
+                <p>456</p>
+            </div>
+            <div class="feature-card">
+                <i class="far fa-building"></i>
+                <p>Нийт Квд</p>
+                <p>6813</p>
+            </div>
+            <div class="feature-card">
+                <i class="far fa-building"></i>
+                <p>Орон сууц</p>
+                <p>215</p>
+            </div>
+            <div class="feature-card">
+                <i class="far fa-building"></i>
+                <p>барьсан жил</p>
+                <p>2020</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="mini-blog-section" id="miniBlog">
+        <div class="inner-mini-blog-section">
+            <h3>suuliin ueiin</h3>
+            <div class="mini-blog-cards-container">
+                <a href="#" class="mini-blog-card">
+                    <img src="{% static 'assets/horizon10.jpg' %}" alt="bulding photo">
+                    <h4>Lorem ipsum dolor sit.</h4>
+                    <div class="blog-status">
+                        <p><i class="fas fa-clock"></i>2020/7/20</p>
+                        <p><i class="far fa-user"></i>niitelsen Lorem ipsum</p>
+                        <p><i class="far fa-comment"></i>25</p>
+                    </div>
+                    <hr>
+                    <p class="little-article">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Nobis, corporis fuga tempora consequuntur dolor, temporibus,
+                        mollitia repudiandae beatae aliquam qui molestiae animi excepturi
+                        cupiditate debitis eligendi exercitationem iste
+                        dolore voluptates!
+                        mollitia repudiandae beatae aliquam qui molestiae animi excepturi
+                        cupiditate debitis eligendi exercitationem iste
+                        dolore voluptates!mollitia repudiandae beatae aliquam qui molestiae animi excepturi
+                        cupiditate debitis eligendi exercitationem iste
+                        dolore voluptates!
+                    </p>
+                </a>
+                <a href="#" class="mini-blog-card">
+                    <img src="{% static 'assets/IMG_7249.JPG' %}" alt="bulding photo">
+                    <h4>Lorem ipsum dolor sit.</h4>
+                    <div class="blog-status">
+                        <p><i class="fas fa-clock"></i>2020/7/20</p>
+                        <p><i class="far fa-user"></i>niitelsen Lorem ipsum</p>
+                        <p><i class="far fa-comment"></i>25</p>
+                    </div>
+                    <hr>
+                    <p class="little-article">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Nobis, corporis fuga tempora consequuntur dolor, temporibus,
+                        mollitia repudiandae beatae aliquam qui molestiae animi excepturi
+                        cupiditate debitis eligendi exercitationem iste
+                        dolore voluptates!
+                        mollitia repudiandae beatae aliquam qui molestiae animi excepturi
+                        cupiditate debitis eligendi exercitationem iste
+                        dolore voluptates!mollitia repudiandae beatae aliquam qui molestiae animi excepturi
+                        cupiditate debitis eligendi exercitationem iste
+                        dolore voluptates!
+                    </p>
+                </a>
+                <a href="#" class="mini-blog-card">
+                    <img src="{% static 'assets/IMG_7256.JPG' %}" alt="bulding photo">
+                    <h4>Lorem ipsum dolor sit.</h4>
+                    <div class="blog-status">
+                        <p><i class="fas fa-clock"></i>2020/7/20</p>
+                        <p><i class="far fa-user"></i>niitelsen Lorem ipsum</p>
+                        <p><i class="far fa-comment"></i>25</p>
+                    </div>
+                    <hr>
+                    <p class="little-article">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Nobis, corporis fuga tempora consequuntur dolor, temporibus,
+                        mollitia repudiandae beatae aliquam qui molestiae animi excepturi
+                        cupiditate debitis eligendi exercitationem iste
+                        dolore voluptates!
+                        mollitia repudiandae beatae aliquam qui molestiae animi excepturi
+                        cupiditate debitis eligendi exercitationem iste
+                        dolore voluptates!mollitia repudiandae beatae aliquam qui molestiae animi excepturi
+                        cupiditate debitis eligendi exercitationem iste
+                        dolore voluptates!
+                    </p>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="building-introduction-section" id="buildingIntro">
+        <div class="__left">
+            <img src="{% static 'assets/horizon10.jpg' %}" alt="building photo1">
+        </div>
+        <div class="__right">
+            <div class="intro-text">
+                <h1>УЛААНБААТАР ХОТЫН ШИЛДЭГ БАЙГУУЛАМЖ</h1>
+                <p>Улаанбаатар хотын зүрхэн төвд байрлах орчин үеийн шийдэл,
+                    чадварлаг менежмент, чанартай үйлчилгээ бүхий уг байгууламж
+                    нь таны бизнесийг амжилтанд хөтлөх цогц бүрдэл юм.
+                    NEW HORIZONS газар хөдлөлтийг тэсвэрлэх чадалтай хамгийн
+                    сүүлийн үеийн шилдэг технологи бүхий архитектурын ухаалаг
+                    шийдэл , ая тух хангах нэмэлт үйлчилгээ, ашигтай байрлал нь
+                    компаний тань байр суурийг тодорхойлж, ажиллагсдын тань урам
+                    зоригийг бадрааж, харилцагч, үйлчлүүлэгчдийг тань бишрүүлэх
+                    болно. "ХАН" ХХК нь ISO 9001,ISO 14001,ОНSAS 18001
+                    стандартуудыг хангасан Хөрөнгийн менежментийн үйлчилгээг үзүүлнэ.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="service">
+        <div class="__left">
+            <ul class="service-lists-container">
+
+                <li class="service-title">
+                    <div class="inner-service-title">Үйлчилгээний газар</div>
+                    <div class="sub-service-list-container">
+                        <a href="#">Хаан банк</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                    </div>
+                </li>
+                <li class="service-title">
+                    <div class="inner-service-title">Үйлчилгээний газар</div>
+                    <div class="sub-service-list-container">
+                        <a href="#">Хаан банк</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                    </div>
+                </li>
+                <li class="service-title">
+                    <div class="inner-service-title">Lorem ipsum dolor sit</div>
+                    <div class="sub-service-list-container">
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                    </div>
+                </li>
+
+                <li class="service-title">
+                    <div class="inner-service-title">Lorem ipsum dolor sit</div>
+                    <div class="sub-service-list-container">
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                    </div>
+                </li>
+                <li class="service-title">
+                    <div class="inner-service-title">Lorem ipsum dolor sit</div>
+                    <div class="sub-service-list-container">
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                    </div>
+                </li>
+                <li class="service-title">
+                    <div class="inner-service-title">Lorem ipsum dolor sit</div>
+                    <div class="sub-service-list-container">
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="__right">
+            <div class="swiper-container-two">
+                <div class="swiper-wrapper" id="getPictures">
+                    <div class="swiper-slide">
+                        <div class="slide-left">
+                            <h3>diverse solution</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati.
+                            </p>
+                        </div>
+                        <div class="slide-right">
+                            <img class="get-photos" src="{% static 'assets/IMG_7256.JPG' %}" alt="slide photo">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-left">
+                            <h3>diverse solution</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati.
+                            </p>
+                        </div>
+                        <div class="slide-right">
+                            <img class="get-photos" src="{% static 'assets/IMG_7256.JPG' %}" alt="slide photo">
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-left">
+                            <h3>diverse solution</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati.
+                            </p>
+                        </div>
+                        <div class="slide-right">
+                            <img class="get-photos" src="{% static 'assets/IMG_7256.JPG' %}" alt="slide photo">
+
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-left">
+                            <h3>diverse solution</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati.
+                            </p>
+                        </div>
+                        <div class="slide-right">
+                            <img class="get-photos" src="{% static 'assets/IMG_7256.JPG' %}" alt="slide photo">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-left">
+                            <h3>diverse solution</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati.
+                            </p>
+                        </div>
+                        <div class="slide-right">
+                            <img class="get-photos" src="{% static 'assets/IMG_72491.jpg' %}" alt="slide photo">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-left">
+                            <h3>diverse solution</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati.
+                            </p>
+                        </div>
+                        <div class="slide-right">
+                            <img class="get-photos" src="{% static 'assets/IMG_72491.jpg' %}" alt="slide photo">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-left">
+                            <h3>diverse solution</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati.
+                            </p>
+                        </div>
+                        <div class="slide-right">
+                            <img class="get-photos" src="{% static 'assets/IMG_72491.jpg' %}" alt="slide photo">
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slide-left">
+                            <h3>diverse solution</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Quo dolores similique dolore in sit placeat incidunt
+                                laboriosam nostrum ipsum obcaecati.
+                            </p>
+                        </div>
+                        <div class="slide-right">
+                            <img class="get-photos" src="{% static 'assets/IMG_72491.jpg' %}" alt="slide photo">
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="slider-component-container">
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <div class="swiper-pagination"></div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="floor-informations" id="floorInfo">
+        <img src="{% static 'assets/horizon10.jpg' %}" alt="building" class="floor-section-bg">
+        <div id="unvisibleList"></div>
+        <div class="floors-container" id="floorContainer">
+            <ul>
+                <li><span>f</span>15
+                    <div class="floor-icon-container">
+                        <div class="inner-floor-icon-container">
+                            <p>хаан банк</p>
+                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
+                        </div>
+                        <div class="inner-floor-icon-container">
+                            <p>haanbank</p>
+                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
+                        </div>
+                    </div>
+                </li>
+                <li><span>f</span>14
+                    <div class="floor-icon-container">
+                        <div class="inner-floor-icon-container">
+                            <p>хаан банк</p>
+                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
+                        </div>
+                    </div>
+                </li>
+                <li><span>f</span>13
+                    <div class="floor-icon-container">
+                        <div class="inner-floor-icon-container">
+                            <p>хаан банк</p>
+                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
+                        </div>
+                    </div>
+                </li>
+                <li><span>f</span>12
+                    <div class="floor-icon-container">
+                        <div class="inner-floor-icon-container">
+                            <p>хаан банк</p>
+                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
+                        </div>
+                    </div>
+                </li>
+                <li><span>f</span>11
+                    <div class="floor-icon-container">
+                        <div class="inner-floor-icon-container">
+                            <p>хаан банк</p>
+                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
+                        </div>
+                    </div>
+                </li>
+                <li><span>f</span>10
+                    <div class="floor-icon-container">
+                        <div class="inner-floor-icon-container">
+                            <p>хаан банк</p>
+                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
+                        </div>
+                    </div>
+                </li>
+                <li><span>f</span>9
+                    <div class="floor-icon-container">
+                        <div class="inner-floor-icon-container">
+                            <p>хаан банк</p>
+                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
+                        </div>
+                    </div>
+                </li>
+                <li><span>f</span>8
+                    <div class="floor-icon-container">
+                        <div class="inner-floor-icon-container">
+                            <p>хаан банк</p>
+                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
+                        </div>
+                    </div>
+                </li>
+                <li><span>f</span>7
+                    <div class="floor-icon-container">
+                        <div class="inner-floor-icon-container">
+                            <p>хаан банк</p>
+                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
+                        </div>
+                    </div>
+                </li>
+                <li><span>f</span>6
+                    <div class="floor-icon-container">
+                        <div class="inner-floor-icon-container">
+                            <p>хаан банк</p>
+                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
+                        </div>
+                    </div>
+                </li>
+                <li><span>f</span>5
+                    <div class="floor-icon-container">
+                        <div class="inner-floor-icon-container">
+                            <p>хаан банк</p>
+                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
+                        </div>
+                    </div>
+                </li>
+                <li><span>f</span>4
+                    <div class="floor-icon-container">
+                        <div class="inner-floor-icon-container">
+                            <p>хаан банк</p>
+                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
+                        </div>
+                    </div>
+                </li>
+                <li><span>f</span>3
+                    <div class="floor-icon-container">
+                        <div class="inner-floor-icon-container">
+                            <p>хаан банк</p>
+                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
+                        </div>
+                    </div>
+                </li>
+                <li><span>f</span>2
+                    <div class="floor-icon-container">
+                        <div class="inner-floor-icon-container">
+                            <p>хаан банк</p>
+                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
+                        </div>
+                    </div>
+                </li>
+                <li><span>f</span>1
+                    <div class="floor-icon-container">
+                        <div class="inner-floor-icon-container">
+                            <p>хаан банк</p>
+                            <img src="{% static 'assets/haanbank.png' %} alt="haan bank">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="plan-photos-container" id="planPhotosContainer" onclick="showFixedInfo()">
+            <div class="plan-photo-hover">ҮЗЭХ</div>
+            
+            <img src="{% static 'assets/plan_images/plan10.jpg' %}" alt="floor one svg">
+            <img src="{% static 'assets/plan_images/plan11.jpeg' %}" alt="floor one svg">
+            <img src="{% static 'assets/plan_images/plan12.png' %}" alt="floor one svg">
+            <img src="{% static 'assets/plan_images/plan14.png' %}" alt="floor one svg">
+            <img src="{% static 'assets/plan_images/plan15.png' %}" alt="floor one svg">
+            <img src="{% static 'assets/plan_images/plan16.png' %}" alt="floor one svg">
+            <img src="{% static 'assets/plan_images/plan17.png' %}" alt="floor one svg">
+            <img src="{% static 'assets/plan_images/plan18.png' %}" alt="floor one svg">
+            <img src="{% static 'assets/plan_images/plan19.jpeg' %}" alt="floor one svg">
+            <img src="{% static 'assets/plan_images/plan20.jpeg' %}" alt="floor one svg">
+            <img src="{% static 'assets/plan_images/plan21.jpeg' %}" alt="floor one svg">
+            <img src="{% static 'assets/plan_images/plan23.png' %}" alt="floor one svg">
+            <img src="{% static 'assets/plan_images/plan24.jpeg' %}" alt="floor one svg">
+            <img src="{% static 'assets/plan_images/plan25.png' %}" alt="floor one svg">
+            <img src="{% static 'assets/plan_images/plan27.png' %}" alt="floor one svg">
+            <img src="{% static 'assets/plan_images/plan29.jpeg' %}" alt="floor one svg">
+            <img src="{% static 'assets/plan_images/plan26.jpeg' %}" alt="floor one svg">
+            <img src="{% static 'assets/plan_images/plan28.jpeg' %}" alt="floor one svg">
+        </div>
+        <div class="plan-photos-fullscreen-info" id="planPhotoInfo">
+            <div class="close-button" onclick="closeFixedInfo()"></div>
+            <div class="invisible-plan-photo-info">
+                <div class="inner-plan-photo-info">
+                    <div class="photo-description">
+                        <h3>Lorem ipsum dolor sit</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Tempore, nihil voluptatum dolorem harum dolore itaque
+                            est corrupti eligendi sint dicta molestiae officiis
+                            accusamus atque distinctio quos facere consequatur,
+                            esse placeat.
+                        </p>
+                    </div>
+                    <img src="{% static 'assets/plan_floor_one.svg' %} alt="floor one svg">
+                </div>
+            </div>
+            <div class="invisible-plan-photo-info">
+                <div class="inner-plan-photo-info">
+                    <div class="photo-description">
+                        <h3>Lorem ipsum dolor sit</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Tempore, nihil voluptatum dolorem harum dolore itaque
+                            est corrupti eligendi sint dicta molestiae officiis
+                            accusamus atque distinctio quos facere consequatur,
+                            esse placeat.
+                        </p>
+                    </div>
+                    <img src="{% static 'assets/plan_floor_one.svg' %} alt="floor one svg">
+                </div>
+            </div>
+            <div class="invisible-plan-photo-info">
+                <div class="inner-plan-photo-info">
+                    <div class="photo-description">
+                        <h3>Lorem ipsum dolor sit</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Tempore, nihil voluptatum dolorem harum dolore itaque
+                            est corrupti eligendi sint dicta molestiae officiis
+                            accusamus atque distinctio quos facere consequatur,
+                            esse placeat.
+                        </p>
+                    </div>
+                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                </div>
+            </div>
+            <div class="invisible-plan-photo-info">
+                <div class="inner-plan-photo-info">
+                    <div class="photo-description">
+                        <h3>Lorem ipsum dolor sit</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Tempore, nihil voluptatum dolorem harum dolore itaque
+                            est corrupti eligendi sint dicta molestiae officiis
+                            accusamus atque distinctio quos facere consequatur,
+                            esse placeat.
+                        </p>
+                    </div>
+                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                </div>
+            </div>
+            <div class="invisible-plan-photo-info">
+                <div class="inner-plan-photo-info">
+                    <div class="photo-description">
+                        <h3>Lorem ipsum dolor sit</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Tempore, nihil voluptatum dolorem harum dolore itaque
+                            est corrupti eligendi sint dicta molestiae officiis
+                            accusamus atque distinctio quos facere consequatur,
+                            esse placeat.
+                        </p>
+                    </div>
+                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                </div>
+            </div>
+            <div class="invisible-plan-photo-info">
+                <div class="inner-plan-photo-info">
+                    <div class="photo-description">
+                        <h3>Lorem ipsum dolor sit</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Tempore, nihil voluptatum dolorem harum dolore itaque
+                            est corrupti eligendi sint dicta molestiae officiis
+                            accusamus atque distinctio quos facere consequatur,
+                            esse placeat.
+                        </p>
+                    </div>
+                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                </div>
+            </div>
+            <div class="invisible-plan-photo-info">
+                <div class="inner-plan-photo-info">
+                    <div class="photo-description">
+                        <h3>Lorem ipsum dolor sit</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Tempore, nihil voluptatum dolorem harum dolore itaque
+                            est corrupti eligendi sint dicta molestiae officiis
+                            accusamus atque distinctio quos facere consequatur,
+                            esse placeat.
+                        </p>
+                    </div>
+                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                </div>
+            </div>
+            <div class="invisible-plan-photo-info">
+                <div class="inner-plan-photo-info">
+                    <div class="photo-description">
+                        <h3>Lorem ipsum dolor sit</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Tempore, nihil voluptatum dolorem harum dolore itaque
+                            est corrupti eligendi sint dicta molestiae officiis
+                            accusamus atque distinctio quos facere consequatur,
+                            esse placeat.
+                        </p>
+                    </div>
+                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                </div>
+            </div>
+            <div class="invisible-plan-photo-info">
+                <div class="inner-plan-photo-info">
+                    <div class="photo-description">
+                        <h3>Lorem ipsum dolor sit</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Tempore, nihil voluptatum dolorem harum dolore itaque
+                            est corrupti eligendi sint dicta molestiae officiis
+                            accusamus atque distinctio quos facere consequatur,
+                            esse placeat.
+                        </p>
+                    </div>
+                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                </div>
+            </div>
+            <div class="invisible-plan-photo-info">
+                <div class="inner-plan-photo-info">
+                    <div class="photo-description">
+                        <h3>Lorem ipsum dolor sit</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Tempore, nihil voluptatum dolorem harum dolore itaque
+                            est corrupti eligendi sint dicta molestiae officiis
+                            accusamus atque distinctio quos facere consequatur,
+                            esse placeat.
+                        </p>
+                    </div>
+                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                </div>
+            </div>
+            <div class="invisible-plan-photo-info">
+                <div class="inner-plan-photo-info">
+                    <div class="photo-description">
+                        <h3>Lorem ipsum dolor sit</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Tempore, nihil voluptatum dolorem harum dolore itaque
+                            est corrupti eligendi sint dicta molestiae officiis
+                            accusamus atque distinctio quos facere consequatur,
+                            esse placeat.
+                        </p>
+                    </div>
+                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                </div>
+            </div>
+            <div class="invisible-plan-photo-info">
+                <div class="inner-plan-photo-info">
+                    <div class="photo-description">
+                        <h3>Lorem ipsum dolor sit</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Tempore, nihil voluptatum dolorem harum dolore itaque
+                            est corrupti eligendi sint dicta molestiae officiis
+                            accusamus atque distinctio quos facere consequatur,
+                            esse placeat.
+                        </p>
+                    </div>
+                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                </div>
+            </div>
+            <div class="invisible-plan-photo-info">
+                <div class="inner-plan-photo-info">
+                    <div class="photo-description">
+                        <h3>Lorem ipsum dolor sit</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Tempore, nihil voluptatum dolorem harum dolore itaque
+                            est corrupti eligendi sint dicta molestiae officiis
+                            accusamus atque distinctio quos facere consequatur,
+                            esse placeat.
+                        </p>
+                    </div>
+                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                </div>
+            </div>
+            <div class="invisible-plan-photo-info">
+                <div class="inner-plan-photo-info">
+                    <div class="photo-description">
+                        <h3>Lorem ipsum dolor sit</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Tempore, nihil voluptatum dolorem harum dolore itaque
+                            est corrupti eligendi sint dicta molestiae officiis
+                            accusamus atque distinctio quos facere consequatur,
+                            esse placeat.
+                        </p>
+                    </div>
+                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                </div>
+            </div>
+            <div class="invisible-plan-photo-info">
+                <div class="inner-plan-photo-info">
+                    <div class="photo-description">
+                        <h3>Lorem ipsum dolor sit</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Tempore, nihil voluptatum dolorem harum dolore itaque
+                            est corrupti eligendi sint dicta molestiae officiis
+                            accusamus atque distinctio quos facere consequatur,
+                            esse placeat.
+                        </p>
+                    </div>
+                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                </div>
+            </div>
+            <div class="invisible-plan-photo-info">
+                <div class="inner-plan-photo-info">
+                    <div class="photo-description">
+                        <h3>Lorem ipsum dolor sit</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Tempore, nihil voluptatum dolorem harum dolore itaque
+                            est corrupti eligendi sint dicta molestiae officiis
+                            accusamus atque distinctio quos facere consequatur,
+                            esse placeat.
+                        </p>
+                    </div>
+                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                </div>
+            </div>
+            <div class="invisible-plan-photo-info">
+                <div class="inner-plan-photo-info">
+                    <div class="photo-description">
+                        <h3>Lorem ipsum dolor sit</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Tempore, nihil voluptatum dolorem harum dolore itaque
+                            est corrupti eligendi sint dicta molestiae officiis
+                            accusamus atque distinctio quos facere consequatur,
+                            esse placeat.
+                        </p>
+                    </div>
+                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                </div>
+            </div>
+            <div class="invisible-plan-photo-info">
+                <div class="close-button" onclick="closeFixedInfo()"></div>
+                <div class="inner-plan-photo-info">
+                    <div class="photo-description">
+                        <h3>Lorem ipsum dolor sit</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Tempore, nihil voluptatum dolorem harum dolore itaque
+                            est corrupti eligendi sint dicta molestiae officiis
+                            accusamus atque distinctio quos facere consequatur,
+                            esse placeat.
+                        </p>
+                    </div>
+                    <img src="./assets/plan_floor_one.svg" alt="floor one svg">
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <section class="seven-reason-section" id="sevenReason">
+        <h3>new horizon ОФИСИЙГ СОНГОХ 7 ШАЛТГААН</h3>
+        <div class="top-section">
+            <div class="reason-card">
+                <i class="fas fa-location-arrow"></i>
+                <div>
+                    <h4>БАЙРШИЛ БАЙРШИЛ бас дахин БАЙРШИЛ</h4>
+                    <p>
+                        Улаанбаатар хотын бизнесийн төв болох Олимпийн гудамжинд
+                        таны нэр хүндийн баталгаа болон сүндэрлэж байна.
+                    </p>
+                </div>
+            </div>
+            <div class="reason-card">
+                <i class="fas fa-award"></i>
+                <div>
+                    <h4>ЧАНАРЫГ ЭРХЭМЛЭСЭН БАРИЛГА</h4>
+                    <p>
+                        Манай барилга нь ЗВС системийн Н-Оеат хэлбэртэй бүрэн ганжуулсан
+                        төмөр каркастай, сайжруулан боловсруулсан ! ом”-Е шилэн фасадтай.
+                        Монгол улсын барилгын стандартад заасан 8 баллын газар хөдлөлтөнд
+                        тэсвэртэй байх шаардлагыг 50 хувь илүү хангасан.
+                    </p>
+                </div>
+            </div>
+            <div class="reason-card">
+                <i class="fas fa-tools"></i>
+                <div>
+                    <h4>ОФИСОО ХҮССЭНЭЭРЭЭ ТӨЛӨВЛӨХ БОЛОМЖ</h4>
+                    <p>
+                        Өндөр даацын ган хөл бүхий шал нь инженерийн дотоод шугам сүлжээнд
+                        хязгаарлагдахгүй таны хүссэнд орчинг бий болгоход туслана.
+                    </p>
+                </div>
+            </div>
+            <div class="reason-card">
+                <i class="fas fa-hard-hat"></i>
+                <div>
+                    <h4>АЮУЛГҮЙ БАЙДЛЫН ШААРДЛАГУУДЫГ БҮРЭН ХАНГАСАН</h4>
+                    <p>
+                        Барилгын стандартын дагуу давхар бүрдээ аваарын шат, гарц, схём
+                        спринклер гэсэн аюулгүй байдлын шаардлагуудыг хангасан.
+                    </p>
+                </div>
+            </div>
+            <div class="reason-card">
+                <i class="fas fa-wind"></i>
+                <div>
+                    <h4>УТААГҮЙ ЦЭВЭР АГААР</h4>
+                    <p>
+                        Агааржуулалт, агаар сэлгэлт, хөргөлтийн гурвалсан системийг ашиглаж
+                        офисийн агвар дахь утаа, тоос, бактерийг устган ямагт эрүүл цэвэр
+                        орчинг бүрдүүлнэ.
+                    </p>
+                </div>
+            </div>
+            <div class="reason-card">
+                <i class="fas fa-tree"></i>
+                <div>
+                    <h4>БАЙГАЛЬ ОРЧИНД ЭЭЛТЭЙ</h4>
+                    <p>
+                        New Horizons нь ганжуулсан шилэн фасадтай бөгөөд, шил нь дулаан
+                        алдалтыг хамгийн бага түвшинд барьж хүйтний улиралд дулаан, зуны
+                        улиралд нарны тусгалын бууруулан ажиллах орчныг төв тухвар
+                        хангах болно.
+                    </p>
+                </div>
+            </div>
+            <div class="reason-card">
+                <i class="fas fa-tasks"></i>
+                <div>
+                    <h4>УХААЛАГ МЕНЕЖМЕНТ</h4>
+                    <p>
+                        Та зөвхөн өөрийн ажилын бүтээмждээ анхаархад болно. Таны тав тух
+                        аюулгүй байдал цэвэр цэмцгэр орчиныг тань манай чадварлаг
+                        менежментийг баг хариуцан ажиллана.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="panaroma-picture-section" id="panaromaSection">
+        <h3>360 зураг</h3>
+        <div class="blured-360" id="bluredPanaroma">
+            <img src="{% static 'assets/360_one.jpeg' %}" alt="blured 360">
+            <p onclick="showPanaroma()">360 зураг үзэх</p>
+        </div>
+    </section>
+
+    <section class="nearby-place-section" id="nearbyPlaces">
+        <div class="inner-nearby-place">
+            <h3>ойр байрлах байгууламж</h3>
+            <div class="google-map-container" id="googleMapContainer">
+                <div class="places-list">
+                    <ul id="listOfMarkers">
+                        <li><a id="busStation">Автобусны буудал</a></li>
+                        <li><a id="government">Улсын байгууллага</a></li>
+                        <li><a id="medical">Эмнэлэг</a></li>
+                        <li><a id="business">Безнэсийн байгууллага</a></li>
+                    </ul>
+                </div>
+                <div id="map"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="desktop-footer" id="desktop-footer">
+        <img class="footer-bg" src="{% static 'assets/IMG_72561.jpg' %}" alt="footer building">
+        <div class="inner-footer">
+            <div class="footer-mini-info">
+                <img src="./assets/nh_logo.png" alt="logo">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Esse quaerat obcaecati beatae neque nostrum harum
+                    dolorem officiis rem facere consequatur?
+                </p>
+                <div class="icons-container">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="sub-pages-title">
+                <h3>дэд хуудас</h3>
+                <div class="sub-pages-list">
+                    <a href="#">
+                        <p><i class="fas fa-angle-double-right"></i>барилгын төлөвлөлт</p>
+                    </a>
+                    <a href="#">
+                        <p><i class="fas fa-angle-double-right"></i>Аюулгүй байдал</p>
+                    </a>
+                    <a href="#">
+                        <p><i class="fas fa-angle-double-right"></i>тав тух</p>
+                    </a>
+                    <a href="#">
+                        <p><i class="fas fa-angle-double-right"></i>мэдээ мэдээлэл</p>
+                    </a>
+                    <a href="#">
+                        <p><i class="fas fa-angle-double-right"></i>хамт олон</p>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-contact-us">
+                <h3>Бидэнтэй холбогдох</h3>
+                <p><i class="fas fa-phone-alt"></i>+976 99999999</p>
+                <p><i class="far fa-envelope"></i>uuganbat.dev@gmail.com</p>
+                <p><i class="fas fa-map-marker-alt"></i>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio,
+                    officia.</p>
+
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+    <!------------------------GSAP onscroll-------------------------->
+    <script src="{% static 'js_libraries/scrollmagic.js' %}"></script>
+    <script src="{% static 'js_libraries/scrollmagicIndicator.js' %}"></script>
+    <!------------------------GSAP onscroll END-------------------------->
+    <!------------------------SWIPER JS-------------------------->
+    <script src="{% static 'js_libraries/swiper.js' %}"></script>
+    <script src="{% static 'home.js' %}"></script>
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm1tPYEg_dlAcUQ1PZ4vbCtgGMJNjm4jE&callback=initMap">
+    </script>
+    <!------------------------SWIPER JS-------------------------->
+    <script>
+        function showPanaroma() {
+            document.getElementById("bluredPanaroma").classList.toggle("removeBlur");
+            var iframe = document.createElement("iframe");
+            iframe.setAttribute("src", "{% url 'panaroma' %}");
+            document.getElementById("panaromaSection").appendChild(iframe);
+        }
+    </script>
+
+</body>
+
+</html>
