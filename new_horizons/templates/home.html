@@ -27,21 +27,21 @@
                 </div>
                 <nav class="desktop-nav">
 
-                    <li><a href="{% url 'index' %}#home">нүүр</a></li>
+                    <li><a href="{% url 'home' %}#home">нүүр</a></li>
 
-                    <li><a href="{% url 'index' %}#miniBlog">Сүүлийн үеийн мэдээ</a></li>
+                    <li><a href="{% url 'home' %}#miniBlog">Сүүлийн үеийн мэдээ</a></li>
 
-                    <li><a href="{% url 'index' %}#buildingIntro">танилцуулга</a></li>
+                    <li><a href="{% url 'home' %}#buildingIntro">танилцуулга</a></li>
 
-                    <li><a href="{% url 'index' %}#service">үйлчилгээ</a></li>
+                    <li><a href="{% url 'home' %}#service">үйлчилгээ</a></li>
 
-                    <li><a href="{% url 'index' %}#floorInfo">давхарийн мэдээлэл</a></li>
+                    <li><a href="{% url 'home' %}#floorInfo">давхарийн мэдээлэл</a></li>
 
-                    <li><a href="{% url 'index' %}#sevenReason">Давуу тал</a></li>
+                    <li><a href="{% url 'home' %}#sevenReason">Давуу тал</a></li>
 
-                    <li><a href="{% url 'index' %}#panaromaSection">360 зураг</a></li>
+                    <li><a href="{% url 'home' %}#panaromaSection">360 зураг</a></li>
 
-                    <li><a href="{% url 'index' %}#nearbyPlaces">Ойр хавийн барилгууд</a></li>
+                    <li><a href="{% url 'home' %}#nearbyPlaces">Ойр хавийн барилгууд</a></li>
 
                 </nav>
             </div>
@@ -61,7 +61,7 @@
 
                 <li><a href="./home.html#home">нүүр</a></li>
 
-                <li><a href="{% url 'index' %}#miniBlog">Сүүлийн үеийн мэдээ</a></li>
+                <li><a href="{% url 'home' %}#miniBlog">Сүүлийн үеийн мэдээ</a></li>
 
                 <li><a href="./home.html#buildingIntro">танилцуулга</a></li>
 
@@ -101,9 +101,9 @@
                 <div class="swiper-slide">
                     <div class="inner-swiper-slide">
                         <img src="{% static 'assets/IMG_7256.JPG' %}" alt="building">
-                        <p>Lorem, ipsum.</p>
-                        <h3>Lorem ipsum dolor sit.</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, assumenda.</p>
+                        <p>Тавтай морил!</p>
+                        <h3>New Horizons ашиглалтанд орлоо</h3>
+                        <!-- <p></p> -->
                         <a href="#"  onclick="showSendInformationForm()">Боршуур авах</a>
                     </div>
                 </div>
@@ -163,69 +163,51 @@
 
     <section class="mini-blog-section" id="miniBlog">
         <div class="inner-mini-blog-section">
-            <h3>suuliin ueiin</h3>
+            <h3>Сүүлийн үеийн мэдээ</h3>
             <div class="mini-blog-cards-container">
                 <a href="#" class="mini-blog-card">
                     <img src="{% static 'assets/horizon10.jpg' %}" alt="bulding photo">
-                    <h4>Lorem ipsum dolor sit.</h4>
+                    <h4>New Horizons ашиглалтанд орлоо</h4>
                     <div class="blog-status">
                         <p><i class="fas fa-clock"></i>2020/7/20</p>
-                        <p><i class="far fa-user"></i>niitelsen Lorem ipsum</p>
-                        <p><i class="far fa-comment"></i>25</p>
+                        <p><i class="far fa-user"></i>Нийтэлсэн: 290</p>
+                        <p><i class="far fa-comment"></i>2</p>
                     </div>
                     <hr>
-                    <p class="little-article">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Nobis, corporis fuga tempora consequuntur dolor, temporibus,
-                        mollitia repudiandae beatae aliquam qui molestiae animi excepturi
-                        cupiditate debitis eligendi exercitationem iste
-                        dolore voluptates!
-                        mollitia repudiandae beatae aliquam qui molestiae animi excepturi
-                        cupiditate debitis eligendi exercitationem iste
-                        dolore voluptates!mollitia repudiandae beatae aliquam qui molestiae animi excepturi
-                        cupiditate debitis eligendi exercitationem iste
-                        dolore voluptates!
+                    <p class="little-article">Улаанбаатар хотын зүрхэн төвд байрлах орчин үеийн шийдэл, 
+                        чадварлаг менежмент, чанартай үйлчилгээ бүхий уг байгууламж нь таны бизнесийг 
+                        амжилтанд хөтлөх цогц бүрдэл юм. NEW HORIZONS газар хөдлөлтийг тэсвэрлэх чадалтай 
+                        хамгийн сүүлийн үеийн шилдэг технологи бүхий архитектурын ухаалаг шийдэл , ая тух 
+                        хангах нэмэлт үйлчилгээ, ашигтай байрлал нь компаний тань байр суурийг тодорхойлж, 
+                        ажиллагсдын тань урам зоригийг бадрааж, харилцагч, үйлчлүүлэгчдийг тань бишрүүлэх болно. 
                     </p>
                 </a>
                 <a href="#" class="mini-blog-card">
                     <img src="{% static 'assets/IMG_7249.JPG' %}" alt="bulding photo">
-                    <h4>Lorem ipsum dolor sit.</h4>
+                    <h4>Улаанбаатар хотын шилдэг байгууламж</h4>
                     <div class="blog-status">
                         <p><i class="fas fa-clock"></i>2020/7/20</p>
-                        <p><i class="far fa-user"></i>niitelsen Lorem ipsum</p>
+                        <p><i class="far fa-user"></i>Нийтэлсэн: 290</p>
                         <p><i class="far fa-comment"></i>25</p>
                     </div>
                     <hr>
-                    <p class="little-article">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Nobis, corporis fuga tempora consequuntur dolor, temporibus,
-                        mollitia repudiandae beatae aliquam qui molestiae animi excepturi
-                        cupiditate debitis eligendi exercitationem iste
-                        dolore voluptates!
-                        mollitia repudiandae beatae aliquam qui molestiae animi excepturi
-                        cupiditate debitis eligendi exercitationem iste
-                        dolore voluptates!mollitia repudiandae beatae aliquam qui molestiae animi excepturi
-                        cupiditate debitis eligendi exercitationem iste
-                        dolore voluptates!
+                    <p class="little-article">"ХАН" ХХК нь ISO 9001,ISO 14001,ОНSAS 18001 стандартуудыг хангасан 
+                        Хөрөнгийн менежментийн үйлчилгээг үзүүлнэ.
                     </p>
                 </a>
                 <a href="#" class="mini-blog-card">
                     <img src="{% static 'assets/IMG_7256.JPG' %}" alt="bulding photo">
-                    <h4>Lorem ipsum dolor sit.</h4>
+                    <h4>New Horizons ашиглалтанд орлоо
+                    </h4>
                     <div class="blog-status">
                         <p><i class="fas fa-clock"></i>2020/7/20</p>
-                        <p><i class="far fa-user"></i>niitelsen Lorem ipsum</p>
+                        <p><i class="far fa-user"></i>Нийтэлсэн: 290</p>
                         <p><i class="far fa-comment"></i>25</p>
                     </div>
                     <hr>
-                    <p class="little-article">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Nobis, corporis fuga tempora consequuntur dolor, temporibus,
-                        mollitia repudiandae beatae aliquam qui molestiae animi excepturi
-                        cupiditate debitis eligendi exercitationem iste
-                        dolore voluptates!
-                        mollitia repudiandae beatae aliquam qui molestiae animi excepturi
-                        cupiditate debitis eligendi exercitationem iste
-                        dolore voluptates!mollitia repudiandae beatae aliquam qui molestiae animi excepturi
-                        cupiditate debitis eligendi exercitationem iste
-                        dolore voluptates!
+                    <p class="little-article">Агааржуулалт, агаар сэлгэлт, хөргөлтийн гурвалсан 
+                        системийг ашиглаж офисийн агвар дахь утаа, тоос, бактерийг устган ямагт 
+                        эрүүл цэвэр орчинг бүрдүүлнэ. 
                     </p>
                 </a>
 
@@ -259,7 +241,7 @@
             <ul class="service-lists-container">
 
                 <li class="service-title">
-                    <div class="inner-service-title">Үйлчилгээний газар</div>
+                    <div class="inner-service-title">Банк, санхүү</div>
                     <div class="sub-service-list-container">
                         <a href="#">Хаан банк</a>
                         <a href="#">Lorem ipsum dolor</a>
@@ -270,7 +252,7 @@
                     </div>
                 </li>
                 <li class="service-title">
-                    <div class="inner-service-title">Үйлчилгээний газар</div>
+                    <div class="inner-service-title">Ресторан</div>
                     <div class="sub-service-list-container">
                         <a href="#">Хаан банк</a>
                         <a href="#">Lorem ipsum dolor</a>
@@ -281,7 +263,7 @@
                     </div>
                 </li>
                 <li class="service-title">
-                    <div class="inner-service-title">Lorem ipsum dolor sit</div>
+                    <div class="inner-service-title">Даатгал</div>
                     <div class="sub-service-list-container">
                         <a href="#">Lorem ipsum dolor</a>
                         <a href="#">Lorem ipsum dolor</a>
@@ -293,7 +275,7 @@
                 </li>
 
                 <li class="service-title">
-                    <div class="inner-service-title">Lorem ipsum dolor sit</div>
+                    <div class="inner-service-title">Фитнесс клуб</div>
                     <div class="sub-service-list-container">
                         <a href="#">Lorem ipsum dolor</a>
                         <a href="#">Lorem ipsum dolor</a>
@@ -304,7 +286,7 @@
                     </div>
                 </li>
                 <li class="service-title">
-                    <div class="inner-service-title">Lorem ipsum dolor sit</div>
+                    <div class="inner-service-title">Худалдааны газар</div>
                     <div class="sub-service-list-container">
                         <a href="#">Lorem ipsum dolor</a>
                         <a href="#">Lorem ipsum dolor</a>
@@ -315,7 +297,7 @@
                     </div>
                 </li>
                 <li class="service-title">
-                    <div class="inner-service-title">Lorem ipsum dolor sit</div>
+                    <div class="inner-service-title">Албан байгууллага</div>
                     <div class="sub-service-list-container">
                         <a href="#">Lorem ipsum dolor</a>
                         <a href="#">Lorem ipsum dolor</a>
@@ -332,16 +314,16 @@
                 <div class="swiper-wrapper" id="getPictures">
                     <div class="swiper-slide">
                         <div class="slide-left">
-                            <h3>diverse solution</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati.
+                            <h3>ХААН банк</h3>
+                            <p>  ХААН Банк нь орон даяар нийт 550 гаруй салбар нэгжтэй үндэсний хэмжээний 
+                                тэргүүлэгч арилжааны банк бөгөөд Монгол Улсын нийт айл өрхийн 80 гаруй хувьд 
+                                буюу 2.5 сая харилцагчид банк санхүүгийн цогц үйлчилгээг хүргэн ажиллаж байна.
+
+                                Банк нь нэг шатлал бүхий улсын банкны тогтолцоо задарсан үе буюу 1991 онд орон 
+                                даяар салбар нэгжтэй, Хөдөө Аж Ахуйн Хоршоологчдын банк нэртэйгээр байгуулагдсан 
+                                түүхтэй. Улмаар улсын банкны хөдөө орон нутаг дахь хөрөнгө, үйл ажиллагааг өөртөө 
+                                шилжүүлэн авч банк хувьчлагдсан ч бизнесийн үйл ажиллагаа нь төр засгийн хүчтэй 
+                                нөлөөллөөс ангид байсангүй. 
                             </p>
                         </div>
                         <div class="slide-right">
@@ -567,7 +549,7 @@
                 <li><span>f</span>7
                     <div class="floor-icon-container">
                         <div class="inner-floor-icon-container">
-                            <p>хаан банк</p>
+                            <p>ХААН банк</p>
                             <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
                         </div>
                     </div>
@@ -1002,10 +984,10 @@
             <div class="google-map-container" id="googleMapContainer">
                 <div class="places-list">
                     <ul id="listOfMarkers">
-                        <li><a id="busStation">Автобусны буудал</a></li>
-                        <li><a id="government">Улсын байгууллага</a></li>
-                        <li><a id="medical">Эмнэлэг</a></li>
-                        <li><a id="business">Безнэсийн байгууллага</a></li>
+                        <li><a id="busStation"> <b>Автобусны буудал</b></a></li>
+                        <li><a id="government"><b>Улсын байгууллага</b></a></li>
+                        <li><a id="medical"><b>Эмнэлэг</b></a></li>
+                        <li><a id="business"><b>Бизнесийн байгууллага</b></a></li>
                     </ul>
                 </div>
                 <div id="map"></div>
@@ -1056,7 +1038,7 @@
                     officia.</p>
 
             </div>
-        </div>
+        </div>  
     </footer>
 
 

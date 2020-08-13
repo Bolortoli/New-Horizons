@@ -3,6 +3,7 @@ from . import views
 from django.views.generic import TemplateView
 
 urlpatterns = [
-    path('', views.index, name="index"),
+    path('', views.guide, name="guide"),
+    path('home/', views.home, name="home"),
     path('panaroma/', views.panaroma, name='panaroma')
 ]
