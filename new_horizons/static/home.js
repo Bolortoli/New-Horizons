@@ -85,7 +85,7 @@ var swiper2 = new Swiper('.swiper-container-two', {
 
 var controller = new ScrollMagic.Controller({
     globalSceneOptions: {
-        duration: "14%"
+        duration: "13%"
     }
 }); //Scroll magic library
 

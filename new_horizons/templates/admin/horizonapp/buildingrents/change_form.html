@@ -1,13 +1,15 @@
 {% extends "admin/change_form.html" %}
 {% load i18n static %}
 
-{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/login.css" %}">
+{% block extrastyle %}{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static "admin/css/login.css" %}">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 {{ form.media }}
 <style>
     body {
         background-color: violet;
     }
+
     .form-row .vCheckboxLabel {
         display: none;
     }
@@ -16,11 +18,51 @@
         background-color: green;
         background: url("{% static 'assets/horizon10.jpg' %}");
     }
+
+    .floors-container {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .floors {
+        height: 20vw;
+        width: 20vw;
+        padding: 0;
+        position: relative;
+        margin: 3vw;
+    }
+    .floor-number {
+        position: absolute;
+        display: inline-grid;
+        place-items: center;
+        width: 100%;
+        height: 100%;
+        font-size: 3vw;
+        font-weight: bold;
+        color: white;
+    }
+    .floors img {
+        position: absolute;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    .inner-floors {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        opacity: 0;
+    }
+    .inner-floors input {
+        width: 50%;
+        height: 100%;
+    } 
 </style>
 
 <script>
-    $(document).ready(function() {
-        $("#id_floor3_a").change(function() {
+    $(document).ready(function () {
+        $("#id_floor3_a").change(function () {
             alert("afsa");
         });
     });
@@ -29,5 +71,140 @@
 {% endblock %}
 
 {% block field_sets %}
- HI
+<div class="floors-container">
+    <div class="floors ">
+        <div class="floor-number">1</div>
+        <img src="{% static 'assets/plan_images/plan15.png' %}" alt="floor one svg">
+        <div class="inner-floors">
+        <input type="checkbox">
+        <input type="checkbox">
+        </div>
+    </div>
+    <div class="floors ">
+        <div class="floor-number">2</div>
+
+        <img src="{% static 'assets/plan_images/plan9_10_14.png' %}" alt="floor one svg">
+        <div class="inner-floors">
+            <input type="checkbox">
+            <input type="checkbox">
+            </div>
+    </div>
+    <div class="floors ">
+        <div class="floor-number">3</div>
+
+        <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
+        <div class="inner-floors">
+            <input type="checkbox">
+            <input type="checkbox">
+            </div>
+    </div>
+    <div class="floors ">
+        <div class="floor-number">4</div>
+
+        <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
+        <div class="inner-floors">
+            <input type="checkbox">
+            <input type="checkbox">
+            </div>
+    </div>
+    <div class="floors">
+        <div class="floor-number">5</div>
+
+        <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
+        <div class="inner-floors">
+            <input type="checkbox">
+            <input type="checkbox">
+            </div>
+    </div>
+    <div class="floors">
+        <div class="floor-number">6</div>
+
+        <img src="{% static 'assets/plan_images/plan9_10_14.png' %}" alt="floor one svg">
+        <div class="inner-floors">
+            <input type="checkbox">
+            <input type="checkbox">
+            </div>
+    </div>
+    <div class="floors">
+        <div class="floor-number">7</div>
+
+        <img src="{% static 'assets/plan_images/plan9_10_14.png' %}" alt="floor one svg">
+        <div class="inner-floors">
+            <input type="checkbox">
+            <input type="checkbox">
+            </div>
+    </div>
+    <div class="floors">
+        <div class="floor-number">8</div>
+
+        <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
+        <div class="inner-floors">
+            <input type="checkbox">
+            <input type="checkbox">
+            </div>
+    </div>
+    <div class="floors">
+        <div class="floor-number">9</div>
+
+        <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
+        <div class="inner-floors">
+            <input type="checkbox">
+            <input type="checkbox">
+            </div>
+    </div>
+    <div class="floors">
+        <div class="floor-number">10</div>
+
+        <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
+        <div class="inner-floors">
+            <input type="checkbox">
+            <input type="checkbox">
+            </div>
+    </div>
+    <div class="floors">
+        <div class="floor-number">11</div>
+
+        <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
+        <div class="inner-floors">
+            <input type="checkbox">
+            <input type="checkbox">
+            </div>
+    </div>
+    <div class="floors">
+        <div class="floor-number">12</div>
+
+        <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
+        <div class="inner-floors">
+            <input type="checkbox">
+            <input type="checkbox">
+            </div>
+    </div>
+    <div class="floors">
+        <div class="floor-number">13</div>
+
+        <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
+        <div class="inner-floors">
+            <input type="checkbox">
+            <input type="checkbox">
+            </div>
+    </div>
+    <div class="floors">
+        <div class="floor-number">14</div>
+
+        <img src="{% static 'assets/plan_images/plan2.png' %}" alt="floor one svg">
+        <div class="inner-floors">
+            <input type="checkbox">
+            <input type="checkbox">
+            </div>
+    </div>
+    <div class="floors">
+        <div class="floor-number">15</div>
+
+        <img src="{% static 'assets/plan_images/plan1.png' %}" alt="floor one svg">
+        <div class="inner-floors">
+            <input type="checkbox">
+            <input type="checkbox">
+            </div>
+    </div>
+</div>
 {% endblock %}
