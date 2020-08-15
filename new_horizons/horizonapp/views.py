@@ -10,7 +10,7 @@ def guide(request):
     context = {
         'news': News.objects.all().first()
     }
-    return render(request, 'guide.html', context)
+    return render(request, 'blog.single.html', context)
 
 def home(request):
     return render(request, 'home.html')
