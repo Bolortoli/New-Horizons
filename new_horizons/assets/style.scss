@@ -1984,7 +1984,6 @@ body {
 				transform: scaleX(1);
 				color: white !important;
 				transition: 0.1s;
-
 				img {
 					padding: 0.3vw;
 				}
@@ -2031,7 +2030,7 @@ body {
 				}
 
 				.floor-icon-container {
-					transform: scaleX(0);
+					transform: scaleX(1);
 					transform-origin: left;
 					width: auto;
 					height: 100%;

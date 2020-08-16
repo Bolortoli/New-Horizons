@@ -2224,8 +2224,8 @@ body {
 }
 
 .floor-informations .floors-container ul li .floor-icon-container {
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
   -webkit-transform-origin: left;
           transform-origin: left;
   width: auto;
