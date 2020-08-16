@@ -1,4 +1,4 @@
-@media only screen and  (max-width: 1000px){
+@media only screen and  (max-width: 600px){
 
 	body {
 		font-size: 2vh !important;
@@ -474,12 +474,9 @@ $font-family-main : headerFont;
 
 /*----------------AIMATION KEYFRAMES---------------*/
 @keyframes coolShowPanaroma {
-	50% {
-		transform: scale(1.2);
-	}
 
 	100% {
-		transform: scale(1);
+		filter: blur(0);
 	}
 }
 
@@ -1607,9 +1604,9 @@ body {
 						content: "";
 						position: absolute;
 						left: 50%;
-						top: -1vw;
-						height: 2vw;
-						width: 0.1vw;
+						top: -0.7vw;
+						height: 1.5vw;
+						width: 0.2vw;
 						background: cornflowerblue;
 						transition: 0.3s;
 					}
@@ -1653,11 +1650,10 @@ body {
 					&:hover .sub-service-list-container {
 						transform: scaleX(1);
 						transform-origin: right;
-						transition: 0.2s;
+						transition: 0.3s;
 					}
 
 					&:hover .sub-service-list-container a {
-						transform: translateY(0);
 						transition: 0.3;
 					}
 
@@ -1677,19 +1673,21 @@ body {
 					.sub-service-list-container {
 						position: absolute;
 						top: 0;
-						left: 100%;
+						left: 105%;
 						list-style-type: none;
-						padding: 0.5vw 2vw;
-						width: auto;
+						padding: 0.5vw;
+						width: 300%;
 						margin: 0;
 						background: rgba(0, 0, 0, 0.8);
 						transition: 0.3s;
 						transition-delay: 0.2s;
 						display: flex;
 						align-items: center;
+						justify-content: center;
 						transform: scaleX(0);
-						transform-origin: right;
-						flex-direction: column;
+						transform-origin: left;
+						flex-direction: row;
+						flex-wrap: wrap;
 						z-index: 100;
 
 						a {
@@ -1698,13 +1696,12 @@ body {
 							color: white;
 							border: 0.1vw solid white;
 							padding: 1.5vw;
-							margin: 0.7vw 0;
+							margin: 0.7vw 1vw;
 							text-align: center;
 							width: 11vw;
 							height: 100%;
 							position: relative;
 							transition: .3s;
-							transform: translateY(100%);
 
 							&::before {
 								content: "";
@@ -1973,7 +1970,7 @@ body {
 		.active-floor-list {
 			background: white;
 			color: black;
-			transition: 0.1s;
+			transition: 0.5s;
 
 			&::before {
 				right: 100%;
@@ -1983,11 +1980,13 @@ body {
 			.floor-icon-container {
 				transform: scaleX(1);
 				color: white !important;
-				transition: 0.1s;
-
+				transition: 0.3s;
 				img {
 					padding: 0.3vw;
 				}
+			}
+			span {
+				opacity: 1;
 			}
 		}
 
@@ -2004,7 +2003,7 @@ body {
 			padding-left: 10%;
 
 			li {
-
+				font-style: 'digital';
 				padding: 0.3vw 0;
 				cursor: pointer;
 				font-size: 1.5em;
@@ -2047,15 +2046,14 @@ body {
 				.inner-floor-icon-container {
 					height: 100%;
 					width: 100%;
-					background: #181818;
+					background: rgba(24, 24, 24, 0.8);
 					white-space: nowrap;
 					display: flex;
 					align-items: center;
 					justify-content: space-evenly;
 					transition: 0.1s;
 					overflow: hidden;
-					border-right: 0.1vw solid cornflowerblue;
-
+					border-right: 0.4vw solid rgba(24, 24, 24, 0.4);
 					img {
 						height: 100%;
 						object-fit: contain;
@@ -2066,6 +2064,7 @@ body {
 			}
 
 			span {
+				font-weight: bolder;
 				text-transform: uppercase;
 				opacity: 0.4;
 			}
@@ -2083,6 +2082,8 @@ body {
 		padding: 0;
 		position: fixed;
 		margin: 2vw;
+		background: rgba(0, 0, 0, .5);
+		border-radius: 1vw;
 
 		img {
 			display: none;
@@ -2114,6 +2115,7 @@ body {
 			display: grid;
 		}
 	}
+
 
 	.plan-photos-fullscreen-info {
 		display: none;
@@ -2493,7 +2495,7 @@ body {
 
 	.blured-360 {
 		width: 100%;
-		height: 60%;
+		height: 90%;
 		position: relative;
 
 		img {
@@ -2558,9 +2560,9 @@ body {
 		display: block;
 		border: none;
 		width: 100%;
-		height: 60%;
-		transform: scale(0);
-		animation: coolShowPanaroma 1.5s ease-in forwards;
+		height: 90%;
+		filter: blur(0.4vw);
+		animation: coolShowPanaroma 2s ease-in forwards;
 	}
 
 }
