@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from django.views.decorators.clickjacking import xframe_options_exempt
-from django.views.decorators.clickjacking import xframe_options_sameorigin
+from django.views.decorators.clickjacking import xframe_options_exempt, xframe_options_sameorigin
 from .models import *
 
 # Create your views here.
@@ -8,9 +7,9 @@ from .models import *
 def guide(request):
 
     context = {
-        'news': News.objects.all().first()
+        'rents': BuildingRents.objects.all().first()
     }
-    return render(request, 'blog.single.html', context)
+    return render(request, 'home.html', context)
 
 def home(request):
     return render(request, 'home.html')

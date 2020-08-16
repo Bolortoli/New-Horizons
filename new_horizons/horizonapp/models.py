@@ -16,6 +16,9 @@ class News(models.Model):
     # picture_main=models.ImageField(verbose_name="Гол зураг", upload_to='news/picture')
     # description1=models.TextField(verbose_name="Мэдээ 1", default='')
     content=RichTextField()
+    floor1_a = models.BooleanField(default=False)
+    floor1_b = models.BooleanField(default=False)
+    floor2_a = models.BooleanField(default=False)
     
 class BuildingRents(models.Model):
 
