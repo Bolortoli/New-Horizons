@@ -14,12 +14,14 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, re_path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
 
-urlpatterns = [
+urlpatterns = [  
+    re_path(r'^jet/', include('jet.urls', 'jet')),
+    # re_path(r'^jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')), 
     path('admin/', admin.site.urls),
     path('', include('horizonapp.urls')),
     path('secret/', include('admin_honeypot.urls', namespace='admin_honeypot')),

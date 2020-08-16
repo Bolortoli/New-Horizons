@@ -6,17 +6,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 {{ form.media }}
 <style>
-    body {
-        background-color: violet;
-    }
-
-    .form-row .vCheckboxLabel {
-        display: none;
-    }
-
-    .form-row #id_floor3_a {
-        background-color: green;
-        background: url("{% static 'assets/horizon10.jpg' %}");
+    body {  
     }
 
     .floors-container {
@@ -26,11 +16,11 @@
     }
 
     .floors {
-        height: 20vw;
-        width: 20vw;
+        height: 10vw;
+        width: 12vw;
         padding: 0;
         position: relative;
-        margin: 3vw;
+        margin: 1vw 2vw;
         user-select: none;
     }
 
@@ -42,7 +32,7 @@
         font-size: 3vw;
         font-weight: bold;
         color: black;
-        z-index: 10000;
+        z-index: 1;
     }
 
     .floors img {
@@ -63,7 +53,7 @@
         width: 50%;
         height: 100%;
         position: relative;
-        opacity: 1;
+        opacity: 0;
     }
 
     .floor-checkbox:after {
@@ -79,7 +69,7 @@
         position: absolute;
         height: 100%;
         background: rgba(0, 0, 0, 0.5);
-        z-index: 10;
+        z-index: 0;
         opacity: 0;
     }
 
@@ -88,12 +78,8 @@
     }
 </style>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-    $(document).ready(function () {
-        $("#id_floor3_a").change(function () {
-            alert("afsa");
-        });
-    });
     $(document).ready(function () {
         $("label").click(function () {
             $(this).toggleClass("sda");
@@ -101,18 +87,19 @@
     });
 </script>
 
+
 {% endblock %}
 
 {% block field_sets %}
 <div class="floors-container">
-    <div class="floors ">
+    <div class="floors " id="1">
         <div class="floor-number">1</div>
         <img src="{% static 'assets/plan_images/plan15.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label for="floor1"></label>
-            <label for="floor2"></label>
-            <input class="floor-checkbox" id="floor1" type="checkbox">
-            <input class="floor-checkbox" id="floor2" type="checkbox">
+            <label for="floor1-a"></label>
+            <label for="floor1-b"></label>
+            <input class="floor-checkbox" id="floor1-a" type="checkbox">
+            <input class="floor-checkbox" id="floor1-b" type="checkbox">
         </div>
     </div>
     <div class="floors ">
@@ -120,10 +107,10 @@
 
         <img src="{% static 'assets/plan_images/plan9_10_14.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label for="floor3"></label>
-            <label for="floor4"></label>
-            <input class="floor-checkbox" id="floor3" type="checkbox">
-            <input class="floor-checkbox" id="floor4" type="checkbox">
+            <label for="floor2-a"></label>
+            <label for="floor2-b"></label>
+            <input class="floor-checkbox" id="floor2-a" type="checkbox">
+            <input class="floor-checkbox" id="floor2-b" type="checkbox">
         </div>
     </div>
     <div class="floors ">
@@ -131,10 +118,10 @@
 
         <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label for="floor5"></label>
-            <label for="floor6"></label>
-            <input class="floor-checkbox" id="floor5" type="checkbox">
-            <input class="floor-checkbox" id="floor6" type="checkbox">
+            <label for="floor3-a"></label>
+            <label for="floor3-b"></label>
+            <input class="floor-checkbox" id="floor3-a" type="checkbox">
+            <input class="floor-checkbox" id="floor3-b" type="checkbox">
         </div>
     </div>
     <div class="floors ">
@@ -142,10 +129,10 @@
 
         <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label for="floor7"></label>
-            <label for="floor8"></label>
-            <input class="floor-checkbox" id="floor7" type="checkbox">
-            <input class="floor-checkbox" id="floor8" type="checkbox">
+            <label for="floor4-a"></label>
+            <label for="floor4-b"></label>
+            <input class="floor-checkbox" id="floor4-a" type="checkbox">
+            <input class="floor-checkbox" id="floor4-b" type="checkbox">
         </div>
     </div>
     <div class="floors">
@@ -153,10 +140,10 @@
 
         <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label for="floor9"></label>
-            <label for="floor10"></label>
-            <input class="floor-checkbox" id="floor9" type="checkbox">
-            <input class="floor-checkbox" id="floor10" type="checkbox">
+            <label for="floor5-a"></label>
+            <label for="floor5-b"></label>
+            <input class="floor-checkbox" id="floor5-a" type="checkbox">
+            <input class="floor-checkbox" id="floor5-b" type="checkbox">
         </div>
     </div>
     <div class="floors">
@@ -164,10 +151,10 @@
 
         <img src="{% static 'assets/plan_images/plan9_10_14.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label for="floor11"></label>
-            <label for="floor12"></label>
-            <input class="floor-checkbox" id="floor11" type="checkbox">
-            <input class="floor-checkbox" id="floor12" type="checkbox">
+            <label for="floor6-a"></label>
+            <label for="floor6-b"></label>
+            <input class="floor-checkbox" id="floor6-a" type="checkbox">
+            <input class="floor-checkbox" id="floor6-b" type="checkbox">
         </div>
     </div>
     <div class="floors">
@@ -175,10 +162,10 @@
 
         <img src="{% static 'assets/plan_images/plan9_10_14.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label for="floor13"></label>
-            <label for="floor14"></label>
-            <input class="floor-checkbox" id="floor13" type="checkbox">
-            <input class="floor-checkbox" id="floor14" type="checkbox">
+            <label for="floor7-a"></label>
+            <label for="floor7-b"></label>
+            <input class="floor-checkbox" id="floor7-a" type="checkbox">
+            <input class="floor-checkbox" id="floor7-b" type="checkbox">
         </div>
     </div>
     <div class="floors">
@@ -186,10 +173,10 @@
 
         <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label for="floor15"></label>
-            <label for="floor16"></label>
-            <input class="floor-checkbox" id="floor15" type="checkbox">
-            <input class="floor-checkbox" id="floor16" type="checkbox">
+            <label for="floor8-a"></label>
+            <label for="floor8-b"></label>
+            <input class="floor-checkbox" id="floor8-a" type="checkbox">
+            <input class="floor-checkbox" id="floor8-b" type="checkbox">
         </div>
     </div>
     <div class="floors">
@@ -197,10 +184,10 @@
 
         <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label for="floor17"></label>
-            <label for="floor18"></label>
-            <input class="floor-checkbox" id="floor17" type="checkbox">
-            <input class="floor-checkbox" id="floor18" type="checkbox">
+            <label for="floor9-a"></label>
+            <label for="floor9-b"></label>
+            <input class="floor-checkbox" id="floor9-a" type="checkbox">
+            <input class="floor-checkbox" id="floor9-b" type="checkbox">
         </div>
     </div>
     <div class="floors">
@@ -208,10 +195,10 @@
 
         <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label for="floor19"></label>
-            <label for="floor20"></label>
-            <input class="floor-checkbox" id="floor19" type="checkbox">
-            <input class="floor-checkbox" id="floor20" type="checkbox">
+            <label for="floor10-a"></label>
+            <label for="floor10-b"></label>
+            <input class="floor-checkbox" id="floor10-a" type="checkbox">
+            <input class="floor-checkbox" id="floor10-b" type="checkbox">
         </div>
     </div>
     <div class="floors">
@@ -219,10 +206,10 @@
 
         <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label for="floor21"></label>
-            <label for="floor22"></label>
-            <input class="floor-checkbox" id="floor21" type="checkbox">
-            <input class="floor-checkbox" id="floor22" type="checkbox">
+            <label for="floor11-a"></label>
+            <label for="floor11-b"></label>
+            <input class="floor-checkbox" id="floor11-a" type="checkbox">
+            <input class="floor-checkbox" id="floor11-b" type="checkbox">
         </div>
     </div>
     <div class="floors">
@@ -230,10 +217,10 @@
 
         <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label for="floor23"></label>
-            <label for="floor24"></label>
-            <input class="floor-checkbox" id="floor23" type="checkbox">
-            <input class="floor-checkbox" id="floor24" type="checkbox">
+            <label for="floor12-a"></label>
+            <label for="floor12-b"></label>
+            <input class="floor-checkbox" id="floor12-a" type="checkbox">
+            <input class="floor-checkbox" id="floor12-b" type="checkbox">
         </div>
     </div>
     <div class="floors">
@@ -241,10 +228,10 @@
 
         <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label for="floor25"></label>
-            <label for="floor26"></label>
-            <input class="floor-checkbox" id="floor25" type="checkbox">
-            <input class="floor-checkbox" id="floor26" type="checkbox">
+            <label for="floor13-a"></label>
+            <label for="floor13-b"></label>
+            <input class="floor-checkbox" id="floor13-a" type="checkbox">
+            <input class="floor-checkbox" id="floor13-b" type="checkbox">
         </div>
     </div>
     <div class="floors">
@@ -252,10 +239,10 @@
 
         <img src="{% static 'assets/plan_images/plan2.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label for="floor27"></label>
-            <label for="floor28"></label>
-            <input class="floor-checkbox" id="floor27" type="checkbox">
-            <input class="floor-checkbox" id="floor28" type="checkbox">
+            <label for="floor14-a"></label>
+            <label for="floor14-b"></label>
+            <input class="floor-checkbox" id="floor14-a" type="checkbox">
+            <input class="floor-checkbox" id="floor14-b" type="checkbox">
         </div>
     </div>
     <div class="floors">
@@ -263,10 +250,10 @@
 
         <img src="{% static 'assets/plan_images/plan1.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label for="floor29"></label>
-            <label for="floor30"></label>
-            <input class="floor-checkbox" id="floor29" type="checkbox">
-            <input class="floor-checkbox" id="floor30" type="checkbox">
+            <label for="floor15-a"></label>
+            <label for="floor15-b"></label>
+            <input class="floor-checkbox" id="floor15-a" type="checkbox">
+            <input class="floor-checkbox" id="floor15-b" type="checkbox">
         </div>
     </div>
 </div>
