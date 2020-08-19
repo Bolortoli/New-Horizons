@@ -12,19 +12,20 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <script src="{% static 'js_libraries/fontawesome.js' %}" crossorigin="anonymous"></script>
     <script src="{% static 'js_libraries/jquery.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!----------------------------360 photo library------------------------>
 </head>
 
 <body class="home-body" id="homeBody">
     {{ rent.value }}
-    <!--------------------------HOME1 HEADER----------------------------->
+    {% comment %} <!--------------------------HOME1 HEADER-----------------------------> {% endcomment %}
 
 
     <header class="home-desktop-header" id="desktopHeader">
         <div class="header-inner">
             <div class="__left">
                 <div class="desktop-logo-container">
-                    <img src="{% static 'assets/nh_logo.png' %}" alt="logo">
+                    <img src="{{ global_settings.logo.url }}" alt="logo">
                 </div>
                 <nav class="desktop-nav">
 
@@ -58,7 +59,7 @@
                 <i class="fas fa-bars menu-icon" id="mobileBarsIcon"></i>
             </div>
             <nav id="mobileNav" onclick="showMobileNav()">
-                <img src="{% static 'assets/nh_logo.png' %}" alt="logo">
+                <img src="{{ global_settings.logo }}" alt="logo">
 
                 <li><a href="./home.html#home">нүүр</a></li>
 
@@ -95,7 +96,7 @@
             </button>
         </form>
     </div>
-    <!--------------------------HOME1 HEADER END----------------------------->
+    {% comment %} <!--------------------------HOME1 HEADER END-----------------------------> {% endcomment %}
     <section class="home-section" id="home">
         <div class="swiper-container">
             <div class="swiper-wrapper">
@@ -104,10 +105,27 @@
                         <img src="{% static 'assets/IMG_7256.JPG' %}" alt="building">
                         <p>Тавтай морил!</p>
                         <h3>New Horizons ашиглалтанд орлоо</h3>
-                        <!-- <p></p> -->
-                        <a href="#"  onclick="showSendInformationForm()">Боршуур авах</a>
+                        {% comment %} <p></p> {% endcomment %}
+                        {% csrf_token %}
+                        <a href="{{ pdf_url.url }}" id="brochure" >Боршуур авах</a>
                     </div>
                 </div>
+                {% comment %} <script>
+                    $(document).ready(function() {
+                        $('a#brochure').on("click", function() {
+                            $.ajax({
+                                method: 'post',
+                                url: "{% url 'send-email' %}",
+                                success: function(message) {
+                                    alert(message);
+                                },
+                                error: function(message) {
+                                    alert('error: ' + message);
+                                },
+                            });
+                        });
+                    });
+                </script> {% endcomment %}
                 <div class="swiper-slide">
                     <div class="inner-swiper-slide">
                         <img src="{% static 'assets/IMG_7249.JPG' %}" alt="building">
@@ -912,89 +930,77 @@
         </div>
 
     </section>
-
+    {% if reason_boxes%}
     <section class="seven-reason-section" id="sevenReason">
         <h3>new horizon ОФИСИЙГ СОНГОХ 7 ШАЛТГААН</h3>
         <div class="top-section">
             <div class="reason-card">
                 <i class="fas fa-location-arrow"></i>
                 <div>
-                    <h4>БАЙРШИЛ БАЙРШИЛ бас дахин БАЙРШИЛ</h4>
+                    <h4>{{ reason_boxes.box1_title }}</h4>
                     <p>
-                        Улаанбаатар хотын бизнесийн төв болох Олимпийн гудамжинд
-                        таны нэр хүндийн баталгаа болон сүндэрлэж байна.
+                        {{ reason_boxes.box1_text}}
                     </p>
                 </div>
             </div>
             <div class="reason-card">
                 <i class="fas fa-award"></i>
                 <div>
-                    <h4>ЧАНАРЫГ ЭРХЭМЛЭСЭН БАРИЛГА</h4>
+                    <h4>{{ reason_boxes.box2_title }}</h4>
                     <p>
-                        Манай барилга нь ЗВС системийн Н-Оеат хэлбэртэй бүрэн ганжуулсан
-                        төмөр каркастай, сайжруулан боловсруулсан ! ом”-Е шилэн фасадтай.
-                        Монгол улсын барилгын стандартад заасан 8 баллын газар хөдлөлтөнд
-                        тэсвэртэй байх шаардлагыг 50 хувь илүү хангасан.
+                        {{ reason_boxes.box2_text }}
                     </p>
                 </div>
             </div>
             <div class="reason-card">
                 <i class="fas fa-tools"></i>
                 <div>
-                    <h4>ОФИСОО ХҮССЭНЭЭРЭЭ ТӨЛӨВЛӨХ БОЛОМЖ</h4>
+                    <h4>{{ reason_boxes.box3_title }}</h4>
                     <p>
-                        Өндөр даацын ган хөл бүхий шал нь инженерийн дотоод шугам сүлжээнд
-                        хязгаарлагдахгүй таны хүссэнд орчинг бий болгоход туслана.
+                        {{ reason_boxes.box3_text }}
                     </p>
                 </div>
             </div>
             <div class="reason-card">
                 <i class="fas fa-hard-hat"></i>
                 <div>
-                    <h4>АЮУЛГҮЙ БАЙДЛЫН ШААРДЛАГУУДЫГ БҮРЭН ХАНГАСАН</h4>
+                    <h4> {{ reason_boxes.box4_title }}</h4>
                     <p>
-                        Барилгын стандартын дагуу давхар бүрдээ аваарын шат, гарц, схём
-                        спринклер гэсэн аюулгүй байдлын шаардлагуудыг хангасан.
+                        {{ reason_boxes.box4_text }}
                     </p>
                 </div>
             </div>
             <div class="reason-card">
                 <i class="fas fa-wind"></i>
                 <div>
-                    <h4>УТААГҮЙ ЦЭВЭР АГААР</h4>
+                    <h4> {{ reason_boxes.box5_title }}</h4>
                     <p>
-                        Агааржуулалт, агаар сэлгэлт, хөргөлтийн гурвалсан системийг ашиглаж
-                        офисийн агвар дахь утаа, тоос, бактерийг устган ямагт эрүүл цэвэр
-                        орчинг бүрдүүлнэ.
+                        {{ reason_boxes.box5_text }}
                     </p>
                 </div>
             </div>
             <div class="reason-card">
                 <i class="fas fa-tree"></i>
                 <div>
-                    <h4>БАЙГАЛЬ ОРЧИНД ЭЭЛТЭЙ</h4>
+                    <h4>{{ reason_boxes.box6_title }}</h4>
                     <p>
-                        New Horizons нь ганжуулсан шилэн фасадтай бөгөөд, шил нь дулаан
-                        алдалтыг хамгийн бага түвшинд барьж хүйтний улиралд дулаан, зуны
-                        улиралд нарны тусгалын бууруулан ажиллах орчныг төв тухвар
-                        хангах болно.
+                        {{ reason_boxes.box6_text }}
                     </p>
                 </div>
             </div>
             <div class="reason-card">
                 <i class="fas fa-tasks"></i>
                 <div>
-                    <h4>УХААЛАГ МЕНЕЖМЕНТ</h4>
+                    <h4>{{ reason_boxes.box7_title }}</h4>
                     <p>
-                        Та зөвхөн өөрийн ажилын бүтээмждээ анхаархад болно. Таны тав тух
-                        аюулгүй байдал цэвэр цэмцгэр орчиныг тань манай чадварлаг
-                        менежментийг баг хариуцан ажиллана.
+                        {{ reason_boxes.box7_text }}
                     </p>
                 </div>
             </div>
         </div>
 
     </section>
+    {% endif %}
 
     <section class="panaroma-picture-section" id="panaromaSection">
         <h3>360 зураг</h3>
@@ -1025,15 +1031,12 @@
         <img class="footer-bg" src="{% static 'assets/IMG_72561.jpg' %}" alt="footer building">
         <div class="inner-footer">
             <div class="footer-mini-info">
-                <img src="{% static 'assets/nh_logo.png' %}" alt="logo">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Esse quaerat obcaecati beatae neque nostrum harum
-                    dolorem officiis rem facere consequatur?
+                <img src="{{ global_settings.logo.url }}" alt="logo">
                 </p>
                 <div class="icons-container">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="{{ global_settings.facebook }}"><i class="fab fa-facebook-f"></i></a>
+                    <a href="{{ global_settings.instagram }}"><i class="fab fa-instagram"></i></a>
+                    <a href="{{ global_settings.twitter }}"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
             <div class="sub-pages-title">
@@ -1058,10 +1061,9 @@
             </div>
             <div class="footer-contact-us">
                 <h3>Бидэнтэй холбогдох</h3>
-                <p><i class="fas fa-phone-alt"></i>+976 99999999</p>
-                <p><i class="far fa-envelope"></i>uuganbat.dev@gmail.com</p>
-                <p><i class="fas fa-map-marker-alt"></i>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odio,
-                    officia.</p>
+                <p><i class="fas fa-phone-alt"></i>+976 {{ global_settings.phone }}</p>
+                <p><i class="far fa-envelope"></i>{{ global_settings.mail }}</p>
+                <p><i class="fas fa-map-marker-alt"></i>{{ global_settings.location }}.</p>
 
             </div>
         </div>  
