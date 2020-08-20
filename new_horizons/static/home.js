@@ -161,12 +161,18 @@ for (let i = 0; i <= lengthOfFloorList; i++) {
 // show blured 360
 function hideSendInformationForm() {
     document.getElementById("sendInformationForm").style.display = "none";
+
 }
 
 function showSendInformationForm() {
     document.getElementById("sendInformationForm").style.display = "grid";
 }
-
+function closeContactUsForm() {
+    document.getElementById("contactUsForm").style.display = "none";
+}
+function showContactUsForm() {
+    document.getElementById("contactUsForm").style.display = "grid";
+}
 function showPanaroma() {
     document.getElementById("bluredPanaroma").classList.toggle("removeBlur");
     var iframe = document.createElement("iframe");

@@ -17,3 +17,6 @@ def home(request):
 @xframe_options_sameorigin
 def panaroma(request):
     return render(request, 'panaroma.html')
+
+def blog(request):
+    return render(request, 'blog.html')
