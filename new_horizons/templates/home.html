@@ -100,51 +100,19 @@
     <section class="home-section" id="home">
         <div class="swiper-container">
             <div class="swiper-wrapper">
+                {% for item in home_sliders %}
                 <div class="swiper-slide">
                     <div class="inner-swiper-slide">
-                        <img src="{% static 'assets/IMG_7256.JPG' %}" alt="building">
-                        <p>Тавтай морил!</p>
-                        <h3>New Horizons ашиглалтанд орлоо</h3>
+                        <img src="{{ item.background_pic.url }}" alt="building">
+                        <p>{{ item.text_lil }}</p>
+                        <h3>{{ item.title }}</h3>
                         {% comment %} <p></p> {% endcomment %}
-                        {% csrf_token %}
-                        <a href="{{ pdf_url.url }}" id="brochure" >Боршуур авах</a>
+                        {% if item.choice1 %}
+                        <a href="https://drive.google.com/file/d/1X7DCnk5kRnHOjiVvGe32TOWqAk2M2isu/view?ts=5f0287df" id="brochure" >Боршуур авах</a>
+                        {% endif %}
                     </div>
                 </div>
-                {% comment %} <script>
-                    $(document).ready(function() {
-                        $('a#brochure').on("click", function() {
-                            $.ajax({
-                                method: 'post',
-                                url: "{% url 'send-email' %}",
-                                success: function(message) {
-                                    alert(message);
-                                },
-                                error: function(message) {
-                                    alert('error: ' + message);
-                                },
-                            });
-                        });
-                    });
-                </script> {% endcomment %}
-                <div class="swiper-slide">
-                    <div class="inner-swiper-slide">
-                        <img src="{% static 'assets/IMG_7249.JPG' %}" alt="building">
-                        <p>Lorem, ipsum.</p>
-                        <h3>Lorem ipsum dolor sit.</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, assumenda.</p>
-                        <a href="#">Lorem, ipsum.</a>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="inner-swiper-slide">
-                        <img src="{% static 'assets/IMG_72491.jpg' %}" alt="building">
-                        <p>Lorem, ipsum.</p>
-                        <h3>Lorem ipsum dolor sit.</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, assumenda.</p>
-                        <a href="#">Lorem, ipsum.</a>
-                    </div>
-                </div>
-
+                {% endfor %}
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
@@ -158,23 +126,23 @@
         <div class="inner-features">
             <div class="feature-card">
                 <i class="far fa-building"></i>
-                <p>Байгаа талбай</p>
-                <p>456</p>
+                <p>{{ feature_boxes.box1_title }}</p>
+                <p>{{ feature_boxes.box1_text }}</p>
             </div>
             <div class="feature-card">
                 <i class="far fa-building"></i>
-                <p>Нийт Квд</p>
-                <p>6813</p>
+                <p>{{ feature_boxes.box2_title }}</p>
+                <p>{{ feature_boxes.box2_text }} </p>
             </div>
             <div class="feature-card">
                 <i class="far fa-building"></i>
-                <p>Орон сууц</p>
-                <p>215</p>
+                <p>{{ feature_boxes.box3_title }}</p>
+                <p><p>{{ feature_boxes.box3_text }}</p>
             </div>
             <div class="feature-card">
                 <i class="far fa-building"></i>
-                <p>барьсан жил</p>
-                <p>2020</p>
+                <p>{{ feature_boxes.box4_title }}</p>
+                <p><p>{{ feature_boxes.box4_text }}</p>
             </div>
 
         </div>
@@ -1093,6 +1061,22 @@
             document.getElementById("panaromaSection").appendChild(iframe);
         }
     </script>
+{% comment %} <script>
+    $(document).ready(function() {
+        $('a#brochure').on("click", function() {
+            $.ajax({
+                method: 'post',
+                url: "{% url 'send-email' %}",
+                success: function(message) {
+                    alert(message);
+                },
+                error: function(message) {
+                    alert('error: ' + message);
+                },
+            });
+        });
+    });
+</script> {% endcomment %}
 
 </body>
 

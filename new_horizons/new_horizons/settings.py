@@ -42,6 +42,20 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'horizonapp',
+    'wagtail.contrib.forms',
+    'wagtail.contrib.redirects',
+    'wagtail.embeds',
+    'wagtail.sites',
+    'wagtail.users',
+    'wagtail.snippets',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.search',
+    'wagtail.admin',
+    'wagtail.core',
+
+    'modelcluster',
+    'taggit',
 ]
 
 MIDDLEWARE = [
@@ -52,6 +66,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'wagtail.core.middleware.SiteMiddleware',
+    'wagtail.contrib.redirects.middleware.RedirectMiddleware',
 ]
 
 ROOT_URLCONF = 'new_horizons.urls'
@@ -141,6 +157,7 @@ EMAIL_USE_TLS = configs.EMAIL_USE_TLS
 JET_DEFAULT_THEME = 'light-gray'
 # JET_SIDE_MENU_COMPACT = True
 
+
 JET_THEMES = [
     {
         'theme': 'default', # theme folder name
@@ -173,3 +190,5 @@ JET_THEMES = [
         'title': 'Light Gray'
     }
 ]
+
+WAGTAIL_SITE_NAME = 'My Example Site'

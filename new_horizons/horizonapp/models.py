@@ -1,6 +1,9 @@
+from django.utils.text import slugify
+from random import randint
 from django.db import models
 from django.core.validators import FileExtensionValidator
 from ckeditor.fields import RichTextField
+import datetime
 
 class NewsCategory(models.Model):
 
@@ -13,12 +16,25 @@ class News(models.Model):
 
     category=models.ForeignKey(NewsCategory, verbose_name="Мэдээний категори", on_delete=models.CASCADE)
     title=models.CharField(max_length=255, verbose_name="Мэдээний гарчиг", default='')
-    # picture_main=models.ImageField(verbose_name="Гол зураг", upload_to='news/picture')
-    # description1=models.TextField(verbose_name="Мэдээ 1", default='')
+    pic=models.ImageField(verbose_name="Мэдээний зураг", upload_to="news/picture", default="", blank=True)
     content=RichTextField()
-    floor1_a = models.BooleanField(default=False)
-    floor1_b = models.BooleanField(default=False)
-    floor2_a = models.BooleanField(default=False)
+    published_date=models.DateField(verbose_name="Огноо", auto_now=True, editable=False)
+    slug=models.CharField(max_length=255, verbose_name="Мэдээний зам", default='', editable=False)
+    featured=models.BooleanField(verbose_name="Онцлох мэдээ", default=False)
+
+    def __str__(self):
+        return self.title
+    
+
+    def save(self, *args, **kwargs):
+        random_number = randint(1000, 999999999)
+        while News.objects.filter(id=random_number).exists():
+            random_number = randint(1000, 9999999)
+        self.id = random_number
+
+        self.slug = slugify("%s %s" % (self.category.name, str(self.id)))
+        super().save(*args, **kwargs)
+
     
 class BuildingRents(models.Model):
 
@@ -53,22 +69,26 @@ class BuildingRents(models.Model):
     floor15_a = models.BooleanField(default=False)
     floor15_b = models.BooleanField(default=False)
 
+    class Meta:
+        verbose_name = "Барилгын түрээсийн мэдээлэл"
+        verbose_name_plural = "Барилгын түрээсийн мэдээлэл"
+
 class ReasonBoxes(models.Model):
 
-    box1_title=models.CharField(max_length=255, verbose_name="Box 1 гарчиг", null=False, default=None)
-    box1_text=models.TextField(verbose_name="Box 1 текст", null=False, default=None)
-    box2_title=models.CharField(max_length=255, verbose_name="Box 2 гарчиг", null=False, default=None)
-    box2_text=models.TextField(verbose_name="Box 2 текст", null=False, default=None)
-    box3_title=models.CharField(max_length=255, verbose_name="Box 3 гарчиг", null=False, default=None)
-    box3_text=models.TextField(verbose_name="Box 3 текст", null=False, default=None)
-    box4_title=models.CharField(max_length=255, verbose_name="Box 4 гарчиг", null=False, default=None)
-    box4_text=models.TextField(verbose_name="Box 4 текст", null=False, default=None)
-    box5_title=models.CharField(max_length=255, verbose_name="Box 5 гарчиг", null=False, default=None)
-    box5_text=models.TextField(verbose_name="Box 5 текст", null=False, default=None)
-    box6_title=models.CharField(max_length=255, verbose_name="Box 6 гарчиг", null=False, default=None)
-    box6_text=models.TextField(verbose_name="Box 6 текст", null=False, default=None)
-    box7_title=models.CharField(max_length=255, verbose_name="Box 7 гарчиг", null=False, default=None)
-    box7_text=models.TextField(verbose_name="Box 7 текст", null=False, default=None)
+    box1_title=models.CharField(max_length=255, verbose_name="Box 1 гарчиг", null=False, default=None, blank=True)
+    box1_text=models.TextField(verbose_name="Box 1 текст", null=False, default=None, blank=True)
+    box2_title=models.CharField(max_length=255, verbose_name="Box 2 гарчиг", null=False, default=None, blank=True)
+    box2_text=models.TextField(verbose_name="Box 2 текст", null=False, default=None, blank=True)
+    box3_title=models.CharField(max_length=255, verbose_name="Box 3 гарчиг", null=False, default=None, blank=True)
+    box3_text=models.TextField(verbose_name="Box 3 текст", null=False, default=None, blank=True)
+    box4_title=models.CharField(max_length=255, verbose_name="Box 4 гарчиг", null=False, default=None, blank=True)
+    box4_text=models.TextField(verbose_name="Box 4 текст", null=False, default=None, blank=True)
+    box5_title=models.CharField(max_length=255, verbose_name="Box 5 гарчиг", null=False, default=None, blank=True)
+    box5_text=models.TextField(verbose_name="Box 5 текст", null=False, default=None, blank=True)
+    box6_title=models.CharField(max_length=255, verbose_name="Box 6 гарчиг", null=False, default=None, blank=True)
+    box6_text=models.TextField(verbose_name="Box 6 текст", null=False, default=None, blank=True)
+    box7_title=models.CharField(max_length=255, verbose_name="Box 7 гарчиг", null=False, default=None, blank=True)
+    box7_text=models.TextField(verbose_name="Box 7 текст", null=False, default=None, blank=True)
 
     class Meta:
         verbose_name = '7 шалтгаан'
@@ -91,5 +111,65 @@ class Settings(models.Model):
 class PDFbrochure(models.Model):
     
     subject=models.CharField(verbose_name="Сэдэв", max_length=255,  null=False, default=None)
-    pdf=models.FileField(upload_to="brochure",verbose_name="Барилгын брошур",
-                                validators=[FileExtensionValidator(allowed_extensions=['pdf'])], blank=False, default=None)
+    pdf=models.TextField(verbose_name="PDF link", null=False, default=None)
+
+class FeatureCard(models.Model):
+    box1_title=models.CharField(max_length=255, verbose_name="Box 1 гарчиг", null=True, blank=True, default=None)
+    box1_text=models.TextField(verbose_name="Box 1 текст", null=True, blank=True, default=None)
+    box2_title=models.CharField(max_length=255, verbose_name="Box 2 гарчиг", null=True, blank=True, default=None)
+    box2_text=models.TextField(verbose_name="Box 2 текст", null=True, blank=True, default=None)
+    box3_title=models.CharField(max_length=255, verbose_name="Box 3 гарчиг", null=True, blank=True, default=None)
+    box3_text=models.TextField(verbose_name="Box 3 текст", null=True, blank=True, default=None)
+    box4_title=models.CharField(max_length=255, verbose_name="Box 4 гарчиг", null=True, blank=True, default=None)
+    box4_text=models.TextField(verbose_name="Box 4 текст", null=True, blank=True, default=None)
+  
+class OrganizationCategory(models.Model):
+    category_name=models.CharField(max_length=255, verbose_name="Ангиллын нэр", null=True, blank=True, default=None)
+
+    class Meta:
+        verbose_name = 'Байгууллагын ангилал'
+        verbose_name_plural = 'Байгууллагын ангилал'
+
+
+class Organization(models.Model):
+    or_name=models.CharField(max_length=255, verbose_name="Байгууллагын нэр", null=True, blank=True, default=None)
+    category=models.ForeignKey(OrganizationCategory, verbose_name="Байгуулагын категори", on_delete=models.CASCADE)
+
+class OrganizationDetail(models.Model):
+    title=models.CharField(max_length=255, verbose_name="Гарчиг", null=True, blank=True, default=None)
+    desc=models.TextField(verbose_name="Тайлбар", null=True, blank=True, default=None) 
+    pic=models.ImageField(upload_to="Organization/Detail/", verbose_name="Зураг", default="", blank=True)
+    organization=models.ForeignKey(Organization, verbose_name="Байгуулага", on_delete=models.CASCADE, default='')
+
+class HomeSlider(models.Model):
+    CHOICES = (
+        ('1', 'Брошур'),
+        ('2', 'Холбоо барих'),
+        ('3', 'Давхарын мэдээлэл')
+    )
+
+    button_choice = models.CharField(max_length=255, verbose_name="Товчны төрөл", default=CHOICES[0], choices=CHOICES)
+    text_lil = models.CharField(max_length=255, verbose_name="Текст", null=True, blank=True, default=None)
+    title = models.CharField(max_length=255, verbose_name="Гарчиг", null=True, blank=True, default=None)
+    background_pic = models.ImageField(upload_to="Home", verbose_name="Зураг", default="", blank=True)
+
+    choice1 = models.BooleanField(editable=False, default=False)
+    choice2 = models.BooleanField(editable=False, default=False)
+    choice3 = models.BooleanField(editable=False, default=False)
+
+    def save(self, *args, **kwargs):
+        print(self.button_choice)
+        # TODO remove hard code
+        if self.button_choice is self.CHOICES[0][0]:
+            self.choice1 = True
+            self.choice2 = False
+            self.choice3 = False
+        if self.button_choice is self.CHOICES[1][0]:
+            self.choice1 = False
+            self.choice2 = True
+            self.choice3 = False
+        if self.button_choice is self.CHOICES[2][0]:
+            self.choice1 = False
+            self.choice2 = False
+            self.choice3 = True
+        super().save(*args, **kwargs)
