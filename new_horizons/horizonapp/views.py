@@ -31,6 +31,10 @@ def home(request):
 def panaroma(request):
     return render(request, 'panaroma.html')
 
+<<<<<<< HEAD
+def blog(request):
+    return render(request, 'blog.html')
+=======
 def news_blog_archive(request):
     return render(request, 'blog.single.html')
 
@@ -100,3 +104,4 @@ def get_building_rent_details(request):
 #             print('asd')
         
 #         return HttpResponse("yes")
+>>>>>>> f4bcf7081e4b4bd00cea1fd474b5c02d5a469c6c

@@ -47,6 +47,9 @@
 
                 </nav>
             </div>
+            <div class="__mid">
+                <a href="{% url 'home' %}#desktop-footer">Бидэнтэй холбогдох</a>
+            </div>
             <div class="__right">
                 <div class="select-language"><a href="#">mn</a></div>
                 <div class="select-language"><a href="#">en</a></div>
@@ -59,7 +62,13 @@
                 <i class="fas fa-bars menu-icon" id="mobileBarsIcon"></i>
             </div>
             <nav id="mobileNav" onclick="showMobileNav()">
+<<<<<<< HEAD
+                <img src="{% static 'assets/nh_logo.png' %}" alt="logo">
+                
+                <div class="contactUsAnchor"><a href="{% url 'home' %}#contactUsFooter">Бидэнтэй холбогдох</a></div>
+=======
                 <img src="{{ global_settings.logo }}" alt="logo">
+>>>>>>> f4bcf7081e4b4bd00cea1fd474b5c02d5a469c6c
 
                 <li><a href="./home.html#home">нүүр</a></li>
 
@@ -96,13 +105,41 @@
             </button>
         </form>
     </div>
+<<<<<<< HEAD
+    <div class="contact-us-form" id="contactUsForm">
+        <div class="inner-contact-us-form">
+            <div class="contact-us-close-button" onclick="closeContactUsForm()">
+                <i class="fas fa-times"></i>
+            </div>
+            <form action="">
+                <div class="contact-us-input-field">
+                    <i class="fas fa-user-tie"></i>
+                    <input type="text" placeholder="Нэр">
+                </div>
+                <div class="contact-us-input-field">
+                    <i class="fas fa-paper-plane"></i>
+                    <input type="email" placeholder="Цахим хаяг">
+                </div>
+                <div class="contact-us-input-field">
+                    <i class="fas fa-briefcase"></i>
+                    <input type="text" placeholder="Компани">
+                </div>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Энд бичнэ үү.."></textarea>
+                <input type="submit" value="Илгээх">
+            </form>
+        </div>
+    </div>
+    <!--------------------------HOME1 HEADER END----------------------------->
+=======
     {% comment %} <!--------------------------HOME1 HEADER END-----------------------------> {% endcomment %}
+>>>>>>> f4bcf7081e4b4bd00cea1fd474b5c02d5a469c6c
     <section class="home-section" id="home">
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 {% for item in home_sliders %}
                 <div class="swiper-slide">
                     <div class="inner-swiper-slide">
+<<<<<<< HEAD
                         <img src="{{ item.background_pic.url }}" alt="building">
                         <p>{{ item.text_lil }}</p>
                         <h3>{{ item.title }}</h3>
@@ -113,6 +150,56 @@
                     </div>
                 </div>
                 {% endfor %}
+=======
+                        <img src="{% static 'assets/IMG_7256.JPG' %}" alt="building">
+                        <p>Тавтай морил!</p>
+                        <h3>New Horizons ашиглалтанд орлоо</h3>
+<<<<<<< HEAD
+                        <!-- <p></p> -->
+                        <a href="#" onclick="showSendInformationForm()">Боршуур авах</a>
+=======
+                        {% comment %} <p></p> {% endcomment %}
+                        {% csrf_token %}
+                        <a href="{{ pdf_url.url }}" id="brochure" >Боршуур авах</a>
+>>>>>>> f4bcf7081e4b4bd00cea1fd474b5c02d5a469c6c
+                    </div>
+                </div>
+                {% comment %} <script>
+                    $(document).ready(function() {
+                        $('a#brochure').on("click", function() {
+                            $.ajax({
+                                method: 'post',
+                                url: "{% url 'send-email' %}",
+                                success: function(message) {
+                                    alert(message);
+                                },
+                                error: function(message) {
+                                    alert('error: ' + message);
+                                },
+                            });
+                        });
+                    });
+                </script> {% endcomment %}
+                <div class="swiper-slide">
+                    <div class="inner-swiper-slide">
+                        <img src="{% static 'assets/IMG_7249.JPG' %}" alt="building">
+                        <p>Lorem, ipsum.</p>
+                        <h3>Lorem ipsum dolor sit.</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, assumenda.</p>
+                        <a href="#" onclick="showContactUsForm()">Бидэнтэй харилцах</a>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="inner-swiper-slide">
+                        <img src="{% static 'assets/IMG_72491.jpg' %}" alt="building">
+                        <p>Lorem, ipsum.</p>
+                        <h3>Lorem ipsum dolor sit.</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, assumenda.</p>
+                        <a href="#">Lorem, ipsum.</a>
+                    </div>
+                </div>
+
+>>>>>>> 2bab0f0cda22940f73a0f66723540af8dae13a51
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
@@ -161,12 +248,12 @@
                         <p><i class="far fa-comment"></i>2</p>
                     </div>
                     <hr>
-                    <p class="little-article">Улаанбаатар хотын зүрхэн төвд байрлах орчин үеийн шийдэл, 
-                        чадварлаг менежмент, чанартай үйлчилгээ бүхий уг байгууламж нь таны бизнесийг 
-                        амжилтанд хөтлөх цогц бүрдэл юм. NEW HORIZONS газар хөдлөлтийг тэсвэрлэх чадалтай 
-                        хамгийн сүүлийн үеийн шилдэг технологи бүхий архитектурын ухаалаг шийдэл , ая тух 
-                        хангах нэмэлт үйлчилгээ, ашигтай байрлал нь компаний тань байр суурийг тодорхойлж, 
-                        ажиллагсдын тань урам зоригийг бадрааж, харилцагч, үйлчлүүлэгчдийг тань бишрүүлэх болно. 
+                    <p class="little-article">Улаанбаатар хотын зүрхэн төвд байрлах орчин үеийн шийдэл,
+                        чадварлаг менежмент, чанартай үйлчилгээ бүхий уг байгууламж нь таны бизнесийг
+                        амжилтанд хөтлөх цогц бүрдэл юм. NEW HORIZONS газар хөдлөлтийг тэсвэрлэх чадалтай
+                        хамгийн сүүлийн үеийн шилдэг технологи бүхий архитектурын ухаалаг шийдэл , ая тух
+                        хангах нэмэлт үйлчилгээ, ашигтай байрлал нь компаний тань байр суурийг тодорхойлж,
+                        ажиллагсдын тань урам зоригийг бадрааж, харилцагч, үйлчлүүлэгчдийг тань бишрүүлэх болно.
                     </p>
                 </a>
                 <a href="#" class="mini-blog-card">
@@ -178,7 +265,7 @@
                         <p><i class="far fa-comment"></i>25</p>
                     </div>
                     <hr>
-                    <p class="little-article">"ХАН" ХХК нь ISO 9001,ISO 14001,ОНSAS 18001 стандартуудыг хангасан 
+                    <p class="little-article">"ХАН" ХХК нь ISO 9001,ISO 14001,ОНSAS 18001 стандартуудыг хангасан
                         Хөрөнгийн менежментийн үйлчилгээг үзүүлнэ.
                     </p>
                 </a>
@@ -192,9 +279,9 @@
                         <p><i class="far fa-comment"></i>25</p>
                     </div>
                     <hr>
-                    <p class="little-article">Агааржуулалт, агаар сэлгэлт, хөргөлтийн гурвалсан 
-                        системийг ашиглаж офисийн агвар дахь утаа, тоос, бактерийг устган ямагт 
-                        эрүүл цэвэр орчинг бүрдүүлнэ. 
+                    <p class="little-article">Агааржуулалт, агаар сэлгэлт, хөргөлтийн гурвалсан
+                        системийг ашиглаж офисийн агвар дахь утаа, тоос, бактерийг устган ямагт
+                        эрүүл цэвэр орчинг бүрдүүлнэ.
                     </p>
                 </a>
 
@@ -305,15 +392,15 @@
                     <div class="swiper-slide">
                         <div class="slide-left">
                             <h3>ХААН банк</h3>
-                            <p>  ХААН Банк нь орон даяар нийт 550 гаруй салбар нэгжтэй үндэсний хэмжээний 
-                                тэргүүлэгч арилжааны банк бөгөөд Монгол Улсын нийт айл өрхийн 80 гаруй хувьд 
+                            <p> ХААН Банк нь орон даяар нийт 550 гаруй салбар нэгжтэй үндэсний хэмжээний
+                                тэргүүлэгч арилжааны банк бөгөөд Монгол Улсын нийт айл өрхийн 80 гаруй хувьд
                                 буюу 2.5 сая харилцагчид банк санхүүгийн цогц үйлчилгээг хүргэн ажиллаж байна.
 
-                                Банк нь нэг шатлал бүхий улсын банкны тогтолцоо задарсан үе буюу 1991 онд орон 
-                                даяар салбар нэгжтэй, Хөдөө Аж Ахуйн Хоршоологчдын банк нэртэйгээр байгуулагдсан 
-                                түүхтэй. Улмаар улсын банкны хөдөө орон нутаг дахь хөрөнгө, үйл ажиллагааг өөртөө 
-                                шилжүүлэн авч банк хувьчлагдсан ч бизнесийн үйл ажиллагаа нь төр засгийн хүчтэй 
-                                нөлөөллөөс ангид байсангүй. 
+                                Банк нь нэг шатлал бүхий улсын банкны тогтолцоо задарсан үе буюу 1991 онд орон
+                                даяар салбар нэгжтэй, Хөдөө Аж Ахуйн Хоршоологчдын банк нэртэйгээр байгуулагдсан
+                                түүхтэй. Улмаар улсын банкны хөдөө орон нутаг дахь хөрөнгө, үйл ажиллагааг өөртөө
+                                шилжүүлэн авч банк хувьчлагдсан ч бизнесийн үйл ажиллагаа нь төр засгийн хүчтэй
+                                нөлөөллөөс ангид байсангүй.
                             </p>
                         </div>
                         <div class="slide-right">
@@ -604,7 +691,7 @@
         </div>
         <div class="plan-photos-container" id="planPhotosContainer" onclick="showFixedInfo()">
             <div class="plan-photo-hover">ҮЗЭХ</div>
-            
+
             <img src="{% static 'assets/plan_images/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
             <img src="{% static 'assets/plan_images/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
             <img src="{% static 'assets/plan_images/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
@@ -636,7 +723,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -650,7 +737,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -664,7 +751,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -678,7 +765,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -692,7 +779,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -706,7 +793,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -720,7 +807,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -734,7 +821,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -748,7 +835,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -762,7 +849,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -776,7 +863,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan_images/plan-3-4-5-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -790,7 +877,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan_images/plan-3-4-5-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -804,7 +891,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan_images/plan-3-4-5-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -818,8 +905,8 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
-                </div>
+                    <img src="{% static 'assets/plan_images/plan2-clear.png' %}" alt="floor one svg">
+                        </div>
             </div>
             <div class="invisible-plan-photo-info">
                 <div class="inner-plan-photo-info">
@@ -832,8 +919,8 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
-                </div>
+                    <img src="{% static 'assets/plan_images/plan1-clear.png' %}" alt="floor one svg">
+                        </div>
             </div>
             <div class="invisible-plan-photo-info">
                 <div class="inner-plan-photo-info">
@@ -846,54 +933,11 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan_images/b1.png' %}" alt="floor one svg">
+        
                 </div>
             </div>
-            <div class="invisible-plan-photo-info">
-                <div class="inner-plan-photo-info">
-                    <div class="photo-description">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tempore, nihil voluptatum dolorem harum dolore itaque
-                            est corrupti eligendi sint dicta molestiae officiis
-                            accusamus atque distinctio quos facere consequatur,
-                            esse placeat.
-                        </p>
-                    </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
-                </div>
-            </div>
-            <div class="invisible-plan-photo-info">
-                <div class="close-button" onclick="closeFixedInfo()"></div>
-                <div class="inner-plan-photo-info">
-                    <div class="photo-description">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tempore, nihil voluptatum dolorem harum dolore itaque
-                            est corrupti eligendi sint dicta molestiae officiis
-                            accusamus atque distinctio quos facere consequatur,
-                            esse placeat.
-                        </p>
-                    </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
-                </div>
-            </div>
-            <div class="invisible-plan-photo-info">
-                <div class="close-button" onclick="closeFixedInfo()"></div>
-                <div class="inner-plan-photo-info">
-                    <div class="photo-description">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tempore, nihil voluptatum dolorem harum dolore itaque
-                            est corrupti eligendi sint dicta molestiae officiis
-                            accusamus atque distinctio quos facere consequatur,
-                            esse placeat.
-                        </p>
-                    </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
-                </div>
-            </div>
-
+ 
 
         </div>
 
@@ -999,8 +1043,13 @@
         <img class="footer-bg" src="{% static 'assets/IMG_72561.jpg' %}" alt="footer building">
         <div class="inner-footer">
             <div class="footer-mini-info">
+<<<<<<< HEAD
+                <img src="{% static 'assets/nh_logo.png' %}" alt="logo">
+
+=======
                 <img src="{{ global_settings.logo.url }}" alt="logo">
                 </p>
+>>>>>>> f4bcf7081e4b4bd00cea1fd474b5c02d5a469c6c
                 <div class="icons-container">
                     <a href="{{ global_settings.facebook }}"><i class="fab fa-facebook-f"></i></a>
                     <a href="{{ global_settings.instagram }}"><i class="fab fa-instagram"></i></a>
@@ -1029,12 +1078,51 @@
             </div>
             <div class="footer-contact-us">
                 <h3>Бидэнтэй холбогдох</h3>
+<<<<<<< HEAD
+                <div class="inner-footer-contact-us">
+                    <div class="inner-footer-contact-us-text">
+                        <p><i class="fas fa-phone-alt"></i>+976 99999999</p>
+                        <p><i class="far fa-envelope"></i>uuganbat.dev@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i>Lorem, ipsum dolor sit amet consectetur adipisicing
+                            elit.
+                            Odio,
+                           officia.
+                        </p>
+                    </div>
+                </div>
+=======
                 <p><i class="fas fa-phone-alt"></i>+976 {{ global_settings.phone }}</p>
                 <p><i class="far fa-envelope"></i>{{ global_settings.mail }}</p>
                 <p><i class="fas fa-map-marker-alt"></i>{{ global_settings.location }}.</p>
 
+>>>>>>> f4bcf7081e4b4bd00cea1fd474b5c02d5a469c6c
             </div>
-        </div>  
+            <div class="footer-contact-us-form" id="contactUsFooter">
+                <h3>Бидэнтэй харилцах</h3>
+                <div class="inner-footer-contact-us-form">
+                    <form action="">
+                        <div class="contact-us-form-left">
+                            <div class="contact-us-input-field">
+                                <i class="fas fa-user-tie"></i>
+                                <input type="text" placeholder="Нэр">
+                            </div>
+                            <div class="contact-us-input-field">
+                                <i class="fas fa-paper-plane"></i>
+                                <input type="email" placeholder="Цахим хаяг">
+                            </div>
+                            <div class="contact-us-input-field">
+                                <i class="fas fa-briefcase"></i>
+                                <input type="text" placeholder="Компани">
+                            </div>
+                            <input type="submit" value="Илгээх">
+                        </div>
+                        <div class="contact-us-form-right">
+                            <textarea name="" id="" cols="30" rows="10" placeholder="Энд бичнэ үү.."></textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </footer>
 
 
