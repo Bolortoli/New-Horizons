@@ -12,19 +12,21 @@
     <link rel="stylesheet" href="{% static 'style.css' %}">
     <script src="{% static 'js_libraries/fontawesome.js' %}" crossorigin="anonymous"></script>
     <script src="{% static 'js_libraries/jquery.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!----------------------------360 photo library------------------------>
 </head>
 
 <body class="home-body" id="homeBody">
     {{ rent.value }}
-    <!--------------------------HOME1 HEADER----------------------------->
+    {% comment %}
+    <!--------------------------HOME1 HEADER-----------------------------> {% endcomment %}
 
 
     <header class="home-desktop-header" id="desktopHeader">
         <div class="header-inner">
             <div class="__left">
                 <div class="desktop-logo-container">
-                    <img src="{% static 'assets/nh_logo.png' %}" alt="logo">
+                    <img src="{{ global_settings.logo.url }}" alt="logo">
                 </div>
                 <nav class="desktop-nav">
 
@@ -62,7 +64,7 @@
             </div>
             <nav id="mobileNav" onclick="showMobileNav()">
                 <img src="{% static 'assets/nh_logo.png' %}" alt="logo">
-                
+
                 <div class="contactUsAnchor"><a href="{% url 'home' %}#contactUsFooter">Бидэнтэй холбогдох</a></div>
 
                 <li><a href="./home.html#home">нүүр</a></li>
@@ -154,7 +156,6 @@
                         <a href="#">Lorem, ipsum.</a>
                     </div>
                 </div>
-
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
@@ -168,23 +169,25 @@
         <div class="inner-features">
             <div class="feature-card">
                 <i class="far fa-building"></i>
-                <p>Байгаа талбай</p>
-                <p>456</p>
+                <p>{{ feature_boxes.box1_title }}</p>
+                <p>{{ feature_boxes.box1_text }}</p>
             </div>
             <div class="feature-card">
                 <i class="far fa-building"></i>
-                <p>Нийт Квд</p>
-                <p>6813</p>
+                <p>{{ feature_boxes.box2_title }}</p>
+                <p>{{ feature_boxes.box2_text }} </p>
             </div>
             <div class="feature-card">
                 <i class="far fa-building"></i>
-                <p>Орон сууц</p>
-                <p>215</p>
+                <p>{{ feature_boxes.box3_title }}</p>
+                <p>
+                    <p>{{ feature_boxes.box3_text }}</p>
             </div>
             <div class="feature-card">
                 <i class="far fa-building"></i>
-                <p>барьсан жил</p>
-                <p>2020</p>
+                <p>{{ feature_boxes.box4_title }}</p>
+                <p>
+                    <p>{{ feature_boxes.box4_text }}</p>
             </div>
 
         </div>
@@ -861,7 +864,7 @@
                         </p>
                     </div>
                     <img src="{% static 'assets/plan_images/plan2-clear.png' %}" alt="floor one svg">
-                        </div>
+                </div>
             </div>
             <div class="invisible-plan-photo-info">
                 <div class="inner-plan-photo-info">
@@ -875,7 +878,7 @@
                         </p>
                     </div>
                     <img src="{% static 'assets/plan_images/plan1-clear.png' %}" alt="floor one svg">
-                        </div>
+                </div>
             </div>
             <div class="invisible-plan-photo-info">
                 <div class="inner-plan-photo-info">
@@ -889,97 +892,85 @@
                         </p>
                     </div>
                     <img src="{% static 'assets/plan_images/b1.png' %}" alt="floor one svg">
-        
+
                 </div>
             </div>
- 
+
 
         </div>
 
     </section>
-
+    {% if reason_boxes%}
     <section class="seven-reason-section" id="sevenReason">
         <h3>new horizon ОФИСИЙГ СОНГОХ 7 ШАЛТГААН</h3>
         <div class="top-section">
             <div class="reason-card">
                 <i class="fas fa-location-arrow"></i>
                 <div>
-                    <h4>БАЙРШИЛ БАЙРШИЛ бас дахин БАЙРШИЛ</h4>
+                    <h4>{{ reason_boxes.box1_title }}</h4>
                     <p>
-                        Улаанбаатар хотын бизнесийн төв болох Олимпийн гудамжинд
-                        таны нэр хүндийн баталгаа болон сүндэрлэж байна.
+                        {{ reason_boxes.box1_text}}
                     </p>
                 </div>
             </div>
             <div class="reason-card">
                 <i class="fas fa-award"></i>
                 <div>
-                    <h4>ЧАНАРЫГ ЭРХЭМЛЭСЭН БАРИЛГА</h4>
+                    <h4>{{ reason_boxes.box2_title }}</h4>
                     <p>
-                        Манай барилга нь ЗВС системийн Н-Оеат хэлбэртэй бүрэн ганжуулсан
-                        төмөр каркастай, сайжруулан боловсруулсан ! ом”-Е шилэн фасадтай.
-                        Монгол улсын барилгын стандартад заасан 8 баллын газар хөдлөлтөнд
-                        тэсвэртэй байх шаардлагыг 50 хувь илүү хангасан.
+                        {{ reason_boxes.box2_text }}
                     </p>
                 </div>
             </div>
             <div class="reason-card">
                 <i class="fas fa-tools"></i>
                 <div>
-                    <h4>ОФИСОО ХҮССЭНЭЭРЭЭ ТӨЛӨВЛӨХ БОЛОМЖ</h4>
+                    <h4>{{ reason_boxes.box3_title }}</h4>
                     <p>
-                        Өндөр даацын ган хөл бүхий шал нь инженерийн дотоод шугам сүлжээнд
-                        хязгаарлагдахгүй таны хүссэнд орчинг бий болгоход туслана.
+                        {{ reason_boxes.box3_text }}
                     </p>
                 </div>
             </div>
             <div class="reason-card">
                 <i class="fas fa-hard-hat"></i>
                 <div>
-                    <h4>АЮУЛГҮЙ БАЙДЛЫН ШААРДЛАГУУДЫГ БҮРЭН ХАНГАСАН</h4>
+                    <h4> {{ reason_boxes.box4_title }}</h4>
                     <p>
-                        Барилгын стандартын дагуу давхар бүрдээ аваарын шат, гарц, схём
-                        спринклер гэсэн аюулгүй байдлын шаардлагуудыг хангасан.
+                        {{ reason_boxes.box4_text }}
                     </p>
                 </div>
             </div>
             <div class="reason-card">
                 <i class="fas fa-wind"></i>
                 <div>
-                    <h4>УТААГҮЙ ЦЭВЭР АГААР</h4>
+                    <h4> {{ reason_boxes.box5_title }}</h4>
                     <p>
-                        Агааржуулалт, агаар сэлгэлт, хөргөлтийн гурвалсан системийг ашиглаж
-                        офисийн агвар дахь утаа, тоос, бактерийг устган ямагт эрүүл цэвэр
-                        орчинг бүрдүүлнэ.
+                        {{ reason_boxes.box5_text }}
                     </p>
                 </div>
             </div>
             <div class="reason-card">
                 <i class="fas fa-tree"></i>
                 <div>
-                    <h4>БАЙГАЛЬ ОРЧИНД ЭЭЛТЭЙ</h4>
+                    <h4>{{ reason_boxes.box6_title }}</h4>
                     <p>
-                        New Horizons нь ганжуулсан шилэн фасадтай бөгөөд, шил нь дулаан
-                        алдалтыг хамгийн бага түвшинд барьж хүйтний улиралд дулаан, зуны
-                        улиралд нарны тусгалын бууруулан ажиллах орчныг төв тухвар
-                        хангах болно.
+                        {{ reason_boxes.box6_text }}
                     </p>
                 </div>
             </div>
             <div class="reason-card">
                 <i class="fas fa-tasks"></i>
                 <div>
-                    <h4>УХААЛАГ МЕНЕЖМЕНТ</h4>
+                    <h4>{{ reason_boxes.box7_title }}</h4>
                     <p>
-                        Та зөвхөн өөрийн ажилын бүтээмждээ анхаархад болно. Таны тав тух
-                        аюулгүй байдал цэвэр цэмцгэр орчиныг тань манай чадварлаг
-                        менежментийг баг хариуцан ажиллана.
+                        {{ reason_boxes.box7_text }}
                     </p>
                 </div>
             </div>
         </div>
 
     </section>
+    {% endif %}
 
     <section class="panaroma-picture-section" id="panaromaSection">
         <h3>360 зураг</h3>
@@ -1013,9 +1004,9 @@
                 <img src="{% static 'assets/nh_logo.png' %}" alt="logo">
 
                 <div class="icons-container">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="{{ global_settings.facebook }}"><i class="fab fa-facebook-f"></i></a>
+                    <a href="{{ global_settings.instagram }}"><i class="fab fa-instagram"></i></a>
+                    <a href="{{ global_settings.twitter }}"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
             <div class="sub-pages-title">
@@ -1047,7 +1038,7 @@
                         <p><i class="fas fa-map-marker-alt"></i>Lorem, ipsum dolor sit amet consectetur adipisicing
                             elit.
                             Odio,
-                           officia.
+                            officia.
                         </p>
                     </div>
                 </div>
@@ -1104,6 +1095,22 @@
             document.getElementById("panaromaSection").appendChild(iframe);
         }
     </script>
+    {% comment %} <script>
+        $(document).ready(function () {
+            $('a#brochure').on("click", function () {
+                $.ajax({
+                    method: 'post',
+                    url: "{% url 'send-email' %}",
+                    success: function (message) {
+                        alert(message);
+                    },
+                    error: function (message) {
+                        alert('error: ' + message);
+                    },
+                });
+            });
+        });
+    </script> {% endcomment %}
 
 </body>
 

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+from . import config as configs
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -66,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'horizonapp.context_processors.global_settings',
             ],
         },
     },
@@ -130,10 +132,15 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-
+EMAIL_HOST = configs.EMAIL_HOST
+EMAIL_PORT = configs.EMAIL_PORT
+EMAIL_HOST_USER = configs.EMAIL_HOST_USER
+EMAIL_HOST_PASSWORD = configs.EMAIL_HOST_PASSWORD
+EMAIL_USE_TLS = configs.EMAIL_USE_TLS
 
 JET_DEFAULT_THEME = 'light-gray'
 # JET_SIDE_MENU_COMPACT = True
+
 
 JET_THEMES = [
     {
@@ -167,3 +174,5 @@ JET_THEMES = [
         'title': 'Light Gray'
     }
 ]
+
+WAGTAIL_SITE_NAME = 'My Example Site'

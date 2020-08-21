@@ -33,7 +33,7 @@ $(window, document, undefined).ready(function() {
     $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd', function(e) {
         $(this).removeClass('is-active');
     });
-  
+
   });
 /*----------------------------SWIPER JS-----------------------------*/
 
@@ -161,7 +161,7 @@ for (let i = 0; i <= lengthOfFloorList; i++) {
 // show blured 360
 function hideSendInformationForm() {
     document.getElementById("sendInformationForm").style.display = "none";
-
+    
 }
 
 function showSendInformationForm() {

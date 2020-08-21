@@ -18,7 +18,6 @@ from django.urls import path, re_path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
-
 urlpatterns = [  
     re_path(r'^jet/', include('jet.urls', 'jet')),
     # re_path(r'^jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')), 
