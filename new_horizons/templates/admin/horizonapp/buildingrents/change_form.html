@@ -13,8 +13,89 @@
         display: flex;
         width: 100%;
         flex-wrap: wrap;
+        position: relative;
     }
+    .floors-pop-up {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background:rgba(0, 0, 0, 0.5);
+        display: none;
+        place-items: center;
+        z-index: 10;
+    }
+    .floors-form-container {
+        width: 30%;
+        padding: 1vw;
+        display: grid;
+        place-items: center;
+        background: white;
+    }
+    .floors-form-container form {
+        display: flex;
+        flex-direction: column;
+    }
+    .floors-form-label,
+    .floors-form-select,
+    .floors-form-submit {
+        margin: 1vw 0;
+    }
+    .floors-form-submit {
+        cursor: pointer;
+    }
+    .select2-dropdown {
+        z-index: 20 !important;
+    }
+    .floors-close-button {
+        width: 1.5vw;
+        height: 1.5vw;
+        justify-self: flex-end;
+        position: relative;
+        cursor: pointer;
+    }
+    .floors-close-button::before {
+        content: "";
+        position: absolute;
+        width: 0.2vw;
+        height: 100%;
+        background: black;
+        left: 45%;
+        transform: rotate(50deg);
+    }
+    .floors-close-button::after {
+        content: "";
+        position: absolute;
+        width: 0.2vw;
+        height: 100%;
+        background: black;
+        right: 45%;
+        transform: rotate(-50deg);
 
+    }
+    .warning-pop-up {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background:rgba(0, 0, 0, 0.5);
+        display: none;
+        place-items: center;
+        z-index: 11;
+    }
+    .inner-warning {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: white;
+        padding: 2vw;
+        text-transform: uppercase;
+    }
+    .yes-no-button {
+        margin: 1vw 0;
+    }
+    .yes-no-button input {
+        margin: 0 1vw;
+    }
     .floors {
         height: 10vw;
         width: 12vw;
@@ -66,12 +147,16 @@
     }
 
     .inner-floors label {
-        width: 50%;
+        width: 49.5%;
         position: absolute;
         height: 100%;
         background: rgba(0, 0, 0, 0.5);
         z-index: 1;
         opacity: 0;
+        color: white;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .inner-floors label:nth-child(even) {
@@ -79,27 +164,213 @@
     }
 </style>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-    $(document).ready(function () {
-        $("label").click(function () {
-            $(this).toggleClass("sda");
+    $(document).ready(function() {
+        // Render if floor has rent
+        $.ajax({
+            method: 'post',
+            url: "{% url 'get_building_rent_details' %}",
+            success: function(message) {
+                console.log(message)
+                for(var i = 0; i < message['rented_floors'].length; i++) {
+                    var floor_id = message['rented_floors'][i]['floor']
+                    var leaseholder_name = message['rented_floors'][i]['organization']
+                    $("label[for=" + floor_id)
+                        .attr('class', 'sda')
+                        .text(leaseholder_name);
+
+                    // var varname_a = get_name(i, "a");
+                    // var varname_b = get_name(i, "b");
+                    // var k = eval("message." + varname_a);
+                    // var l = eval("message." + varname_b);
+                    // alert("floora" + message.floor1_a);
+                    // alert("b" +message.floor1_b);
+                    // if(k == "True") {
+                    //     $("label[for=id_" + varname_a).attr('class', 'sda');
+                    //     document.getElementById("id_" + varname_a).checked = true;
+                    // }
+                    // if(l == "True") {
+                    //     $("label[for=id_" + varname_b).attr('class', 'sda');
+                    //     document.getElementById("id_" + varname_b).checked = true;
+                    // }
+                }
+            },
+            error: function(message) {
+                alert(message);
+            }
+        });
+        // $('.floor-label').on('click', function() {
+        //     alert('clicked');
+        //     console.log(document.getElementById('id_floor1_a').checked)
+        // });
+        // Checkbox toggles
+        $(".floor-checkbox").on('change', function() {
+            var id = $(this).prop('id');
+            var val = this.checked ? true : false;
+            // Get registered companies name by ajax
+            if(val) {
+                document.getElementById(id).checked = false;
+                showFloorsPopUp();
+                $.ajax({
+                    method: 'post',
+                    url: "{% url 'get-organizations' %}",
+                    success: function(organizations) {
+                        if(organizations.success == "false") {
+                            alert("Байгууллага нэмнэ үү...");
+                            window.open('http://127.0.0.1:8000/admin/horizonapp/organization/add/');
+                            closeFloorsPopUp();
+                        } else {
+                            $('.floors-form-select')
+                                .find('option')
+                                .remove()
+                                .end()
+                                .append($("<option></option>")
+                                    .text('--select on--')
+                                    .attr('selected', '')
+                                    .attr('disabled', '')
+                                    .attr('value', '')); 
+                            for(var i = 0; i < organizations['organizations'].length; i++) {
+                                var obj = organizations['organizations'][i];
+                                $('.floors-form-select').prop('id', id);
+                                // alert($('#'+id).prop('id'));
+                                $('.floors-form-select')
+                                    .append($("<option></option>")
+                                        .text(obj['name'])); 
+                            }
+                            console.log(organizations['organizations'].length);  
+                        }
+                    },
+                    error: function(message) {
+                        console.log("error" + message);
+                    },
+                });
+            // Unregister leaseholder, clean object
+            } else {
+                document.getElementById(id).checked = true;
+                
+                $('.clear-leaseholder').prop('id', id);
+                
+                showWarningPopUp();
+            }
+            console.log('checked' + String(document.getElementById('id_floor1_a').checked));
+        });
+        // Register leaseholder
+        $('#floors-form-submit').on('click', function () {
+            var floor_name = $('.floors-form-select').prop('id');
+            // alert(floor_name);
+            var selected = $( "#" + floor_name +" option:selected" );
+            document.getElementById(floor_name).checked = false;
+            if(selected.prop("disabled") == true) {
+                $('#selection-message').text('Please select')
+            }
+            else {
+                // $('#id_' + floor_name).attr('class', 'floor');
+                var leaseholder_name = selected.text();
+                // alert(leaseholder_name)
+                // alert(floor_name)
+                $.ajax({
+                    method: 'post',
+                    url: "{% url 'register-rent' %}",
+                    data: {
+                        leaseholder_name: leaseholder_name,
+                        floor_name: floor_name,
+                    },
+                    success: function() {
+                        alert("Амжилттай")
+                        $("label[for=" + floor_name)
+                            .attr('class', 'sda')
+                            .text(leaseholder_name);
+                        closeFloorsPopUp();
+                        $('.floors-form-select').attr('id', '')
+                        document.getElementById(floor_name).checked = true;
+                    },
+                    error: function() {
+                        alert("Дахин оролдоно уу...")
+                    }
+                });
+            }
+        });
+        $(document).on('change', '.floors-form-select', function() {
+            alert();
+            $('#selection-message').text('');
+        });
+        $('.clear-leaseholder').on('click', function() {
+            var id = $(this).prop('id');
+            $.ajax({
+                method: 'post',
+                url: "{% url 'clear-leaseholder' %}",
+                data: {
+                    floor_name: id
+                },
+                success: function() {
+                    closeWarningPopUp();
+                    document.getElementById(id).checked = false;
+                    $("label[for=" + id)
+                        .attr('class', 'floor-label')
+                        .text('');
+                    $('.clear-leaseholder').prop('id', '')
+                }
+
+            });
         });
     });
+    function get_name(floor, side) {
+        return "floor" + String(floor) + "_" + String(side);
+    }
+    // function toggleLabel(label_name) {
+    //     jQuery(function(label_name) {
+    //         $('#id_' + label_name).toggleClass("sda");
+    //         console.log(label_name)
+    //     });
+    // }
+    function showFloorsPopUp() {
+        document.getElementById("floorsPopUp").style.display = "grid";
+    }
+    function showWarningPopUp() {
+        document.getElementById("warningPopUp").style.display = "grid";
+    }
+    function closeFloorsPopUp() {
+        document.getElementById("floorsPopUp").style.display = "none";
+    }
+    function closeWarningPopUp() {
+        document.getElementById("warningPopUp").style.display = "none";
+    }
 </script>
-
 
 {% endblock %}
 
 {% block field_sets %}
 
 <div class="floors-container">
+    <div class="floors-pop-up" id="floorsPopUp">
+        <div class="floors-form-container">
+            <form action="">
+                {% csrf_token %}
+                <div class="floors-close-button" onclick="closeFloorsPopUp()"></div>
+                <label class="floors-form-label" for="organizations">Ta company aa songonuu</label>
+                <select class="floors-form-select" name="organizations" id="organizations">
+                    <!-- <option disabled selected value> -- select an option -- </option> -->
+                </select>
+                <span id="selection-message"></span>
+                <input class="floors-form-submit" id="floors-form-submit" type="button" value="songoh">
+            </form>
+        </div>
+    </div>
+    <div class="warning-pop-up" id="warningPopUp">
+        <div class="inner-warning">
+            <p>ta itgeltei bainuu</p>
+            <div class="yes-no-button">
+            <input type="button" value="tiim" class='clear-leaseholder'>
+            <input type="button" value="ugui" onclick="closeWarningPopUp()">
+        </div>
+        </div>
+    </div>
     <div class="floors ">
         <div class="floor-number">1</div>
         <img src="{% static 'assets/plan_images/plan15.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label name="vCheckboxLabel" for="id_floor1_a"></label>
-            <label name="vCheckboxLabel" for="id_floor1_b"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor1_a"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor1_b">asdaskgaskj dashdaslkda hsd</label>
             <input class="floor-checkbox" id="id_floor1_a" type="checkbox" name="floor1_a">
             <input class="floor-checkbox" id="id_floor1_b" type="checkbox" name="floor1_b">
         </div>
@@ -108,8 +379,8 @@
         <div class="floor-number">2</div>
         <img src="{% static 'assets/plan_images/plan9_10_14.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label name="vCheckboxLabel" for="id_floor2_a"></label>
-            <label name="vCheckboxLabel" for="id_floor2_b"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor2_a"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor2_b"></label>
             <input class="floor-checkbox" id="id_floor2_a" type="checkbox" name="floor2_a">
             <input class="floor-checkbox" id="id_floor2_b" type="checkbox" name="floor2_b">
         </div>
@@ -119,8 +390,8 @@
 
         <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label name="vCheckboxLabel" for="id_floor3_a"></label>
-            <label name="vCheckboxLabel" for="id_floor3_b"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor3_a"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor3_b"></label>
             <input class="floor-checkbox" id="id_floor3_a" type="checkbox" name="floor3_a">
             <input class="floor-checkbox" id="id_floor3_b" type="checkbox" name="floor3_b">
         </div>
@@ -130,8 +401,8 @@
 
         <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label name="vCheckboxLabel" for="id_floor4_a"></label>
-            <label name="vCheckboxLabel" for="id_floor4_b"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor4_a"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor4_b"></label>
             <input class="floor-checkbox" id="id_floor4_a" type="checkbox" name="floor4_a">
             <input class="floor-checkbox" id="id_floor4_b" type="checkbox" name="floor4_b">
         </div>
@@ -141,8 +412,8 @@
 
         <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label name="vCheckboxLabel" for="id_floor5_a"></label>
-            <label name="vCheckboxLabel" for="id_floor5_b"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor5_a"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor5_b"></label>
             <input class="floor-checkbox" id="id_floor5_a" type="checkbox" name="floor5_a">
             <input class="floor-checkbox" id="id_floor5_b" type="checkbox" name="floor5_b">
         </div>
@@ -152,8 +423,8 @@
 
         <img src="{% static 'assets/plan_images/plan9_10_14.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label name="vCheckboxLabel" for="id_floor6_a"></label>
-            <label name="vCheckboxLabel" for="id_floor6_b"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor6_a"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor6_b"></label>
             <input class="floor-checkbox" id="id_floor6_a" type="checkbox" name="floor6_a">
             <input class="floor-checkbox" id="id_floor6_b" type="checkbox" name="floor6_b">
         </div>
@@ -163,8 +434,8 @@
 
         <img src="{% static 'assets/plan_images/plan9_10_14.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label name="vCheckboxLabel" for="id_floor7_a"></label>
-            <label name="vCheckboxLabel" for="id_floor7_b"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor7_a"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor7_b"></label>
             <input class="floor-checkbox" id="id_floor7_a" type="checkbox" name="floor7_a">
             <input class="floor-checkbox" id="id_floor7_b" type="checkbox" name="floor7_b">
         </div>
@@ -174,8 +445,8 @@
 
         <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label name="vCheckboxLabel" for="id_floor8_a"></label>
-            <label name="vCheckboxLabel" for="id_floor8_b"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor8_a"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor8_b"></label>
             <input class="floor-checkbox" id="id_floor8_a" type="checkbox" name="floor8_a">
             <input class="floor-checkbox" id="id_floor8_b" type="checkbox" name="floor8_b">
         </div>
@@ -185,8 +456,8 @@
 
         <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label name="vCheckboxLabel" for="id_floor9_a"></label>
-            <label name="vCheckboxLabel" for="id_floor9_b"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor9_a"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor9_b"></label>
             <input class="floor-checkbox" id="id_floor9_a" type="checkbox" name="floor9_a">
             <input class="floor-checkbox" id="id_floor9_b" type="checkbox" name="floor9_b">
         </div>
@@ -196,8 +467,8 @@
 
         <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label name="vCheckboxLabel" for="id_floor10_a"></label>
-            <label name="vCheckboxLabel" for="id_floor10_b"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor10_a"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor10_b"></label>
             <input class="floor-checkbox" id="id_floor10_a" type="checkbox" name="floor10_a">
             <input class="floor-checkbox" id="id_floor10_b" type="checkbox" name="floor10_b">
         </div>
@@ -207,8 +478,8 @@
 
         <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label name="vCheckboxLabel" for="id_floor11_a"></label>
-            <label name="vCheckboxLabel" for="id_floor11_b"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor11_a"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor11_b"></label>
             <input class="floor-checkbox" id="id_floor11_a" type="checkbox" name="floor11_a">
             <input class="floor-checkbox" id="id_floor11_b" type="checkbox" name="floor11_b">
         </div>
@@ -218,8 +489,8 @@
 
         <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label name="vCheckboxLabel" for="id_floor12_a"></label>
-            <label name="vCheckboxLabel" for="id_floor12_b"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor12_a"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor12_b"></label>
             <input class="floor-checkbox" id="id_floor12_a" type="checkbox" name="floor12_a">
             <input class="floor-checkbox" id="id_floor12_b" type="checkbox" name="floor12_b">
         </div>
@@ -229,8 +500,8 @@
 
         <img src="{% static 'assets/plan_images/plan3.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label name="vCheckboxLabel" for="id_floor13_a"></label>
-            <label name="vCheckboxLabel" for="id_floor13_b"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor13_a"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor13_b"></label>
             <input class="floor-checkbox" id="id_floor13_a" type="checkbox" name="floor13_a">
             <input class="floor-checkbox" id="id_floor13_b" type="checkbox" name="floor13_b">
         </div>
@@ -240,8 +511,8 @@
 
         <img src="{% static 'assets/plan_images/plan2.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label name="vCheckboxLabel" for="id_floor14_a"></label>
-            <label name="vCheckboxLabel" for="id_floor14_b"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor14_a"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor14_b"></label>
             <input class="floor-checkbox" id="id_floor14_a" type="checkbox" name="floor14_a">
             <input class="floor-checkbox" id="id_floor14_b" type="checkbox" name="floor14_b">
         </div>
@@ -251,8 +522,8 @@
 
         <img src="{% static 'assets/plan_images/plan1.png' %}" alt="floor one svg">
         <div class="inner-floors">
-            <label name="vCheckboxLabel" for="id_floor15_a"></label>
-            <label name="vCheckboxLabel" for="id_floor15_b"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor15_a"></label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor15_b"></label>
             <input class="floor-checkbox" id="id_floor15_a" type="checkbox" name="floor15_a">
             <input class="floor-checkbox" id="id_floor15_b" type="checkbox" name="floor15_b">
         </div>

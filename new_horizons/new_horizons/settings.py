@@ -141,6 +141,7 @@ EMAIL_USE_TLS = configs.EMAIL_USE_TLS
 JET_DEFAULT_THEME = 'light-gray'
 # JET_SIDE_MENU_COMPACT = True
 
+
 JET_THEMES = [
     {
         'theme': 'default', # theme folder name
@@ -173,3 +174,5 @@ JET_THEMES = [
         'title': 'Light Gray'
     }
 ]
+
+WAGTAIL_SITE_NAME = 'My Example Site'

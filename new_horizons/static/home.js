@@ -33,6 +33,7 @@ $(window, document, undefined).ready(function() {
     $ripples.on('animationend webkitAnimationEnd mozAnimationEnd oanimationend MSAnimationEnd', function(e) {
         $(this).removeClass('is-active');
     });
+
   });
 /*----------------------------SWIPER JS-----------------------------*/
 
@@ -166,7 +167,12 @@ function hideSendInformationForm() {
 function showSendInformationForm() {
     document.getElementById("sendInformationForm").style.display = "grid";
 }
-
+function closeContactUsForm() {
+    document.getElementById("contactUsForm").style.display = "none";
+}
+function showContactUsForm() {
+    document.getElementById("contactUsForm").style.display = "grid";
+}
 function showPanaroma() {
     document.getElementById("bluredPanaroma").classList.toggle("removeBlur");
     var iframe = document.createElement("iframe");

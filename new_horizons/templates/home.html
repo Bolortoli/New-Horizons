@@ -18,7 +18,7 @@
 
 <body class="home-body" id="homeBody">
     {{ rent.value }}
-    {% comment %} <!--------------------------HOME1 HEADER-----------------------------> {% endcomment %}
+    <!--------------------------HOME1 HEADER-----------------------------> 
 
 
     <header class="home-desktop-header" id="desktopHeader">
@@ -47,6 +47,9 @@
 
                 </nav>
             </div>
+            <div class="__mid">
+                <a href="{% url 'home' %}#desktop-footer">Бидэнтэй холбогдох</a>
+            </div>
             <div class="__right">
                 <div class="select-language"><a href="#">mn</a></div>
                 <div class="select-language"><a href="#">en</a></div>
@@ -59,7 +62,9 @@
                 <i class="fas fa-bars menu-icon" id="mobileBarsIcon"></i>
             </div>
             <nav id="mobileNav" onclick="showMobileNav()">
-                <img src="{{ global_settings.logo }}" alt="logo">
+                <img src="{% static 'assets/nh_logo.png' %}" alt="logo">
+
+                <div class="contactUsAnchor"><a href="{% url 'home' %}#contactUsFooter">Бидэнтэй холбогдох</a></div>
 
                 <li><a href="./home.html#home">нүүр</a></li>
 
@@ -96,43 +101,57 @@
             </button>
         </form>
     </div>
-    {% comment %} <!--------------------------HOME1 HEADER END-----------------------------> {% endcomment %}
+    <div class="contact-us-form" id="contactUsForm">
+        <div class="inner-contact-us-form">
+            <div class="contact-us-close-button" onclick="closeContactUsForm()">
+                <i class="fas fa-times"></i>
+            </div>
+            <form action="">
+                <div class="contact-us-input-field">
+                    <i class="fas fa-user-tie"></i>
+                    <input type="text" placeholder="Нэр">
+                </div>
+                <div class="contact-us-input-field">
+                    <i class="fas fa-paper-plane"></i>
+                    <input type="email" placeholder="Цахим хаяг">
+                </div>
+                <div class="contact-us-input-field">
+                    <i class="fas fa-briefcase"></i>
+                    <input type="text" placeholder="Компани">
+                </div>
+                <textarea name="" id="" cols="30" rows="10" placeholder="Энд бичнэ үү.."></textarea>
+                <input type="submit" value="Илгээх">
+            </form>
+        </div>
+    </div>
+    <!--------------------------HOME1 HEADER END----------------------------->
     <section class="home-section" id="home">
         <div class="swiper-container">
             <div class="swiper-wrapper">
+                {% for obj in home_sliders %}
                 <div class="swiper-slide">
                     <div class="inner-swiper-slide">
-                        <img src="{% static 'assets/IMG_7256.JPG' %}" alt="building">
-                        <p>Тавтай морил!</p>
-                        <h3>New Horizons ашиглалтанд орлоо</h3>
-                        {% comment %} <p></p> {% endcomment %}
-                        {% csrf_token %}
-                        <a href="{{ pdf_url.url }}" id="brochure" >Боршуур авах</a>
+                        <img src="{{ obj.background_pic.url }}" alt="building">
+                        <p>{{ obj.text_lil }}</p>
+                        <h3>{{ obj.title }}</h3>
+                        <!-- <p></p> -->
+                        {% if obj.choice1 %}
+                        <a href="https://drive.google.com/file/d/1X7DCnk5kRnHOjiVvGe32TOWqAk2M2isu/view?ts=5f0287df">Боршуур авах</a>
+                        {% elif obj.choice2 %}
+                        <a href="#" onclick="showContactUsForm()">Бидэнтэй холбогдох</a>
+                        {% elif obj.choice3 %}
+                        <a href="{% url 'home' %}#floorInfo">Давхарын мэдээлэл</a>
+                        {% endif %}
                     </div>
                 </div>
-                {% comment %} <script>
-                    $(document).ready(function() {
-                        $('a#brochure').on("click", function() {
-                            $.ajax({
-                                method: 'post',
-                                url: "{% url 'send-email' %}",
-                                success: function(message) {
-                                    alert(message);
-                                },
-                                error: function(message) {
-                                    alert('error: ' + message);
-                                },
-                            });
-                        });
-                    });
-                </script> {% endcomment %}
+                {% endfor %}
                 <div class="swiper-slide">
                     <div class="inner-swiper-slide">
                         <img src="{% static 'assets/IMG_7249.JPG' %}" alt="building">
                         <p>Lorem, ipsum.</p>
                         <h3>Lorem ipsum dolor sit.</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, assumenda.</p>
-                        <a href="#">Lorem, ipsum.</a>
+                        <a href="#" onclick="showContactUsForm()">Бидэнтэй харилцах</a>
                     </div>
                 </div>
                 <div class="swiper-slide">
@@ -144,7 +163,6 @@
                         <a href="#">Lorem, ipsum.</a>
                     </div>
                 </div>
-
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
@@ -158,23 +176,25 @@
         <div class="inner-features">
             <div class="feature-card">
                 <i class="far fa-building"></i>
-                <p>Байгаа талбай</p>
-                <p>456</p>
+                <p>{{ feature_boxes.box1_title }}</p>
+                <p>{{ feature_boxes.box1_text }}</p>
             </div>
             <div class="feature-card">
                 <i class="far fa-building"></i>
-                <p>Нийт Квд</p>
-                <p>6813</p>
+                <p>{{ feature_boxes.box2_title }}</p>
+                <p>{{ feature_boxes.box2_text }} </p>
             </div>
             <div class="feature-card">
                 <i class="far fa-building"></i>
-                <p>Орон сууц</p>
-                <p>215</p>
+                <p>{{ feature_boxes.box3_title }}</p>
+                <p>
+                    <p>{{ feature_boxes.box3_text }}</p>
             </div>
             <div class="feature-card">
                 <i class="far fa-building"></i>
-                <p>барьсан жил</p>
-                <p>2020</p>
+                <p>{{ feature_boxes.box4_title }}</p>
+                <p>
+                    <p>{{ feature_boxes.box4_text }}</p>
             </div>
 
         </div>
@@ -193,12 +213,12 @@
                         <p><i class="far fa-comment"></i>2</p>
                     </div>
                     <hr>
-                    <p class="little-article">Улаанбаатар хотын зүрхэн төвд байрлах орчин үеийн шийдэл, 
-                        чадварлаг менежмент, чанартай үйлчилгээ бүхий уг байгууламж нь таны бизнесийг 
-                        амжилтанд хөтлөх цогц бүрдэл юм. NEW HORIZONS газар хөдлөлтийг тэсвэрлэх чадалтай 
-                        хамгийн сүүлийн үеийн шилдэг технологи бүхий архитектурын ухаалаг шийдэл , ая тух 
-                        хангах нэмэлт үйлчилгээ, ашигтай байрлал нь компаний тань байр суурийг тодорхойлж, 
-                        ажиллагсдын тань урам зоригийг бадрааж, харилцагч, үйлчлүүлэгчдийг тань бишрүүлэх болно. 
+                    <p class="little-article">Улаанбаатар хотын зүрхэн төвд байрлах орчин үеийн шийдэл,
+                        чадварлаг менежмент, чанартай үйлчилгээ бүхий уг байгууламж нь таны бизнесийг
+                        амжилтанд хөтлөх цогц бүрдэл юм. NEW HORIZONS газар хөдлөлтийг тэсвэрлэх чадалтай
+                        хамгийн сүүлийн үеийн шилдэг технологи бүхий архитектурын ухаалаг шийдэл , ая тух
+                        хангах нэмэлт үйлчилгээ, ашигтай байрлал нь компаний тань байр суурийг тодорхойлж,
+                        ажиллагсдын тань урам зоригийг бадрааж, харилцагч, үйлчлүүлэгчдийг тань бишрүүлэх болно.
                     </p>
                 </a>
                 <a href="#" class="mini-blog-card">
@@ -210,7 +230,7 @@
                         <p><i class="far fa-comment"></i>25</p>
                     </div>
                     <hr>
-                    <p class="little-article">"ХАН" ХХК нь ISO 9001,ISO 14001,ОНSAS 18001 стандартуудыг хангасан 
+                    <p class="little-article">"ХАН" ХХК нь ISO 9001,ISO 14001,ОНSAS 18001 стандартуудыг хангасан
                         Хөрөнгийн менежментийн үйлчилгээг үзүүлнэ.
                     </p>
                 </a>
@@ -224,9 +244,9 @@
                         <p><i class="far fa-comment"></i>25</p>
                     </div>
                     <hr>
-                    <p class="little-article">Агааржуулалт, агаар сэлгэлт, хөргөлтийн гурвалсан 
-                        системийг ашиглаж офисийн агвар дахь утаа, тоос, бактерийг устган ямагт 
-                        эрүүл цэвэр орчинг бүрдүүлнэ. 
+                    <p class="little-article">Агааржуулалт, агаар сэлгэлт, хөргөлтийн гурвалсан
+                        системийг ашиглаж офисийн агвар дахь утаа, тоос, бактерийг устган ямагт
+                        эрүүл цэвэр орчинг бүрдүүлнэ.
                     </p>
                 </a>
 
@@ -258,22 +278,48 @@
     <section class="services-section" id="service">
         <div class="__left">
             <ul class="service-lists-container">
-
+                <!-- Leaseholders start -->
+                {% for leaseholder in leaseholders %}
                 <li class="service-title">
-                    <div class="inner-service-title">Банк, санхүү</div>
+                    <div class="inner-service-title"> {{ leaseholder.category}} </div>
                     <div class="sub-service-list-container">
-                        <a href="#">Хаан банк</a>
-                        <a href="#">Lorem ipsum dolwaeoifjjoro weoifoj</a>
+                        {% for i in leaseholder.leaseholder %}
+                        <a class='leaseholder-name' href="{% url 'home' company=i %}#service">{{ i }}</a>
+                        <!-- <a href="#">Lorem ipsum dolwaeoifjjoro weoifoj</a>
                         <a href="#">Lorem ipsum dolor</a>
                         <a href="#">Lorem ipsum dolor</a>
                         <a href="#">Lorem ipsum dolor</a>
                         <a href="#">Lorem ipsum dolor</a>
                         <a href="#">Lorem ipsum dolor</a>
                         <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
+                        <a href="#">Lorem ipsum dolor</a> -->
+                        {% endfor %}
                     </div>
                 </li>
-                <li class="service-title">
+                {% endfor %}
+
+                <!-- <script>
+                    $(document).ready(function () {
+                        $('.leaseholder-name').click(function() {
+                            var name = $(this).text();
+                            alert(name);
+                            $('.swiper-wrapper').empty();
+                            $('.swiper-pagination').empty();
+                            $('.swiper-button-next').empty();
+                            $('.swiper-button-prev').empty();
+                            $('.swiper-wrapper').append($("<div></div>")
+                                .attr('class', 'slide-left')
+                            ).append($("<h3>dsjfkasdfkljahs</h3>")
+                                    .attr('class', 'slide-left')  
+                                );
+                            // $.ajax({
+
+                            // });
+                        });
+                    });
+                </script> -->
+                <!-- Leaseholders end -->
+                <!-- <li class="service-title">
                     <div class="inner-service-title">Ресторан</div>
                     <div class="sub-service-list-container">
                         <a href="#">Хаан банк</a>
@@ -328,31 +374,29 @@
                         <a href="#">Lorem ipsum dolor</a>
                         <a href="#">Lorem ipsum dolor</a>
                     </div>
-                </li>
+                </li> -->
             </ul>
         </div>
         <div class="__right">
             <div class="swiper-container-two">
                 <div class="swiper-wrapper" id="getPictures">
+                    <!-- Slider object -->
+                    {% for obj in lesaeholder_slider %}
                     <div class="swiper-slide">
                         <div class="slide-left">
-                            <h3>ХААН банк</h3>
-                            <p>  ХААН Банк нь орон даяар нийт 550 гаруй салбар нэгжтэй үндэсний хэмжээний 
-                                тэргүүлэгч арилжааны банк бөгөөд Монгол Улсын нийт айл өрхийн 80 гаруй хувьд 
-                                буюу 2.5 сая харилцагчид банк санхүүгийн цогц үйлчилгээг хүргэн ажиллаж байна.
-
-                                Банк нь нэг шатлал бүхий улсын банкны тогтолцоо задарсан үе буюу 1991 онд орон 
-                                даяар салбар нэгжтэй, Хөдөө Аж Ахуйн Хоршоологчдын банк нэртэйгээр байгуулагдсан 
-                                түүхтэй. Улмаар улсын банкны хөдөө орон нутаг дахь хөрөнгө, үйл ажиллагааг өөртөө 
-                                шилжүүлэн авч банк хувьчлагдсан ч бизнесийн үйл ажиллагаа нь төр засгийн хүчтэй 
-                                нөлөөллөөс ангид байсангүй. 
+                            <h3>{{ obj.title }}</h3>
+                            <p> {{ obj.desc }}
                             </p>
                         </div>
                         <div class="slide-right">
-                            <img class="get-photos" src="{% static 'assets/IMG_7256.JPG' %}" alt="slide photo">
+                            <img class="get-photos" src="{{ obj.pic.url }}" alt="slide photo">
                         </div>
                     </div>
-                    <div class="swiper-slide">
+                    {% endfor %}
+                   
+                    <!-- Slider object end -->
+                    <!-- DUMMY SLIDER OBJECT -->
+                    <!-- <div class="swiper-slide">
                         <div class="slide-left">
                             <h3>diverse solution</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -479,8 +523,8 @@
                         <div class="slide-right">
                             <img class="get-photos" src="{% static 'assets/IMG_72491.jpg' %}" alt="slide photo">
                         </div>
-                    </div>
-
+                    </div> -->
+                    <!-- DUMMY SLIDER OBJECT END -->
 
 
                 </div>
@@ -636,7 +680,7 @@
         </div>
         <div class="plan-photos-container" id="planPhotosContainer" onclick="showFixedInfo()">
             <div class="plan-photo-hover">ҮЗЭХ</div>
-            
+
             <img src="{% static 'assets/plan_images/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
             <img src="{% static 'assets/plan_images/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
             <img src="{% static 'assets/plan_images/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
@@ -655,6 +699,10 @@
             <img src="{% static 'assets/plan_images/b1.png' %}" alt="floor one svg">
 
         </div>
+
+        <script>
+
+        </script>
         <div class="plan-photos-fullscreen-info" id="planPhotoInfo">
             <div class="close-button" onclick="closeFixedInfo()"></div>
             <div class="invisible-plan-photo-info">
@@ -668,7 +716,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -682,7 +730,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -696,7 +744,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -710,7 +758,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -724,7 +772,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -738,7 +786,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -752,7 +800,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -766,7 +814,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -780,7 +828,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -794,7 +842,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -808,7 +856,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan_images/plan-3-4-5-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -822,7 +870,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan_images/plan-3-4-5-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -836,7 +884,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan_images/plan-3-4-5-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -850,7 +898,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan_images/plan2-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -864,7 +912,7 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan_images/plan1-clear.png' %}" alt="floor one svg">
                 </div>
             </div>
             <div class="invisible-plan-photo-info">
@@ -878,51 +926,8 @@
                             esse placeat.
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
-                </div>
-            </div>
-            <div class="invisible-plan-photo-info">
-                <div class="inner-plan-photo-info">
-                    <div class="photo-description">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tempore, nihil voluptatum dolorem harum dolore itaque
-                            est corrupti eligendi sint dicta molestiae officiis
-                            accusamus atque distinctio quos facere consequatur,
-                            esse placeat.
-                        </p>
-                    </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
-                </div>
-            </div>
-            <div class="invisible-plan-photo-info">
-                <div class="close-button" onclick="closeFixedInfo()"></div>
-                <div class="inner-plan-photo-info">
-                    <div class="photo-description">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tempore, nihil voluptatum dolorem harum dolore itaque
-                            est corrupti eligendi sint dicta molestiae officiis
-                            accusamus atque distinctio quos facere consequatur,
-                            esse placeat.
-                        </p>
-                    </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
-                </div>
-            </div>
-            <div class="invisible-plan-photo-info">
-                <div class="close-button" onclick="closeFixedInfo()"></div>
-                <div class="inner-plan-photo-info">
-                    <div class="photo-description">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tempore, nihil voluptatum dolorem harum dolore itaque
-                            est corrupti eligendi sint dicta molestiae officiis
-                            accusamus atque distinctio quos facere consequatur,
-                            esse placeat.
-                        </p>
-                    </div>
-                    <img src="{% static 'assets/plan_floor_one.svg' %}" alt="floor one svg">
+                    <img src="{% static 'assets/plan_images/b1.png' %}" alt="floor one svg">
+
                 </div>
             </div>
 
@@ -1031,8 +1036,8 @@
         <img class="footer-bg" src="{% static 'assets/IMG_72561.jpg' %}" alt="footer building">
         <div class="inner-footer">
             <div class="footer-mini-info">
-                <img src="{{ global_settings.logo.url }}" alt="logo">
-                </p>
+                <img src="{% static 'assets/nh_logo.png' %}" alt="logo">
+
                 <div class="icons-container">
                     <a href="{{ global_settings.facebook }}"><i class="fab fa-facebook-f"></i></a>
                     <a href="{{ global_settings.instagram }}"><i class="fab fa-instagram"></i></a>
@@ -1061,16 +1066,45 @@
             </div>
             <div class="footer-contact-us">
                 <h3>Бидэнтэй холбогдох</h3>
-                <p><i class="fas fa-phone-alt"></i>+976 {{ global_settings.phone }}</p>
-                <p><i class="far fa-envelope"></i>{{ global_settings.mail }}</p>
-                <p><i class="fas fa-map-marker-alt"></i>{{ global_settings.location }}.</p>
-
+                <div class="inner-footer-contact-us">
+                    <div class="inner-footer-contact-us-text">
+                        <p><i class="fas fa-phone-alt"></i>+976 99999999</p>
+                        <p><i class="far fa-envelope"></i>uuganbat.dev@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i>Lorem, ipsum dolor sit amet consectetur adipisicing
+                            elit.
+                            Odio,
+                            officia.
+                        </p>
+                    </div>
+                </div>
             </div>
-        </div>  
+            <div class="footer-contact-us-form" id="contactUsFooter">
+                <h3>Бидэнтэй харилцах</h3>
+                <div class="inner-footer-contact-us-form">
+                    <form action="">
+                        <div class="contact-us-form-left">
+                            <div class="contact-us-input-field">
+                                <i class="fas fa-user-tie"></i>
+                                <input id="name-contact" type="text" placeholder="Нэр">
+                            </div>
+                            <div class="contact-us-input-field">
+                                <i class="fas fa-paper-plane"></i>
+                                <input id="mail-contact" type="email" placeholder="Цахим хаяг">
+                            </div>
+                            <div class="contact-us-input-field">
+                                <i class="fas fa-briefcase"></i>
+                                <input id="company-contact" type="text" placeholder="Компани">
+                            </div>
+                            <input id="submit-contact" type="submit" value="Илгээх">
+                        </div>
+                        <div class="contact-us-form-right">
+                            <textarea name="" id="message-contact" cols="30" rows="10" placeholder="Энд бичнэ үү.."></textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </footer>
-
-
-
 
 
     <!------------------------GSAP onscroll-------------------------->
@@ -1093,7 +1127,33 @@
             document.getElementById("panaromaSection").appendChild(iframe);
         }
     </script>
+    <script>
+        $(document).ready(function () {
+            $('#submit-contact').on("click", function () {
+                var name = $('#name-contact').val();
+                var email = $('#mail-contact').val();
+                var company = $('#company-contact').val();
+                var text = $('#message-contact').val();
 
+                $.ajax({
+                    method: 'post',
+                    url: "{% url 'register-contact-request' %}",
+                    data: {
+                        name: name,
+                        email: email,
+                        company: company,
+                        text: text
+                    },
+                    success: function (message) {
+                        alert(message);
+                    },
+                    error: function (message) {
+                        alert('error: ' + message);
+                    },
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
