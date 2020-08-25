@@ -164,6 +164,26 @@
     }
 </style>
 
+<!-- // var varname_a = get_name(i, "a");
+// var varname_b = get_name(i, "b");
+// var k = eval("message." + varname_a);
+// var l = eval("message." + varname_b);
+// alert("floora" + message.floor1_a);
+// alert("b" +message.floor1_b);
+// if(k == "True") {
+//     $("label[for=id_" + varname_a).attr('class', 'sda');
+//     document.getElementById("id_" + varname_a).checked = true;
+// }
+// if(l == "True") {
+//     $("label[for=id_" + varname_b).attr('class', 'sda');
+//     document.getElementById("id_" + varname_b).checked = true;
+// } -->
+<!-- Script when page load -->
+<script>
+    $(document).ready(function() {
+        $("input[type=checkbox]").prop('checked', false);
+    });
+</script>
 <script>
     $(document).ready(function() {
         // Render if floor has rent
@@ -178,83 +198,75 @@
                     $("label[for=" + floor_id)
                         .attr('class', 'sda')
                         .text(leaseholder_name);
-
-                    // var varname_a = get_name(i, "a");
-                    // var varname_b = get_name(i, "b");
-                    // var k = eval("message." + varname_a);
-                    // var l = eval("message." + varname_b);
-                    // alert("floora" + message.floor1_a);
-                    // alert("b" +message.floor1_b);
-                    // if(k == "True") {
-                    //     $("label[for=id_" + varname_a).attr('class', 'sda');
-                    //     document.getElementById("id_" + varname_a).checked = true;
-                    // }
-                    // if(l == "True") {
-                    //     $("label[for=id_" + varname_b).attr('class', 'sda');
-                    //     document.getElementById("id_" + varname_b).checked = true;
-                    // }
+                    $('#' + floor_id).prop('checked', true);
                 }
             },
             error: function(message) {
                 alert(message);
             }
         });
-        // $('.floor-label').on('click', function() {
-        //     alert('clicked');
-        //     console.log(document.getElementById('id_floor1_a').checked)
-        // });
+        $.ajax({
+            method: 'post',
+            url: "{% url 'get-organizations' %}",
+            success: function(organizations) {
+                if(organizations.success == "false") {
+                    alert("Байгууллага нэмнэ үү...");
+                    window.open('http://127.0.0.1:8000/admin/horizonapp/organization/add/');
+                } else {
+                    // $('.floors-form-select')
+                    //     .find('option')
+                    //     .remove()
+                    //     .end()
+                    //     .append($("<option></option>")
+                    //         .text('--select on--')
+                    //         .attr('selected', '')
+                    //         .attr('disabled', '')
+                    //         .attr('value', '')); 
+                    for(var i = 0; i < organizations['organizations'].length; i++) {
+                        var obj = organizations['organizations'][i];
+                        
+                        $('.floors-form-select')
+                            .append($("<option></option>")
+                                .text(obj['name'])); 
+                    }
+                    console.log(organizations['organizations'].length);  
+                }
+            },
+            error: function(message) {
+                console.log("error" + message);
+            },
+        });
+    });
+    
+</script>
+
+<script>
+    
+    $(document).ready(function() {
+
         // Checkbox toggles
-        $(".floor-checkbox").on('change', function() {
+        $("input[type=checkbox]").click(function() {
             var id = $(this).prop('id');
-            var val = this.checked ? true : false;
+            // console.log('checked ' + String($('#' + id).prop('checked')));
+            var val = $(this).prop('checked') ? true : false;
+            console.log($(this).prop('checked'));
             // Get registered companies name by ajax
             if(val) {
-                document.getElementById(id).checked = false;
-                showFloorsPopUp();
-                $.ajax({
-                    method: 'post',
-                    url: "{% url 'get-organizations' %}",
-                    success: function(organizations) {
-                        if(organizations.success == "false") {
-                            alert("Байгууллага нэмнэ үү...");
-                            window.open('http://127.0.0.1:8000/admin/horizonapp/organization/add/');
-                            closeFloorsPopUp();
-                        } else {
-                            $('.floors-form-select')
-                                .find('option')
-                                .remove()
-                                .end()
-                                .append($("<option></option>")
-                                    .text('--select on--')
-                                    .attr('selected', '')
-                                    .attr('disabled', '')
-                                    .attr('value', '')); 
-                            for(var i = 0; i < organizations['organizations'].length; i++) {
-                                var obj = organizations['organizations'][i];
-                                $('.floors-form-select').prop('id', id);
-                                // alert($('#'+id).prop('id'));
-                                $('.floors-form-select')
-                                    .append($("<option></option>")
-                                        .text(obj['name'])); 
-                            }
-                            console.log(organizations['organizations'].length);  
-                        }
-                    },
-                    error: function(message) {
-                        console.log("error" + message);
-                    },
-                });
+                $('.floors-form-select').prop('id', id);
+                $('#floorsPopUp').show();
+                $(this).prop('checked', false);
+                
             // Unregister leaseholder, clean object
             } else {
-                document.getElementById(id).checked = true;
-                
                 $('.clear-leaseholder').prop('id', id);
-                
-                showWarningPopUp();
+                $('.close-warning-pop-up').prop('id', id);
+                $('#warningPopUp').show();
+                $(this).prop('checked', true);
+
             }
-            console.log('checked' + String(document.getElementById('id_floor1_a').checked));
+            // console.log('checked ' + String($('#' + id).prop('checked')));
         });
-        // Register leaseholder
+    //     // Register leaseholder
         $('#floors-form-submit').on('click', function () {
             var floor_name = $('.floors-form-select').prop('id');
             // alert(floor_name);
@@ -280,22 +292,23 @@
                         $("label[for=" + floor_name)
                             .attr('class', 'sda')
                             .text(leaseholder_name);
-                        closeFloorsPopUp();
                         $('.floors-form-select').attr('id', '')
-                        document.getElementById(floor_name).checked = true;
+                        $('#' + floor_name).prop('checked', true);
+                        $('#floorsPopUp').hide();
                     },
                     error: function() {
                         alert("Дахин оролдоно уу...")
-                    }
+                    },
                 });
             }
         });
-        $(document).on('change', '.floors-form-select', function() {
-            alert();
-            $('#selection-message').text('');
-        });
+        // $(document).on('change', '.floors-form-select', function() {
+        //     alert();
+        //     $('#selection-message').text('');
+        // });
         $('.clear-leaseholder').on('click', function() {
             var id = $(this).prop('id');
+            alert(id);
             $.ajax({
                 method: 'post',
                 url: "{% url 'clear-leaseholder' %}",
@@ -303,38 +316,27 @@
                     floor_name: id
                 },
                 success: function() {
-                    closeWarningPopUp();
-                    document.getElementById(id).checked = false;
                     $("label[for=" + id)
                         .attr('class', 'floor-label')
                         .text('');
-                    $('.clear-leaseholder').prop('id', '')
-                }
+                    $('.clear-leaseholder').prop('id', '');
+                    $('.close-warning-pop-up').prop('id', '');
+                    $('#warningPopUp').hide();
+                    $('#' + id).prop('checked', false);
+                },
 
             });
         });
+        $('.close-warning-pop-up').click(function() {
+            $('#warningPopUp').hide();
+            $('.clear-leaseholder').prop('id', '');
+            $('.close-warning-pop-up').prop('id', '');
+        });
+        $('.floors-close-button').click(function() {
+            $('#floorsPopUp').hide();
+        });
+        
     });
-    function get_name(floor, side) {
-        return "floor" + String(floor) + "_" + String(side);
-    }
-    // function toggleLabel(label_name) {
-    //     jQuery(function(label_name) {
-    //         $('#id_' + label_name).toggleClass("sda");
-    //         console.log(label_name)
-    //     });
-    // }
-    function showFloorsPopUp() {
-        document.getElementById("floorsPopUp").style.display = "grid";
-    }
-    function showWarningPopUp() {
-        document.getElementById("warningPopUp").style.display = "grid";
-    }
-    function closeFloorsPopUp() {
-        document.getElementById("floorsPopUp").style.display = "none";
-    }
-    function closeWarningPopUp() {
-        document.getElementById("warningPopUp").style.display = "none";
-    }
 </script>
 
 {% endblock %}
@@ -346,10 +348,10 @@
         <div class="floors-form-container">
             <form action="">
                 {% csrf_token %}
-                <div class="floors-close-button" onclick="closeFloorsPopUp()"></div>
+                <div class="floors-close-button"></div>
                 <label class="floors-form-label" for="organizations">Ta company aa songonuu</label>
                 <select class="floors-form-select" name="organizations" id="organizations">
-                    <!-- <option disabled selected value> -- select an option -- </option> -->
+                    <option disabled selected value> -- select an option -- </option>
                 </select>
                 <span id="selection-message"></span>
                 <input class="floors-form-submit" id="floors-form-submit" type="button" value="songoh">
@@ -361,7 +363,7 @@
             <p>ta itgeltei bainuu</p>
             <div class="yes-no-button">
             <input type="button" value="tiim" class='clear-leaseholder'>
-            <input type="button" value="ugui" onclick="closeWarningPopUp()">
+            <input type="button" value="ugui" class='close-warning-pop-up'>
         </div>
         </div>
     </div>
@@ -370,7 +372,7 @@
         <img src="{% static 'assets/plan_images/plan15.png' %}" alt="floor one svg">
         <div class="inner-floors">
             <label class="floor-label" name="vCheckboxLabel" for="id_floor1_a"></label>
-            <label class="floor-label" name="vCheckboxLabel" for="id_floor1_b">asdaskgaskj dashdaslkda hsd</label>
+            <label class="floor-label" name="vCheckboxLabel" for="id_floor1_b"></label>
             <input class="floor-checkbox" id="id_floor1_a" type="checkbox" name="floor1_a">
             <input class="floor-checkbox" id="id_floor1_b" type="checkbox" name="floor1_b">
         </div>
@@ -534,7 +536,7 @@
 {% block submit_buttons_bottom %}
     {{ block.super }}
      
-    <div class="submit-row">
+    <!-- <div class="submit-row">
       <input type="submit" value="X" name="_continue">
-    </div>
+    </div> -->
 {% endblock %}

@@ -8,11 +8,9 @@ import json, random
 
 
 def guide(request):
-    co = BuildingRents.objects.all().first().floor2_a
-    ca = BuildingRents.objects.all().first().floor2_b
+    pdf = PDFbrochure.objects.all().first().pdf
     context = {
-        'c': co,
-        'co': ca,
+        'pdf_url': pdf
     }
     return render(request, 'guide.html', context)
 

@@ -69,6 +69,8 @@ class BuildingRents(models.Model):
     floor15_a = models.BooleanField(default=False)
     floor15_b = models.BooleanField(default=False)
 
+    def __str__(self):
+        return "Түрээслэгч солих"
     class Meta:
         verbose_name = "Барилгын түрээсийн мэдээлэл"
         verbose_name_plural = "Барилгын түрээсийн мэдээлэл"
@@ -111,8 +113,13 @@ class Settings(models.Model):
 
 class PDFbrochure(models.Model):
     
-    subject=models.CharField(verbose_name="Сэдэв", max_length=255,  null=False, default=None)
+    # subject=models.CharField(verbose_name="Сэдэв", max_length=255,  null=False, default=None)
     pdf=models.TextField(verbose_name="PDF link", null=False, default=None)
+
+    class Meta:
+        verbose_name = 'PDF брошур'
+        verbose_name_plural = 'PDF брошур'
+
 
 class FeatureCard(models.Model):
     box1_title=models.CharField(max_length=255, verbose_name="Box 1 гарчиг", null=True, blank=True, default=None)
@@ -123,6 +130,10 @@ class FeatureCard(models.Model):
     box3_text=models.TextField(verbose_name="Box 3 текст", null=True, blank=True, default=None)
     box4_title=models.CharField(max_length=255, verbose_name="Box 4 гарчиг", null=True, blank=True, default=None)
     box4_text=models.TextField(verbose_name="Box 4 текст", null=True, blank=True, default=None)
+
+    class Meta:
+        verbose_name = 'Санал болгох талбар'
+        verbose_name_plural = 'Санал болгох талбар'
   
 class OrganizationCategory(models.Model):
     category_name=models.CharField(max_length=255, verbose_name="Ангиллын нэр", null=True, blank=True, default=None, unique=True)
@@ -137,6 +148,7 @@ class OrganizationCategory(models.Model):
 class Organization(models.Model):
     or_name=models.CharField(max_length=255, verbose_name="Байгууллагын нэр", null=True, blank=True, default=None, unique=True)
     category=models.ForeignKey(OrganizationCategory, verbose_name="Байгуулагын категори", on_delete=models.CASCADE)
+    pic=models.ImageField(upload_to="Organization/", verbose_name="Зураг", default="", blank=True)
     special = models.BooleanField(verbose_name="Нүүр хуудсанд гаргах ", default=False)
 
     def __str__(self):
@@ -168,6 +180,19 @@ class ContactUs(models.Model):
     class Meta:
         verbose_name = "Холбоо барих хүсэлт"
         verbose_name_plural = "Холбоо барих хүсэлт жагсаалт"
+
+
+
+class BuildingIntro(models.Model):
+        
+    title = models.CharField(max_length=255, verbose_name="Гарчиг", null=True, blank=True, default=None)
+    text = RichTextField()
+    pic=models.ImageField(upload_to="Home/building_intro/", verbose_name="Зураг", default="", blank=True)
+
+    class Meta:
+        verbose_name = 'Барилгын товч танилцуулга'
+        verbose_name_plural = 'Барилгын товч танилцуулга'
+
 
 
 class HomeSlider(models.Model):
@@ -202,3 +227,10 @@ class HomeSlider(models.Model):
             self.choice2 = False
             self.choice3 = True
         super().save(*args, **kwargs)
+    
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'Slider'
+        verbose_name_plural = 'Нүүр хуудас - slider'

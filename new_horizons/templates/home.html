@@ -136,7 +136,7 @@
                         <h3>{{ obj.title }}</h3>
                         <!-- <p></p> -->
                         {% if obj.choice1 %}
-                        <a href="https://drive.google.com/file/d/1X7DCnk5kRnHOjiVvGe32TOWqAk2M2isu/view?ts=5f0287df">Боршуур авах</a>
+                        <a href="{{ pdf_url }}">Боршуур авах</a>
                         {% elif obj.choice2 %}
                         <a href="#" onclick="showContactUsForm()">Бидэнтэй холбогдох</a>
                         {% elif obj.choice3 %}
@@ -145,24 +145,7 @@
                     </div>
                 </div>
                 {% endfor %}
-                <div class="swiper-slide">
-                    <div class="inner-swiper-slide">
-                        <img src="{% static 'assets/IMG_7249.JPG' %}" alt="building">
-                        <p>Lorem, ipsum.</p>
-                        <h3>Lorem ipsum dolor sit.</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, assumenda.</p>
-                        <a href="#" onclick="showContactUsForm()">Бидэнтэй харилцах</a>
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="inner-swiper-slide">
-                        <img src="{% static 'assets/IMG_72491.jpg' %}" alt="building">
-                        <p>Lorem, ipsum.</p>
-                        <h3>Lorem ipsum dolor sit.</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit, assumenda.</p>
-                        <a href="#">Lorem, ipsum.</a>
-                    </div>
-                </div>
+               
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>

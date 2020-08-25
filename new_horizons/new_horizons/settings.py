@@ -26,7 +26,7 @@ SECRET_KEY = '#oq%0lf4!6s)x(e#xswmhq04)#&1w-4!#ny-u0#*l8s74oyfx@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'horizonapp',
+    # 'horizonapp.apps.HorizonappConfig',
 ]
 
 MIDDLEWARE = [
