@@ -4,6 +4,8 @@ from django.db import models
 from django.core.validators import FileExtensionValidator
 from ckeditor.fields import RichTextField
 import datetime
+from urllib.parse import urljoin 
+from django.conf import settings
 
 class NewsCategory(models.Model):
 
@@ -39,36 +41,6 @@ class News(models.Model):
 class BuildingRents(models.Model):
 
     floor1_a = models.BooleanField(default=False)
-    floor1_b = models.BooleanField(default=False)
-    floor2_a = models.BooleanField(default=False)
-    floor2_b = models.BooleanField(default=False)
-    floor3_a = models.BooleanField(default=False)
-    floor3_b = models.BooleanField(default=False)
-    floor4_a = models.BooleanField(default=False)
-    floor4_b = models.BooleanField(default=False)
-    floor5_a = models.BooleanField(default=False)
-    floor5_b = models.BooleanField(default=False)
-    floor6_a = models.BooleanField(default=False)
-    floor6_b = models.BooleanField(default=False)
-    floor7_a = models.BooleanField(default=False)
-    floor7_b = models.BooleanField(default=False)
-    floor8_a = models.BooleanField(default=False)
-    floor8_b = models.BooleanField(default=False)
-    floor9_a = models.BooleanField(default=False)
-    floor9_b = models.BooleanField(default=False)
-    floor10_a = models.BooleanField(default=False)
-    floor10_b = models.BooleanField(default=False)
-    floor11_a = models.BooleanField(default=False)
-    floor11_b = models.BooleanField(default=False)
-    floor12_a = models.BooleanField(default=False)
-    floor12_b = models.BooleanField(default=False)
-    floor13_a = models.BooleanField(default=False)
-    floor13_b = models.BooleanField(default=False)
-    floor14_a = models.BooleanField(default=False)
-    floor14_b = models.BooleanField(default=False)
-    floor15_a = models.BooleanField(default=False)
-    floor15_b = models.BooleanField(default=False)
-
     def __str__(self):
         return "Түрээслэгч солих"
     class Meta:
@@ -148,7 +120,7 @@ class OrganizationCategory(models.Model):
 class Organization(models.Model):
     or_name=models.CharField(max_length=255, verbose_name="Байгууллагын нэр", null=True, blank=True, default=None, unique=True)
     category=models.ForeignKey(OrganizationCategory, verbose_name="Байгуулагын категори", on_delete=models.CASCADE)
-    pic=models.ImageField(upload_to="Organization/", verbose_name="Зураг", default="", blank=True)
+    pic=models.ImageField(upload_to="Organization/", verbose_name="Лого", default="", blank=True)
     special = models.BooleanField(verbose_name="Нүүр хуудсанд гаргах ", default=False)
 
     def __str__(self):
@@ -193,6 +165,17 @@ class BuildingIntro(models.Model):
         verbose_name = 'Барилгын товч танилцуулга'
         verbose_name_plural = 'Барилгын товч танилцуулга'
 
+
+class FloorPlan(models.Model):
+    floor = models.CharField(max_length=255, verbose_name="Давхар", null=True, blank=True, default="Оруулаагүй")
+    title = models.CharField(max_length=255, verbose_name="Гарчиг", null=True, blank=True, default="Оруулаагүй")
+    description = models.CharField(max_length=255, verbose_name="Текст", null=True, blank=True, default="Оруулаагүй")
+    pic = models.ImageField(upload_to="Home/Plan-Pictures", verbose_name="План зураг", default='settings/index.jpeg', blank=True)
+
+
+    class Meta:
+        verbose_name = 'Давхрын план зураг, танилцуулга'
+        verbose_name_plural = 'Давхрын план зураг, танилцуулга'
 
 
 class HomeSlider(models.Model):

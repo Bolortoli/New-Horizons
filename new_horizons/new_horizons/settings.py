@@ -42,7 +42,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'horizonapp',
-    # 'horizonapp.apps.HorizonappConfig',
 ]
 
 MIDDLEWARE = [
@@ -139,6 +138,14 @@ EMAIL_HOST_USER = configs.EMAIL_HOST_USER
 EMAIL_HOST_PASSWORD = configs.EMAIL_HOST_PASSWORD
 EMAIL_USE_TLS = configs.EMAIL_USE_TLS
 
+# SECURE_HSTS_PRELOAD = True
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# SECURE_HSTS_SECONDS = 1
+# # SECURE_SSL_REDIRECT = False
+# SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# SECURE_REFERRER_POLICY = 'origin'
+
 JET_DEFAULT_THEME = 'light-gray'
 # JET_SIDE_MENU_COMPACT = True
 
@@ -175,5 +182,3 @@ JET_THEMES = [
         'title': 'Light Gray'
     }
 ]
-
-WAGTAIL_SITE_NAME = 'My Example Site'

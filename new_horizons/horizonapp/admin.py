@@ -120,3 +120,10 @@ class FeatureCardAdmin(admin.ModelAdmin):
 
     def has_delete_permission(self, request, obj=None):
         return False
+
+@admin.register(FloorPlan)
+class FloorPlanAdmin(admin.ModelAdmin):
+    
+    list_display = [f.name for f in FloorPlan._meta.get_fields() if f.name != "id"]
+    list_editable = [f.name for f in FloorPlan._meta.get_fields() if f.name != "id" and f.name != "floor"]
+    list_display_links = None

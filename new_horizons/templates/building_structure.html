@@ -1,0 +1,286 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Барилгын төлөвлөлт</title>
+    <link rel="stylesheet" href="{% static 'sub_pages.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="{% static '/fontawesome.js' %}" crossorigin="anonymous"></script>
+</head>
+
+<body class="sp-pages-body">
+    <div class="menu-container" onclick="showSpagesMenu(this)">
+        <i class="fas fa-bars menu-icon" id="mobileBarsIcon"></i>
+    </div>
+    <div class="sp-sidebar" id="spSideBar">
+        <div class="inner-sidebar">
+            <div class="logo-container">
+                <img src="{% static 'sub_pages_pictures/nh_logo.png' %}" alt="logo">
+            </div>
+            <div class="sub-pages-lists">
+                <div class="list-container">
+                    <a href="#">Нүүр</a>
+                </div>
+                <div class="list-container">
+                    <a href="#">Барилгын төлөвлөлт</a>
+                </div>
+                <div class="list-container">
+                    <a href="#">Аюулгүй байдал</a>
+                </div>
+                <div class="list-container">
+                    <a href="#">Тав тух</a>
+                </div>
+
+                <div class="list-container">
+                    <a href="#">Хамт олон</a>
+                </div>
+                <div class="list-container">
+                    <a href="#">Мэдээ мэдээлэл</a>
+                </div>
+            </div>
+            <div class="icons-container">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="inner-building-structure">
+        <h1>Барилгын төлөвлөлт</h1>
+        <div class="building-structure-cards-container">
+            <div class="sp-long-card">
+                <img src="{% static 'sub_pages_pictures/building.jpg' %}" alt="structure">
+                <div class="sp-long-card-description">
+                    <h3>Барилгын төлөвлөлт </h3>
+                    <p>New Horizons төсөл нь Улаанбаатар хотын бизнесийн төв болох Олимпийн гудамжинд
+                        таны бүхий л хэрэгцээг хангах ресторан банк кофе шоп зэргийг 1-5 давхартаа байршуулан
+                        мөн 6-15 давхаруудаа оффисын зориулалтаар ашиглахад бэлэн болоод байна.
+                        Төсөл маань нийтдээ 15 давхар мөн 58 метрийн өндөртэй бөгөөд Улаанбаатар хотын
+                        шилдэг барилга байгууламжуудын нэг юм.
+                    </p>
+                </div>
+            </div>
+            <div class="sp-iconed-card">
+                <div class="inner-iconed-card-left-side">
+                    <h3>Тав тух</h3>
+                    <p>Офисоо өөрийн хүссэнээрээ байгуулах боломжтой
+                        Dynamic шал мөн торох
+                        хүссэнээрээ байгуулах боломжтой
+                        Dynamic шал мөн торох
+                        хүссэнээрээ байгуулах боломжтой
+                        Dynamic шал мөн торох
+                    </p>
+                </div>
+                <div class="inner-iconed-card-right-side">
+                    <div class="iconed-little-card">
+                        <img src="{% static 'sub_pages_pictures/security.png' %}" alt="icon">
+                        <p>
+                            24 цагын харуул хамгаалалт мөн төслийн
+
+                        </p>
+                    </div>
+                    <div class="iconed-little-card">
+                        <img src="{% static 'sub_pages_pictures/wifi.png' %}" alt="icon">
+                        <p>
+                            24 цагын харуул хамгаалалт мөн төслийн
+
+                        </p>
+                    </div>
+                    <div class="iconed-little-card">
+                        <img src="{% static 'sub_pages_pictures/security.png' %}" alt="icon">
+                        <p>
+                            24 цагын харуул хамгаалалт мөн төслийн
+
+                        </p>
+                    </div>
+                    <div class="iconed-little-card">
+                        <img src="{% static 'sub_pages_pictures/toolbox.png' %}" alt="icon">
+                        <p>
+                            24 цагын харуул хамгаалалт мөн төслийн
+
+                        </p>
+                    </div>
+                    <div class="iconed-little-card">
+                        <img src="{% static 'sub_pages_pictures/security.png' %}" alt="icon">
+                        <p>
+                            24 цагын харуул хамгаалалт мөн төслийн
+
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="sp-long-card sp-long-reverse">
+                <img src="{% static 'sub_pages_pictures/building.jpg' %}" alt="structure">
+                <div class="sp-long-card-description">
+                    <h3>Барилгын төлөвлөлт </h3>
+                    <p>New Horizons төсөл нь Улаанбаатар хотын бизнесийн төв болох Олимпийн гудамжинд
+                        таны бүхий л хэрэгцээг хангах ресторан банк кофе шоп зэргийг 1-5 давхартаа байршуулан
+                    </p>
+                </div>
+            </div>
+            <div class="sp-iconed-card iconed-card-reverse">
+                <div class="inner-iconed-card-left-side">
+                    <h3>Тав тух</h3>
+                    <p>Офисоо өөрийн хүссэнээрээ байгуулах боломжтой
+                        Dynamic шал мөн торох хүссэнээрээ байгуулах боломжтой
+                        Dynamic шал мөн торох
+                    </p>
+                </div>
+                <div class="inner-iconed-card-right-side">
+                    <div class="iconed-little-card">
+                        <img src="{% static 'sub_pages_pictures/security.png' %}" alt="icon">
+                        <p>
+                            24 цагын харуул хамгаалалт мөн төслийн
+
+                        </p>
+                    </div>
+                    <div class="iconed-little-card">
+                        <img src="{% static 'sub_pages_pictures/wifi.png' %}" alt="icon">
+                        <p>
+                            24 цагын харуул хамгаалалт мөн төслийн
+
+                        </p>
+                    </div>
+                    <div class="iconed-little-card">
+                        <img src="{% static 'sub_pages_pictures/security.png' %}" alt="icon">
+                        <p>
+                            24 цагын харуул хамгаалалт мөн төслийн
+
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="sub-pages-swiper-container">
+                <div class="sp-swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="product-card">
+                                <img src="{% static 'sub_pages_pictures/building.jpg' %}" alt="building">
+                                <div class="product-description">
+                                    <h3>Аюулгүй байдал</h3>
+                                    <p>24 цагын харуул хамгаалалт мөн төслийн SRC бүтээц зэрэг нь таны болон таны
+                                        бизнесийн аюулгүй байдал </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="product-card">
+                                <img src="{% static 'sub_pages_pictures/building.jpg' %}" alt="building">
+                                <div class="product-description">
+                                    <h3>Аюулгүй байдал</h3>
+                                    <p>24 цагын харуул хамгаалалт мөн төслийн SRC бүтээц зэрэг нь таны болон таны
+                                        бизнесийн аюулгүй байдал </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="product-card">
+                                <img src="{% static 'sub_pages_pictures/building.jpg' %}" alt="building">
+                                <div class="product-description">
+                                    <h3>Аюулгүй байдал</h3>
+                                    <p>24 цагын харуул хамгаалалт мөн төслийн SRC бүтээц зэрэг нь таны болон таны
+                                        бизнесийн аюулгүй байдал </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="product-card">
+                                <img src="{% static 'sub_pages_pictures/building.jpg' %}" alt="building">
+                                <div class="product-description">
+                                    <h3>Аюулгүй байдал</h3>
+                                    <p>24 цагын харуул хамгаалалт мөн төслийн SRC бүтээц зэрэг нь таны болон таны
+                                        бизнесийн аюулгүй байдал </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="product-card">
+                                <img src="{% static 'sub_pages_pictures/building.jpg' %}" alt="building">
+                                <div class="product-description">
+                                    <h3>Аюулгүй байдал</h3>
+                                    <p>24 цагын харуул хамгаалалт мөн төслийн SRC бүтээц зэрэг нь таны болон таны
+                                        бизнесийн аюулгүй байдал </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <div class="product-card">
+                                <img src="{% static 'sub_pages_pictures/building.jpg' %}" alt="building">
+                                <div class="product-description">
+                                    <h3>Аюулгүй байдал</h3>
+                                    <p>24 цагын харуул хамгаалалт мөн хамгаалалт төслийн SRC бүтээц зэрэг нь таны болон
+                                        таны бизнесийн аюулгүй байдал </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="swiper-component-container">
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+            <div class="iconed-container">
+                <div class="iconed-card">
+                    <img src="{% static 'sub_pages_pictures/wifi.png' %}" alt="">
+                    <div class="inconed-card-description">
+                        <h3>Тав тух</h3>
+                        <p>Офисоо өөрийн хүссэнээрээ байгуулах боломжтой Dynamic шал мөн торох хүссэнээрээ байгуулах
+                            боломжтой Dynamic шал мөн торох </p>
+                    </div>
+                </div>
+                <div class="iconed-card">
+                    <img src="{% static 'sub_pages_pictures/toolbox.png' %}" alt="">
+                    <div class="inconed-card-description">
+                        <h3>Тав тух</h3>
+                        <p>Офисоо өөрийн хүссэнээрээ байгуулах боломжтой Dynamic шал мөн торох хүссэнээрээ байгуулах
+                            боломжтой Dynamic шал мөн торох </p>
+                    </div>
+                </div>
+                <div class="iconed-card">
+                    <img src="{% static 'sub_pages_pictures/wifi.png' %}" alt="">
+                    <div class="inconed-card-description">
+                        <h3>Тав тух</h3>
+                        <p>Офисоо өөрийн хүссэнээрээ байгуулах боломжтой Dynamic шал мөн торох хүссэнээрээ байгуулах
+                            боломжтой Dynamic шал мөн торох </p>
+                    </div>
+                </div>
+                <div class="iconed-card">
+                    <img src="{% static 'sub_pages_pictures/security.png' %}" alt="">
+                    <div class="inconed-card-description">
+                        <h3>Тав тух</h3>
+                        <p>Офисоо өөрийн хүссэнээрээ байгуулах боломжтой Dynamic шал мөн торох хүссэнээрээ байгуулах
+                            боломжтой Dynamic шал мөн торох </p>
+                    </div>
+                </div>
+                <div class="iconed-card">
+                    <img src="{% static 'sub_pages_pictures/security.png' %}" alt="">
+                    <div class="inconed-card-description">
+                        <h3>Тав тух</h3>
+                        <p>Офисоо өөрийн хүссэнээрээ байгуулах боломжтой Dynamic шал мөн торох хүссэнээрээ байгуулах
+                            боломжтой Dynamic шал мөн торох </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="{% static 'sub_pages.js' %}"></script>
+</body>
+
+</html>

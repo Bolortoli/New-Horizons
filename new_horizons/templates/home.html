@@ -47,8 +47,8 @@
 
                 </nav>
             </div>
-            <div class="__mid">
-                <a href="{% url 'home' %}#desktop-footer">Бидэнтэй холбогдох</a>
+            <div class="__mid" onclick="showContactUsForm()">
+                <a href="#">Бидэнтэй холбогдох</a>
             </div>
             <div class="__right">
                 <div class="select-language"><a href="#">mn</a></div>
@@ -109,18 +109,18 @@
             <form action="">
                 <div class="contact-us-input-field">
                     <i class="fas fa-user-tie"></i>
-                    <input type="text" placeholder="Нэр">
+                    <input id="name-contact" type="text" placeholder="Нэр">
                 </div>
                 <div class="contact-us-input-field">
                     <i class="fas fa-paper-plane"></i>
-                    <input type="email" placeholder="Цахим хаяг">
+                    <input id="mail-contact" type="email" placeholder="Цахим хаяг">
                 </div>
                 <div class="contact-us-input-field">
                     <i class="fas fa-briefcase"></i>
-                    <input type="text" placeholder="Компани">
+                    <input id="company-contact" type="text" placeholder="Компани">
                 </div>
-                <textarea name="" id="" cols="30" rows="10" placeholder="Энд бичнэ үү.."></textarea>
-                <input type="submit" value="Илгээх">
+                <textarea name="" id="message-contact" cols="30" rows="10" placeholder="Энд бичнэ үү.."></textarea>
+                <input id="submit-contact" type="submit" value="Илгээх">
             </form>
         </div>
     </div>
@@ -239,21 +239,14 @@
 
     <section class="building-introduction-section" id="buildingIntro">
         <div class="__left">
-            <img src="{% static 'assets/horizon10.jpg' %}" alt="building photo1">
+            <img src="{{ intro.pic.url }}" alt="building photo1">
         </div>
         <div class="__right">
             <div class="intro-text">
-                <h1>УЛААНБААТАР ХОТЫН ШИЛДЭГ БАЙГУУЛАМЖ</h1>
-                <p>Улаанбаатар хотын зүрхэн төвд байрлах орчин үеийн шийдэл,
-                    чадварлаг менежмент, чанартай үйлчилгээ бүхий уг байгууламж
-                    нь таны бизнесийг амжилтанд хөтлөх цогц бүрдэл юм.
-                    NEW HORIZONS газар хөдлөлтийг тэсвэрлэх чадалтай хамгийн
-                    сүүлийн үеийн шилдэг технологи бүхий архитектурын ухаалаг
-                    шийдэл , ая тух хангах нэмэлт үйлчилгээ, ашигтай байрлал нь
-                    компаний тань байр суурийг тодорхойлж, ажиллагсдын тань урам
-                    зоригийг бадрааж, харилцагч, үйлчлүүлэгчдийг тань бишрүүлэх
-                    болно. "ХАН" ХХК нь ISO 9001,ISO 14001,ОНSAS 18001
-                    стандартуудыг хангасан Хөрөнгийн менежментийн үйлчилгээг үзүүлнэ.</p>
+                <h1>{{ intro.title }}</h1>
+                <p>
+                    {{ intro.text | safe }}
+                </p>
             </div>
         </div>
     </section>
@@ -527,10 +520,48 @@
         <div id="unvisibleList"></div>
         <div class="floors-container" id="floorContainer">
             <ul>
-                <li><span>f</span>15
+                {% for i in leaseholder_per_floor %}
+                {% if i.name1 is not none and i.name2 is not none and not i.b1 %}
+                <li><span>f</span>{{ i.floor }}
                     <div class="floor-icon-container">
                         <div class="inner-floor-icon-container">
-                            <p>хаан банк</p>
+                            <p>{{ i.name1 }}</p>
+                            <img src="{{ i.picture1.url }}" alt="haan bank">
+                        </div>
+                        <div class="inner-floor-icon-container">
+                            <p>{{ i.name2 }}</p>
+                            <img src="{{ i.picture2.url }}" alt="haan bank">
+                        </div>
+                    </div>
+                </li>
+                {% elif i.name1 is not none and i.name2 is none and not i.b1 %}
+                <li><span>f</span>{{ i.floor }}
+                    <div class="floor-icon-container">
+                        <div class="inner-floor-icon-container">
+                            <p>{{ i.name1 }}</p>
+                            <img src="{{ i.picture1.url }}" alt="haan bank">
+                        </div>
+                    </div>
+                </li>
+                {% elif i.name1 is none and i.name2 is not none and not i.b1 %}
+                <li><span>f</span>{{ i.floor }}
+                    <div class="floor-icon-container">
+                        <div class="inner-floor-icon-container">
+                            <p>{{ i.name2 }}</p>
+                            <img src="{{ i.picture2.url }}" alt="haan bank">
+                        </div>
+                    </div>
+                </li>
+                {% elif i.name1 is none and i.name2 is none and not i.b1 %}
+                <li><span>f</span>{{ i.floor }}</li>
+                {% elif i.b1 %}
+                <li><span>B</span>1</li>
+                {% endif %}
+                {% endfor %}
+                <!-- <li><span>f</span>15
+                    <div class="floor-icon-container">
+                        <div class="inner-floor-icon-container">
+                            <p>Түрээслээгэйүш хыбл</p>
                             <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
                         </div>
                         <div class="inner-floor-icon-container">
@@ -658,14 +689,16 @@
                             <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
                         </div>
                     </div>
-                </li>
+                </li> -->
             </ul>
         </div>
         <div class="plan-photos-container" id="planPhotosContainer" onclick="showFixedInfo()">
             <div class="plan-photo-hover">ҮЗЭХ</div>
-
-            <img src="{% static 'assets/plan_images/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
-            <img src="{% static 'assets/plan_images/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
+            {% for plan in floor_plan %}
+            <img src="{{ plan.pic.url }}" alt="floor one svg">
+            {% endfor %}
+            <!-- <img src="{% static 'assets/plan_images/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg"> -->
+            <!-- <img src="{% static 'assets/plan_images/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
             <img src="{% static 'assets/plan_images/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
             <img src="{% static 'assets/plan_images/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
             <img src="{% static 'assets/plan_images/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
@@ -679,7 +712,7 @@
             <img src="{% static 'assets/plan_images/plan-3-4-5-clear.png' %}" alt="floor one svg">
             <img src="{% static 'assets/plan_images/plan2-clear.png' %}" alt="floor one svg">
             <img src="{% static 'assets/plan_images/plan1-clear.png' %}" alt="floor one svg">
-            <img src="{% static 'assets/plan_images/b1.png' %}" alt="floor one svg">
+            <img src="{% static 'assets/plan_images/b1.png' %}" alt="floor one svg"> -->
 
         </div>
 
@@ -688,21 +721,19 @@
         </script>
         <div class="plan-photos-fullscreen-info" id="planPhotoInfo">
             <div class="close-button" onclick="closeFixedInfo()"></div>
+            {% for plan in floor_plan %}
             <div class="invisible-plan-photo-info">
                 <div class="inner-plan-photo-info">
                     <div class="photo-description">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tempore, nihil voluptatum dolorem harum dolore itaque
-                            est corrupti eligendi sint dicta molestiae officiis
-                            accusamus atque distinctio quos facere consequatur,
-                            esse placeat.
+                        <h3>{{ plan.title }}</h3>
+                        <p>{{ plan.description }}
                         </p>
                     </div>
-                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
+                    <img src="{{ plan.pic.url }}" alt="floor one svg">
                 </div>
             </div>
-            <div class="invisible-plan-photo-info">
+            {% endfor %}
+            <!-- <div class="invisible-plan-photo-info">
                 <div class="inner-plan-photo-info">
                     <div class="photo-description">
                         <h3>Lorem ipsum dolor sit</h3>
@@ -912,7 +943,7 @@
                     <img src="{% static 'assets/plan_images/b1.png' %}" alt="floor one svg">
 
                 </div>
-            </div>
+            </div> -->
 
 
         </div>
@@ -1128,7 +1159,12 @@
                         text: text
                     },
                     success: function (message) {
-                        alert(message);
+                        alert('success');
+                        closeContactUsForm();
+                        $('#name-contact').val('');
+                        $('#mail-contact').val('');
+                        $('#company-contact').val('');
+                        $('#message-contact').val('');
                     },
                     error: function (message) {
                         alert('error: ' + message);

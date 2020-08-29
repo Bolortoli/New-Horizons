@@ -12,7 +12,7 @@ def guide(request):
     context = {
         'pdf_url': pdf
     }
-    return render(request, 'guide.html', context)
+    return render(request, 'about_us.html', context)
 
 def get_organizations_with_slider(request):
     orgs = Organization.objects.all() 
@@ -45,6 +45,7 @@ def home(request, company=None):
     pdf_url = PDFbrochure.objects.all().first().pdf
     feature_boxes = FeatureCard.objects.all().first() if FeatureCard.objects.count() != 0 else FeatureCard.objects.all()
     home_sliders = HomeSlider.objects.all()
+    building_intro = BuildingIntro.objects.all().first() if BuildingIntro.objects.count() != 0 else None
 
     if company is None:
         # LEASEHOLDER SLIDER INITIALIZE -->
@@ -78,7 +79,7 @@ def home(request, company=None):
                 leaseholder_slider.append(dictionary.copy())
             #     leaseholder_slider.append(slider)
         # END -->
-    # Custom url company means companies slider on home page
+    # Custom url company -> means companies slider on home page
     else:
         leaseholder_slider = []
         sliders = OrganizationDetail.objects.filter(organization=Organization.objects.get(or_name=company))
@@ -103,6 +104,38 @@ def home(request, company=None):
                 # orgs.append()
             orgs.append(org_cats)
 
+    # LEASEHOLDERS on building
+    leaseholder_per_floor = []
+    if RentedFloor.objects.exists():
+        for i in range(15, 0, -1):
+            fa = RentedFloor.objects.filter(rented_object='id_floor'+str(i)+'_a')
+            fb = RentedFloor.objects.filter(rented_object='id_floor'+str(i)+'_b') 
+            # if floor_filter_a.exist():
+            #     leaseholder_per_floor.append(floor_rent(floor_filter_a.first().organization.pic, name=str(i)+'-a'))
+            
+            # if floor_filter_b.exist():
+            #     leaseholder_per_floor.append(floor_rent(floor_filter_b.first().organization.pic, name=str(i)+'-b'))
+            if fa.exists() and fb.exists():
+                leaseholder_per_floor.append(floor_rent(floor=i, picture1=fa.first().organization.pic, name1=fa.first().organization.or_name, picture2=fb.first().organization.pic, name2=fb.first().organization.or_name))
+            elif fa.exists() and not fb.exists():
+                leaseholder_per_floor.append(floor_rent(floor=i, picture1=fa.first().organization.pic, name1=fa.first().organization.or_name, picture2=None, name2=None))
+            elif not fa.exists() and fb.exists():
+                leaseholder_per_floor.append(floor_rent(floor=i, picture2=fb.first().organization.pic, name2=fb.first().organization.or_name, picture1=None, name1=None))
+            else:
+                leaseholder_per_floor.append(floor_rent(floor=i, picture1=None, name1=None, picture2=None, name2=None))
+        leaseholder_per_floor.append(floor_rent(floor='B1', picture1=None, name1=None, picture2=None, name2=None, b1=True))
+
+        # for rentedfloor in RentedFloor.objects.all():
+        #     # floor = rentedfloor.
+        #     leaseholder_per_floor.append(rentedfloor)
+
+    # Floors plan images
+    floor_plan_details = []
+    for plan in FloorPlan.objects.all().exclude(floor="B1").order_by('-id'):
+        print(plan.title)
+        floor_plan_details.append(plan)
+    floor_plan_details.append(FloorPlan.objects.get(floor='B1'))
+    
     context = {
         'reason_boxes': reason_boxes,
         'pdf_url': pdf_url,
@@ -110,6 +143,9 @@ def home(request, company=None):
         'home_sliders': home_sliders,
         'lesaeholder_slider': leaseholder_slider,
         'leaseholders': orgs,
+        'intro': building_intro,
+        'floor_plan': floor_plan_details,
+        'leaseholder_per_floor': leaseholder_per_floor,
     }
 
     return render(request, 'home.html', context)
@@ -119,10 +155,11 @@ def panaroma(request):
     return render(request, 'panaroma.html')
 
 def news_blog_archive(request):
-    return render(request, 'blog.single.html')
+    return render(request, 'blog.html')
 
 def blog(request):
-    return render(request, 'blog.html')
+    return render(request, 'blog_single.html')
+
 
 @csrf_exempt
 def get_organizations(request):
@@ -179,7 +216,6 @@ def register_rent(request):
 @csrf_exempt
 def get_building_rent_details(request):
     if request.method == 'POST':
-        # TODO remove hard CODE!!! use eval or exec function
         data = {}
         data['rented_floors'] = []
         print(data)
@@ -189,13 +225,6 @@ def get_building_rent_details(request):
                 'organization': obj.organization.or_name
             })
 
-
-        # json = {}
-        # for field in BuildingRents._meta.get_fields():
-        #     if field.name != "id":
-        #         data = {str(field.name), str(BuildingRents.objects.all().first().(field.name))}
-
-        # return JsonResponse({str(nameof(BuildingRents.objects.all().first().floor1_a)): "hell"})
         return JsonResponse(data)
 
 # @csrf_exempt
@@ -223,3 +252,12 @@ def get_building_rent_details(request):
 #             print('asd')
         
 #         return HttpResponse("yes")
+
+class floor_rent:
+    def __init__(self, picture1, name1, picture2, name2, floor, b1=False):
+        self.picture1 = picture1
+        self.name1 = name1
+        self.picture2 = picture2
+        self.name2 = name2
+        self.floor = floor
+        self.b1 = b1
