@@ -39,58 +39,56 @@
                 <div class="row flex-lg-row-reverse">                   
                     <main class="col-12 col-lg-9 left-sidebar md-margin-60px-bottom sm-margin-40px-bottom pr-0 md-no-padding-left">
                         <!-- start post item --> 
+                        {% for news in news_list %}
                         <div class="col-12 blog-post-content margin-60px-bottom sm-margin-30px-bottom text-center text-md-left">
-                            <div class="blog-image"><a href="#"><img src="http://placehold.it/1200x752" alt=""/></a></div>
+                            <div class="blog-image"><a href="#"><img src="{{news.pic.url}}" alt=""/></a></div>
                             <div class="blog-text border-all d-inline-block width-100">
                                 <div class="content padding-50px-all sm-padding-20px-all">
-                                    <div class="text-medium-gray text-extra-small margin-5px-bottom text-uppercase alt-font"><span>2020 ОНЫ 7 САРЫН 17-д нийтлэгдсэн</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span><a href="#" class="text-medium-gray ">Өгүүллэг</a></span></div>
+                                    <div class="text-medium-gray text-extra-small margin-5px-bottom text-uppercase alt-font"><span>{{news.published_date}}</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span><a href="{% url 'news' category=news.category %}" class="text-medium-gray ">{{news.category}}</a></span></div>
                                     <a href="#" class="text-extra-dark-gray text-uppercase alt-font text-large font-weight-600 margin-15px-bottom d-block">Мэдээний гарчиг кэкэ</a>
                                     <p class="m-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry industry’s standard dummy text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text.</p>
                                 </div>
-                                <div class="row m-0 author border-top border-color-extra-light-gray text-center">
-                                    <div class="col-12 col-md-4 d-flex flex-column justify-content-center name padding-15px-all">
-                                        <div>
-                                            <img src="http://placehold.it/149x149" alt="" class="rounded-circle width-30px">
-                                            <span class="text-medium-gray text-uppercase text-extra-small alt-font padding-10px-left">by <a href="#" class="text-medium-gray">EEGII DEEGII BEEGII</a></span>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-4 d-flex flex-column justify-content-center name border-lr padding-15px-all border-color-extra-light-gray sm-no-border">
-                                        <div>
-                                            <a href="#" class="text-extra-small alt-font text-medium-gray text-uppercase"><i class="far fa-heart margin-5px-right text-small"></i>5 хүнд таалагдсан</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-4 d-flex flex-column justify-content-center name padding-15px-all">
-                                        <div>
-                                            <a href="#" class="text-extra-small alt-font text-medium-gray text-uppercase"><i class="far fa-comment margin-5px-right text-small"></i>3 сэтгэгдэл</a>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </div>
+                        {% endfor %}
                         <!-- end post item -->  
                         <!-- start pagination -->
                         <div class="col-12 text-center margin-100px-top md-margin-50px-top wow fadeInUp">
+
                             <div class="pagination text-small text-uppercase text-extra-dark-gray">
                                 <ul class="mx-auto">
-                                    <li><a href="#"><i class="fas fa-long-arrow-alt-left margin-5px-right d-none d-md-inline-block"></i> Өмнөх</a></li>
-                                    <li class="active"><a href="#">1</a></li>
-                                    <li><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">Дараах <i class="fas fa-long-arrow-alt-right margin-5px-left d-none d-md-inline-block"></i></a></li>
+                                    {% if news_list.has_previous %}
+                                    <li><a href="?page={{ news_list.previous_page_number }}"><i class="fas fa-long-arrow-alt-left margin-5px-right d-none d-md-inline-block"></i> Өмнөх</a></li>
+                                    {% else %}
+                                    <li><a><i class="fas fa-long-arrow-alt-left margin-5px-right d-none d-md-inline-block"></i> Өмнөх</a></li>
+                                    {% endif %}
+                                    {% for n in news_list.paginator.page_range %}
+                                        {% if news_list.number == n %}
+                                        <li class="active"><a>{{n}}</a></li> 
+                                        {% elif n > news_list.number|add:'-3' and n < news_list.number|add:'3' %} 
+                                            <li><a href="?page={{n}}">{{n}}</a></li>                    
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% if news_list.has_next %}
+                                    <li><a href="?page={{news_list.next_page_number}}">Дараах <i class="fas fa-long-arrow-alt-right margin-5px-left d-none d-md-inline-block"></i></a></li>
+                                    {% else %}
+                                    <li><a>Дараах <i class="fas fa-long-arrow-alt-right margin-5px-left d-none d-md-inline-block"></i></a></li>
+                                    {% endif %}
                                 </ul>
                             </div>
+                            
                         </div>
                         <!-- end pagination -->
                     </main>
                     <aside class="col-12 col-lg-3">
-                        <div class="d-inline-block width-100 margin-45px-bottom sm-margin-25px-bottom">
+                        <!-- <div class="d-inline-block width-100 margin-45px-bottom sm-margin-25px-bottom">
                             <form>
                                 <div class="position-relative">
                                     <input type="text" class="bg-transparent text-small m-0 border-color-extra-light-gray medium-input float-left" placeholder="Хайх үгээ бичнэ үү...">
                                     <button type="submit" class="bg-transparent btn position-absolute right-0 top-1"><i class="fas fa-search no-margin-left"></i></button>
                                 </div>   
                             </form>
-                        </div>
+                        </div> -->
 
                         <div class="margin-50px-bottom">
                             <div class="text-extra-dark-gray margin-20px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>Биднийг дагаарай</span></div>
@@ -107,38 +105,23 @@
                         <div class="margin-45px-bottom sm-margin-25px-bottom">
                             <div class="text-extra-dark-gray margin-20px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>Мэдээний төрөл</span></div>
                             <ul class="list-style-6 margin-50px-bottom text-small">
-                                <li><a href="#">Улс төр</a><span>12</span></li>
-                                <li><a href="#">Сонин хачин</a><span>05</span></li>
+                                {% for category in categories %}
+                                <li><a href="{% url 'news' category=category.category %}">{{ category.category }}</a><span>{{ category.news_count }}</span></li>
+                                {% endfor %}
                             </ul>   
                         </div>
                        
                         <div class="margin-45px-bottom sm-margin-25px-bottom">
                             <div class="text-extra-dark-gray margin-25px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>Онцлох мэдээ</span></div>
                             <ul class="latest-post position-relative">
+                                {% for news in featured_news %}
                                 <li class="media">
                                     <figure>
-                                        <a href="#"><img src="http://placehold.it/480x358" alt=""></a>
+                                        <a href="{% url 'blog' slug=news.slug %}"><img src="{{ news.pic.url }}" alt=""></a>
                                     </figure>
-                                    <div class="media-body text-small"><a href="#" class="text-extra-dark-gray"><span class="d-block margin-5px-bottom">eheheh</span></a> <span class="d-block text-medium-gray text-small">2-р сарын 26, 2016</span></div>
+                                    <div class="media-body text-small"><a href="{% url 'blog' slug=news.slug %}" class="text-extra-dark-gray"><span class="d-block margin-5px-bottom">{{ news.title }}</span></a> <span class="d-block text-medium-gray text-small">{{ news.published_date}}</span></div>
                                 </li>
-                                <li class="media">
-                                    <figure>
-                                        <a href="#"><img src="http://placehold.it/480x358" alt=""></a>
-                                    </figure>
-                                    <div class="media-body text-small"><a href="#" class="text-extra-dark-gray"><span class="d-block margin-5px-bottom">eheheh</span></a> <span class="d-block text-medium-gray text-small">2-р сарын 26, 2016</span></div>
-                                </li>
-                                <li class="media">
-                                    <figure>
-                                        <a href="#"><img src="http://placehold.it/480x358" alt=""></a>
-                                    </figure>
-                                    <div class="media-body text-small"><a href="#" class="text-extra-dark-gray"><span class="d-block margin-5px-bottom">eheheh</span></a> <span class="d-block text-medium-gray text-small">2-р сарын 26, 2016</span></div>
-                                </li>
-                                <li class="media">
-                                    <figure>
-                                        <a href="#"><img src="http://placehold.it/480x358" alt=""></a>
-                                    </figure>
-                                    <div class="media-body text-small"><a href="#" class="text-extra-dark-gray"><span class="d-block margin-5px-bottom">eheheh</span></a> <span class="d-block text-medium-gray text-small">2-р сарын 26, 2016</span></div>
-                                </li>
+                                {% endfor %}
                             </ul>
                         </div>
 <!--                        

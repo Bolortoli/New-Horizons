@@ -25,6 +25,7 @@ urlpatterns = [
     path('', include('horizonapp.urls')),
     path('secret/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     # path('grappelli/', include('grappelli.urls')),
+    path("ckeditor5/", include('django_ckeditor_5.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

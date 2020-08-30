@@ -8,14 +8,17 @@ admin.site.unregister(Group)
 admin.site.unregister(User)
 admin.site.site_header = 'New Hozirons Dashboard'
 
-admin.site.register(News)
+# admin.site.register(News)
 # admin.site.register(BuildingRents)
 admin.site.register(NewsCategory)
 admin.site.register(OrganizationCategory)
 admin.site.register(HomeSlider)
 admin.site.register(RentedFloor)
 admin.site.register(ContactUs)
-
+@admin.register(News)
+class NewsAdmin(admin.ModelAdmin):
+    list_display = ['title', 'category', 'featured']
+    list_editable = ['featured']
 
 @admin.register(BuildingIntro)
 class BuildingIntroAdmin(admin.ModelAdmin):
@@ -124,6 +127,6 @@ class FeatureCardAdmin(admin.ModelAdmin):
 @admin.register(FloorPlan)
 class FloorPlanAdmin(admin.ModelAdmin):
     
-    list_display = [f.name for f in FloorPlan._meta.get_fields() if f.name != "id"]
-    list_editable = [f.name for f in FloorPlan._meta.get_fields() if f.name != "id" and f.name != "floor"]
-    list_display_links = None
+    list_display = ['floor', 'pic']
+    list_editable = ['pic']
+    # list_display_links = None

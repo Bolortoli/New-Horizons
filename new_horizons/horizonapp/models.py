@@ -6,6 +6,7 @@ from ckeditor.fields import RichTextField
 import datetime
 from urllib.parse import urljoin 
 from django.conf import settings
+from django_ckeditor_5.fields import CKEditor5Field
 
 class NewsCategory(models.Model):
 
@@ -19,10 +20,11 @@ class News(models.Model):
     category=models.ForeignKey(NewsCategory, verbose_name="Мэдээний категори", on_delete=models.CASCADE)
     title=models.CharField(max_length=255, verbose_name="Мэдээний гарчиг", default='')
     pic=models.ImageField(verbose_name="Мэдээний зураг", upload_to="news/picture", default="", blank=True)
-    content=RichTextField()
+    content=CKEditor5Field('Text', config_name='extends')
     published_date=models.DateField(verbose_name="Огноо", auto_now=True, editable=False)
     slug=models.CharField(max_length=255, verbose_name="Мэдээний зам", default='', editable=False)
     featured=models.BooleanField(verbose_name="Онцлох мэдээ", default=False)
+    viewed=models.IntegerField(editable=False, default=0)
 
     def __str__(self):
         return self.title
@@ -169,7 +171,7 @@ class BuildingIntro(models.Model):
 class FloorPlan(models.Model):
     floor = models.CharField(max_length=255, verbose_name="Давхар", null=True, blank=True, default="Оруулаагүй")
     title = models.CharField(max_length=255, verbose_name="Гарчиг", null=True, blank=True, default="Оруулаагүй")
-    description = models.CharField(max_length=255, verbose_name="Текст", null=True, blank=True, default="Оруулаагүй")
+    description = CKEditor5Field('Text', config_name='extends')
     pic = models.ImageField(upload_to="Home/Plan-Pictures", verbose_name="План зураг", default='settings/index.jpeg', blank=True)
 
 

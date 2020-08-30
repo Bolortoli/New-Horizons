@@ -187,24 +187,21 @@
         <div class="inner-mini-blog-section">
             <h3>Сүүлийн үеийн мэдээ</h3>
             <div class="mini-blog-cards-container">
-                <a href="#" class="mini-blog-card">
-                    <img src="{% static 'assets/horizon10.jpg' %}" alt="bulding photo">
-                    <h4>New Horizons ашиглалтанд орлоо</h4>
+                {% for news in news_list %}
+                <a href="{% url 'blog' slug=news.slug %}" class="mini-blog-card">
+                    <img src="{{ news.pic.url }}" alt="bulding photo">
+                    <h4>{{ news.title}}</h4>
                     <div class="blog-status">
-                        <p><i class="fas fa-clock"></i>2020/7/20</p>
-                        <p><i class="far fa-user"></i>Нийтэлсэн: 290</p>
-                        <p><i class="far fa-comment"></i>2</p>
+                        <p><i class="fas fa-clock"></i>{{ news.published_date }}</p>
+                        <p><i class="far fa-user"></i>Нийтэлсэн: {{ news.publisher }}</p>
+                        <p><i class="far fa-comment"></i>{{ news.viewed }}</p>
                     </div>
                     <hr>
-                    <p class="little-article">Улаанбаатар хотын зүрхэн төвд байрлах орчин үеийн шийдэл,
-                        чадварлаг менежмент, чанартай үйлчилгээ бүхий уг байгууламж нь таны бизнесийг
-                        амжилтанд хөтлөх цогц бүрдэл юм. NEW HORIZONS газар хөдлөлтийг тэсвэрлэх чадалтай
-                        хамгийн сүүлийн үеийн шилдэг технологи бүхий архитектурын ухаалаг шийдэл , ая тух
-                        хангах нэмэлт үйлчилгээ, ашигтай байрлал нь компаний тань байр суурийг тодорхойлж,
-                        ажиллагсдын тань урам зоригийг бадрааж, харилцагч, үйлчлүүлэгчдийг тань бишрүүлэх болно.
+                    <p class="little-article">{{ news.title}}
                     </p>
                 </a>
-                <a href="#" class="mini-blog-card">
+                {% endfor %}
+                <!-- <a href="#" class="mini-blog-card">
                     <img src="{% static 'assets/IMG_7249.JPG' %}" alt="bulding photo">
                     <h4>Улаанбаатар хотын шилдэг байгууламж</h4>
                     <div class="blog-status">
@@ -223,15 +220,15 @@
                     </h4>
                     <div class="blog-status">
                         <p><i class="fas fa-clock"></i>2020/7/20</p>
-                        <p><i class="far fa-user"></i>Нийтэлсэн: 290</p>
-                        <p><i class="far fa-comment"></i>25</p>
+                        <p><i class="far fa-user"></i>Нийтэлсэн: 290</p> -->
+                        <!-- <p><i class="far fa-comment"></i>25</p>
                     </div>
                     <hr>
                     <p class="little-article">Агааржуулалт, агаар сэлгэлт, хөргөлтийн гурвалсан
                         системийг ашиглаж офисийн агвар дахь утаа, тоос, бактерийг устган ямагт
                         эрүүл цэвэр орчинг бүрдүүлнэ.
                     </p>
-                </a>
+                </a> -->
 
             </div>
         </div>
@@ -261,96 +258,10 @@
                     <div class="sub-service-list-container">
                         {% for i in leaseholder.leaseholder %}
                         <a class='leaseholder-name' href="{% url 'home' company=i %}#service">{{ i }}</a>
-                        <!-- <a href="#">Lorem ipsum dolwaeoifjjoro weoifoj</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a> -->
                         {% endfor %}
                     </div>
                 </li>
                 {% endfor %}
-
-                <!-- <script>
-                    $(document).ready(function () {
-                        $('.leaseholder-name').click(function() {
-                            var name = $(this).text();
-                            alert(name);
-                            $('.swiper-wrapper').empty();
-                            $('.swiper-pagination').empty();
-                            $('.swiper-button-next').empty();
-                            $('.swiper-button-prev').empty();
-                            $('.swiper-wrapper').append($("<div></div>")
-                                .attr('class', 'slide-left')
-                            ).append($("<h3>dsjfkasdfkljahs</h3>")
-                                    .attr('class', 'slide-left')  
-                                );
-                            // $.ajax({
-
-                            // });
-                        });
-                    });
-                </script> -->
-                <!-- Leaseholders end -->
-                <!-- <li class="service-title">
-                    <div class="inner-service-title">Ресторан</div>
-                    <div class="sub-service-list-container">
-                        <a href="#">Хаан банк</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                    </div>
-                </li>
-                <li class="service-title">
-                    <div class="inner-service-title">Даатгал</div>
-                    <div class="sub-service-list-container">
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                    </div>
-                </li>
-
-                <li class="service-title">
-                    <div class="inner-service-title">Фитнесс клуб</div>
-                    <div class="sub-service-list-container">
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                    </div>
-                </li>
-                <li class="service-title">
-                    <div class="inner-service-title">Худалдааны газар</div>
-                    <div class="sub-service-list-container">
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                    </div>
-                </li>
-                <li class="service-title">
-                    <div class="inner-service-title">Албан байгууллага</div>
-                    <div class="sub-service-list-container">
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                        <a href="#">Lorem ipsum dolor</a>
-                    </div>
-                </li> -->
             </ul>
         </div>
         <div class="__right">
@@ -371,138 +282,6 @@
                     {% endfor %}
                    
                     <!-- Slider object end -->
-                    <!-- DUMMY SLIDER OBJECT -->
-                    <!-- <div class="swiper-slide">
-                        <div class="slide-left">
-                            <h3>diverse solution</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati.
-                            </p>
-                        </div>
-                        <div class="slide-right">
-                            <img class="get-photos" src="{% static 'assets/IMG_7256.JPG' %}" alt="slide photo">
-
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide-left">
-                            <h3>diverse solution</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati.
-                            </p>
-                        </div>
-                        <div class="slide-right">
-                            <img class="get-photos" src="{% static 'assets/IMG_7256.JPG' %}" alt="slide photo">
-
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide-left">
-                            <h3>diverse solution</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati.
-                            </p>
-                        </div>
-                        <div class="slide-right">
-                            <img class="get-photos" src="{% static 'assets/IMG_7256.JPG' %}" alt="slide photo">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide-left">
-                            <h3>diverse solution</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati.
-                            </p>
-                        </div>
-                        <div class="slide-right">
-                            <img class="get-photos" src="{% static 'assets/IMG_72491.jpg' %}" alt="slide photo">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide-left">
-                            <h3>diverse solution</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati.
-                            </p>
-                        </div>
-                        <div class="slide-right">
-                            <img class="get-photos" src="{% static 'assets/IMG_72491.jpg' %}" alt="slide photo">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide-left">
-                            <h3>diverse solution</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati.
-                            </p>
-                        </div>
-                        <div class="slide-right">
-                            <img class="get-photos" src="{% static 'assets/IMG_72491.jpg' %}" alt="slide photo">
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slide-left">
-                            <h3>diverse solution</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Quo dolores similique dolore in sit placeat incidunt
-                                laboriosam nostrum ipsum obcaecati.
-                            </p>
-                        </div>
-                        <div class="slide-right">
-                            <img class="get-photos" src="{% static 'assets/IMG_72491.jpg' %}" alt="slide photo">
-                        </div>
-                    </div> -->
-                    <!-- DUMMY SLIDER OBJECT END -->
-
-
                 </div>
                 <div class="slider-component-container">
                     <!-- Add Arrows -->
@@ -558,138 +337,6 @@
                 <li><span>B</span>1</li>
                 {% endif %}
                 {% endfor %}
-                <!-- <li><span>f</span>15
-                    <div class="floor-icon-container">
-                        <div class="inner-floor-icon-container">
-                            <p>Түрээслээгэйүш хыбл</p>
-                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
-                        </div>
-                        <div class="inner-floor-icon-container">
-                            <p>haanbank</p>
-                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
-                        </div>
-                    </div>
-                </li>
-                <li><span>f</span>14
-                    <div class="floor-icon-container">
-                        <div class="inner-floor-icon-container">
-                            <p>хаан банк</p>
-                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
-                        </div>
-                    </div>
-                </li>
-                <li><span>f</span>13
-                    <div class="floor-icon-container">
-                        <div class="inner-floor-icon-container">
-                            <p>хаан банк</p>
-                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
-                        </div>
-                    </div>
-                </li>
-                <li><span>f</span>12
-                    <div class="floor-icon-container">
-                        <div class="inner-floor-icon-container">
-                            <p>хаан банк</p>
-                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
-                        </div>
-                    </div>
-                </li>
-                <li><span>f</span>11
-                    <div class="floor-icon-container">
-                        <div class="inner-floor-icon-container">
-                            <p>хаан банк</p>
-                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
-                        </div>
-                    </div>
-                </li>
-                <li><span>f</span>10
-                    <div class="floor-icon-container">
-                        <div class="inner-floor-icon-container">
-                            <p>хаан банк</p>
-                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
-                        </div>
-                    </div>
-                </li>
-                <li><span>f</span>9
-                    <div class="floor-icon-container">
-                        <div class="inner-floor-icon-container">
-                            <p>хаан банк</p>
-                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
-                        </div>
-                    </div>
-                </li>
-                <li><span>f</span>8
-                    <div class="floor-icon-container">
-                        <div class="inner-floor-icon-container">
-                            <p>хаан банк</p>
-                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
-                        </div>
-                    </div>
-                </li>
-                <li><span>f</span>7
-                    <div class="floor-icon-container">
-                        <div class="inner-floor-icon-container">
-                            <p>ХААН банк</p>
-                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
-                        </div>
-                    </div>
-                </li>
-                <li><span>f</span>6
-                    <div class="floor-icon-container">
-                        <div class="inner-floor-icon-container">
-                            <p>хаан банк</p>
-                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
-                        </div>
-                    </div>
-                </li>
-                <li><span>f</span>5
-                    <div class="floor-icon-container">
-                        <div class="inner-floor-icon-container">
-                            <p>хаан банк</p>
-                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
-                        </div>
-                    </div>
-                </li>
-                <li><span>f</span>4
-                    <div class="floor-icon-container">
-                        <div class="inner-floor-icon-container">
-                            <p>хаан банк</p>
-                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
-                        </div>
-                    </div>
-                </li>
-                <li><span>f</span>3
-                    <div class="floor-icon-container">
-                        <div class="inner-floor-icon-container">
-                            <p>хаан банк</p>
-                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
-                        </div>
-                    </div>
-                </li>
-                <li><span>f</span>2
-                    <div class="floor-icon-container">
-                        <div class="inner-floor-icon-container">
-                            <p>хаан банк</p>
-                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
-                        </div>
-                    </div>
-                </li>
-                <li><span>f</span>1
-                    <div class="floor-icon-container">
-                        <div class="inner-floor-icon-container">
-                            <p>хаан банк</p>
-                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
-                        </div>
-                    </div>
-                </li>
-                <li>b1
-                    <div class="floor-icon-container">
-                        <div class="inner-floor-icon-container">
-                            <p>хаан банк</p>
-                            <img src="{% static 'assets/haanbank.png' %}" alt="haan bank">
-                        </div>
-                    </div>
-                </li> -->
             </ul>
         </div>
         <div class="plan-photos-container" id="planPhotosContainer" onclick="showFixedInfo()">
@@ -697,28 +344,7 @@
             {% for plan in floor_plan %}
             <img src="{{ plan.pic.url }}" alt="floor one svg">
             {% endfor %}
-            <!-- <img src="{% static 'assets/plan_images/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg"> -->
-            <!-- <img src="{% static 'assets/plan_images/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
-            <img src="{% static 'assets/plan_images/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
-            <img src="{% static 'assets/plan_images/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
-            <img src="{% static 'assets/plan_images/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
-            <img src="{% static 'assets/plan_images/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
-            <img src="{% static 'assets/plan_images/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
-            <img src="{% static 'assets/plan_images/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
-            <img src="{% static 'assets/plan_images/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
-            <img src="{% static 'assets/plan_images/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
-            <img src="{% static 'assets/plan_images/plan-3-4-5-clear.png' %}" alt="floor one svg">
-            <img src="{% static 'assets/plan_images/plan-3-4-5-clear.png' %}" alt="floor one svg">
-            <img src="{% static 'assets/plan_images/plan-3-4-5-clear.png' %}" alt="floor one svg">
-            <img src="{% static 'assets/plan_images/plan2-clear.png' %}" alt="floor one svg">
-            <img src="{% static 'assets/plan_images/plan1-clear.png' %}" alt="floor one svg">
-            <img src="{% static 'assets/plan_images/b1.png' %}" alt="floor one svg"> -->
-
         </div>
-
-        <script>
-
-        </script>
         <div class="plan-photos-fullscreen-info" id="planPhotoInfo">
             <div class="close-button" onclick="closeFixedInfo()"></div>
             {% for plan in floor_plan %}

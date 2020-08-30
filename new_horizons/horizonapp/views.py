@@ -5,7 +5,10 @@ from .models import *
 from django.http import HttpResponse, JsonResponse, HttpResponseBadRequest
 from django.core.mail import EmailMessage
 import json, random
+from django.core.paginator import Paginator 
 
+FEATURE_NEWS_ON_BLOGS = 4
+FEATURE_NEWS_ON_HOME = 3
 
 def guide(request):
     pdf = PDFbrochure.objects.all().first().pdf
@@ -136,6 +139,12 @@ def home(request, company=None):
         floor_plan_details.append(plan)
     floor_plan_details.append(FloorPlan.objects.get(floor='B1'))
     
+    # Featured news
+    news_list = []
+    if News.objects.exists():
+        for news in News.objects.filter(featured=True)[:FEATURE_NEWS_ON_HOME]:
+            news_list.append(news)
+
     context = {
         'reason_boxes': reason_boxes,
         'pdf_url': pdf_url,
@@ -146,6 +155,7 @@ def home(request, company=None):
         'intro': building_intro,
         'floor_plan': floor_plan_details,
         'leaseholder_per_floor': leaseholder_per_floor,
+        'news_list': news_list,
     }
 
     return render(request, 'home.html', context)
@@ -155,10 +165,71 @@ def panaroma(request):
     return render(request, 'panaroma.html')
 
 def news_blog_archive(request):
-    return render(request, 'blog.html')
 
-def blog(request):
-    return render(request, 'blog_single.html')
+    obj_list = News.objects.all()
+
+    paginator = Paginator(obj_list, 6)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    featured_news = News.objects.filter(featured=True)[:FEATURE_NEWS_ON_BLOGS]
+
+    categories = [News_Category(cat, News.objects.filter(category=cat).count()) for cat in NewsCategory.objects.all() if News.objects.filter(category=cat).count() != 0]
+
+    context = {
+        'news_list': page_obj,
+        'featured_news': featured_news,
+        'categories': categories,
+    }
+    return render(request, 'blog.html', context)
+
+def news_blog_archive_category(request, category):
+
+    obj_list = News.objects.filter(category=NewsCategory.objects.get(name=category))
+
+    paginator = Paginator(obj_list, 6)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
+    featured_news = News.objects.filter(featured=True)[:FEATURE_NEWS_ON_BLOGS]
+
+    categories = [News_Category(cat, News.objects.filter(category=cat).count()) for cat in NewsCategory.objects.all() if News.objects.filter(category=cat).count() != 0]
+
+    context = {
+        'news_list': page_obj,
+        'featured_news': featured_news,
+        'categories': categories
+    }
+    return render(request, 'blog.html', context)
+
+def blog(request, slug=None):
+    if slug is not None:
+        news_filter = News.objects.filter(slug=slug)
+        news = News.objects.get(slug=slug)
+
+        # Increment viewed count
+        views_count = news.viewed + 1
+        news_filter.update(viewed=views_count)
+
+        categories = [News_Category(cat, News.objects.filter(category=cat).count()) for cat in NewsCategory.objects.all() if News.objects.filter(category=cat).count() != 0]
+        category_blog = news.category
+
+        featured_news = News.objects.filter(featured=True)[:FEATURE_NEWS_ON_BLOGS]
+
+        pdf_url = PDFbrochure.objects.all().first().pdf
+
+        # Reward.objects.all().order_by('-year', '-month').exclude(slug=specified_slug)[:count] if Reward.objects.count() >= count else Reward.objects.all()  
+        news_related = News.objects.order_by('?').exclude(slug=slug)[:FEATURE_NEWS_ON_HOME]
+
+    context = {
+        'news': news,
+        'categories': categories,
+        'category_blog': category_blog,
+        'pdf_url': pdf_url,
+        'featured_news': featured_news,
+        'news_related': news_related,
+    }
+    return render(request, 'blog_single.html', context)
 
 
 @csrf_exempt
@@ -261,3 +332,8 @@ class floor_rent:
         self.name2 = name2
         self.floor = floor
         self.b1 = b1
+
+class News_Category:
+    def __init__(self, category, news_count):
+        self.category = category
+        self.news_count = news_count
