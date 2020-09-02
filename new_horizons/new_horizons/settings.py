@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'horizonapp',
+    'admin_reorder',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'admin_reorder.middleware.ModelAdminReorder',
 ]
 
 ROOT_URLCONF = 'new_horizons.urls'
@@ -64,11 +66,11 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'horizonapp.context_processors.global_settings',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'horizonapp.context_processors.global_settings',
             ],
         },
     },
@@ -147,8 +149,11 @@ EMAIL_USE_TLS = configs.EMAIL_USE_TLS
 # CSRF_COOKIE_SECURE = True
 # SECURE_REFERRER_POLICY = 'origin'
 
+# Django-jet configs
+# Doc --> https://jet.readthedocs.io/en/latest/config_file.html
+
 JET_DEFAULT_THEME = 'light-gray'
-# JET_SIDE_MENU_COMPACT = True
+JET_SIDE_MENU_COMPACT = True
 
 
 JET_THEMES = [
@@ -183,6 +188,8 @@ JET_THEMES = [
         'title': 'Light Gray'
     }
 ]
+
+# CkEditor 5 configs
 
 customColorPalette = [
         {
@@ -265,3 +272,57 @@ CKEDITOR_5_CONFIGS = {
         }
     }
 }
+
+# Admin reorder
+
+ADMIN_REORDER = [
+    {
+        'app': 'horizonapp', 'label': 'Мэдээ',
+            'models': (
+                'horizonapp.News',
+                'horizonapp.NewsCategory'
+            )
+    },
+    {
+        'app': 'horizonapp', 'label': 'Түрээслэгчийн мэдээллүүд',
+            'models': (
+                'horizonapp.BuildingRents',
+            )
+    },
+    {
+        'app': 'horizonapp', 'label': 'Тохиргоо',
+            'models': (
+                'horizonapp.PDFbrochure',
+                'horizonapp.Settings',
+                'horizonapp.ContactUs',
+            )
+    },
+    {
+        'app': 'horizonapp', 'label': 'Түрээслэгч',
+            'models': (
+                'horizonapp.Organization',
+                'horizonapp.OrganizationCategory',
+            )
+    },
+    {
+        'app': 'horizonapp', 'label': 'Нүүр хуудас',
+            'models': (
+                'horizonapp.HomeSlider',
+                'horizonapp.BuildingIntro',
+                'horizonapp.FeatureCard',
+                'horizonapp.FloorPlan',
+                'horizonapp.ReasonBoxes',
+            )
+    },
+        {
+        'app': 'horizonapp', 'label': 'Дэд хуудас',
+            'models': (
+                'horizonapp.SubPage',
+                'horizonapp.SubPages_NoTitleIcon_Rightpic',
+                'horizonapp.SubPages_NoTitleIcon_Leftpic',
+                'horizonapp.SubPages_TitleIcon',
+                'horizonapp.SubPages_Slider',
+            )
+    },
+
+]

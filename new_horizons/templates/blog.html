@@ -2,35 +2,113 @@
 <!doctype html>
 <html class="no-js" lang="en">
     <head>
-        <!-- title -->
-        <title>s</title>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+    <!-- title -->
+    <title>s</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
 
-        <!-- favicon -->
-        <link rel="shortcut icon" href="images/favicon.png">
-        <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-      
-        <!-- bootstrap -->
-        <link rel="stylesheet" href="{% static 'blog_css/bootstrap.min.css' %}" />
-        <!-- et line icon --> 
-     
-        <!-- font-awesome icon -->
-        <link rel="stylesheet" href="{% static 'blog_css/font-awesome.min.css' %}" />
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
     
-     
-        <!-- style -->
-        <link rel="stylesheet" href="{% static 'blog_css/style.css' %}" />
-        <!-- responsive css -->
-        <link rel="stylesheet" href="{% static 'blog_css/responsive.css' %}" />
-   
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="{% static 'blog_css/bootstrap.min.css' %}" />
+    <!-- et line icon --> 
+    
+    <!-- font-awesome icon -->
+    <link rel="stylesheet" href="{% static 'blog_css/font-awesome.min.css' %}" />
+
+
+    <!-- style -->
+    <link rel="stylesheet" href="{% static 'blog_css/style.css' %}" />
+    <!-- responsive css -->
+    <link rel="stylesheet" href="{% static 'blog_css/responsive.css' %}" />
+    <link rel="stylesheet" href="{% static 'swiperjs.css' %}">
+    <!------------------------SWIPER JS-------------------------->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <script src="{% static 'js_libraries/fontawesome.js' %}" crossorigin="anonymous"></script>
+    <script src="{% static 'js_libraries/jquery.js' %}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js_libraries/scrollmagic.js' %}"></script>
+    <script src="{% static 'js_libraries/scrollmagicIndicator.js' %}"></script>
+    <!------------------------GSAP onscroll END-------------------------->
+    <!------------------------SWIPER JS-------------------------->
+    <script src="{% static 'js_libraries/swiper.js' %}"></script>
+    <script src="{% static 'home.js' %}"></script>
+        
     </head>
-    <body>
+    <body class="home-body" id="homeBody">
         <!-- start header -->
-      
+        <header class="home-desktop-header" id="desktopHeader">
+            <div class="header-inner">
+                <div class="__left">
+                    <div class="desktop-logo-container">
+                        <img src="{{ global_settings.logo.url }}" alt="logo">
+                    </div>
+                    <nav class="desktop-nav">
+    
+                        <li><a href="{% url 'home' %}#home">нүүр</a></li>
+    
+                        <li><a href="{% url 'home' %}#miniBlog">Сүүлийн үеийн мэдээ</a></li>
+    
+                        <li><a href="{% url 'home' %}#buildingIntro">танилцуулга</a></li>
+    
+                        <li><a href="{% url 'home' %}#service">үйлчилгээ</a></li>
+    
+                        <li><a href="{% url 'home' %}#floorInfo">давхарийн мэдээлэл</a></li>
+    
+                        <li><a href="{% url 'home' %}#sevenReason">Давуу тал</a></li>
+    
+                        <li><a href="{% url 'home' %}#panaromaSection">360 зураг</a></li>
+    
+                        <li><a href="{% url 'home' %}#nearbyPlaces">Ойр хавийн барилгууд</a></li>
+    
+                    </nav>
+                </div>
+                <div class="__mid" onclick="showContactUsForm()">
+                    <a href="#">Бидэнтэй холбогдох</a>
+                </div>
+                <div class="__right">
+                    <div class="select-language"><a href="#">mn</a></div>
+                    <div class="select-language"><a href="#">en</a></div>
+                </div>
+            </div>
+        </header>
+        <header class="mobile-header">
+            <div class="side-nav">
+                <div onclick="showMobileNav()" class="menu-container">
+                    <i class="fas fa-bars menu-icon" id="mobileBarsIcon"></i>
+                </div>
+                <nav id="mobileNav" onclick="showMobileNav()">
+                    <img src="{% static 'assets/nh_logo.png' %}" alt="logo">
+    
+                    <div class="contactUsAnchor"><a href="{% url 'home' %}#contactUsFooter">Бидэнтэй холбогдох</a></div>
+    
+                    <li><a href="./home.html#home">нүүр</a></li>
+    
+                    <li><a href="{% url 'home' %}#miniBlog">Сүүлийн үеийн мэдээ</a></li>
+    
+                    <li><a href="./home.html#buildingIntro">танилцуулга</a></li>
+    
+                    <li><a href="./home.html#service">үйлчилгээ</a></li>
+    
+                    <li><a href="./home.html#floorInfo">давхарийн мэдээлэл</a></li>
+    
+                    <li><a href="./home.html#sevenReason">7 шалтгаан</a></li>
+    
+                    <li><a href="./home.html#panaromaSection">360 зураг</a></li>
+    
+                    <li><a href="./home.html#nearbyPlaces">Ойр хавийн барилгууд</a></li>
+                    <div class="__right">
+                        <a href="#">mn</a>
+                        <a href="#">en</a>
+                    </div>
+                </nav>
+            </div>
+        </header>
         <!-- end header -->
     
         <!-- start post content section --> 
@@ -45,8 +123,8 @@
                             <div class="blog-text border-all d-inline-block width-100">
                                 <div class="content padding-50px-all sm-padding-20px-all">
                                     <div class="text-medium-gray text-extra-small margin-5px-bottom text-uppercase alt-font"><span>{{news.published_date}}</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span><a href="{% url 'news' category=news.category %}" class="text-medium-gray ">{{news.category}}</a></span></div>
-                                    <a href="#" class="text-extra-dark-gray text-uppercase alt-font text-large font-weight-600 margin-15px-bottom d-block">Мэдээний гарчиг кэкэ</a>
-                                    <p class="m-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry industry’s standard dummy text Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text.</p>
+                                    <a href="{% url 'blog' slug=news.slug %}" class="text-extra-dark-gray text-uppercase alt-font text-large font-weight-600 margin-15px-bottom d-block">{{ news.title }}</a>
+                                    <p class="m-0">Цааш унших...</p>
                                 </div>
                             </div>
                         </div>
@@ -94,11 +172,11 @@
                             <div class="text-extra-dark-gray margin-20px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>Биднийг дагаарай</span></div>
                             <div class="social-icon-style-1 text-center">
                                 <ul class="extra-small-icon">
-                                    <li><a class="facebook" href="http://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
-                                    <li><a class="twitter" href="http://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a class="google" href="http://google.com" target="_blank"><i class="fab fa-google-plus-g"></i></a></li>
-                                    <li><a class="dribbble" href="http://dribbble.com" target="_blank"><i class="fab fa-dribbble"></i></a></li>
-                                    <li><a class="linkedin" href="http://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a class="facebook" href="{{ global_settings.facebook }}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a class="twitter" href="{{ global_settings.twitter }}" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a class="google" href="{{ global_settings.instagram }}" target="_blank"><i class="fab fa-google-plus-g"></i></a></li>
+                                    <!-- <li><a class="dribbble" href="http://dribbble.com" target="_blank"><i class="fab fa-dribbble"></i></a></li>
+                                    <li><a class="linkedin" href="http://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a></li> -->
                                 </ul>
                             </div>
                         </div>
@@ -137,12 +215,13 @@
                         <div class="margin-45px-bottom sm-margin-25px-bottom">
                             <div class="text-extra-dark-gray margin-25px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>Мэдээлэл авах</span></div>
                             <div class="d-inline-block width-100">
-                                <form>
+                                <!-- <form>
                                     <div class="position-relative">
                                         <input type="email" class="bg-transparent text-small m-0 border-color-extra-light-gray medium-input float-left" placeholder="Мэйл хаягаа оруулна уу...">
                                         <button type="submit" class="bg-transparent text-large btn position-absolute right-0 top-3"><i class="far fa-envelope no-margin-left"></i></button>
                                     </div>   
-                                </form>
+                                </form> -->
+                                <a href="{{ pdf_url }}">Брошур авах</a>
                             </div>
                         </div>
 
@@ -151,5 +230,80 @@
             </div>
         </section>
         <!-- end blog content section -->  
+        <!-- start footer -->
+        <footer class="desktop-footer" id="desktop-footer">
+            <img class="footer-bg" src="{% static 'assets/IMG_72561.jpg' %}" alt="footer building">
+            <div class="inner-footer">
+                <div class="footer-mini-info">
+                    <img src="{% static 'assets/nh_logo.png' %}" alt="logo">
+    
+                    <div class="icons-container">
+                        <a href="{{ global_settings.facebook }}"><i class="fab fa-facebook-f"></i></a>
+                        <a href="{{ global_settings.instagram }}"><i class="fab fa-instagram"></i></a>
+                        <a href="{{ global_settings.twitter }}"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="sub-pages-title">
+                    <h3>дэд хуудас</h3>
+                    <div class="sub-pages-list">
+                        <a href="#">
+                            <p><i class="fas fa-angle-double-right"></i>барилгын төлөвлөлт</p>
+                        </a>
+                        <a href="#">
+                            <p><i class="fas fa-angle-double-right"></i>Аюулгүй байдал</p>
+                        </a>
+                        <a href="#">
+                            <p><i class="fas fa-angle-double-right"></i>тав тух</p>
+                        </a>
+                        <a href="#">
+                            <p><i class="fas fa-angle-double-right"></i>мэдээ мэдээлэл</p>
+                        </a>
+                        <a href="#">
+                            <p><i class="fas fa-angle-double-right"></i>хамт олон</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-contact-us">
+                    <h3>Бидэнтэй холбогдох</h3>
+                    <div class="inner-footer-contact-us">
+                        <div class="inner-footer-contact-us-text">
+                            <p><i class="fas fa-phone-alt"></i>+976 99999999</p>
+                            <p><i class="far fa-envelope"></i>uuganbat.dev@gmail.com</p>
+                            <p><i class="fas fa-map-marker-alt"></i>Lorem, ipsum dolor sit amet consectetur adipisicing
+                                elit.
+                                Odio,
+                                officia.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-contact-us-form" id="contactUsFooter">
+                    <h3>Бидэнтэй харилцах</h3>
+                    <div class="inner-footer-contact-us-form">
+                        <form action="">
+                            <div class="contact-us-form-left">
+                                <div class="contact-us-input-field">
+                                    <i class="fas fa-user-tie"></i>
+                                    <input id="name-contact" type="text" placeholder="Нэр">
+                                </div>
+                                <div class="contact-us-input-field">
+                                    <i class="fas fa-paper-plane"></i>
+                                    <input id="mail-contact" type="email" placeholder="Цахим хаяг">
+                                </div>
+                                <div class="contact-us-input-field">
+                                    <i class="fas fa-briefcase"></i>
+                                    <input id="company-contact" type="text" placeholder="Компани">
+                                </div>
+                                <input id="submit-contact" type="submit" value="Илгээх">
+                            </div>
+                            <div class="contact-us-form-right">
+                                <textarea name="" id="message-contact" cols="30" rows="10" placeholder="Энд бичнэ үү.."></textarea>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- end footer -->
     </body>
 </html>

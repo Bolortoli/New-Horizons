@@ -8,13 +8,22 @@ admin.site.unregister(Group)
 admin.site.unregister(User)
 admin.site.site_header = 'New Hozirons Dashboard'
 
-# admin.site.register(News)
-# admin.site.register(BuildingRents)
 admin.site.register(NewsCategory)
 admin.site.register(OrganizationCategory)
 admin.site.register(HomeSlider)
-admin.site.register(RentedFloor)
-admin.site.register(ContactUs)
+# admin.site.register(RentedFloor)
+@admin.register(ContactUs)
+class ContactUsAdmin(admin.ModelAdmin):
+
+    list_display = [f.name for f in ContactUs._meta.get_fields() if f.name != 'id']
+    list_display_links = None
+
+    def has_add_permission(self, request):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return True
+
 @admin.register(News)
 class NewsAdmin(admin.ModelAdmin):
     list_display = ['title', 'category', 'featured']
@@ -56,10 +65,8 @@ class OrganizationAdmin(admin.ModelAdmin):
 
     list_display = ['or_name', 'category', 'pic', 'special']
     list_editable = ['category', 'pic', 'special']
-    # list_display_links = ['id']
 
 @admin.register(ReasonBoxes)
-
 class ReasonBoxesAdmin(admin.ModelAdmin):
     list_display = [f.name for f in ReasonBoxes._meta.get_fields()]
     list_editable = [f.name for f in ReasonBoxes._meta.get_fields() if f.name != "id" and f.name != "title"]
@@ -129,4 +136,31 @@ class FloorPlanAdmin(admin.ModelAdmin):
     
     list_display = ['floor', 'pic']
     list_editable = ['pic']
-    # list_display_links = None
+    def has_add_permission(self, request):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+
+class SubPage_NoTitledIconLeftInline(admin.TabularInline):
+    model = SubPages_NoTitleIcon_Leftpic
+
+class SubPage_NoTitledIconRightInline(admin.TabularInline):
+    model = SubPages_NoTitleIcon_Rightpic
+
+class SubPage_TitledIconInline(admin.TabularInline):
+    model = SubPages_TitleIcon
+
+class SubPage_SliderInline(admin.TabularInline):
+    model = SubPages_Slider
+
+@admin.register(SubPage)
+class SubPageAdmin(admin.ModelAdmin):
+    inlines = [SubPage_NoTitledIconLeftInline, SubPage_NoTitledIconRightInline, SubPage_TitledIconInline, SubPage_SliderInline]
+
+    def has_add_permission(self, request):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False

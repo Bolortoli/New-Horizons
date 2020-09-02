@@ -11,11 +11,11 @@ FEATURE_NEWS_ON_BLOGS = 4
 FEATURE_NEWS_ON_HOME = 3
 
 def guide(request):
-    pdf = PDFbrochure.objects.all().first().pdf
+    pdf = PDFbrochure.objects.all().first()
     context = {
-        'pdf_url': pdf
+        'pdf_url': pdf,
     }
-    return render(request, 'about_us.html', context)
+    return render(request, 'guide.html', context)
 
 def get_organizations_with_slider(request):
     orgs = Organization.objects.all() 
@@ -45,7 +45,7 @@ def register_contact_request(request):
 @xframe_options_exempt
 def home(request, company=None):
     reason_boxes = ReasonBoxes.objects.all().first() if ReasonBoxes.objects.count() != 0 else ReasonBoxes.objects.all()
-    pdf_url = PDFbrochure.objects.all().first().pdf
+    pdf_url = PDFbrochure.objects.all().first()
     feature_boxes = FeatureCard.objects.all().first() if FeatureCard.objects.count() != 0 else FeatureCard.objects.all()
     home_sliders = HomeSlider.objects.all()
     building_intro = BuildingIntro.objects.all().first() if BuildingIntro.objects.count() != 0 else None
@@ -109,24 +109,24 @@ def home(request, company=None):
 
     # LEASEHOLDERS on building
     leaseholder_per_floor = []
-    if RentedFloor.objects.exists():
-        for i in range(15, 0, -1):
-            fa = RentedFloor.objects.filter(rented_object='id_floor'+str(i)+'_a')
-            fb = RentedFloor.objects.filter(rented_object='id_floor'+str(i)+'_b') 
-            # if floor_filter_a.exist():
-            #     leaseholder_per_floor.append(floor_rent(floor_filter_a.first().organization.pic, name=str(i)+'-a'))
-            
-            # if floor_filter_b.exist():
-            #     leaseholder_per_floor.append(floor_rent(floor_filter_b.first().organization.pic, name=str(i)+'-b'))
-            if fa.exists() and fb.exists():
-                leaseholder_per_floor.append(floor_rent(floor=i, picture1=fa.first().organization.pic, name1=fa.first().organization.or_name, picture2=fb.first().organization.pic, name2=fb.first().organization.or_name))
-            elif fa.exists() and not fb.exists():
-                leaseholder_per_floor.append(floor_rent(floor=i, picture1=fa.first().organization.pic, name1=fa.first().organization.or_name, picture2=None, name2=None))
-            elif not fa.exists() and fb.exists():
-                leaseholder_per_floor.append(floor_rent(floor=i, picture2=fb.first().organization.pic, name2=fb.first().organization.or_name, picture1=None, name1=None))
-            else:
-                leaseholder_per_floor.append(floor_rent(floor=i, picture1=None, name1=None, picture2=None, name2=None))
-        leaseholder_per_floor.append(floor_rent(floor='B1', picture1=None, name1=None, picture2=None, name2=None, b1=True))
+    # if RentedFloor.objects.exists():
+    for i in range(15, 0, -1):
+        fa = RentedFloor.objects.filter(rented_object='id_floor'+str(i)+'_a')
+        fb = RentedFloor.objects.filter(rented_object='id_floor'+str(i)+'_b') 
+        # if floor_filter_a.exist():
+        #     leaseholder_per_floor.append(floor_rent(floor_filter_a.first().organization.pic, name=str(i)+'-a'))
+        
+        # if floor_filter_b.exist():
+        #     leaseholder_per_floor.append(floor_rent(floor_filter_b.first().organization.pic, name=str(i)+'-b'))
+        if fa.exists() and fb.exists():
+            leaseholder_per_floor.append(floor_rent(floor=i, picture1=fa.first().organization.pic, name1=fa.first().organization.or_name, picture2=fb.first().organization.pic, name2=fb.first().organization.or_name))
+        elif fa.exists() and not fb.exists():
+            leaseholder_per_floor.append(floor_rent(floor=i, picture1=fa.first().organization.pic, name1=fa.first().organization.or_name, picture2=None, name2=None))
+        elif not fa.exists() and fb.exists():
+            leaseholder_per_floor.append(floor_rent(floor=i, picture2=fb.first().organization.pic, name2=fb.first().organization.or_name, picture1=None, name1=None))
+        else:
+            leaseholder_per_floor.append(floor_rent(floor=i, picture1=None, name1=None, picture2=None, name2=None))
+    leaseholder_per_floor.append(floor_rent(floor='B1', picture1=None, name1=None, picture2=None, name2=None, b1=True))
 
         # for rentedfloor in RentedFloor.objects.all():
         #     # floor = rentedfloor.
@@ -135,9 +135,10 @@ def home(request, company=None):
     # Floors plan images
     floor_plan_details = []
     for plan in FloorPlan.objects.all().exclude(floor="B1").order_by('-id'):
-        print(plan.title)
-        floor_plan_details.append(plan)
+        # print(plan.title)
+        floor_plan_details.append(plan)                 
     floor_plan_details.append(FloorPlan.objects.get(floor='B1'))
+    print(floor_plan_details[15].pic)
     
     # Featured news
     news_list = []
@@ -176,10 +177,13 @@ def news_blog_archive(request):
 
     categories = [News_Category(cat, News.objects.filter(category=cat).count()) for cat in NewsCategory.objects.all() if News.objects.filter(category=cat).count() != 0]
 
+    pdf = PDFbrochure.objects.all().first().pdf
+
     context = {
         'news_list': page_obj,
         'featured_news': featured_news,
         'categories': categories,
+        'pdf_url': pdf,
     }
     return render(request, 'blog.html', context)
 
@@ -195,12 +199,107 @@ def news_blog_archive_category(request, category):
 
     categories = [News_Category(cat, News.objects.filter(category=cat).count()) for cat in NewsCategory.objects.all() if News.objects.filter(category=cat).count() != 0]
 
+    pdf = PDFbrochure.objects.all().first().pdf
+
     context = {
         'news_list': page_obj,
         'featured_news': featured_news,
-        'categories': categories
+        'categories': categories,
+        'pdf_url': pdf,
     }
     return render(request, 'blog.html', context)
+
+def aboutUs(request):
+    page_obj = SubPage.objects.get(sign='1')
+    notitlediconleft = SubPages_NoTitleIcon_Leftpic.objects.filter(organization=page_obj)
+    print(notitlediconleft)
+    if not notitlediconleft:
+        print('agaign') 
+    notitlediconright = SubPages_NoTitleIcon_Rightpic.objects.filter(organization=page_obj)
+    titledicon = SubPages_TitleIcon.objects.filter(organization=page_obj)
+    slider = SubPages_Slider.objects.filter(organization=page_obj)
+    security = SubPage.objects.get(sign='2').page_title
+    building_structure = SubPage.objects.get(sign='3').page_title
+    user_experience = SubPage.objects.get(sign='4').page_title
+
+    context = {
+        'page_obj': page_obj,
+        'notitlediconleft': notitlediconleft,
+        'notitlediconright': notitlediconright,
+        'titledicon': titledicon,
+        'slider': slider,
+        'security': security,
+        'building_structure': building_structure,
+        'user_experience': user_experience,
+    }
+    return render(request, 'about_us.html', context)
+def building_structure(request):
+    page_obj = SubPage.objects.get(sign='3')
+    notitlediconleft = SubPages_NoTitleIcon_Leftpic.objects.filter(organization=page_obj)
+    notitlediconright = SubPages_NoTitleIcon_Rightpic.objects.filter(organization=page_obj)
+    titledicon = SubPages_TitleIcon.objects.filter(organization=page_obj)
+    slider = SubPages_Slider.objects.filter(organization=page_obj)
+    security = SubPage.objects.get(sign='2').page_title
+    about_us = SubPage.objects.get(sign='1').page_title
+    user_experience = SubPage.objects.get(sign='4').page_title
+
+    context = {
+        'page_obj': page_obj,
+        'notitlediconleft': notitlediconleft,
+        'notitlediconright': notitlediconright,
+        'titledicon': titledicon,
+        'slider': slider,
+        'security': security,
+        'about_us': about_us,
+        'user_experience': user_experience,
+    }
+    return render(request, 'building_structure.html', context)
+def user_experience(request):
+
+    page_obj = SubPage.objects.get(sign='4')
+    notitlediconleft = SubPages_NoTitleIcon_Leftpic.objects.filter(organization=page_obj)
+    notitlediconright = SubPages_NoTitleIcon_Rightpic.objects.filter(organization=page_obj)
+    titledicon = SubPages_TitleIcon.objects.filter(organization=page_obj)
+    slider = SubPages_Slider.objects.filter(organization=page_obj)
+    security = SubPage.objects.get(sign='2').page_title
+    about_us = SubPage.objects.get(sign='1').page_title
+    building_structure = SubPage.objects.get(sign='3').page_title
+
+    context = {
+        'page_obj': page_obj,
+        'notitlediconleft': notitlediconleft,
+        'notitlediconright': notitlediconright,
+        'titledicon': titledicon,
+        'slider': slider,
+        'security': security,
+        'about_us': about_us,
+        'building_structure': building_structure,
+    }
+
+    return render(request, 'user_experience.html', context)
+def security(request):
+
+    page_obj = SubPage.objects.get(sign='2')
+    notitlediconleft = SubPages_NoTitleIcon_Leftpic.objects.filter(organization=page_obj)
+    notitlediconright = SubPages_NoTitleIcon_Rightpic.objects.filter(organization=page_obj)
+    titledicon = SubPages_TitleIcon.objects.filter(organization=page_obj)
+    slider = SubPages_Slider.objects.filter(organization=page_obj)
+    user_experience = SubPage.objects.get(sign='4').page_title
+    about_us = SubPage.objects.get(sign='1').page_title
+    building_structure = SubPage.objects.get(sign='3').page_title
+
+    context = {
+        'page_obj': page_obj,
+        'notitlediconleft': notitlediconleft,
+        'notitlediconright': notitlediconright,
+        'titledicon': titledicon,
+        'slider': slider,
+        'user_experience': user_experience,
+        'about_us': about_us,
+        'building_structure': building_structure,
+    }
+
+    return render(request, 'security.html', context)
 
 def blog(request, slug=None):
     if slug is not None:

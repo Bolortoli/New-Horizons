@@ -17,7 +17,6 @@
 </head>
 
 <body class="home-body" id="homeBody">
-    {{ rent.value }}
     <!--------------------------HOME1 HEADER-----------------------------> 
 
 
@@ -62,25 +61,25 @@
                 <i class="fas fa-bars menu-icon" id="mobileBarsIcon"></i>
             </div>
             <nav id="mobileNav" onclick="showMobileNav()">
-                <img src="{% static 'assets/nh_logo.png' %}" alt="logo">
+                <img src="{{ global_setings.logo.url }}" alt="logo">
 
                 <div class="contactUsAnchor"><a href="{% url 'home' %}#contactUsFooter">Бидэнтэй холбогдох</a></div>
 
-                <li><a href="./home.html#home">нүүр</a></li>
+                <li><a href="{% url 'home' %}#home">нүүр</a></li>
 
                 <li><a href="{% url 'home' %}#miniBlog">Сүүлийн үеийн мэдээ</a></li>
 
-                <li><a href="./home.html#buildingIntro">танилцуулга</a></li>
+                <li><a href="{% url 'home' %}#buildingIntro">танилцуулга</a></li>
 
-                <li><a href="./home.html#service">үйлчилгээ</a></li>
+                <li><a href="{% url 'home' %}#service">үйлчилгээ</a></li>
 
-                <li><a href="./home.html#floorInfo">давхарийн мэдээлэл</a></li>
+                <li><a href="{% url 'home' %}#floorInfo">давхарийн мэдээлэл</a></li>
 
-                <li><a href="./home.html#sevenReason">7 шалтгаан</a></li>
+                <li><a href="{% url 'home' %}#sevenReason">7 шалтгаан</a></li>
 
-                <li><a href="./home.html#panaromaSection">360 зураг</a></li>
+                <li><a href="{% url 'home' %}#panaromaSection">360 зураг</a></li>
 
-                <li><a href="./home.html#nearbyPlaces">Ойр хавийн барилгууд</a></li>
+                <li><a href="{% url 'home' %}#nearbyPlaces">Ойр хавийн барилгууд</a></li>
                 <div class="__right">
                     <a href="#">mn</a>
                     <a href="#">en</a>
@@ -136,7 +135,7 @@
                         <h3>{{ obj.title }}</h3>
                         <!-- <p></p> -->
                         {% if obj.choice1 %}
-                        <a href="{{ pdf_url }}">Боршуур авах</a>
+                        <a href="{{ pdf_url.pdf }}">Боршуур авах</a>
                         {% elif obj.choice2 %}
                         <a href="#" onclick="showContactUsForm()">Бидэнтэй холбогдох</a>
                         {% elif obj.choice3 %}
@@ -194,10 +193,10 @@
                     <div class="blog-status">
                         <p><i class="fas fa-clock"></i>{{ news.published_date }}</p>
                         <p><i class="far fa-user"></i>Нийтэлсэн: {{ news.publisher }}</p>
-                        <p><i class="far fa-comment"></i>{{ news.viewed }}</p>
+                        <p><i class="far fa-comment"></i>Үзэлт: {{ news.viewed }}</p>
                     </div>
                     <hr>
-                    <p class="little-article">{{ news.title}}
+                    <p class="little-article">Цааш унших
                     </p>
                 </a>
                 {% endfor %}
@@ -305,11 +304,11 @@
                     <div class="floor-icon-container">
                         <div class="inner-floor-icon-container">
                             <p>{{ i.name1 }}</p>
-                            <img src="{{ i.picture1.url }}" alt="haan bank">
+                            <img src="{{ i.picture1.url }}" alt="organization-pic">
                         </div>
                         <div class="inner-floor-icon-container">
                             <p>{{ i.name2 }}</p>
-                            <img src="{{ i.picture2.url }}" alt="haan bank">
+                            <img src="{{ i.picture2.url }}" alt="organization-pic">
                         </div>
                     </div>
                 </li>
@@ -318,7 +317,7 @@
                     <div class="floor-icon-container">
                         <div class="inner-floor-icon-container">
                             <p>{{ i.name1 }}</p>
-                            <img src="{{ i.picture1.url }}" alt="haan bank">
+                            <img src="{{ i.picture1.url }}" alt="organization-pic">
                         </div>
                     </div>
                 </li>
@@ -327,7 +326,7 @@
                     <div class="floor-icon-container">
                         <div class="inner-floor-icon-container">
                             <p>{{ i.name2 }}</p>
-                            <img src="{{ i.picture2.url }}" alt="haan bank">
+                            <img src="{{ i.picture2.url }}" alt="organization-pic">
                         </div>
                     </div>
                 </li>
@@ -343,6 +342,7 @@
             <div class="plan-photo-hover">ҮЗЭХ</div>
             {% for plan in floor_plan %}
             <img src="{{ plan.pic.url }}" alt="floor one svg">
+            <!-- <img src="{{ plan.pic.url }}" alt="floor one svg"> -->
             {% endfor %}
         </div>
         <div class="plan-photos-fullscreen-info" id="planPhotoInfo">
@@ -352,226 +352,12 @@
                 <div class="inner-plan-photo-info">
                     <div class="photo-description">
                         <h3>{{ plan.title }}</h3>
-                        <p>{{ plan.description }}
-                        </p>
+                        {{ plan.description | safe }}
                     </div>
                     <img src="{{ plan.pic.url }}" alt="floor one svg">
                 </div>
             </div>
             {% endfor %}
-            <!-- <div class="invisible-plan-photo-info">
-                <div class="inner-plan-photo-info">
-                    <div class="photo-description">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tempore, nihil voluptatum dolorem harum dolore itaque
-                            est corrupti eligendi sint dicta molestiae officiis
-                            accusamus atque distinctio quos facere consequatur,
-                            esse placeat.
-                        </p>
-                    </div>
-                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
-                </div>
-            </div>
-            <div class="invisible-plan-photo-info">
-                <div class="inner-plan-photo-info">
-                    <div class="photo-description">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tempore, nihil voluptatum dolorem harum dolore itaque
-                            est corrupti eligendi sint dicta molestiae officiis
-                            accusamus atque distinctio quos facere consequatur,
-                            esse placeat.
-                        </p>
-                    </div>
-                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
-                </div>
-            </div>
-            <div class="invisible-plan-photo-info">
-                <div class="inner-plan-photo-info">
-                    <div class="photo-description">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tempore, nihil voluptatum dolorem harum dolore itaque
-                            est corrupti eligendi sint dicta molestiae officiis
-                            accusamus atque distinctio quos facere consequatur,
-                            esse placeat.
-                        </p>
-                    </div>
-                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
-                </div>
-            </div>
-            <div class="invisible-plan-photo-info">
-                <div class="inner-plan-photo-info">
-                    <div class="photo-description">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tempore, nihil voluptatum dolorem harum dolore itaque
-                            est corrupti eligendi sint dicta molestiae officiis
-                            accusamus atque distinctio quos facere consequatur,
-                            esse placeat.
-                        </p>
-                    </div>
-                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
-                </div>
-            </div>
-            <div class="invisible-plan-photo-info">
-                <div class="inner-plan-photo-info">
-                    <div class="photo-description">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tempore, nihil voluptatum dolorem harum dolore itaque
-                            est corrupti eligendi sint dicta molestiae officiis
-                            accusamus atque distinctio quos facere consequatur,
-                            esse placeat.
-                        </p>
-                    </div>
-                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
-                </div>
-            </div>
-            <div class="invisible-plan-photo-info">
-                <div class="inner-plan-photo-info">
-                    <div class="photo-description">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tempore, nihil voluptatum dolorem harum dolore itaque
-                            est corrupti eligendi sint dicta molestiae officiis
-                            accusamus atque distinctio quos facere consequatur,
-                            esse placeat.
-                        </p>
-                    </div>
-                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
-                </div>
-            </div>
-            <div class="invisible-plan-photo-info">
-                <div class="inner-plan-photo-info">
-                    <div class="photo-description">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tempore, nihil voluptatum dolorem harum dolore itaque
-                            est corrupti eligendi sint dicta molestiae officiis
-                            accusamus atque distinctio quos facere consequatur,
-                            esse placeat.
-                        </p>
-                    </div>
-                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
-                </div>
-            </div>
-            <div class="invisible-plan-photo-info">
-                <div class="inner-plan-photo-info">
-                    <div class="photo-description">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tempore, nihil voluptatum dolorem harum dolore itaque
-                            est corrupti eligendi sint dicta molestiae officiis
-                            accusamus atque distinctio quos facere consequatur,
-                            esse placeat.
-                        </p>
-                    </div>
-                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
-                </div>
-            </div>
-            <div class="invisible-plan-photo-info">
-                <div class="inner-plan-photo-info">
-                    <div class="photo-description">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tempore, nihil voluptatum dolorem harum dolore itaque
-                            est corrupti eligendi sint dicta molestiae officiis
-                            accusamus atque distinctio quos facere consequatur,
-                            esse placeat.
-                        </p>
-                    </div>
-                    <img src="{% static 'assets/plan7-8-9-10-11-12-13-14-15-clear.png' %}" alt="floor one svg">
-                </div>
-            </div>
-            <div class="invisible-plan-photo-info">
-                <div class="inner-plan-photo-info">
-                    <div class="photo-description">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tempore, nihil voluptatum dolorem harum dolore itaque
-                            est corrupti eligendi sint dicta molestiae officiis
-                            accusamus atque distinctio quos facere consequatur,
-                            esse placeat.
-                        </p>
-                    </div>
-                    <img src="{% static 'assets/plan_images/plan-3-4-5-clear.png' %}" alt="floor one svg">
-                </div>
-            </div>
-            <div class="invisible-plan-photo-info">
-                <div class="inner-plan-photo-info">
-                    <div class="photo-description">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tempore, nihil voluptatum dolorem harum dolore itaque
-                            est corrupti eligendi sint dicta molestiae officiis
-                            accusamus atque distinctio quos facere consequatur,
-                            esse placeat.
-                        </p>
-                    </div>
-                    <img src="{% static 'assets/plan_images/plan-3-4-5-clear.png' %}" alt="floor one svg">
-                </div>
-            </div>
-            <div class="invisible-plan-photo-info">
-                <div class="inner-plan-photo-info">
-                    <div class="photo-description">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tempore, nihil voluptatum dolorem harum dolore itaque
-                            est corrupti eligendi sint dicta molestiae officiis
-                            accusamus atque distinctio quos facere consequatur,
-                            esse placeat.
-                        </p>
-                    </div>
-                    <img src="{% static 'assets/plan_images/plan-3-4-5-clear.png' %}" alt="floor one svg">
-                </div>
-            </div>
-            <div class="invisible-plan-photo-info">
-                <div class="inner-plan-photo-info">
-                    <div class="photo-description">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tempore, nihil voluptatum dolorem harum dolore itaque
-                            est corrupti eligendi sint dicta molestiae officiis
-                            accusamus atque distinctio quos facere consequatur,
-                            esse placeat.
-                        </p>
-                    </div>
-                    <img src="{% static 'assets/plan_images/plan2-clear.png' %}" alt="floor one svg">
-                </div>
-            </div>
-            <div class="invisible-plan-photo-info">
-                <div class="inner-plan-photo-info">
-                    <div class="photo-description">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tempore, nihil voluptatum dolorem harum dolore itaque
-                            est corrupti eligendi sint dicta molestiae officiis
-                            accusamus atque distinctio quos facere consequatur,
-                            esse placeat.
-                        </p>
-                    </div>
-                    <img src="{% static 'assets/plan_images/plan1-clear.png' %}" alt="floor one svg">
-                </div>
-            </div>
-            <div class="invisible-plan-photo-info">
-                <div class="inner-plan-photo-info">
-                    <div class="photo-description">
-                        <h3>Lorem ipsum dolor sit</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Tempore, nihil voluptatum dolorem harum dolore itaque
-                            est corrupti eligendi sint dicta molestiae officiis
-                            accusamus atque distinctio quos facere consequatur,
-                            esse placeat.
-                        </p>
-                    </div>
-                    <img src="{% static 'assets/plan_images/b1.png' %}" alt="floor one svg">
-
-                </div>
-            </div> -->
-
-
         </div>
 
     </section>
@@ -708,12 +494,9 @@
                 <h3>Бидэнтэй холбогдох</h3>
                 <div class="inner-footer-contact-us">
                     <div class="inner-footer-contact-us-text">
-                        <p><i class="fas fa-phone-alt"></i>+976 99999999</p>
-                        <p><i class="far fa-envelope"></i>uuganbat.dev@gmail.com</p>
-                        <p><i class="fas fa-map-marker-alt"></i>Lorem, ipsum dolor sit amet consectetur adipisicing
-                            elit.
-                            Odio,
-                            officia.
+                        <p><i class="fas fa-phone-alt"></i>{{ global_settings.phone }}</p>
+                        <p><i class="far fa-envelope"></i>{{ global_settings.mail }}</p>
+                        <p><i class="fas fa-map-marker-alt"></i>{{ global_settings.location }}
                         </p>
                     </div>
                 </div>
@@ -785,7 +568,7 @@
                         text: text
                     },
                     success: function (message) {
-                        alert('success');
+                        // alert('success');
                         closeContactUsForm();
                         $('#name-contact').val('');
                         $('#mail-contact').val('');
@@ -793,7 +576,7 @@
                         $('#message-contact').val('');
                     },
                     error: function (message) {
-                        alert('error: ' + message);
+                        alert('Дахин оролдоно уу...');
                     },
                 });
             });
