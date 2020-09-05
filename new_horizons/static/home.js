@@ -76,6 +76,25 @@ var swiper2 = new Swiper('.swiper-container-two', {
     },
 })
 
+
+var swiper3 = new Swiper('.swiper-container-three', {
+    slidesPerView: 1,
+    spaceBetween: 0,
+    speed: 1500,
+    loop: true,
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});
+var mySwiper = document.querySelector('.swiper-container-three').swiper
+
+// Now you can use all slider methods like
+setInterval(function(){ mySwiper.slideNext(); }, 6000);
 /*----------------------------SWIPER JS END-----------------------------*/
 
 /*----------------------------HOME JS-----------------------------*/

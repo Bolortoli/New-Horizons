@@ -17,7 +17,7 @@
 </head>
 
 <body class="home-body" id="homeBody">
-    <!--------------------------HOME1 HEADER-----------------------------> 
+    <!--------------------------HOME1 HEADER----------------------------->
 
 
     <header class="home-desktop-header" id="desktopHeader">
@@ -47,7 +47,7 @@
                 </nav>
             </div>
             <div class="__mid" onclick="showContactUsForm()">
-                <a href="#">Бидэнтэй холбогдох</a>
+                <a href="#">Бидэнтэй харилцах</a>
             </div>
             <div class="__right">
                 <div class="select-language"><a href="#">mn</a></div>
@@ -144,7 +144,7 @@
                     </div>
                 </div>
                 {% endfor %}
-               
+
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination"></div>
@@ -169,13 +169,13 @@
             <div class="feature-card">
                 <i class="far fa-building"></i>
                 <p>{{ feature_boxes.box3_title }}</p>
-                <p>
+            
                     <p>{{ feature_boxes.box3_text }}</p>
             </div>
             <div class="feature-card">
                 <i class="far fa-building"></i>
                 <p>{{ feature_boxes.box4_title }}</p>
-                <p>
+                
                     <p>{{ feature_boxes.box4_text }}</p>
             </div>
 
@@ -220,7 +220,7 @@
                     <div class="blog-status">
                         <p><i class="fas fa-clock"></i>2020/7/20</p>
                         <p><i class="far fa-user"></i>Нийтэлсэн: 290</p> -->
-                        <!-- <p><i class="far fa-comment"></i>25</p>
+                <!-- <p><i class="far fa-comment"></i>25</p>
                     </div>
                     <hr>
                     <p class="little-article">Агааржуулалт, агаар сэлгэлт, хөргөлтийн гурвалсан
@@ -279,7 +279,7 @@
                         </div>
                     </div>
                     {% endfor %}
-                   
+
                     <!-- Slider object end -->
                 </div>
                 <div class="slider-component-container">
@@ -294,7 +294,7 @@
     </section>
 
     <section class="floor-informations" id="floorInfo">
-        <img src="{% static 'assets/horizon10.jpg' %}" alt="building" class="floor-section-bg">
+        <img src="{% static 'assets/floor_section_picture.jpg' %}" alt="building" class="floor-section-bg">
         <div id="unvisibleList"></div>
         <div class="floors-container" id="floorContainer">
             <ul>
@@ -432,7 +432,41 @@
 
     </section>
     {% endif %}
-
+    <section class="carousel-section">
+        <div class="carousel-description">
+            <h3>манай орчин</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo dicta dolorem nostrum inventore consectetur dolorem nostrum inventore consectetur dolorem nostrum inventore consectetur dolorem nostrum inventore consectetur esse, tempora sunt, ipsum, vitae deleniti obcaecati ratione repellendus quae ducimus sapiente dignissimos voluptate doloremque molestias?</p>
+        </div>
+        <div class="swiper-container-three">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="inner-swiper-slide">
+                        <img src="{% static 'assets/interier_1.jpg' %}" alt="building">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="inner-swiper-slide">
+                        <img src="{% static 'assets/interier_2.jpg' %}" alt="building">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="inner-swiper-slide">
+                        <img src="{% static 'assets/interier_3.jpg' %}" alt="building">
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="inner-swiper-slide">
+                        <img src="{% static 'assets/interier_4.jpg' %}" alt="building">
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-swiper-component-container">
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </div>
+    </section>
     <section class="panaroma-picture-section" id="panaromaSection">
         <h3>360 зураг</h3>
         <div class="blured-360" id="bluredPanaroma">
@@ -521,7 +555,8 @@
                             <input id="submit-contact" type="submit" value="Илгээх">
                         </div>
                         <div class="contact-us-form-right">
-                            <textarea name="" id="message-contact" cols="30" rows="10" placeholder="Энд бичнэ үү.."></textarea>
+                            <textarea name="" id="message-contact" cols="30" rows="10"
+                                placeholder="Энд бичнэ үү.."></textarea>
                         </div>
                     </form>
                 </div>

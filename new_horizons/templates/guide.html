@@ -42,6 +42,9 @@
 
                 </nav>
             </div>
+            <div class="__mid" onclick="showContactUsForm()">
+                <a href="#">Бидэнтэй харилцах</a>
+            </div>
             <div class="__right">
                 <div class="select-language"><a href="#">mn</a></div>
                 <div class="select-language"><a href="#">en</a></div>
@@ -51,26 +54,28 @@
     <header class="mobile-header">
         <div class="side-nav">
             <div onclick="showMobileNav()" class="menu-container">
-                <i class="fas fa-bars menu-icon" id="menuBarIcon"></i>
+                <i class="fas fa-bars menu-icon" id="mobileBarsIcon"></i>
             </div>
             <nav id="mobileNav" onclick="showMobileNav()">
-                <img src="{% static 'assets/nh_logo.png' %}" alt="logo">
+                <img src="{{ global_setings.logo.url }}" alt="logo">
 
-                <li><a href="./home.html#home">нүүр</a></li>
+                <div class="contactUsAnchor"><a href="{% url 'home' %}#contactUsFooter">Бидэнтэй холбогдох</a></div>
 
-                <li><a href="./home.html#miniBlog">Сүүлийн үеийн мэдээ</a></li>
+                <li><a href="{% url 'home' %}#home">нүүр</a></li>
 
-                <li><a href="./home.html#buildingIntro">танилцуулга</a></li>
+                <li><a href="{% url 'home' %}#miniBlog">Сүүлийн үеийн мэдээ</a></li>
 
-                <li><a href="./home.html#service">үйлчилгээ</a></li>
+                <li><a href="{% url 'home' %}#buildingIntro">танилцуулга</a></li>
 
-                <li><a href="./home.html#floorInfo">давхарийн мэдээлэл</a></li>
+                <li><a href="{% url 'home' %}#service">үйлчилгээ</a></li>
 
-                <li><a href="./home.html#sevenReason">7 шалтгаан</a></li>
+                <li><a href="{% url 'home' %}#floorInfo">давхарийн мэдээлэл</a></li>
 
-                <li><a href="./home.html#panaromaSection">360 зураг</a></li>
+                <li><a href="{% url 'home' %}#sevenReason">7 шалтгаан</a></li>
 
-                <li><a href="./home.html#nearbyPlaces">Ойр хавийн барилгууд</a></li>
+                <li><a href="{% url 'home' %}#panaromaSection">360 зураг</a></li>
+
+                <li><a href="{% url 'home' %}#nearbyPlaces">Ойр хавийн барилгууд</a></li>
                 <div class="__right">
                     <a href="#">mn</a>
                     <a href="#">en</a>
@@ -80,9 +85,31 @@
     </header>
 
 
-
     <!--------------------------HOME1 HEADER END----------------------------->
-
+    <div class="contact-us-form" id="contactUsForm">
+        <div class="inner-contact-us-form">
+            <div class="contact-us-close-button" onclick="closeContactUsForm()">
+                <i class="fas fa-times"></i>
+            </div>
+            <form action="">
+                <div class="contact-us-input-field">
+                    <i class="fas fa-user-tie"></i>
+                    <input id="name-contact" type="text" placeholder="Нэр">
+                </div>
+                <div class="contact-us-input-field">
+                    <i class="fas fa-paper-plane"></i>
+                    <input id="mail-contact" type="email" placeholder="Цахим хаяг">
+                </div>
+                <div class="contact-us-input-field">
+                    <i class="fas fa-briefcase"></i>
+                    <input id="company-contact" type="text" placeholder="Компани">
+                </div>
+                <textarea name="" id="message-contact" cols="30" rows="10" placeholder="Энд бичнэ үү.."></textarea>
+                <input id="submit-contact" type="submit" value="Илгээх">
+            </form>
+        </div>
+    </div>
+    
     <section class="guide-section">
         <div class="home-img1-container">
             <div class="get-information">
@@ -90,10 +117,10 @@
                     <p>боршуур авах</p>
                 </a>
             </div>
-            <img src="{% static 'assets/IMG_72561.jpg' %}" alt="building image" width="100">
+            <img src="{% static 'assets/IMG_7249.JPG' %}" alt="building image" width="100">
         </div>
         <div class="home-img2-container">
-            <img src="{% static 'assets/horizon10.jpg' %}" alt="building image 2" width="100">
+            <img src="{% static 'assets/NH.jpg' %}" alt="building image 2" width="100">
             <div class="guide-middle-line">
                 <div class="inner-middle-line"></div>
             </div>

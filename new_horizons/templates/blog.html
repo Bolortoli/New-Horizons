@@ -15,17 +15,6 @@
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
     
     <!-- bootstrap -->
-    <link rel="stylesheet" href="{% static 'blog_css/bootstrap.min.css' %}" />
-    <!-- et line icon --> 
-    
-    <!-- font-awesome icon -->
-    <link rel="stylesheet" href="{% static 'blog_css/font-awesome.min.css' %}" />
-
-
-    <!-- style -->
-    <link rel="stylesheet" href="{% static 'blog_css/style.css' %}" />
-    <!-- responsive css -->
-    <link rel="stylesheet" href="{% static 'blog_css/responsive.css' %}" />
     <link rel="stylesheet" href="{% static 'swiperjs.css' %}">
     <!------------------------SWIPER JS-------------------------->
     <link rel="stylesheet" href="{% static 'style.css' %}">
@@ -41,16 +30,41 @@
         
     </head>
     <body class="home-body" id="homeBody">
+        <div class="contact-us-form" id="contactUsForm">
+            <div class="inner-contact-us-form">
+                <div class="contact-us-close-button" onclick="closeContactUsForm()">
+                    <i class="fas fa-times"></i>
+                </div>
+                <form action="">
+                    <div class="contact-us-input-field">
+                        <i class="fas fa-user-tie"></i>
+                        <input id="name-contact" type="text" placeholder="Нэр">
+                    </div>
+                    <div class="contact-us-input-field">
+                        <i class="fas fa-paper-plane"></i>
+                        <input id="mail-contact" type="email" placeholder="Цахим хаяг">
+                    </div>
+                    <div class="contact-us-input-field">
+                        <i class="fas fa-briefcase"></i>
+                        <input id="company-contact" type="text" placeholder="Компани">
+                    </div>
+                    <textarea name="" id="message-contact" cols="30" rows="10" placeholder="Энд бичнэ үү.."></textarea>
+                    <input id="submit-contact" type="submit" value="Илгээх">
+                </form>
+            </div>
+        </div>
         <!-- start header -->
-        <header class="home-desktop-header" id="desktopHeader">
-            <div class="header-inner">
+        <header class="guide-desktop-header">
+            <div class="inner-header">
                 <div class="__left">
                     <div class="desktop-logo-container">
-                        <img src="{{ global_settings.logo.url }}" alt="logo">
+                        <img src="{% static 'assets/nh_logo.png' %}" alt="logo" height="60">
                     </div>
                     <nav class="desktop-nav">
     
-                        <li><a href="{% url 'home' %}#home">нүүр</a></li>
+                        <li><a href="{% url 'home' %}">нүүр</a></li>
+                        
+                        <li><a href="{% url 'home' %}#buildingFeature">Дадвуу тал</a></li>
     
                         <li><a href="{% url 'home' %}#miniBlog">Сүүлийн үеийн мэдээ</a></li>
     
@@ -61,7 +75,7 @@
                         <li><a href="{% url 'home' %}#floorInfo">давхарийн мэдээлэл</a></li>
     
                         <li><a href="{% url 'home' %}#sevenReason">Давуу тал</a></li>
-    
+                        
                         <li><a href="{% url 'home' %}#panaromaSection">360 зураг</a></li>
     
                         <li><a href="{% url 'home' %}#nearbyPlaces">Ойр хавийн барилгууд</a></li>
@@ -69,39 +83,39 @@
                     </nav>
                 </div>
                 <div class="__mid" onclick="showContactUsForm()">
-                    <a href="#">Бидэнтэй холбогдох</a>
+                    <a href="#">Бидэнтэй харилцах</a>
                 </div>
                 <div class="__right">
                     <div class="select-language"><a href="#">mn</a></div>
                     <div class="select-language"><a href="#">en</a></div>
                 </div>
             </div>
-        </header>
+        </header> 
         <header class="mobile-header">
             <div class="side-nav">
                 <div onclick="showMobileNav()" class="menu-container">
-                    <i class="fas fa-bars menu-icon" id="mobileBarsIcon"></i>
+                    <i class="fas fa-bars menu-icon" id="mobileBarsIcon" style="color:black"></i>
                 </div>
                 <nav id="mobileNav" onclick="showMobileNav()">
-                    <img src="{% static 'assets/nh_logo.png' %}" alt="logo">
+                    <img src="{{ global_setings.logo.url }}" alt="logo">
     
                     <div class="contactUsAnchor"><a href="{% url 'home' %}#contactUsFooter">Бидэнтэй холбогдох</a></div>
     
-                    <li><a href="./home.html#home">нүүр</a></li>
+                    <li><a href="{% url 'home' %}#home">нүүр</a></li>
     
                     <li><a href="{% url 'home' %}#miniBlog">Сүүлийн үеийн мэдээ</a></li>
     
-                    <li><a href="./home.html#buildingIntro">танилцуулга</a></li>
+                    <li><a href="{% url 'home' %}#buildingIntro">танилцуулга</a></li>
     
-                    <li><a href="./home.html#service">үйлчилгээ</a></li>
+                    <li><a href="{% url 'home' %}#service">үйлчилгээ</a></li>
     
-                    <li><a href="./home.html#floorInfo">давхарийн мэдээлэл</a></li>
+                    <li><a href="{% url 'home' %}#floorInfo">давхарийн мэдээлэл</a></li>
     
-                    <li><a href="./home.html#sevenReason">7 шалтгаан</a></li>
+                    <li><a href="{% url 'home' %}#sevenReason">7 шалтгаан</a></li>
     
-                    <li><a href="./home.html#panaromaSection">360 зураг</a></li>
+                    <li><a href="{% url 'home' %}#panaromaSection">360 зураг</a></li>
     
-                    <li><a href="./home.html#nearbyPlaces">Ойр хавийн барилгууд</a></li>
+                    <li><a href="{% url 'home' %}#nearbyPlaces">Ойр хавийн барилгууд</a></li>
                     <div class="__right">
                         <a href="#">mn</a>
                         <a href="#">en</a>
@@ -109,10 +123,12 @@
                 </nav>
             </div>
         </header>
+    
+    
         <!-- end header -->
     
         <!-- start post content section --> 
-        <section>
+        <section class="blog-styling">
             <div class="container">
                 <div class="row flex-lg-row-reverse">                   
                     <main class="col-12 col-lg-9 left-sidebar md-margin-60px-bottom sm-margin-40px-bottom pr-0 md-no-padding-left">
@@ -267,12 +283,9 @@
                     <h3>Бидэнтэй холбогдох</h3>
                     <div class="inner-footer-contact-us">
                         <div class="inner-footer-contact-us-text">
-                            <p><i class="fas fa-phone-alt"></i>+976 99999999</p>
-                            <p><i class="far fa-envelope"></i>uuganbat.dev@gmail.com</p>
-                            <p><i class="fas fa-map-marker-alt"></i>Lorem, ipsum dolor sit amet consectetur adipisicing
-                                elit.
-                                Odio,
-                                officia.
+                            <p><i class="fas fa-phone-alt"></i>{{ global_settings.phone }}</p>
+                            <p><i class="far fa-envelope"></i>{{ global_settings.mail }}</p>
+                            <p><i class="fas fa-map-marker-alt"></i>{{ global_settings.location }}
                             </p>
                         </div>
                     </div>
@@ -297,7 +310,8 @@
                                 <input id="submit-contact" type="submit" value="Илгээх">
                             </div>
                             <div class="contact-us-form-right">
-                                <textarea name="" id="message-contact" cols="30" rows="10" placeholder="Энд бичнэ үү.."></textarea>
+                                <textarea name="" id="message-contact" cols="30" rows="10"
+                                    placeholder="Энд бичнэ үү.."></textarea>
                             </div>
                         </form>
                     </div>

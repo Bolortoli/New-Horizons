@@ -67,5 +67,10 @@ function showMobileNav() {
 }
 
 
-
+function closeContactUsForm() {
+    document.getElementById("contactUsForm").style.display = "none";
+}
+function showContactUsForm() {
+    document.getElementById("contactUsForm").style.display = "grid";
+}
 /*-----------home1.html code END------------------*/
