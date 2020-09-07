@@ -1,6 +1,9 @@
-from .models import FloorPlan, SubPage, PDFbrochure, Settings, ReasonBoxes, HomeSlider, FeatureCard, BuildingIntro, BuildingRents
+from .models import FloorPlan, SubPage, PDFbrochure, Settings, ReasonBoxes, HomeSlider, FeatureCard, BuildingIntro, BuildingRents, BuildingEnvironment
 
 def global_settings(request):
+
+    if not BuildingEnvironment.objects.exists():
+        BuildingEnvironment().save()
 
     if not BuildingRents.objects.exists():
         BuildingRents().save()

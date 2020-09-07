@@ -434,31 +434,19 @@
     {% endif %}
     <section class="carousel-section">
         <div class="carousel-description">
-            <h3>манай орчин</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quo dicta dolorem nostrum inventore consectetur dolorem nostrum inventore consectetur dolorem nostrum inventore consectetur dolorem nostrum inventore consectetur esse, tempora sunt, ipsum, vitae deleniti obcaecati ratione repellendus quae ducimus sapiente dignissimos voluptate doloremque molestias?</p>
+            <h3>{{ env_obj.title }}</h3>
+            <p>{{ env_obj.text }}</p>
         </div>
         <div class="swiper-container-three">
             <div class="swiper-wrapper">
+
+                {% for obj in env_pics %}
                 <div class="swiper-slide">
                     <div class="inner-swiper-slide">
-                        <img src="{% static 'assets/interier_1.jpg' %}" alt="building">
+                        <img src="{{ obj.pic.url }}" alt="building">
                     </div>
                 </div>
-                <div class="swiper-slide">
-                    <div class="inner-swiper-slide">
-                        <img src="{% static 'assets/interier_2.jpg' %}" alt="building">
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="inner-swiper-slide">
-                        <img src="{% static 'assets/interier_3.jpg' %}" alt="building">
-                    </div>
-                </div>
-                <div class="swiper-slide">
-                    <div class="inner-swiper-slide">
-                        <img src="{% static 'assets/interier_4.jpg' %}" alt="building">
-                    </div>
-                </div>
+                {% endfor %}
             </div>
             <div class="carousel-swiper-component-container">
                 <div class="swiper-pagination"></div>

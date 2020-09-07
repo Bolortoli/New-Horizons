@@ -167,7 +167,7 @@ class ContactUs(models.Model):
 class BuildingIntro(models.Model):
         
     title = models.CharField(max_length=255, verbose_name="Гарчиг", null=True, blank=True, default="Оруулаагүй")
-    text = RichTextField()
+    text=models.TextField(verbose_name="Тайлбар", default='') 
     pic=models.ImageField(upload_to="Home/building_intro/", verbose_name="Зураг", default="settings/horizon10.jpg", blank=True)
 
     class Meta:
@@ -295,6 +295,24 @@ class SubPages_Slider(models.Model):
         verbose_name = 'Titled-Icon'
         verbose_name_plural = 'Titled-Icon'
     
+class BuildingEnvironment(models.Model):
+    title = models.CharField(max_length=255, verbose_name="Гарчиг", null=True, blank=True, default="Манай орчин")
+    text = models.CharField(max_length=255, verbose_name="Текст", null=True, blank=True, default="")
+
+    def __str__(self):
+        return 'Барилын орчин өөрчлөх'
+
+    class Meta:
+        verbose_name = 'Барилгын орчин'
+        verbose_name_plural = 'Барилгын орчин'
+   
+class BuildingEnvironmentPic(models.Model):
+    pic = models.ImageField(upload_to="Home/Environemt", verbose_name="Зураг", default='', blank=True)
+    organization=models.ForeignKey(BuildingEnvironment, verbose_name="a", on_delete=models.CASCADE, default='')
+
+    class Meta:
+        verbose_name = 'SLider Зураг'
+        verbose_name_plural = 'Slider Зураг'
 
 # # Sorry about HARD CODE :( Bo
 # # It hurts my heart at the time 
