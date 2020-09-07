@@ -1,4 +1,5 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,21 +25,21 @@
 
                     <li><a href="{% url 'home' %}">нүүр</a></li>
                     
-                    <li><a href="{% url 'home' %}#buildingFeature">Дадвуу тал</a></li>
+		    <li><a href="{% url 'home' %}#buildingFeature">{% trans "Дадвуу тал" %}</a></li>
 
-                    <li><a href="{% url 'home' %}#miniBlog">Сүүлийн үеийн мэдээ</a></li>
+		    <li><a href="{% url 'home' %}#miniBlog">{% trans "Сүүлийн үеийн мэдээ" %}</a></li>
 
-                    <li><a href="{% url 'home' %}#buildingIntro">танилцуулга</a></li>
+		    <li><a href="{% url 'home' %}#buildingIntro">{% trans "танилцуулга" %}</a></li>
 
-                    <li><a href="{% url 'home' %}#service">үйлчилгээ</a></li>
+		    <li><a href="{% url 'home' %}#service">{% trans "үйлчилгээ" %}</a></li>
 
-                    <li><a href="{% url 'home' %}#floorInfo">давхарийн мэдээлэл</a></li>
+		    <li><a href="{% url 'home' %}#floorInfo">{% trans "давхарийн мэдээлэл" %}</a></li>
 
-                    <li><a href="{% url 'home' %}#sevenReason">Давуу тал</a></li>
+		    <li><a href="{% url 'home' %}#sevenReason">{% trans "Давуу тал" %}</a></li>
                     
-                    <li><a href="{% url 'home' %}#panaromaSection">360 зураг</a></li>
+		    <li><a href="{% url 'home' %}#panaromaSection">{% trans "360 зураг" %}</a></li>
 
-                    <li><a href="{% url 'home' %}#nearbyPlaces">Ойр хавийн барилгууд</a></li>
+		    <li><a href="{% url 'home' %}#nearbyPlaces">{% trans "Ойр хавийн барилгууд" %}</a></li>
 
                 </nav>
             </div>
@@ -59,23 +60,23 @@
             <nav id="mobileNav" onclick="showMobileNav()">
                 <img src="{{ global_setings.logo.url }}" alt="logo">
 
-                <div class="contactUsAnchor"><a href="{% url 'home' %}#contactUsFooter">Бидэнтэй холбогдох</a></div>
+		<div class="contactUsAnchor"><a href="{% url 'home' %}#contactUsFooter">{% trans "Бидэнтэй холбогдох" %}</a></div>
 
-                <li><a href="{% url 'home' %}#home">нүүр</a></li>
+		<li><a href="{% url 'home' %}#home">{% trans "нүүр" %}</a></li>
 
-                <li><a href="{% url 'home' %}#miniBlog">Сүүлийн үеийн мэдээ</a></li>
+		<li><a href="{% url 'home' %}#miniBlog">{% trans "Сүүлийн үеийн мэдээ" %}</a></li>
 
-                <li><a href="{% url 'home' %}#buildingIntro">танилцуулга</a></li>
+		<li><a href="{% url 'home' %}#buildingIntro">{% trans "танилцуулга" %}</a></li>
 
-                <li><a href="{% url 'home' %}#service">үйлчилгээ</a></li>
+		<li><a href="{% url 'home' %}#service">{% trans "үйлчилгээ" %}</a></li>
 
-                <li><a href="{% url 'home' %}#floorInfo">давхарийн мэдээлэл</a></li>
+		<li><a href="{% url 'home' %}#floorInfo">{% trans "давхарийн мэдээлэл" %}</a></li>
 
-                <li><a href="{% url 'home' %}#sevenReason">7 шалтгаан</a></li>
+		<li><a href="{% url 'home' %}#sevenReason">{% trans "7 шалтгаан" %}</a></li>
 
-                <li><a href="{% url 'home' %}#panaromaSection">360 зураг</a></li>
+		<li><a href="{% url 'home' %}#panaromaSection">{% trans "360 зураг" %}</a></li>
 
-                <li><a href="{% url 'home' %}#nearbyPlaces">Ойр хавийн барилгууд</a></li>
+		<li><a href="{% url 'home' %}#nearbyPlaces">{% trans "Ойр хавийн барилгууд" %}</a></li>
                 <div class="__right">
                     <a href="#">mn</a>
                     <a href="#">en</a>
@@ -94,18 +95,18 @@
             <form action="">
                 <div class="contact-us-input-field">
                     <i class="fas fa-user-tie"></i>
-                    <input id="name-contact" type="text" placeholder="Нэр">
+		    <input id="name-contact" type="text" placeholder="{% trans 'Нэр' %}">
                 </div>
                 <div class="contact-us-input-field">
                     <i class="fas fa-paper-plane"></i>
-                    <input id="mail-contact" type="email" placeholder="Цахим хаяг">
+		    <input id="mail-contact" type="email" placeholder="{% trans 'Цахим хаяг' %}">
                 </div>
                 <div class="contact-us-input-field">
                     <i class="fas fa-briefcase"></i>
-                    <input id="company-contact" type="text" placeholder="Компани">
+		    <input id="company-contact" type="text" placeholder="{% trans 'Компани' %}">
                 </div>
-                <textarea name="" id="message-contact" cols="30" rows="10" placeholder="Энд бичнэ үү.."></textarea>
-                <input id="submit-contact" type="submit" value="Илгээх">
+		<textarea name="" id="message-contact" cols="30" rows="10" placeholder="{% trans 'Энд бичнэ үү..' %}"></textarea>
+		<input id="submit-contact" type="submit" value="{% trans 'Илгээх' %}">
             </form>
         </div>
     </div>
@@ -114,7 +115,7 @@
         <div class="home-img1-container">
             <div class="get-information">
                 <a href="{{ pdf_url }}" class="get-information-inner">
-                    <p>боршуур авах</p>
+		  <p>{% trans "боршуур авах" %}</p>
                 </a>
             </div>
             <img src="{% static 'assets/IMG_7249.JPG' %}" alt="building image" width="100">
@@ -127,17 +128,17 @@
             <div class="effected-get-information">
                 <div class="info-container">
                     <a href="{{ pdf_url }}" class="get-information-inner">
-                        <p>боршуур авах</p>
+		      <p>{% trans "боршуур авах" %}</p>
                     </a>
                 </div>
             </div>
         </div>
         <ul class="sub-pages">
-            <li><a href="{% url 'building-structure' %}">барилгын төлөвлөлт</a></li>
-            <li><a href="{% url 'security' %}">Аюулгүй байдал</a></li>
-            <li><a href="{% url 'user-experience' %}">тав тух</a></li>
-            <li><a href="{% url 'news' %}">мэдээ мэдээлэл</a></li>
-            <li><a href="{% url 'about-us' %}">хамт олон</a></li>
+	  <li><a href="{% url 'building-structure' %}">{% trans "барилгын төлөвлөлт" %}</a></li>
+	  <li><a href="{% url 'security' %}">{% trans "Аюулгүй байдал" %}</a></li>
+	  <li><a href="{% url 'user-experience' %}">{% trans "тав тух" %}</a></li>
+	  <li><a href="{% url 'news' %}">{% trans "мэдээ мэдээлэл" %}</a></li>
+	  <li><a href="{% url 'about-us' %}">{% trans "хамт олон" %}</a></li>
         </ul>
     </section>
 </body>

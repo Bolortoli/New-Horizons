@@ -6,6 +6,7 @@ from django.http import HttpResponse, JsonResponse, HttpResponseBadRequest
 from django.core.mail import EmailMessage
 import json, random
 from django.core.paginator import Paginator 
+from django.utils.translation import gettext as _
 
 FEATURE_NEWS_ON_BLOGS = 4
 FEATURE_NEWS_ON_HOME = 3

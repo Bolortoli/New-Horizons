@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 urlpatterns = [  
     re_path(r'^jet/', include('jet.urls', 'jet')),
     # re_path(r'^jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')), 
+    path('rosetta/', include('rosetta.urls')),
     path('admin/', admin.site.urls),
     path('', include('horizonapp.urls')),
     path('secret/', include('admin_honeypot.urls', namespace='admin_honeypot')),
