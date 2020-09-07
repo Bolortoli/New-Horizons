@@ -146,6 +146,10 @@ def home(request, company=None):
         for news in News.objects.filter(featured=True)[:FEATURE_NEWS_ON_HOME]:
             news_list.append(news)
 
+    # Building environment slider
+    env_obj = BuildingEnvironment.objects.all().first()
+    env_pics = BuildingEnvironmentPic.objects.filter(organization=env_obj)
+
     context = {
         'reason_boxes': reason_boxes,
         'pdf_url': pdf_url,
@@ -157,6 +161,8 @@ def home(request, company=None):
         'floor_plan': floor_plan_details,
         'leaseholder_per_floor': leaseholder_per_floor,
         'news_list': news_list,
+        'env_obj': env_obj,
+        'env_pics': env_pics,
     }
 
     return render(request, 'home.html', context)

@@ -32,8 +32,8 @@ class NewsAdmin(admin.ModelAdmin):
 @admin.register(BuildingIntro)
 class BuildingIntroAdmin(admin.ModelAdmin):
 
-    list_display = [f.name for f in BuildingIntro._meta.get_fields()]
-    list_editable = [f.name for f in BuildingIntro._meta.get_fields() if f.name != "id" and f.name != "title"]
+    list_display = [f.name for f in BuildingIntro._meta.get_fields() if f.name != "id" ]
+    list_editable = [f.name for f in BuildingIntro._meta.get_fields() if f.name != "id" ]
     list_display_links = None
 
     def has_add_permission(self, request):
@@ -41,6 +41,21 @@ class BuildingIntroAdmin(admin.ModelAdmin):
 
     def has_delete_permission(self, request, obj=None):
         return False
+
+class BuildingEnvironmentPicsInline(admin.StackedInline):
+    model = BuildingEnvironmentPic
+
+@admin.register(BuildingEnvironment)
+class BuildingEnvironmentAdmin(admin.ModelAdmin):
+
+    inlines = [BuildingEnvironmentPicsInline]
+
+    def has_add_permission(self, request):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
 
 @admin.register(BuildingRents)
 class BuildingRentsAdmin(admin.ModelAdmin):
