@@ -1,4 +1,7 @@
 tags
-
+tags.lock
+tags.temp
 
 /tags
+/tags.lock
+/tags.temp
