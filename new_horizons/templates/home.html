@@ -256,7 +256,7 @@
                     <div class="inner-service-title"> {{ leaseholder.category}} </div>
                     <div class="sub-service-list-container">
                         {% for i in leaseholder.leaseholder %}
-                        <a class='leaseholder-name' href="{% url 'home' company=i %}#service">{{ i }}</a>
+                        <a class='leaseholder-name' href="{% url 'home' company=i.id %}#service">{{ i }}</a>
                         {% endfor %}
                     </div>
                 </li>

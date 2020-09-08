@@ -86,7 +86,7 @@ def home(request, company=None):
     # Custom url company -> means companies slider on home page
     else:
         leaseholder_slider = []
-        sliders = OrganizationDetail.objects.filter(organization=Organization.objects.get(or_name=company))
+        sliders = OrganizationDetail.objects.filter(organization=Organization.objects.get(id=company))
         for slider in sliders:
             dictionary = {
                 'title': slider.title,
@@ -104,7 +104,7 @@ def home(request, company=None):
                 'leaseholder': []
             }
             for org in Organization.objects.filter(category=obj):
-                org_cats['leaseholder'].append(org.or_name)
+                org_cats['leaseholder'].append(Organization.objects.get(or_name=org.or_name))
                 # orgs.append()
             orgs.append(org_cats)
 
