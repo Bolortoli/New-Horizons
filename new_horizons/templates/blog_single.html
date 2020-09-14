@@ -154,7 +154,7 @@
                         <div class="row mx-0">
                             <div class="col-12 col-lg-6 text-center text-lg-left">
                                 <div class="tag-cloud margin-20px-bottom">
-                                    <a href="{% url 'news' category=news.category %}">{{ news.category }}</a>
+                                    <a href="{% url 'news' cat_id=news.category.id %}">{{ news.category }}</a>
                                     <!-- <a href="blog-grid.html">сонин хачин</a> -->
                                   
                                 </div>
@@ -303,7 +303,11 @@
                             <div class="text-extra-dark-gray margin-20px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>Мэдээний төрөл</span></div>
                             <ul class="list-style-6 margin-50px-bottom text-small">
                                 {% for category in categories %}
-                                <li><a href="{% url 'news' category=category.category %}">{{ category.category }}</a><span>{{ category.news_count }}</span></li>
+                                {% if category.cat_id is none %}
+                                <li><a href="{% url 'news' %}">{{ category.category }}</a><span>{{ category.news_count }}</span></li>
+                                {% else %}
+                                <li><a href="{% url 'news' cat_id=category.cat_id %}">{{ category.category }}</a><span>{{ category.news_count }}</span></li>
+                                {% endif %}
                                 {% endfor %}
                                 <!-- <li><a href="#">Сонин хачин</a><span>05</span></li> -->
                             </ul>   
@@ -379,19 +383,19 @@
                 <div class="sub-pages-title">
                     <h3>дэд хуудас</h3>
                     <div class="sub-pages-list">
-                        <a href="#">
+                        <a href="{% url 'building-structure' %}">
                             <p><i class="fas fa-angle-double-right"></i>барилгын төлөвлөлт</p>
                         </a>
-                        <a href="#">
+                        <a href="{% url 'security' %}">
                             <p><i class="fas fa-angle-double-right"></i>Аюулгүй байдал</p>
                         </a>
-                        <a href="#">
+                        <a href="{% url 'user-experience' %}">
                             <p><i class="fas fa-angle-double-right"></i>тав тух</p>
                         </a>
-                        <a href="#">
+                        <a href="{% url 'news' %}">
                             <p><i class="fas fa-angle-double-right"></i>мэдээ мэдээлэл</p>
                         </a>
-                        <a href="#">
+                        <a href="{% url 'about-us' %}">
                             <p><i class="fas fa-angle-double-right"></i>хамт олон</p>
                         </a>
                     </div>

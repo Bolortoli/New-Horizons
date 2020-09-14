@@ -47,8 +47,14 @@
                 <a href="#">Бидэнтэй харилцах</a>
             </div>
             <div class="__right">
-                <div class="select-language"><a href="#">mn</a></div>
-                <div class="select-language"><a href="#">en</a></div>
+              {% get_current_language as LANGUAGE_CODE %}
+              {% get_available_languages as LANGUAGES %}
+
+              {% get_language_info_list for LANGUAGES as languages %}
+
+              {% for lan in languages %}
+              <div class="select-language"><a href="/{{ lan.code }}/">{{ lan.name_local }}</a></div>
+              {% endfor %}
             </div>
         </div>
     </header>
@@ -77,10 +83,19 @@
 		<li><a href="{% url 'home' %}#panaromaSection">{% trans "360 зураг" %}</a></li>
 
 		<li><a href="{% url 'home' %}#nearbyPlaces">{% trans "Ойр хавийн барилгууд" %}</a></li>
-                <div class="__right">
-                    <a href="#">mn</a>
-                    <a href="#">en</a>
-                </div>
+    
+
+    <div class="__right">
+      {% get_current_language as LANGUAGE_CODE %}
+      {% get_available_languages as LANGUAGES %}
+
+      {% get_language_info_list for LANGUAGES as languages %}
+
+      {% for lan in languages %}
+      <a href="/{{ lan.code }}/">{{ lan.name_local }}</a>
+      {% endfor %}
+    </div>
+
             </nav>
         </div>
     </header>
@@ -114,8 +129,8 @@
     <section class="guide-section">
         <div class="home-img1-container">
             <div class="get-information">
-                <a href="{{ pdf_url }}" class="get-information-inner">
-		  <p>{% trans "Товхимол авах" %}</p>
+                <a href="{{ pdf_url.pdf }}" class="get-information-inner">
+		  <p>{% trans "Танилцуулга авах" %}</p>
                 </a>
             </div>
             <img src="{% static 'assets/IMG_7249.JPG' %}" alt="building image" width="100">
@@ -127,18 +142,18 @@
             </div>
             <div class="effected-get-information">
                 <div class="info-container">
-                    <a href="{{ pdf_url }}" class="get-information-inner">
-		      <p>{% trans "Товхимол авах" %}</p>
+                    <a href="{{ pdf_url.pdf }}" class="get-information-inner">
+		      <p>{% trans "Танилцуулга авах" %}</p>
                     </a>
                 </div>
             </div>
         </div>
         <ul class="sub-pages">
-	  <li><a href="{% url 'building-structure' %}">{% trans "барилгын төлөвлөлт" %}</a></li>
+	  <li><a href="{% url 'building-structure' %}">{% trans "Барилгын төлөвлөлт" %}</a></li>
 	  <li><a href="{% url 'security' %}">{% trans "Аюулгүй байдал" %}</a></li>
-	  <li><a href="{% url 'user-experience' %}">{% trans "тав тух" %}</a></li>
-	  <li><a href="{% url 'news' %}">{% trans "мэдээ мэдээлэл" %}</a></li>
-	  <li><a href="{% url 'about-us' %}">{% trans "хамт олон" %}</a></li>
+	  <li><a href="{% url 'user-experience' %}">{% trans "Аюулгүй байдал" %}</a></li>
+	  <li><a href="{% url 'news' %}">{% trans "Мэдээ мэдээлэл" %}</a></li>
+	  <li><a href="{% url 'about-us' %}">{% trans "Хамт олон" %}</a></li>
         </ul>
     </section>
 </body>

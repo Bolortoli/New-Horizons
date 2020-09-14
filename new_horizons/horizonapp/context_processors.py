@@ -1,6 +1,9 @@
-from .models import FloorPlan, SubPage, PDFbrochure, Settings, ReasonBoxes, HomeSlider, FeatureCard, BuildingIntro, BuildingRents, BuildingEnvironment
+from .models import FloorPlan, SubPage, PDFbrochure, Settings, ReasonBoxes, HomeSlider, FeatureCard, BuildingIntro, BuildingRents, BuildingEnvironment, Three60Pic
 
 def global_settings(request):
+
+    if not Three60Pic.objects.exists():
+        Three60Pic().save()
 
     if not BuildingEnvironment.objects.exists():
         BuildingEnvironment().save()

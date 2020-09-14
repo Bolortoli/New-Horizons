@@ -8,6 +8,14 @@ from urllib.parse import urljoin
 from django.conf import settings
 from django_ckeditor_5.fields import CKEditor5Field
 
+class Three60Pic(models.Model):
+     pic=models.ImageField(verbose_name="360 зураг", upload_to="three60pics", default="public_html/static/assets/360_one.jpg")
+     
+     class Meta:
+         verbose_name = "360 зураг"
+         verbose_name_plural = "360 зураг"
+    
+
 class NewsCategory(models.Model):
 
     name=models.CharField(max_length=255, verbose_name="Категорийн нэр", default='', unique=True)
@@ -22,7 +30,7 @@ class News(models.Model):
 
     category=models.ForeignKey(NewsCategory, verbose_name="Мэдээний категори", on_delete=models.CASCADE)
     title=models.CharField(max_length=255, verbose_name="Мэдээний гарчиг", default='')
-    pic=models.ImageField(verbose_name="Мэдээний зураг", upload_to="news/picture", default="", blank=True)
+    pic=models.ImageField(verbose_name="Мэдээний зураг", upload_to="news/picture", default="")
     content=CKEditor5Field('Text', config_name='extends')
     published_date=models.DateField(verbose_name="Огноо", auto_now=True, editable=False)
     slug=models.CharField(max_length=255, verbose_name="Мэдээний зам", default='', editable=False)
@@ -37,9 +45,9 @@ class News(models.Model):
         random_number = randint(1000, 999999999)
         while News.objects.filter(id=random_number).exists():
             random_number = randint(1000, 9999999)
-        self.id = random_number
-
-        self.slug = slugify("%s %s" % (self.category.name, str(self.id)))
+        # self.id = random_number
+        
+        self.slug = slugify("%s %s" % (self.category.name, str(random_number)))
         super().save(*args, **kwargs)
 
     class Meta:
@@ -281,8 +289,8 @@ class SubPages_TitleIcon(models.Model):
     
     
     class Meta:
-        verbose_name = 'Slider'
-        verbose_name_plural = 'Slider'
+        verbose_name = 'Titled-Icon'
+        verbose_name_plural = 'Titled-Icon'
 
 class SubPages_Slider(models.Model):
     title = models.CharField(max_length=255, verbose_name="Гарчиг", null=True, blank=True, default="")
@@ -292,8 +300,8 @@ class SubPages_Slider(models.Model):
     
     
     class Meta:
-        verbose_name = 'Titled-Icon'
-        verbose_name_plural = 'Titled-Icon'
+        verbose_name = 'Slider'
+        verbose_name_plural = 'Slider'
     
 class BuildingEnvironment(models.Model):
     title = models.CharField(max_length=255, verbose_name="Гарчиг", null=True, blank=True, default="Манай орчин")
@@ -313,193 +321,3 @@ class BuildingEnvironmentPic(models.Model):
     class Meta:
         verbose_name = 'SLider Зураг'
         verbose_name_plural = 'Slider Зураг'
-
-# # Sorry about HARD CODE :( Bo
-# # It hurts my heart at the time 
-# # HARD CODE START :'(
-# class SubPageAboutUs(models.Model):
-#     page_title = models.CharField(max_length=255, verbose_name="Хуудас гарчиг", null=True,  default="Бидний тухай")
-#     lefty_title = models.CharField(max_length=255, verbose_name="Зүүн зурагтай - Гарчиг", null=True, blank=True, default="Оруулаагүй")
-#     lefty_description = CKEditor5Field('Text', config_name='extends', blank=True)
-#     lefty_pic = models.ImageField(upload_to="Sub-pages/about-us", verbose_name="Зүүн зурагтай - зураг", default='settings/index.jpeg', blank=True)
-
-#     notitledicon_title = models.CharField(max_length=255, verbose_name="NoTitledIcon left - Гарчиг", null=True, blank=True, default="Оруулаагүй")
-#     notitledicon_description = CKEditor5Field('Text', config_name='extends', blank=True)
-
-#     righty_title = models.CharField(max_length=255, verbose_name="Баруун зурагтай - Гарчиг", null=True, blank=True, default="Оруулаагүй")
-#     righty_description = CKEditor5Field('Text', config_name='extends', blank=True)
-#     righty_pic = models.ImageField(upload_to="Sub-pages/about-us", verbose_name="Баруун зурагтай - зураг", default='settings/index.jpeg', blank=True)
- 
-    
-#     notitledicon_title = models.CharField(max_length=255, verbose_name="NoTitledIcon right - Гарчиг", null=True, blank=True, default="Оруулаагүй")
-#     notitledicon_description = CKEditor5Field('Text', config_name='extends', blank=True)
-
-#     righty_pic = models.ImageField(upload_to="Sub-pages/about-us", verbose_name="Зураг том", default='settings/index.jpeg', blank=True)
-    
-#     def __str__(self):
-#         return 'Өөрчлөх'
-
-#     class Meta:
-#         verbose_name = 'Бидний тухай'
-#         verbose_name_plural = 'Бидний тухай'
-
-# class SubPages_ABOUTUS_NoTitleIcon(models.Model):
-#     text = models.CharField(max_length=255, verbose_name="Текст", null=True, blank=True, default="")
-#     icon = models.ImageField(upload_to="Sub-pages/notitledicon", verbose_name="Зураг", default='', blank=True)
-#     organization=models.ForeignKey(SubPageAboutUs, verbose_name="a", on_delete=models.CASCADE, default='')
-    
-#     class Meta:
-#         verbose_name = 'No-Titled-Icon'
-#         verbose_name_plural = 'No-Titled-Icon'
-
-# class SubPages_ABOUTUS_TitleIcon(models.Model):
-#     title = models.CharField(max_length=255, verbose_name="Гарчиг", null=True, blank=True, default="")
-#     text = models.CharField(max_length=255, verbose_name="Текст", null=True, blank=True, default="")
-#     icon = models.ImageField(upload_to="Sub-pages/icon/notitledicon", verbose_name="Зураг", default='', blank=True)
-#     organization=models.ForeignKey(SubPageAboutUs, verbose_name="a", on_delete=models.CASCADE, default='')
-    
-    
-#     class Meta:
-#         verbose_name = 'Titled-Icon'
-#         verbose_name_plural = 'Titled-Icon'
-
-
-# class SubPageSecurity(models.Model):
-#     page_title = models.CharField(max_length=255, verbose_name="Хуудас гарчиг", null=True,  default="Бидний тухай")
-#     lefty_title = models.CharField(max_length=255, verbose_name="Зүүн зурагтай - Гарчиг", null=True, blank=True, default="Оруулаагүй")
-#     lefty_description = CKEditor5Field('Text', config_name='extends', blank=True)
-#     lefty_pic = models.ImageField(upload_to="Sub-pages/about-us", verbose_name="Зүүн зурагтай - зураг", default='settings/index.jpeg', blank=True)
-
-#     notitledicon_title = models.CharField(max_length=255, verbose_name="NoTitledIcon left - Гарчиг", null=True, blank=True, default="Оруулаагүй")
-#     notitledicon_description = CKEditor5Field('Text', config_name='extends', blank=True)
-
-#     righty_title = models.CharField(max_length=255, verbose_name="Баруун зурагтай - Гарчиг", null=True, blank=True, default="Оруулаагүй")
-#     righty_description = CKEditor5Field('Text', config_name='extends', blank=True)
-#     righty_pic = models.ImageField(upload_to="Sub-pages/about-us", verbose_name="Баруун зурагтай - зураг", default='settings/index.jpeg', blank=True)
- 
-    
-#     notitledicon_title = models.CharField(max_length=255, verbose_name="NoTitledIcon right - Гарчиг", null=True, blank=True, default="Оруулаагүй")
-#     notitledicon_description = CKEditor5Field('Text', config_name='extends', blank=True)
-
-#     righty_pic = models.ImageField(upload_to="Sub-pages/about-us", verbose_name="Зураг том", default='settings/index.jpeg', blank=True)
-    
-#     def __str__(self):
-#         return 'Өөрчлөх'
-
-#     class Meta:
-#         verbose_name = 'Бидний тухай'
-#         verbose_name_plural = 'Бидний тухай'
-
-# class SubPages_SECURITY_NoTitleIcon(models.Model):
-#     text = models.CharField(max_length=255, verbose_name="Текст", null=True, blank=True, default="")
-#     icon = models.ImageField(upload_to="Sub-pages/notitledicon", verbose_name="Зураг", default='', blank=True)
-#     organization=models.ForeignKey(SubPageAboutUs, verbose_name="a", on_delete=models.CASCADE, default='')
-    
-#     class Meta:
-#         verbose_name = 'No-Titled-Icon'
-#         verbose_name_plural = 'No-Titled-Icon'
-
-# class SubPages_SECURITY_TitleIcon(models.Model):
-#     title = models.CharField(max_length=255, verbose_name="Гарчиг", null=True, blank=True, default="")
-#     text = models.CharField(max_length=255, verbose_name="Текст", null=True, blank=True, default="")
-#     icon = models.ImageField(upload_to="Sub-pages/icon/notitledicon", verbose_name="Зураг", default='', blank=True)
-#     organization=models.ForeignKey(SubPageAboutUs, verbose_name="a", on_delete=models.CASCADE, default='')
-    
-    
-#     class Meta:
-#         verbose_name = 'Titled-Icon'
-#         verbose_name_plural = 'Titled-Icon'
-
-
-# class SubPageStructure(models.Model):
-#     page_title = models.CharField(max_length=255, verbose_name="Хуудас гарчиг", null=True,  default="Барилгын төлөвлөлт")
-#     lefty_title = models.CharField(max_length=255, verbose_name="Зүүн зурагтай - Гарчиг", null=True, blank=True, default="Оруулаагүй")
-#     lefty_description = CKEditor5Field('Text', config_name='extends', blank=True)
-#     lefty_pic = models.ImageField(upload_to="Sub-pages/about-us", verbose_name="Зүүн зурагтай - зураг", default='settings/index.jpeg', blank=True)
-
-#     notitledicon_title = models.CharField(max_length=255, verbose_name="NoTitledIcon left - Гарчиг", null=True, blank=True, default="Оруулаагүй")
-#     notitledicon_description = CKEditor5Field('Text', config_name='extends', blank=True)
-
-#     righty_title = models.CharField(max_length=255, verbose_name="Баруун зурагтай - Гарчиг", null=True, blank=True, default="Оруулаагүй")
-#     righty_description = CKEditor5Field('Text', config_name='extends', blank=True)
-#     righty_pic = models.ImageField(upload_to="Sub-pages/about-us", verbose_name="Баруун зурагтай - зураг", default='settings/index.jpeg', blank=True)
- 
-    
-#     notitledicon_title = models.CharField(max_length=255, verbose_name="NoTitledIcon right - Гарчиг", null=True, blank=True, default="Оруулаагүй")
-#     notitledicon_description = CKEditor5Field('Text', config_name='extends', blank=True)
-
-#     righty_pic = models.ImageField(upload_to="Sub-pages/about-us", verbose_name="Зураг том", default='settings/index.jpeg', blank=True)
-    
-#     def __str__(self):
-#         return 'Өөрчлөх'
-
-#     class Meta:
-#         verbose_name = 'Бидний тухай'
-#         verbose_name_plural = 'Бидний тухай'
-
-# class SubPages_STRUCTURE_NoTitleIcon(models.Model):
-#     text = models.CharField(max_length=255, verbose_name="Текст", null=True, blank=True, default="")
-#     icon = models.ImageField(upload_to="Sub-pages/notitledicon", verbose_name="Зураг", default='', blank=True)
-#     organization=models.ForeignKey(SubPageAboutUs, verbose_name="a", on_delete=models.CASCADE, default='')
-    
-#     class Meta:
-#         verbose_name = 'No-Titled-Icon'
-#         verbose_name_plural = 'No-Titled-Icon'
-
-# class SubPages_STRUCTURE_TitleIcon(models.Model):
-#     title = models.CharField(max_length=255, verbose_name="Гарчиг", null=True, blank=True, default="")
-#     text = models.CharField(max_length=255, verbose_name="Текст", null=True, blank=True, default="")
-#     icon = models.ImageField(upload_to="Sub-pages/icon/notitledicon", verbose_name="Зураг", default='', blank=True)
-#     organization=models.ForeignKey(SubPageAboutUs, verbose_name="a", on_delete=models.CASCADE, default='')
-    
-    
-#     class Meta:
-#         verbose_name = 'Titled-Icon'
-#         verbose_name_plural = 'Titled-Icon'
-
-
-# class SubPageUserExperience(models.Model):
-#     page_title = models.CharField(max_length=255, verbose_name="Хуудас гарчиг", null=True,  default="Тав тух")
-#     lefty_title = models.CharField(max_length=255, verbose_name="Зүүн зурагтай - Гарчиг", null=True, blank=True, default="Оруулаагүй")
-#     lefty_description = CKEditor5Field('Text', config_name='extends', blank=True)
-#     lefty_pic = models.ImageField(upload_to="Sub-pages/about-us", verbose_name="Зүүн зурагтай - зураг", default='settings/index.jpeg', blank=True)
-
-#     notitledicon_title = models.CharField(max_length=255, verbose_name="NoTitledIcon left - Гарчиг", null=True, blank=True, default="Оруулаагүй")
-#     notitledicon_description = CKEditor5Field('Text', config_name='extends', blank=True)
-
-#     righty_title = models.CharField(max_length=255, verbose_name="Баруун зурагтай - Гарчиг", null=True, blank=True, default="Оруулаагүй")
-#     righty_description = CKEditor5Field('Text', config_name='extends', blank=True)
-#     righty_pic = models.ImageField(upload_to="Sub-pages/about-us", verbose_name="Баруун зурагтай - зураг", default='settings/index.jpeg', blank=True)
- 
-    
-#     notitledicon_title = models.CharField(max_length=255, verbose_name="NoTitledIcon right - Гарчиг", null=True, blank=True, default="Оруулаагүй")
-#     notitledicon_description = CKEditor5Field('Text', config_name='extends', blank=True)
-
-#     righty_pic = models.ImageField(upload_to="Sub-pages/about-us", verbose_name="Зураг том", default='settings/index.jpeg', blank=True)
-    
-#     def __str__(self):
-#         return 'Өөрчлөх'
-
-#     class Meta:
-#         verbose_name = 'Бидний тухай'
-#         verbose_name_plural = 'Бидний тухай'
-
-# class SubPages_USEREXP_NoTitleIcon(models.Model):
-#     text = models.CharField(max_length=255, verbose_name="Текст", null=True, blank=True, default="")
-#     icon = models.ImageField(upload_to="Sub-pages/notitledicon", verbose_name="Зураг", default='', blank=True)
-#     organization=models.ForeignKey(SubPageAboutUs, verbose_name="a", on_delete=models.CASCADE, default='')
-    
-#     class Meta:
-#         verbose_name = 'No-Titled-Icon'
-#         verbose_name_plural = 'No-Titled-Icon'
-
-# class SubPages_USEREXP_TitleIcon(models.Model):
-#     title = models.CharField(max_length=255, verbose_name="Гарчиг", null=True, blank=True, default="")
-#     text = models.CharField(max_length=255, verbose_name="Текст", null=True, blank=True, default="")
-#     icon = models.ImageField(upload_to="Sub-pages/icon/notitledicon", verbose_name="Зураг", default='', blank=True)
-#     organization=models.ForeignKey(SubPageAboutUs, verbose_name="a", on_delete=models.CASCADE, default='')
-    
-    
-#     class Meta:
-#         verbose_name = 'Titled-Icon'
-#         verbose_name_plural = 'Titled-Icon'

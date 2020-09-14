@@ -12,10 +12,13 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 
 import os
 from . import config as configs
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+# Cpanel or Local Environment?
+DEV_ENV = 'local'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -23,10 +26,16 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '#oq%0lf4!6s)x(e#xswmhq04)#&1w-4!#ny-u0#*l8s74oyfx@'
 
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+if DEV_ENV == 'cpanel' :
+  ALLOWED_HOSTS = ["newhorizons.mn","www.newhorizons.mn",'localhost', '127.0.0.1']
+else :
+  ALLOWED_HOSTS = ["*"]
+
+
 
 
 # Application definition
@@ -34,6 +43,7 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 INSTALLED_APPS = [
     'ckeditor',
     'django_ckeditor_5',
+    'jet.dashboard',
     'jet',
     'admin_honeypot',
     'django.contrib.admin',
@@ -42,8 +52,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'horizonapp',
     'admin_reorder',
+    'horizonapp',
     'rosetta',
 ]
 
@@ -114,10 +124,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'mn'
+prefix_default_language=False
+
+LANGUAGE_CODE = 'en'
 LANGUAGES = (
-      ('en','English'),
-      ('mn','Mongolia'),
+      ('en',_('English')),
+      ('mn',_('Mongolia')),
     )
 
 TIME_ZONE = 'UTC'
@@ -133,19 +145,29 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
-STATIC_ROOT = os.path.join(BASE_DIR, 'assets')
-
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+CKEDITOR_UPLOAD_PATH = 'uploads/'
 
-EMAIL_HOST = configs.EMAIL_HOST
-EMAIL_PORT = configs.EMAIL_PORT
-EMAIL_HOST_USER = configs.EMAIL_HOST_USER
-EMAIL_HOST_PASSWORD = configs.EMAIL_HOST_PASSWORD
-EMAIL_USE_TLS = configs.EMAIL_USE_TLS
+if DEV_ENV == 'cpanel' :
+  STATICFILES_DIRS = [
+      os.path.join(BASE_DIR, 'static')
+  ]
+  STATIC_ROOT = "/home/newhoriz/public_html/static/"
+  MEDIA_ROOT = "/home/newhoriz/public_html/media/"
+else:
+  STATICFILES_DIRS = [
+      os.path.join(BASE_DIR, 'assets')
+  ]
+  STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+  MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+
+# EMAIL_HOST = configs.EMAIL_HOST
+# EMAIL_PORT = configs.EMAIL_PORT
+# EMAIL_HOST_USER = configs.EMAIL_HOST_USER
+# EMAIL_HOST_PASSWORD = configs.EMAIL_HOST_PASSWORD
+# EMAIL_USE_TLS = configs.EMAIL_USE_TLS
 
 # SECURE_HSTS_PRELOAD = True
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
@@ -224,7 +246,7 @@ customColorPalette = [
         },
     ]
 
-CKEDITOR_5_CUSTOM_CSS = 'path_to.css' # optional
+# CKEDITOR_5_CUSTOM_CSS = 'path_to.css' # optional
 CKEDITOR_5_CONFIGS = {
     'default': {
         'toolbar': ['heading', '|', 'bold', 'italic', 'link',
@@ -301,6 +323,7 @@ ADMIN_REORDER = [
                 'horizonapp.PDFbrochure',
                 'horizonapp.Settings',
                 'horizonapp.ContactUs',
+                'horizonapp.Three60Pic',
             )
     },
     {
@@ -330,9 +353,41 @@ ADMIN_REORDER = [
                 'horizonapp.SubPages_Slider',
             )
     },
-
+]
+JET_SIDE_MENU_ITEMS = [  # A list of application or custom item dicts
+    {'label': 'Мэдээ мэдээлэл', 'app_label': 'horizonapp', 'items': [
+        {'name': 'NewsCategory', 'label': 'Мэдээний категори', 'url': 'http://newhorizons.mn/admin/horizonapp/newscategory/'},
+        {'name': 'News', 'label': 'Мэдээ', 'url': 'http://newhorizons.mn/admin/horizonapp/news/'},
+    ]},
+    {'label': 'Нүүр хуудас', 'app_label': 'horizonapp', 'items': [
+        {'name': 'HomeSlider', 'label': 'Нүүр хуудас слайдэр', 'url': 'http://newhorizons.mn/admin/horizonapp/homeslider/'},
+        {'name': 'BuildingIntro', 'label': 'Товч танилцуулга', 'url': 'http://newhorizons.mn/admin/horizonapp/buildingintro/'},
+        {'name': 'FeatureCard', 'label': '4 хайрцаг', 'url': 'http://newhorizons.mn/admin/horizonapp/featurecard/'},
+        {'name': 'FloorPlan', 'label': 'Давхарын план', 'url': 'http://newhorizons.mn/admin/horizonapp/FloorPlan/'},
+        {'name': 'ReasonBoxes', 'label': '7 шалтгаан', 'url': 'http://newhorizons.mn/admin/horizonapp/reasonboxes/'},
+        {'name': 'Three60Pic', 'label': '360 зураг', 'url': 'http://newhorizons.mn/admin/horizonapp/three60pic/'},
+    ]},
+    {'label': 'Түрээслэгч', 'app_label': 'horizonapp', 'items': [
+        {'name': 'OrganizationCategry', 'label': 'Байгууллагын төрөл', 'url': 'http://newhorizons.mn/admin/horizonapp/organization/'},
+        {'name': 'News', 'label': 'Байгууллага', 'url': 'http://newhorizons.mn/admin/horizonapp/organizationcategory/'},
+        {'name': 'BuildingRents', 'label': 'Түрээсийн мэдээлэл', 'url': 'http://newhorizons.mn/admin/horizonapp/buildingrents/'},
+    ]},
+    {'label': 'Бусад', 'app_label': 'horizonapp', 'items': [
+        {'name': 'PDFbrochure', 'label': 'PDF танилцуулга(линк)', 'url': 'http://newhorizons.mn/admin/horizonapp/pdfbrochure/'},
+        {'name': 'Settings', 'label': 'Вэб сайтын тохиргоо', 'url': 'http://newhorizons.mn/admin/horizonapp/settings/'},
+        {'name': 'ContactUs', 'label': 'Холбоо барих хүсэлтийн жагсаалт', 'url': 'http://newhorizons.mn/admin/horizonapp/contactus/'},
+    ]},
 ]
 
 LOCALE_PATHS = (
       os.path.join(BASE_DIR,'locale/'),
     )
+    
+JET_INDEX_DASHBOARD = 'jet.dashboard.dashboard.DefaultIndexDashboard'
+    
+# JET_INDEX_DASHBOARD = 'dashboard.CustomIndexDashboard'
+# JET_APP_INDEX_DASHBOARD = 'dashboard.CustomAppIndexDashboard'
+# JET_MODULE_YANDEX_METRIKA_CLIENT_ID = 'YANDEX_METRIKA_CLIENT_ID'
+# JET_MODULE_YANDEX_METRIKA_CLIENT_SECRET = 'YANDEX_METRIKA_CLIENT_SECRET'
+
+JET_MODULE_GOOGLE_ANALYTICS_CLIENT_SECRETS_FILE = '/home/newhoriz/repositories/newhorizon/new_horizons/client_secret.json'

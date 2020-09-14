@@ -53,7 +53,7 @@
                 <img src="{{ page_obj.lefty_pic.url }}" alt="structure">
                 <div class="sp-long-card-description">
                     <h3>{{ page_obj.lefty_title }}</h3>
-                    <p>{{ page_obj.lefty_description }}
+                    <p>{{ page_obj.lefty_description | safe }}
                     </p>
                 </div>
             </div>
@@ -62,7 +62,7 @@
             <div class="sp-iconed-card">
                 <div class="inner-iconed-card-left-side">
                     <h3>{{ page_obj.notitledicon_left_title }}</h3>
-                    <p>{{ page_obj.notitledicon_left_description }}
+                    <p>{{ page_obj.notitledicon_left_description | safe }}
                     </p>
                 </div>
                 {% for obj in notitlediconleft %}
@@ -83,7 +83,7 @@
                 <img src="{{ page_obj.righty_pic.url }}" alt="structure">
                 <div class="sp-long-card-description">
                     <h3>{{ page_obj.righty_title }}</h3>
-                    <p>{{ page_obj.righty_description }}
+                    <p>{{ page_obj.righty_description | safe }}
                     </p>
                 </div>
             </div>
@@ -93,7 +93,7 @@
             <div class="sp-iconed-card iconed-card-reverse">
                 <div class="inner-iconed-card-left-side">
                     <h3>{{ page_obj.notitledicon_right_title }}</h3>
-                    <p>{{ page_obj.notitledicon_right_description }}
+                    <p>{{ page_obj.notitledicon_right_description | safe }}
                     </p>
                 </div>
                 {% for obj in notitlediconleft %}

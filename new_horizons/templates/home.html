@@ -1,4 +1,6 @@
 {% load static %}
+{% load i18n %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="mn">
 
@@ -42,16 +44,20 @@
 
                     <li><a href="{% url 'home' %}#panaromaSection">360 зураг</a></li>
 
-                    <li><a href="{% url 'home' %}#nearbyPlaces">Ойр хавийн барилгууд</a></li>
-
                 </nav>
             </div>
             <div class="__mid" onclick="showContactUsForm()">
                 <a href="#">Бидэнтэй харилцах</a>
             </div>
             <div class="__right">
-                <div class="select-language"><a href="#">mn</a></div>
-                <div class="select-language"><a href="#">en</a></div>
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+
+                    {% get_language_info_list for LANGUAGES as languages %}
+
+                    {% for lan in languages %}
+                    <div class="select-language"><a href="/{{ lan.code }}/">{{ lan.name_local }}</a></div>
+                    {% endfor %}
             </div>
         </div>
     </header>
@@ -81,8 +87,14 @@
 
                 <li><a href="{% url 'home' %}#nearbyPlaces">Ойр хавийн барилгууд</a></li>
                 <div class="__right">
-                    <a href="#">mn</a>
-                    <a href="#">en</a>
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+
+                    {% get_language_info_list for LANGUAGES as languages %}
+
+                    {% for lan in languages %}
+                    <a href="/{{lan.code }}/">{{ lan.name_local }}</a>
+                    {% endfor %}
                 </div>
             </nav>
         </div>
@@ -135,7 +147,7 @@
                         <h3>{{ obj.title }}</h3>
                         <!-- <p></p> -->
                         {% if obj.choice1 %}
-                        <a href="{{ pdf_url.pdf }}">Боршуур авах</a>
+                        <a href="{{ pdf_url.pdf }}">Танилуулга авах</a>
                         {% elif obj.choice2 %}
                         <a href="#" onclick="showContactUsForm()">Бидэнтэй холбогдох</a>
                         {% elif obj.choice3 %}
@@ -458,7 +470,7 @@
     <section class="panaroma-picture-section" id="panaromaSection">
         <h3>360 зураг</h3>
         <div class="blured-360" id="bluredPanaroma">
-            <img src="{% static 'assets/360_one.jpg' %}" alt="blured 360">
+            <img src="{{ three60pic.pic.url }}" alt="blured 360">
             <p onclick="showPanaroma()">360 зураг үзэх</p>
         </div>
     </section>
@@ -495,19 +507,19 @@
             <div class="sub-pages-title">
                 <h3>дэд хуудас</h3>
                 <div class="sub-pages-list">
-                    <a href="#">
+                    <a href="{% url 'building-structure' %}">
                         <p><i class="fas fa-angle-double-right"></i>барилгын төлөвлөлт</p>
                     </a>
-                    <a href="#">
+                    <a href="{% url 'security' %}">
                         <p><i class="fas fa-angle-double-right"></i>Аюулгүй байдал</p>
                     </a>
-                    <a href="#">
+                    <a href="{% url 'user-experience' %}">
                         <p><i class="fas fa-angle-double-right"></i>тав тух</p>
                     </a>
-                    <a href="#">
+                    <a href="{% url 'news' %}">
                         <p><i class="fas fa-angle-double-right"></i>мэдээ мэдээлэл</p>
                     </a>
-                    <a href="#">
+                    <a href="{% url 'about-us' %}">
                         <p><i class="fas fa-angle-double-right"></i>хамт олон</p>
                     </a>
                 </div>
@@ -530,20 +542,20 @@
                         <div class="contact-us-form-left">
                             <div class="contact-us-input-field">
                                 <i class="fas fa-user-tie"></i>
-                                <input id="name-contact" type="text" placeholder="Нэр">
+                                <input id="name-contact-footer" type="text" placeholder="Нэр">
                             </div>
                             <div class="contact-us-input-field">
                                 <i class="fas fa-paper-plane"></i>
-                                <input id="mail-contact" type="email" placeholder="Цахим хаяг">
+                                <input id="mail-contact-footer" type="email" placeholder="Цахим хаяг">
                             </div>
                             <div class="contact-us-input-field">
                                 <i class="fas fa-briefcase"></i>
-                                <input id="company-contact" type="text" placeholder="Компани">
+                                <input id="company-contact-footer" type="text" placeholder="Компани">
                             </div>
-                            <input id="submit-contact" type="submit" value="Илгээх">
+                            <input id="submit-contact-footer" type="submit" value="Илгээх">
                         </div>
                         <div class="contact-us-form-right">
-                            <textarea name="" id="message-contact" cols="30" rows="10"
+                            <textarea name="" id="message-contact-footer" cols="30" rows="10"
                                 placeholder="Энд бичнэ үү.."></textarea>
                         </div>
                     </form>
@@ -576,6 +588,7 @@
     <script>
         $(document).ready(function () {
             $('#submit-contact').on("click", function () {
+                console.log("asdasdasdasdasd")
                 var name = $('#name-contact').val();
                 var email = $('#mail-contact').val();
                 var company = $('#company-contact').val();
@@ -597,6 +610,35 @@
                         $('#mail-contact').val('');
                         $('#company-contact').val('');
                         $('#message-contact').val('');
+                    },
+                    error: function (message) {
+                        alert('Дахин оролдоно уу...');
+                    },
+                });
+            });
+            $('#submit-contact-footer').on("click", function () {
+                console.log("asdasdasdasdasd")
+                var name = $('#name-contact-footer').val();
+                var email = $('#mail-contact-footer').val();
+                var company = $('#company-contact-footer').val();
+                var text = $('#message-contact-footer').val();
+
+                $.ajax({
+                    method: 'post',
+                    url: "{% url 'register-contact-request' %}",
+                    data: {
+                        name: name,
+                        email: email,
+                        company: company,
+                        text: text
+                    },
+                    success: function (message) {
+                        // alert('success');
+                        closeContactUsForm();
+                        $('#name-contact-footer').val('');
+                        $('#mail-contact-footer').val('');
+                        $('#company-contact-footer').val('');
+                        $('#message-contact-footer').val('');
                     },
                     error: function (message) {
                         alert('Дахин оролдоно уу...');

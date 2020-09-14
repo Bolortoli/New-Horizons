@@ -135,12 +135,12 @@
                         <!-- start post item --> 
                         {% for news in news_list %}
                         <div class="col-12 blog-post-content margin-60px-bottom sm-margin-30px-bottom text-center text-md-left">
-                            <div class="blog-image"><a href="#"><img src="{{news.pic.url}}" alt=""/></a></div>
+                            <div class="blog-image"><a href="{% url 'blog' slug=news.slug %}"><img src="{{news.pic.url}}" alt=""/></a></div>
                             <div class="blog-text border-all d-inline-block width-100">
                                 <div class="content padding-50px-all sm-padding-20px-all">
-                                    <div class="text-medium-gray text-extra-small margin-5px-bottom text-uppercase alt-font"><span>{{news.published_date}}</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span><a href="{% url 'news' category=news.category %}" class="text-medium-gray ">{{news.category}}</a></span></div>
+                                    <div class="text-medium-gray text-extra-small margin-5px-bottom text-uppercase alt-font"><span>{{news.published_date}}</span>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<span><a class="text-medium-gray ">{{news.category}}</a></span></div>
                                     <a href="{% url 'blog' slug=news.slug %}" class="text-extra-dark-gray text-uppercase alt-font text-large font-weight-600 margin-15px-bottom d-block">{{ news.title }}</a>
-                                    <p class="m-0">Цааш унших...</p>
+                                    <a href="{% url 'blog' slug=news.slug %}"><p class="m-0">Цааш унших...</p></a>
                                 </div>
                             </div>
                         </div>
@@ -199,8 +199,11 @@
                         <div class="margin-45px-bottom sm-margin-25px-bottom">
                             <div class="text-extra-dark-gray margin-20px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>Мэдээний төрөл</span></div>
                             <ul class="list-style-6 margin-50px-bottom text-small">
-                                {% for category in categories %}
-                                <li><a href="{% url 'news' category=category.category %}">{{ category.category }}</a><span>{{ category.news_count }}</span></li>
+                                {% for category in categories %}{% if category.cat_id is none %}
+                                <li><a href="{% url 'news' %}">{{ category.category }}</a><span>{{ category.news_count }}</span></li>
+                                {% else %}
+                                <li><a href="{% url 'news' cat_id=category.cat_id %}">{{ category.category }}</a><span>{{ category.news_count }}</span></li>
+                                {% endif %}
                                 {% endfor %}
                             </ul>   
                         </div>
@@ -262,19 +265,19 @@
                 <div class="sub-pages-title">
                     <h3>дэд хуудас</h3>
                     <div class="sub-pages-list">
-                        <a href="#">
+                        <a href="{% url 'building-structure' %}">
                             <p><i class="fas fa-angle-double-right"></i>барилгын төлөвлөлт</p>
                         </a>
-                        <a href="#">
+                        <a href="{% url 'security' %}">
                             <p><i class="fas fa-angle-double-right"></i>Аюулгүй байдал</p>
                         </a>
-                        <a href="#">
+                        <a href="{% url 'user-experience' %}">
                             <p><i class="fas fa-angle-double-right"></i>тав тух</p>
                         </a>
-                        <a href="#">
+                        <a href="{% url 'news' %}">
                             <p><i class="fas fa-angle-double-right"></i>мэдээ мэдээлэл</p>
                         </a>
-                        <a href="#">
+                        <a href="{% url 'about-us' %}">
                             <p><i class="fas fa-angle-double-right"></i>хамт олон</p>
                         </a>
                     </div>
@@ -319,5 +322,67 @@
             </div>
         </footer>
         <!-- end footer -->
+        <script>
+        $(document).ready(function () {
+            $('#submit-contact').on("click", function () {
+                console.log("asdasdasdasdasd")
+                var name = $('#name-contact').val();
+                var email = $('#mail-contact').val();
+                var company = $('#company-contact').val();
+                var text = $('#message-contact').val();
+
+                $.ajax({
+                    method: 'post',
+                    url: "{% url 'register-contact-request' %}",
+                    data: {
+                        name: name,
+                        email: email,
+                        company: company,
+                        text: text
+                    },
+                    success: function (message) {
+                        // alert('success');
+                        closeContactUsForm();
+                        $('#name-contact').val('');
+                        $('#mail-contact').val('');
+                        $('#company-contact').val('');
+                        $('#message-contact').val('');
+                    },
+                    error: function (message) {
+                        alert('Дахин оролдоно уу...');
+                    },
+                });
+            });
+            $('#submit-contact-footer').on("click", function () {
+                console.log("asdasdasdasdasd")
+                var name = $('#name-contact-footer').val();
+                var email = $('#mail-contact-footer').val();
+                var company = $('#company-contact-footer').val();
+                var text = $('#message-contact-footer').val();
+
+                $.ajax({
+                    method: 'post',
+                    url: "{% url 'register-contact-request' %}",
+                    data: {
+                        name: name,
+                        email: email,
+                        company: company,
+                        text: text
+                    },
+                    success: function (message) {
+                        // alert('success');
+                        closeContactUsForm();
+                        $('#name-contact-footer').val('');
+                        $('#mail-contact-footer').val('');
+                        $('#company-contact-footer').val('');
+                        $('#message-contact-footer').val('');
+                    },
+                    error: function (message) {
+                        alert('Дахин оролдоно уу...');
+                    },
+                });
+            });
+        });
+    </script>
     </body>
 </html>

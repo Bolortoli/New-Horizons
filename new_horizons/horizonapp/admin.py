@@ -2,16 +2,35 @@ from django.contrib import admin
 from .models import *
 from django.forms import Textarea, TextInput
 from django.contrib.auth.models import Group, User
+from django.utils.html import format_html
 
 
 admin.site.unregister(Group)
 admin.site.unregister(User)
 admin.site.site_header = 'New Hozirons Dashboard'
 
+
 admin.site.register(NewsCategory)
 admin.site.register(OrganizationCategory)
 admin.site.register(HomeSlider)
-# admin.site.register(RentedFloor)
+
+@admin.register(Three60Pic)
+class Three60PicAdmin(admin.ModelAdmin):
+    
+    def image_tag(self, obj):
+        return format_html('<img src="{}" />'.format(obj.image.url))
+    
+    def has_add_permission(self, request):
+        return False
+
+    def has_delete_permission(self, request, obj=None):
+        return False
+
+    image_tag.short_description = 'Image'
+    list_display = ['pic']
+    list_editable = ['pic']
+    list_display_links = None
+
 @admin.register(ContactUs)
 class ContactUsAdmin(admin.ModelAdmin):
 
@@ -26,7 +45,7 @@ class ContactUsAdmin(admin.ModelAdmin):
 
 @admin.register(News)
 class NewsAdmin(admin.ModelAdmin):
-    list_display = ['title', 'category', 'featured']
+    list_display = ['title', 'category', 'featured', 'published_date']
     list_editable = ['featured']
 
 @admin.register(BuildingIntro)

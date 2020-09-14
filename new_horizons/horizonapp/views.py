@@ -150,6 +150,9 @@ def home(request, company=None):
     # Building environment slider
     env_obj = BuildingEnvironment.objects.all().first()
     env_pics = BuildingEnvironmentPic.objects.filter(organization=env_obj)
+    
+    # 360 pictures
+    three60pic = Three60Pic.objects.all().first()
 
     context = {
         'reason_boxes': reason_boxes,
@@ -164,13 +167,19 @@ def home(request, company=None):
         'news_list': news_list,
         'env_obj': env_obj,
         'env_pics': env_pics,
+        'three60pic': three60pic,
     }
 
     return render(request, 'home.html', context)
 
 @xframe_options_sameorigin
 def panaroma(request):
-    return render(request, 'panaroma.html')
+    three60pic = Three60Pic.objects.all().first()
+
+    context = {
+        'three60pic': three60pic,
+    }
+    return render(request, 'panaroma.html', context)
 
 def news_blog_archive(request):
 
@@ -182,7 +191,7 @@ def news_blog_archive(request):
 
     featured_news = News.objects.filter(featured=True)[:FEATURE_NEWS_ON_BLOGS]
 
-    categories = [News_Category(cat, News.objects.filter(category=cat).count()) for cat in NewsCategory.objects.all() if News.objects.filter(category=cat).count() != 0]
+    categories = [News_Category(cat, News.objects.filter(category=cat).count(), NewsCategory.objects.get(name=cat.name).id) for cat in NewsCategory.objects.all() if News.objects.filter(category=cat).count() != 0]
 
     pdf = PDFbrochure.objects.all().first().pdf
 
@@ -194,9 +203,9 @@ def news_blog_archive(request):
     }
     return render(request, 'blog.html', context)
 
-def news_blog_archive_category(request, category):
+def news_blog_archive_category(request, cat_id):
 
-    obj_list = News.objects.filter(category=NewsCategory.objects.get(name=category))
+    obj_list = News.objects.filter(category=NewsCategory.objects.get(id=cat_id))
 
     paginator = Paginator(obj_list, 6)
     page_number = request.GET.get('page')
@@ -204,7 +213,7 @@ def news_blog_archive_category(request, category):
 
     featured_news = News.objects.filter(featured=True)[:FEATURE_NEWS_ON_BLOGS]
 
-    categories = [News_Category(cat, News.objects.filter(category=cat).count()) for cat in NewsCategory.objects.all() if News.objects.filter(category=cat).count() != 0]
+    categories = [News_Category(cat, News.objects.filter(category=cat).count(), NewsCategory.objects.get(name=cat.name).id) for cat in NewsCategory.objects.all() if News.objects.filter(category=cat).count() != 0]
 
     pdf = PDFbrochure.objects.all().first().pdf
 
@@ -440,6 +449,7 @@ class floor_rent:
         self.b1 = b1
 
 class News_Category:
-    def __init__(self, category, news_count):
+    def __init__(self, category, news_count, cat_id=None):
         self.category = category
         self.news_count = news_count
+        self.cat_id = cat_id

@@ -1,6 +1,9 @@
 from django.urls import path, include
 from . import views
 from django.views.generic import TemplateView
+from django.conf.urls.i18n import i18n_patterns
+
+
 
 urlpatterns = [
     path('', views.guide, name="guide"),
@@ -9,7 +12,7 @@ urlpatterns = [
     path('panaroma/', views.panaroma, name='panaroma'),
     path('blog/<str:slug>', views.blog, name='blog'),
     path('news/', views.news_blog_archive, name='news'),
-    path('news/<str:category>', views.news_blog_archive_category, name='news'),
+    path('news=<int:cat_id>', views.news_blog_archive_category, name='news'),
     path('get_building_rent_info', views.get_building_rent_details, name="get_building_rent_details"),
     path('get-organizations', views.get_organizations, name='get-organizations'),
     path('register-rent', views.register_rent, name='register-rent'),
