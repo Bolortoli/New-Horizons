@@ -1,10 +1,6 @@
 from django.urls import path, include
 from . import views
 from django.views.generic import TemplateView
-from django.conf.urls.i18n import i18n_patterns
-
-
-
 urlpatterns = [
     path('', views.guide, name="guide"),
     path('home/', views.home, name="home"),

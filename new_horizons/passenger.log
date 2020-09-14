@@ -26894,3 +26894,1613 @@ App 20406 output: Not Found: /ads.txt
 App 20406 output: [ pid=20406, time=2020-09-13 16:43:44,457 ]: Not Found: /ads.txt
 App 20406 output: Not Found: /favicon.ico
 App 20406 output: [ pid=20406, time=2020-09-13 17:53:43,237 ]: Not Found: /favicon.ico
+App 20406 output: Not Found: /wp/404.shtml
+App 20406 output: [ pid=20406, time=2020-09-13 18:28:00,020 ]: Not Found: /wp/404.shtml
+App 20406 output: Not Found: /favicon.ico
+App 20406 output: [ pid=20406, time=2020-09-14 03:22:04,490 ]: Not Found: /favicon.ico
+App 20406 output: <QuerySet []>
+App 20406 output: 
+App 20406 output: agaign
+App 20406 output: 
+App 20406 output: Home/Plan-Pictures/b1_rNH39KG.png
+App 20406 output: 
+App 20406 output: Not Found: /media/Home/20200805-IMG_1180_AGD1hZv.jpg
+App 20406 output: [ pid=20406, time=2020-09-14 03:22:36,890 ]: Not Found: /media/Home/20200805-IMG_1180_AGD1hZv.jpg
+App 20406 output: [ pid=20406, time=2020-09-14 03:59:19,397 ]: /home/newhoriz/repositories/newhorizon/new_horizons/horizonapp/views.py:188: UnorderedObjectListWarning: Pagination may yield inconsistent results with an unordered object_list: <class 'horizonapp.models.News'> QuerySet.
+App 20406 output:   paginator = Paginator(obj_list, 6)
+App 20406 output: 
+App 20406 output: Not Found: /news/images/favicon.png
+App 20406 output: [ pid=20406, time=2020-09-14 03:59:20,952 ]: Not Found: /news/images/favicon.png
+App 20406 output: Not Found: /favicon.ico
+App 20406 output: [ pid=20406, time=2020-09-14 04:00:45,927 ]: Not Found: /favicon.ico
+App 20406 output: Not Found: /favicon.ico
+App 20406 output: [ pid=20406, time=2020-09-14 04:07:28,775 ]: Not Found: /favicon.ico
+App 20406 output: Not Found: /robots.txt
+App 20406 output: [ pid=20406, time=2020-09-14 04:12:14,949 ]: Not Found: /robots.txt
+App 20406 output: Home/Plan-Pictures/b1_rNH39KG.png
+App 20406 output: 
+App 20406 output: Not Found: /media/Home/20200805-IMG_1180_AGD1hZv.jpg
+App 20406 output: [ pid=20406, time=2020-09-14 04:15:15,700 ]: Not Found: /media/Home/20200805-IMG_1180_AGD1hZv.jpg
+App 20406 output: Not Found: /favicon.ico
+App 20406 output: [ pid=20406, time=2020-09-14 05:00:31,214 ]: Not Found: /favicon.ico
+App 18233 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 18233 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 18233 output: Not Found: /favicon.ico
+App 18233 output: [ pid=18233, time=2020-09-14 05:18:30,095 ]: Not Found: /favicon.ico
+App 28593 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 28593 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 28593 output: Not Found: /favicon.ico
+App 28593 output: [ pid=28593, time=2020-09-14 05:21:18,853 ]: Not Found: /favicon.ico
+App 29109 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 29109 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 29320 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 29320 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 29109 output: Not Found: /favicon.ico
+App 29109 output: [ pid=29109, time=2020-09-14 05:32:56,141 ]: Not Found: /favicon.ico
+App 29109 output: Home/Plan-Pictures/b1_rNH39KG.png
+App 29109 output: 
+App 29109 output: Not Found: /media/Home/20200805-IMG_1180_AGD1hZv.jpg
+App 29109 output: [ pid=29109, time=2020-09-14 05:33:13,252 ]: Not Found: /media/Home/20200805-IMG_1180_AGD1hZv.jpg
+App 29109 output: Not Found: /images/icons/nh.png
+App 29109 output: [ pid=29109, time=2020-09-14 05:33:39,466 ]: Not Found: /images/icons/nh.png
+App 2476 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 2476 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 2640 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 2640 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 2700 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 2700 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 2640 output: Not Found: /favicon.ico
+App 2640 output: [ pid=2640, time=2020-09-14 05:34:09,812 ]: Not Found: /favicon.ico
+App 2763 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 2763 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 2640 output: Not Found: /favicon.ico
+App 2640 output: [ pid=2640, time=2020-09-14 05:34:14,023 ]: Not Found: /favicon.ico
+App 2640 output: Home/Plan-Pictures/b1_rNH39KG.png
+App 2640 output: Not Found: /media/Home/20200805-IMG_1180_AGD1hZv.jpg
+App 2640 output: [ pid=2640, time=2020-09-14 05:34:30,584 ]: Not Found: /media/Home/20200805-IMG_1180_AGD1hZv.jpg
+App 2640 output: [ pid=2640, time=2020-09-14 05:35:10,343 ]: /home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/PIL/Image.py:2832: DecompressionBombWarning: Image size (130055961 pixels) exceeds limit of 89478485 pixels, could be decompression bomb DOS attack.
+App 2640 output:   warnings.warn(
+App 2640 output: 
+App 3541 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 3541 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 3617 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 3617 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 3541 output: Home/Plan-Pictures/b1_rNH39KG.png
+App 3541 output: 
+App 3541 output: Not Found: /media/Home/20200805-IMG_1180_AGD1hZv.jpg
+App 3541 output: [ pid=3541, time=2020-09-14 05:35:31,113 ]: Not Found: /media/Home/20200805-IMG_1180_AGD1hZv.jpg
+App 3541 output: Not Found: /media/three60pics/100_0085_20200824115553_b/403.shtml
+App 3541 output: [ pid=3541, time=2020-09-14 05:35:32,720 ]: Not Found: /media/three60pics/100_0085_20200824115553_b/403.shtml
+App 3708 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 3708 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 3541 output: Not Found: /media/three60pics/100_0085_20200824115553_b/403.shtml
+App 3541 output: [ pid=3541, time=2020-09-14 05:35:35,771 ]: Not Found: /media/three60pics/100_0085_20200824115553_b/403.shtml
+App 5162 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 5162 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 5283 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 5283 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 5402 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 5402 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 5162 output: Internal Server Error: /jet/dashboard/module/26/
+App 5162 output: Traceback (most recent call last):
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 5162 output:     response = get_response(request)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 156, in _get_response
+App 5162 output:     response = self.process_exception_by_middleware(e, request)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 154, in _get_response
+App 5162 output:     response = response.render()
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 106, in render
+App 5162 output:     self.content = self.rendered_content
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+App 5162 output:     content = template.render(context, self._request)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+App 5162 output:     return self.template.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 171, in render
+App 5162 output:     return self._render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 5162 output:     return self.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 5162 output:     return compiled_parent._render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 5162 output:     return self.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 5162 output:     return compiled_parent._render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 5162 output:     return self.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 5162 output:     result = block.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 5162 output:     result = block.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 5162 output:     result = block.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 5162 output:     return nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 188, in render
+App 5162 output:     return template.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 173, in render
+App 5162 output:     return self._render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 5162 output:     return self.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 209, in render
+App 5162 output:     nodelist.append(node.render_annotated(context))
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 5162 output:     return nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 5162 output:     return nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.
+App 5162 output: render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 993, in render
+App 5162 output:     return render_value_in_context(output, context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 972, in render_value_in_context
+App 5162 output:     value = str(value)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/utils/html.py", line 397, in <lambda>
+App 5162 output:     klass.__str__ = lambda self: mark_safe(klass_str(self))
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/forms/boundfield.py", line 33, in __str__
+App 5162 output:     return self.as_widget()
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/forms/boundfield.py", line 89, in as_widget
+App 5162 output:     return widget.render(
+App 5162 output: TypeError: render() got an unexpected keyword argument 'renderer'
+App 5162 output: [ pid=5162, time=2020-09-14 05:38:22,232 ]: Internal Server Error: /jet/dashboard/module/26/
+App 5162 output: Traceback (most recent call last):
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 5162 output:     response = get_response(request)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 156, in _get_response
+App 5162 output:     response = self.process_exception_by_middleware(e, request)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 154, in _get_response
+App 5162 output:     response = response.render()
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 106, in render
+App 5162 output:     self.content = self.rendered_content
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+App 5162 output:     content = template.render(context, self._request)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+App 5162 output:     return self.template.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 171, in render
+App 5162 output:     return self._render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 5162 output:     return self.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 5162 output:     return compiled_parent._render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 5162 output:     return self.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 5162 output:     return compiled_parent._render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 5162 output:     return self.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 5162 output:     result = block.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 5162 output:     result = block.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 5162 output:     result = block.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 5162 output:     return nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 188, in render
+App 5162 output:     return template.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 173, in render
+App 5162 output:     return self._render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 5162 output:     return self.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositor
+App 5162 output: ies/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 209, in render
+App 5162 output:     nodelist.append(node.render_annotated(context))
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 5162 output:     return nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 5162 output:     return nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 993, in render
+App 5162 output:     return render_value_in_context(output, context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 972, in render_value_in_context
+App 5162 output:     value = str(value)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/utils/html.py", line 397, in <lambda>
+App 5162 output:     klass.__str__ = lambda self: mark_safe(klass_str(self))
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/forms/boundfield.py", line 33, in __str__
+App 5162 output:     return self.as_widget()
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/forms/boundfield.py", line 89, in as_widget
+App 5162 output:     return widget.render(
+App 5162 output: TypeError: render() got an unexpected keyword argument 'renderer'
+App 5568 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 5568 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 5162 output: Internal Server Error: /jet/dashboard/module/26/
+App 5162 output: Traceback (most recent call last):
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 5162 output:     response = get_response(request)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 156, in _get_response
+App 5162 output:     response = self.process_exception_by_middleware(e, request)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 154, in _get_response
+App 5162 output:     response = response.render()
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 106, in render
+App 5162 output:     self.content = self.rendered_content
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+App 5162 output:     content = template.render(context, self._request)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+App 5162 output:     return self.template.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 171, in render
+App 5162 output:     return self._render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 5162 output:     return self.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 5162 output:     return compiled_parent._render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 5162 output:     return self.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 5162 output:     return compiled_parent._render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 5162 output:     return self.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 5162 output:     result = block.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 5162 output:     result = block.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 5162 output:     result = block.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 5162 output:     return nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 188, in render
+App 5162 output:     return template.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 173, in render
+App 5162 output:     return self._render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 5162 output:     return self.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 209, in render
+App 5162 output:     nodelist.append(node.render_annotated(context))
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 5162 output:     return nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 5162 output:     return nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.
+App 5162 output: render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 993, in render
+App 5162 output:     return render_value_in_context(output, context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 972, in render_value_in_context
+App 5162 output:     value = str(value)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/utils/html.py", line 397, in <lambda>
+App 5162 output:     klass.__str__ = lambda self: mark_safe(klass_str(self))
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/forms/boundfield.py", line 33, in __str__
+App 5162 output:     return self.as_widget()
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/forms/boundfield.py", line 89, in as_widget
+App 5162 output:     return widget.render(
+App 5162 output: TypeError: render() got an unexpected keyword argument 'renderer'
+App 5162 output: [ pid=5162, time=2020-09-14 05:38:32,124 ]: Internal Server Error: /jet/dashboard/module/26/
+App 5162 output: Traceback (most recent call last):
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 5162 output:     response = get_response(request)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 156, in _get_response
+App 5162 output:     response = self.process_exception_by_middleware(e, request)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 154, in _get_response
+App 5162 output:     response = response.render()
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 106, in render
+App 5162 output:     self.content = self.rendered_content
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+App 5162 output:     content = template.render(context, self._request)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+App 5162 output:     return self.template.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 171, in render
+App 5162 output:     return self._render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 5162 output:     return self.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 5162 output:     return compiled_parent._render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 5162 output:     return self.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 5162 output:     return compiled_parent._render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 5162 output:     return self.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 5162 output:     result = block.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 5162 output:     result = block.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 5162 output:     result = block.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 5162 output:     return nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 188, in render
+App 5162 output:     return template.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 173, in render
+App 5162 output:     return self._render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 5162 output:     return self.nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositor
+App 5162 output: ies/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 209, in render
+App 5162 output:     nodelist.append(node.render_annotated(context))
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 5162 output:     return nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 5162 output:     return nodelist.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 5162 output:     bit = node.render_annotated(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 5162 output:     return self.render(context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 993, in render
+App 5162 output:     return render_value_in_context(output, context)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 972, in render_value_in_context
+App 5162 output:     value = str(value)
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/utils/html.py", line 397, in <lambda>
+App 5162 output:     klass.__str__ = lambda self: mark_safe(klass_str(self))
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/forms/boundfield.py", line 33, in __str__
+App 5162 output:     return self.as_widget()
+App 5162 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/forms/boundfield.py", line 89, in as_widget
+App 5162 output:     return widget.render(
+App 5162 output: TypeError: render() got an unexpected keyword argument 'renderer'
+App 8568 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 8568 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 8568 output: Internal Server Error: /jet/dashboard/module/26/
+App 8568 output: Traceback (most recent call last):
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 8568 output:     response = get_response(request)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 156, in _get_response
+App 8568 output:     response = self.process_exception_by_middleware(e, request)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 154, in _get_response
+App 8568 output:     response = response.render()
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 106, in render
+App 8568 output:     self.content = self.rendered_content
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+App 8568 output:     content = template.render(context, self._request)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+App 8568 output:     return self.template.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 171, in render
+App 8568 output:     return self._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 8568 output:     return compiled_parent._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 8568 output:     return compiled_parent._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 8568 output:     result = block.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 8568 output:     result = block.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 8568 output:     result = block.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 8568 output:     return nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 188, in render
+App 8568 output:     return template.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 173, in render
+App 8568 output:     return self._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 209, in render
+App 8568 output:     nodelist.append(node.render_annotated(context))
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 8568 output:     return nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 8568 output:     return nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.
+App 8568 output: render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 993, in render
+App 8568 output:     return render_value_in_context(output, context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 972, in render_value_in_context
+App 8568 output:     value = str(value)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/utils/html.py", line 397, in <lambda>
+App 8568 output:     klass.__str__ = lambda self: mark_safe(klass_str(self))
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/forms/boundfield.py", line 33, in __str__
+App 8568 output:     return self.as_widget()
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/forms/boundfield.py", line 89, in as_widget
+App 8568 output:     return widget.render(
+App 8568 output: TypeError: render() got an unexpected keyword argument 'renderer'
+App 8568 output: [ pid=8568, time=2020-09-14 05:43:10,048 ]: Internal Server Error: /jet/dashboard/module/26/
+App 8568 output: Traceback (most recent call last):
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 8568 output:     response = get_response(request)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 156, in _get_response
+App 8568 output:     response = self.process_exception_by_middleware(e, request)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 154, in _get_response
+App 8568 output:     response = response.render()
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 106, in render
+App 8568 output:     self.content = self.rendered_content
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+App 8568 output:     content = template.render(context, self._request)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+App 8568 output:     return self.template.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 171, in render
+App 8568 output:     return self._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 8568 output:     return compiled_parent._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 8568 output:     return compiled_parent._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 8568 output:     result = block.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 8568 output:     result = block.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 8568 output:     result = block.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 8568 output:     return nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 188, in render
+App 8568 output:     return template.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 173, in render
+App 8568 output:     return self._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositor
+App 8568 output: ies/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 209, in render
+App 8568 output:     nodelist.append(node.render_annotated(context))
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 8568 output:     return nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 8568 output:     return nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 993, in render
+App 8568 output:     return render_value_in_context(output, context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 972, in render_value_in_context
+App 8568 output:     value = str(value)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/utils/html.py", line 397, in <lambda>
+App 8568 output:     klass.__str__ = lambda self: mark_safe(klass_str(self))
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/forms/boundfield.py", line 33, in __str__
+App 8568 output:     return self.as_widget()
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/forms/boundfield.py", line 89, in as_widget
+App 8568 output:     return widget.render(
+App 8568 output: TypeError: render() got an unexpected keyword argument 'renderer'
+App 8695 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 8695 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 8568 output: Internal Server Error: /jet/dashboard/module/27/
+App 8568 output: Traceback (most recent call last):
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 8568 output:     response = get_response(request)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 156, in _get_response
+App 8568 output:     response = self.process_exception_by_middleware(e, request)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 154, in _get_response
+App 8568 output:     response = response.render()
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 106, in render
+App 8568 output:     self.content = self.rendered_content
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+App 8568 output:     content = template.render(context, self._request)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+App 8568 output:     return self.template.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 171, in render
+App 8568 output:     return self._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 8568 output:     return compiled_parent._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 8568 output:     return compiled_parent._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 8568 output:     result = block.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 8568 output:     result = block.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 8568 output:     result = block.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 8568 output:     return nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 188, in render
+App 8568 output:     return template.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 173, in render
+App 8568 output:     return self._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 209, in render
+App 8568 output:     nodelist.append(node.render_annotated(context))
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 8568 output:     return nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 8568 output:     return nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.
+App 8568 output: render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 993, in render
+App 8568 output:     return render_value_in_context(output, context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 972, in render_value_in_context
+App 8568 output:     value = str(value)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/utils/html.py", line 397, in <lambda>
+App 8568 output:     klass.__str__ = lambda self: mark_safe(klass_str(self))
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/forms/boundfield.py", line 33, in __str__
+App 8568 output:     return self.as_widget()
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/forms/boundfield.py", line 89, in as_widget
+App 8568 output:     return widget.render(
+App 8568 output: TypeError: render() got an unexpected keyword argument 'renderer'
+App 8568 output: [ pid=8568, time=2020-09-14 05:43:14,989 ]: Internal Server Error: /jet/dashboard/module/27/
+App 8568 output: Traceback (most recent call last):
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 8568 output:     response = get_response(request)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 156, in _get_response
+App 8568 output:     response = self.process_exception_by_middleware(e, request)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 154, in _get_response
+App 8568 output:     response = response.render()
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 106, in render
+App 8568 output:     self.content = self.rendered_content
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+App 8568 output:     content = template.render(context, self._request)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+App 8568 output:     return self.template.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 171, in render
+App 8568 output:     return self._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 8568 output:     return compiled_parent._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 8568 output:     return compiled_parent._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 8568 output:     result = block.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 8568 output:     result = block.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 8568 output:     result = block.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 8568 output:     return nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 188, in render
+App 8568 output:     return template.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 173, in render
+App 8568 output:     return self._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositor
+App 8568 output: ies/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 209, in render
+App 8568 output:     nodelist.append(node.render_annotated(context))
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 8568 output:     return nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 8568 output:     return nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 993, in render
+App 8568 output:     return render_value_in_context(output, context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 972, in render_value_in_context
+App 8568 output:     value = str(value)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/utils/html.py", line 397, in <lambda>
+App 8568 output:     klass.__str__ = lambda self: mark_safe(klass_str(self))
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/forms/boundfield.py", line 33, in __str__
+App 8568 output:     return self.as_widget()
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/forms/boundfield.py", line 89, in as_widget
+App 8568 output:     return widget.render(
+App 8568 output: TypeError: render() got an unexpected keyword argument 'renderer'
+App 8568 output: Internal Server Error: /jet/dashboard/module/27/
+App 8568 output: Traceback (most recent call last):
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 8568 output:     response = get_response(request)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 156, in _get_response
+App 8568 output:     response = self.process_exception_by_middleware(e, request)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 154, in _get_response
+App 8568 output:     response = response.render()
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 106, in render
+App 8568 output:     self.content = self.rendered_content
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+App 8568 output:     content = template.render(context, self._request)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+App 8568 output:     return self.template.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 171, in render
+App 8568 output:     return self._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 8568 output:     return compiled_parent._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 8568 output:     return compiled_parent._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 8568 output:     result = block.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 8568 output:     result = block.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 8568 output:     result = block.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 8568 output:     return nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 188, in render
+App 8568 output:     return template.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 173, in render
+App 8568 output:     return self._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 209, in render
+App 8568 output:     nodelist.append(node.render_annotated(context))
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 8568 output:     return nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 8568 output:     return nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.
+App 8568 output: render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 993, in render
+App 8568 output:     return render_value_in_context(output, context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 972, in render_value_in_context
+App 8568 output:     value = str(value)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/utils/html.py", line 397, in <lambda>
+App 8568 output:     klass.__str__ = lambda self: mark_safe(klass_str(self))
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/forms/boundfield.py", line 33, in __str__
+App 8568 output:     return self.as_widget()
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/forms/boundfield.py", line 89, in as_widget
+App 8568 output:     # return widget.render(
+App 8568 output: TypeError: render() got an unexpected keyword argument 'renderer'
+App 8568 output: [ pid=8568, time=2020-09-14 05:45:27,122 ]: Internal Server Error: /jet/dashboard/module/27/
+App 8568 output: Traceback (most recent call last):
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 8568 output:     response = get_response(request)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 156, in _get_response
+App 8568 output:     response = self.process_exception_by_middleware(e, request)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 154, in _get_response
+App 8568 output:     response = response.render()
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 106, in render
+App 8568 output:     self.content = self.rendered_content
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+App 8568 output:     content = template.render(context, self._request)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+App 8568 output:     return self.template.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 171, in render
+App 8568 output:     return self._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 8568 output:     return compiled_parent._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 8568 output:     return compiled_parent._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 8568 output:     result = block.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 8568 output:     result = block.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 8568 output:     result = block.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 8568 output:     return nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 188, in render
+App 8568 output:     return template.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 173, in render
+App 8568 output:     return self._render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 8568 output:     return self.nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/reposit
+App 8568 output: ories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 209, in render
+App 8568 output:     nodelist.append(node.render_annotated(context))
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 8568 output:     return nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/defaulttags.py", line 309, in render
+App 8568 output:     return nodelist.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 8568 output:     bit = node.render_annotated(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 8568 output:     return self.render(context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 993, in render
+App 8568 output:     return render_value_in_context(output, context)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 972, in render_value_in_context
+App 8568 output:     value = str(value)
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/utils/html.py", line 397, in <lambda>
+App 8568 output:     klass.__str__ = lambda self: mark_safe(klass_str(self))
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/forms/boundfield.py", line 33, in __str__
+App 8568 output:     return self.as_widget()
+App 8568 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/forms/boundfield.py", line 89, in as_widget
+App 8568 output:     # return widget.render(
+App 8568 output: TypeError: render() got an unexpected keyword argument 'renderer'
+App 10384 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 10384 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 10384 output: Not Found: /favicon.ico
+App 10384 output: [ pid=10384, time=2020-09-14 05:45:41,924 ]: Not Found: /favicon.ico
+App 10384 output: Internal Server Error: /jet/dashboard/google-analytics/grant/27/
+App 10384 output: Traceback (most recent call last):
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 10384 output:     response = get_response(request)
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 126, in _get_response
+App 10384 output:     response = self.process_exception_by_middleware(e, request)
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 124, in _get_response
+App 10384 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics_views.py", line 20, in google_analytics_grant_view
+App 10384 output:     client = GoogleAnalyticsClient(redirect_uri=redirect_uri)
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics.py", line 74, in __init__
+App 10384 output:     self.FLOW = flow_from_clientsecrets(
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/oauth2client/util.py", line 135, in positional_wrapper
+App 10384 output:     return wrapped(*args, **kwargs)
+App 10384 output: TypeError: flow_from_clientsecrets() got an unexpected keyword argument 'prompt'
+App 10384 output: [ pid=10384, time=2020-09-14 05:45:50,086 ]: Internal Server Error: /jet/dashboard/google-analytics/grant/27/
+App 10384 output: Traceback (most recent call last):
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 10384 output:     response = get_response(request)
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 126, in _get_response
+App 10384 output:     response = self.process_exception_by_middleware(e, request)
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 124, in _get_response
+App 10384 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics_views.py", line 20, in google_analytics_grant_view
+App 10384 output:     client = GoogleAnalyticsClient(redirect_uri=redirect_uri)
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics.py", line 74, in __init__
+App 10384 output:     self.FLOW = flow_from_clientsecrets(
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/oauth2client/util.py", line 135, in positional_wrapper
+App 10384 output:     return wrapped(*args, **kwargs)
+App 10384 output: TypeError: flow_from_clientsecrets() got an unexpected keyword argument 'prompt'
+App 10604 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 10604 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 10686 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 10686 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 10384 output: Not Found: /favicon.ico
+App 10384 output: [ pid=10384, time=2020-09-14 05:46:05,430 ]: Not Found: /favicon.ico
+App 10384 output: Not Found: /favicon.ico
+App 10384 output: [ pid=10384, time=2020-09-14 05:46:09,553 ]: Not Found: /favicon.ico
+App 10803 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 10803 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 10384 output: Not Found: /favicon.ico
+App 10384 output: [ pid=10384, time=2020-09-14 05:46:14,181 ]: Not Found: /favicon.ico
+App 10384 output: Not Found: /favicon.ico
+App 10384 output: [ pid=10384, time=2020-09-14 05:46:16,229 ]: Not Found: /favicon.ico
+App 10384 output: Not Found: /favicon.ico
+App 10384 output: [ pid=10384, time=2020-09-14 05:46:49,899 ]: Not Found: /favicon.ico
+App 10384 output: Internal Server Error: /jet/dashboard/google-analytics/grant/27/
+App 10384 output: Traceback (most recent call last):
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 10384 output:     response = get_response(request)
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 126, in _get_response
+App 10384 output:     response = self.process_exception_by_middleware(e, request)
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 124, in _get_response
+App 10384 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics_views.py", line 20, in google_analytics_grant_view
+App 10384 output:     client = GoogleAnalyticsClient(redirect_uri=redirect_uri)
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics.py", line 74, in __init__
+App 10384 output:     self.FLOW = flow_from_clientsecrets(
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/oauth2client/util.py", line 135, in positional_wrapper
+App 10384 output:     return wrapped(*args, **kwargs)
+App 10384 output: TypeError: flow_from_clientsecrets() got an unexpected keyword argument 'prompt'
+App 10384 output: [ pid=10384, time=2020-09-14 05:46:57,374 ]: Internal Server Error: /jet/dashboard/google-analytics/grant/27/
+App 10384 output: Traceback (most recent call last):
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 10384 output:     response = get_response(request)
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 126, in _get_response
+App 10384 output:     response = self.process_exception_by_middleware(e, request)
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 124, in _get_response
+App 10384 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics_views.py", line 20, in google_analytics_grant_view
+App 10384 output:     client = GoogleAnalyticsClient(redirect_uri=redirect_uri)
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics.py", line 74, in __init__
+App 10384 output:     self.FLOW = flow_from_clientsecrets(
+App 10384 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/oauth2client/util.py", line 135, in positional_wrapper
+App 10384 output:     return wrapped(*args, **kwargs)
+App 10384 output: TypeError: flow_from_clientsecrets() got an unexpected keyword argument 'prompt'
+App 16227 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 16227 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 16320 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 16320 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 16227 output: Not Found: /favicon.ico
+App 16227 output: [ pid=16227, time=2020-09-14 05:56:03,710 ]: Not Found: /favicon.ico
+App 16227 output: Internal Server Error: /jet/dashboard/google-analytics/grant/26/
+App 16227 output: Traceback (most recent call last):
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 16227 output:     response = get_response(request)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 126, in _get_response
+App 16227 output:     response = self.process_exception_by_middleware(e, request)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 124, in _get_response
+App 16227 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics_views.py", line 20, in google_analytics_grant_view
+App 16227 output:     client = GoogleAnalyticsClient(redirect_uri=redirect_uri)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics.py", line 74, in __init__
+App 16227 output:     self.FLOW = flow_from_clientsecrets(
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/oauth2client/util.py", line 135, in positional_wrapper
+App 16227 output:     return wrapped(*args, **kwargs)
+App 16227 output: TypeError: flow_from_clientsecrets() got an unexpected keyword argument 'prompt'
+App 16227 output: [ pid=16227, time=2020-09-14 05:56:05,059 ]: Internal Server Error: /jet/dashboard/google-analytics/grant/26/
+App 16227 output: Traceback (most recent call last):
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 16227 output:     response = get_response(request)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 126, in _get_response
+App 16227 output:     response = self.process_exception_by_middleware(e, request)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 124, in _get_response
+App 16227 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics_views.py", line 20, in google_analytics_grant_view
+App 16227 output:     client = GoogleAnalyticsClient(redirect_uri=redirect_uri)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics.py", line 74, in __init__
+App 16227 output:     self.FLOW = flow_from_clientsecrets(
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/oauth2client/util.py", line 135, in positional_wrapper
+App 16227 output:     return wrapped(*args, **kwargs)
+App 16227 output: TypeError: flow_from_clientsecrets() got an unexpected keyword argument 'prompt'
+App 16227 output: Internal Server Error: /jet/dashboard/google-analytics/grant/26/
+App 16227 output: Traceback (most recent call last):
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 16227 output:     response = get_response(request)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 126, in _get_response
+App 16227 output:     response = self.process_exception_by_middleware(e, request)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 124, in _get_response
+App 16227 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics_views.py", line 20, in google_analytics_grant_view
+App 16227 output:     client = GoogleAnalyticsClient(redirect_uri=redirect_uri)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics.py", line 74, in __init__
+App 16227 output:     self.FLOW = flow_from_clientsecrets(
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/oauth2client/util.py", line 135, in positional_wrapper
+App 16227 output:     return wrapped(*args, **kwargs)
+App 16227 output: TypeError: flow_from_clientsecrets() got an unexpected keyword argument 'prompt'
+App 16227 output: [ pid=16227, time=2020-09-14 05:56:09,204 ]: Internal Server Error: /jet/dashboard/google-analytics/grant/26/
+App 16227 output: Traceback (most recent call last):
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 16227 output:     response = get_response(request)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 126, in _get_response
+App 16227 output:     response = self.process_exception_by_middleware(e, request)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 124, in _get_response
+App 16227 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics_views.py", line 20, in google_analytics_grant_view
+App 16227 output:     client = GoogleAnalyticsClient(redirect_uri=redirect_uri)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics.py", line 74, in __init__
+App 16227 output:     self.FLOW = flow_from_clientsecrets(
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/oauth2client/util.py", line 135, in positional_wrapper
+App 16227 output:     return wrapped(*args, **kwargs)
+App 16227 output: TypeError: flow_from_clientsecrets() got an unexpected keyword argument 'prompt'
+App 16227 output: Internal Server Error: /jet/dashboard/google-analytics/grant/26/
+App 16227 output: Traceback (most recent call last):
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 16227 output:     response = get_response(request)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 126, in _get_response
+App 16227 output:     response = self.process_exception_by_middleware(e, request)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 124, in _get_response
+App 16227 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics_views.py", line 20, in google_analytics_grant_view
+App 16227 output:     client = GoogleAnalyticsClient(redirect_uri=redirect_uri)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics.py", line 74, in __init__
+App 16227 output:     self.FLOW = flow_from_clientsecrets(
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/oauth2client/util.py", line 135, in positional_wrapper
+App 16227 output:     return wrapped(*args, **kwargs)
+App 16227 output: TypeError: flow_from_clientsecrets() got an unexpected keyword argument 'prompt'
+App 16227 output: [ pid=16227, time=2020-09-14 05:56:10,358 ]: Internal Server Error: /jet/dashboard/google-analytics/grant/26/
+App 16227 output: Traceback (most recent call last):
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 16227 output:     response = get_response(request)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 126, in _get_response
+App 16227 output:     response = self.process_exception_by_middleware(e, request)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 124, in _get_response
+App 16227 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics_views.py", line 20, in google_analytics_grant_view
+App 16227 output:     client = GoogleAnalyticsClient(redirect_uri=redirect_uri)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics.py", line 74, in __init__
+App 16227 output:     self.FLOW = flow_from_clientsecrets(
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/oauth2client/util.py", line 135, in positional_wrapper
+App 16227 output:     return wrapped(*args, **kwargs)
+App 16227 output: TypeError: flow_from_clientsecrets() got an unexpected keyword argument 'prompt'
+App 16227 output: Internal Server Error: /jet/dashboard/google-analytics/grant/26/
+App 16227 output: Traceback (most recent call last):
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 16227 output:     response = get_response(request)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 126, in _get_response
+App 16227 output:     response = self.process_exception_by_middleware(e, request)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 124, in _get_response
+App 16227 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics_views.py", line 20, in google_analytics_grant_view
+App 16227 output:     client = GoogleAnalyticsClient(redirect_uri=redirect_uri)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics.py", line 74, in __init__
+App 16227 output:     self.FLOW = flow_from_clientsecrets(
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/oauth2client/util.py", line 135, in positional_wrapper
+App 16227 output:     return wrapped(*args, **kwargs)
+App 16227 output: TypeError: flow_from_clientsecrets() got an unexpected keyword argument 'prompt'
+App 16227 output: [ pid=16227, time=2020-09-14 05:56:11,238 ]: Internal Server Error: /jet/dashboard/google-analytics/grant/26/
+App 16227 output: Traceback (most recent call last):
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 16227 output:     response = get_response(request)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 126, in _get_response
+App 16227 output:     response = self.process_exception_by_middleware(e, request)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 124, in _get_response
+App 16227 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics_views.py", line 20, in google_analytics_grant_view
+App 16227 output:     client = GoogleAnalyticsClient(redirect_uri=redirect_uri)
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics.py", line 74, in __init__
+App 16227 output:     self.FLOW = flow_from_clientsecrets(
+App 16227 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/oauth2client/util.py", line 135, in positional_wrapper
+App 16227 output:     return wrapped(*args, **kwargs)
+App 16227 output: TypeError: flow_from_clientsecrets() got an unexpected keyword argument 'prompt'
+App 16227 output: Not Found: /wp-content/plugins/ioptimization/IOptimize.php
+App 16227 output: [ pid=16227, time=2020-09-14 06:20:56,968 ]: Not Found: /wp-content/plugins/ioptimization/IOptimize.php
+App 16227 output: Not Found: /wp-content/plugins/ioptimization/IOptimize.php
+App 16227 output: [ pid=16227, time=2020-09-14 06:21:04,570 ]: Not Found: /wp-content/plugins/ioptimization/IOptimize.php
+App 16227 output: Not Found: /wp-content/index.php
+App 16227 output: [ pid=16227, time=2020-09-14 06:21:19,259 ]: Not Found: /wp-content/index.php
+App 16227 output: Not Found: /wp-content/plugins/ioptimization/IOptimize.php
+App 16227 output: [ pid=16227, time=2020-09-14 06:21:29,153 ]: Not Found: /wp-content/plugins/ioptimization/IOptimize.php
+App 16227 output: Not Found: /wp-content/plugins/ioptimization/wgofuoqppu.php
+App 16227 output: [ pid=16227, time=2020-09-14 06:21:37,559 ]: Not Found: /wp-content/plugins/ioptimization/wgofuoqppu.php
+App 16227 output: Not Found: /wp-content/plugins/ioptimization/IOptimize.php
+App 16227 output: [ pid=16227, time=2020-09-14 06:21:47,191 ]: Not Found: /wp-content/plugins/ioptimization/IOptimize.php
+App 16227 output: Not Found: /wp-content/plugins/ioptimization/wgofuoqppu.php
+App 16227 output: [ pid=16227, time=2020-09-14 06:22:00,910 ]: Not Found: /wp-content/plugins/ioptimization/wgofuoqppu.php
+App 14684 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 14684 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 14684 output: /home/newhoriz/repositories/newhorizon/new_horizons
+App 14684 output: 
+App 14801 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 14801 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 14801 output: /home/newhoriz/repositories/newhorizon/new_horizons
+App 19264 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 19264 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 19818 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 19818 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 14801 output: Home/Plan-Pictures/b1_rNH39KG.png
+App 14801 output: Not Found: /media/Home/20200805-IMG_1180_AGD1hZv.jpg
+App 14801 output: [ pid=14801, time=2020-09-14 06:56:46,173 ]: Not Found: /media/Home/20200805-IMG_1180_AGD1hZv.jpg
+App 14801 output: Not Found: /blog/js/jquery.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:36,416 ]: Not Found: /blog/js/jquery.js
+App 19264 output: Not Found: /blog/js/modernizr.js
+App 19264 output: [ pid=19264, time=2020-09-14 06:58:36,431 ]: Not Found: /blog/js/modernizr.js
+App 19818 output: Not Found: /blog/js/skrollr.min.js
+App 19818 output: [ pid=19818, time=2020-09-14 06:58:36,437 ]: Not Found: /blog/js/skrollr.min.js
+App 14801 output: Not Found: /blog/js/bootstrap.bundle.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:36,612 ]: Not Found: /blog/js/bootstrap.bundle.js
+App 19818 output: Not Found: /blog/js/jquery.easing.1.3.js
+App 19818 output: [ pid=19818, time=2020-09-14 06:58:36,633 ]: Not Found: /blog/js/jquery.easing.1.3.js
+App 19264 output: Not Found: /blog/js/smooth-scroll.js
+App 19264 output: [ pid=19264, time=2020-09-14 06:58:36,720 ]: Not Found: /blog/js/smooth-scroll.js
+App 14801 output: Not Found: /blog/images/menu-banner-01.png
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:36,821 ]: Not Found: /blog/images/menu-banner-01.png
+App 19818 output: Not Found: /blog/js/jquery.appear.js
+App 19818 output: [ pid=19818, time=2020-09-14 06:58:36,835 ]: Not Found: /blog/js/jquery.appear.js
+App 19264 output: Not Found: /blog/js/bootsnav.js
+App 19264 output: [ pid=19264, time=2020-09-14 06:58:36,927 ]: Not Found: /blog/js/bootsnav.js
+App 14801 output: Not Found: /blog/js/jquery.nav.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:37,030 ]: Not Found: /blog/js/jquery.nav.js
+App 19818 output: Not Found: /blog/js/skrollr.min.js
+App 19818 output: [ pid=19818, time=2020-09-14 06:58:37,035 ]: Not Found: /blog/js/skrollr.min.js
+App 19264 output: Not Found: /blog/js/wow.min.js
+App 19264 output: [ pid=19264, time=2020-09-14 06:58:37,117 ]: Not Found: /blog/js/wow.min.js
+App 19818 output: Not Found: /blog/js/swiper.min.js
+App 19818 output: [ pid=19818, time=2020-09-14 06:58:37,211 ]: Not Found: /blog/js/swiper.min.js
+App 19264 output: Not Found: /blog/js/jquery.count-to.js
+App 19264 output: [ pid=19264, time=2020-09-14 06:58:37,214 ]: Not Found: /blog/js/jquery.count-to.js
+App 14801 output: Not Found: /blog/js/page-scroll.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:37,231 ]: Not Found: /blog/js/page-scroll.js
+App 19264 output: Not Found: /blog/js/jquery.magnific-popup.min.js
+App 19264 output: [ pid=19264, time=2020-09-14 06:58:37,315 ]: Not Found: /blog/js/jquery.magnific-popup.min.js
+App 19818 output: Not Found: /blog/js/jquery.stellar.js
+App 19818 output: [ pid=19818, time=2020-09-14 06:58:37,414 ]: Not Found: /blog/js/jquery.stellar.js
+App 19264 output: Not Found: /blog/js/imagesloaded.pkgd.min.js
+App 19264 output: [ pid=19264, time=2020-09-14 06:58:37,416 ]: Not Found: /blog/js/imagesloaded.pkgd.min.js
+App 14801 output: Not Found: /blog/js/smooth-scroll.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:37,426 ]: Not Found: /blog/js/smooth-scroll.js
+App 19264 output: Not Found: /blog/js/classie.js
+App 19264 output: [ pid=19264, time=2020-09-14 06:58:37,518 ]: Not Found: /blog/js/classie.js
+App 14801 output: Not Found: /blog/js/hamburger-menu.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:37,611 ]: Not Found: /blog/js/hamburger-menu.js
+App 19264 output: Not Found: /blog/js/jquery.fitvids.js
+App 19264 output: [ pid=19264, time=2020-09-14 06:58:37,614 ]: Not Found: /blog/js/jquery.fitvids.js
+App 19818 output: Not Found: /blog/js/isotope.pkgd.min.js
+App 19818 output: [ pid=19818, time=2020-09-14 06:58:37,615 ]: Not Found: /blog/js/isotope.pkgd.min.js
+App 19264 output: Not Found: /blog/js/skill.bars.jquery.js
+App 19264 output: [ pid=19264, time=2020-09-14 06:58:37,724 ]: Not Found: /blog/js/skill.bars.jquery.js
+App 14801 output: Not Found: /blog/js/counter.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:37,726 ]: Not Found: /blog/js/counter.js
+App 19818 output: Not Found: /blog/js/jquery.appear.js
+App 19818 output: [ pid=19818, time=2020-09-14 06:58:37,733 ]: Not Found: /blog/js/jquery.appear.js
+App 14801 output: Not Found: /blog/js/jquery.easypiechart.min.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:37,919 ]: Not Found: /blog/js/jquery.easypiechart.min.js
+App 19264 output: Not Found: /blog/js/justified-gallery.min.js
+App 19264 output: [ pid=19264, time=2020-09-14 06:58:37,925 ]: Not Found: /blog/js/justified-gallery.min.js
+App 19818 output: Not Found: /blog/js/instafeed.min.js
+App 19818 output: [ pid=19818, time=2020-09-14 06:58:37,936 ]: Not Found: /blog/js/instafeed.min.js
+App 14801 output: Not Found: /blog/js/retina.min.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:38,117 ]: Not Found: /blog/js/retina.min.js
+App 19818 output: Not Found: /blog/revolution/js/jquery.themepunch.revolution.min.js
+App 19818 output: [ pid=19818, time=2020-09-14 06:58:38,127 ]: Not Found: /blog/revolution/js/jquery.themepunch.revolution.min.js
+App 19264 output: Not Found: /blog/revolution/js/jquery.themepunch.tools.min.js
+App 19264 output: [ pid=19264, time=2020-09-14 06:58:38,132 ]: Not Found: /blog/revolution/js/jquery.themepunch.tools.min.js
+App 14801 output: Not Found: /blog/js/bootsnav.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:38,240 ]: Not Found: /blog/js/bootsnav.js
+App 19818 output: Not Found: /blog/js/main.js
+App 19818 output: [ pid=19818, time=2020-09-14 06:58:38,322 ]: Not Found: /blog/js/main.js
+App 14801 output: Not Found: /blog/js/jquery.nav.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:38,431 ]: Not Found: /blog/js/jquery.nav.js
+App 14801 output: Not Found: /blog/js/wow.min.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:38,542 ]: Not Found: /blog/js/wow.min.js
+App 14801 output: Not Found: /blog/js/page-scroll.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:38,714 ]: Not Found: /blog/js/page-scroll.js
+App 14801 output: Not Found: /blog/js/swiper.min.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:38,834 ]: Not Found: /blog/js/swiper.min.js
+App 14801 output: Not Found: /blog/js/jquery.count-to.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:39,026 ]: Not Found: /blog/js/jquery.count-to.js
+App 14801 output: Not Found: /blog/js/jquery.stellar.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:39,215 ]: Not Found: /blog/js/jquery.stellar.js
+App 14801 output: Not Found: /blog/js/jquery.magnific-popup.min.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:39,320 ]: Not Found: /blog/js/jquery.magnific-popup.min.js
+App 14801 output: Not Found: /blog/js/isotope.pkgd.min.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:39,434 ]: Not Found: /blog/js/isotope.pkgd.min.js
+App 14801 output: Not Found: /blog/js/imagesloaded.pkgd.min.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:39,542 ]: Not Found: /blog/js/imagesloaded.pkgd.min.js
+App 14801 output: Not Found: /blog/js/classie.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:39,649 ]: Not Found: /blog/js/classie.js
+App 14801 output: Not Found: /blog/js/hamburger-menu.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:39,754 ]: Not Found: /blog/js/hamburger-menu.js
+App 20932 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 20932 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 14801 output: Not Found: /blog/js/counter.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:39,855 ]: Not Found: /blog/js/counter.js
+App 14801 output: Not Found: /blog/js/jquery.fitvids.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:40,023 ]: Not Found: /blog/js/jquery.fitvids.js
+App 14801 output: Not Found: /blog/js/skill.bars.jquery.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:40,133 ]: Not Found: /blog/js/skill.bars.jquery.js
+App 14801 output: Not Found: /blog/js/justified-gallery.min.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:40,245 ]: Not Found: /blog/js/justified-gallery.min.js
+App 14801 output: Not Found: /blog/js/jquery.easypiechart.min.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:40,354 ]: Not Found: /blog/js/jquery.easypiechart.min.js
+App 14801 output: Not Found: /blog/js/instafeed.min.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:40,517 ]: Not Found: /blog/js/instafeed.min.js
+App 14801 output: Not Found: /blog/js/retina.min.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:40,626 ]: Not Found: /blog/js/retina.min.js
+App 14801 output: Not Found: /blog/revolution/js/jquery.themepunch.tools.min.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:40,727 ]: Not Found: /blog/revolution/js/jquery.themepunch.tools.min.js
+App 14801 output: Not Found: /blog/revolution/js/jquery.themepunch.revolution.min.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:40,843 ]: Not Found: /blog/revolution/js/jquery.themepunch.revolution.min.js
+App 14801 output: Not Found: /blog/js/main.js
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:40,953 ]: Not Found: /blog/js/main.js
+App 14801 output: Not Found: /blog/images/favicon.png
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:41,122 ]: Not Found: /blog/images/favicon.png
+App 14801 output: Home/Plan-Pictures/b1_rNH39KG.png
+App 14801 output: Not Found: /media/Home/20200805-IMG_1180_AGD1hZv.jpg
+App 14801 output: [ pid=14801, time=2020-09-14 06:58:45,436 ]: Not Found: /media/Home/20200805-IMG_1180_AGD1hZv.jpg
+App 14801 output: Not Found: /favicon.ico
+App 14801 output: [ pid=14801, time=2020-09-14 06:59:56,653 ]: Not Found: /favicon.ico
+App 14801 output: Not Found: /favicon.ico
+App 14801 output: [ pid=14801, time=2020-09-14 07:00:21,776 ]: Not Found: /favicon.ico
+App 14801 output: Not Found: /favicon.ico
+App 14801 output: [ pid=14801, time=2020-09-14 07:00:44,338 ]: Not Found: /favicon.ico
+App 14801 output: Internal Server Error: /jet/dashboard/google-analytics/grant/29/
+App 14801 output: Traceback (most recent call last):
+App 14801 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 14801 output:     response = get_response(request)
+App 14801 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 126, in _get_response
+App 14801 output:     response = self.process_exception_by_middleware(e, request)
+App 14801 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 124, in _get_response
+App 14801 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 14801 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics_views.py", line 20, in google_analytics_grant_view
+App 14801 output:     client = GoogleAnalyticsClient(redirect_uri=redirect_uri)
+App 14801 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics.py", line 74, in __init__
+App 14801 output:     self.FLOW = flow_from_clientsecrets(
+App 14801 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/oauth2client/util.py", line 135, in positional_wrapper
+App 14801 output:     return wrapped(*args, **kwargs)
+App 14801 output: TypeError: flow_from_clientsecrets() got an unexpected keyword argument 'prompt'
+App 14801 output: [ pid=14801, time=2020-09-14 07:01:10,331 ]: Internal Server Error: /jet/dashboard/google-analytics/grant/29/
+App 14801 output: Traceback (most recent call last):
+App 14801 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 14801 output:     response = get_response(request)
+App 14801 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 126, in _get_response
+App 14801 output:     response = self.process_exception_by_middleware(e, request)
+App 14801 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 124, in _get_response
+App 14801 output:     response = wrapped_callback(request, *callback_args, **callback_kwargs)
+App 14801 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics_views.py", line 20, in google_analytics_grant_view
+App 14801 output:     client = GoogleAnalyticsClient(redirect_uri=redirect_uri)
+App 14801 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/dashboard_modules/google_analytics.py", line 74, in __init__
+App 14801 output:     self.FLOW = flow_from_clientsecrets(
+App 14801 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/oauth2client/util.py", line 135, in positional_wrapper
+App 14801 output:     return wrapped(*args, **kwargs)
+App 14801 output: TypeError: flow_from_clientsecrets() got an unexpected keyword argument 'prompt'
+App 14801 output: Home/Plan-Pictures/b1_rNH39KG.png
+App 14801 output: 
+App 14801 output: Not Found: /media/Home/20200805-IMG_1180_AGD1hZv.jpg
+App 14801 output: [ pid=14801, time=2020-09-14 07:02:55,065 ]: Not Found: /media/Home/20200805-IMG_1180_AGD1hZv.jpg
+App 14801 output: Not Found: /favicon.ico
+App 14801 output: [ pid=14801, time=2020-09-14 07:04:20,247 ]: Not Found: /favicon.ico
+App 14801 output: Not Found: /static/bootstrap.min.css.map
+App 14801 output: [ pid=14801, time=2020-09-14 07:04:35,650 ]: Not Found: /static/bootstrap.min.css.map
+App 20932 output: Not Found: /en/
+App 20932 output: [ pid=20932, time=2020-09-14 07:13:19,024 ]: Not Found: /en/
+App 20932 output: Not Found: /mn/
+App 20932 output: [ pid=20932, time=2020-09-14 07:13:19,078 ]: Not Found: /mn/
+App 30136 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 30136 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 30136 output: Home/Plan-Pictures/b1_rNH39KG.png
+App 30136 output: Not Found: /media/Home/20200805-IMG_1180_AGD1hZv.jpg
+App 30136 output: [ pid=30136, time=2020-09-14 07:14:13,052 ]: Not Found: /media/Home/20200805-IMG_1180_AGD1hZv.jpg
+App 31254 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 31254 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 1458 output: /opt/passenger-5.3.7-9.el7.cloudlinux/src/helper-scripts/wsgi-loader.py:26: DeprecationWarning: the imp module is deprecated in favour of importlib; see the module's documentation for alternative uses
+App 1458 output:   import sys, os, io, re, imp, threading, signal, traceback, socket, select, struct, logging, errno
+App 31254 output: Home/Plan-Pictures/b1_rNH39KG.png
+App 31254 output: 
+App 31254 output: Not Found: /media/Home/20200805-IMG_1180_AGD1hZv.jpg
+App 31254 output: [ pid=31254, time=2020-09-14 07:19:58,949 ]: Not Found: /media/Home/20200805-IMG_1180_AGD1hZv.jpg
+App 31254 output: Home/Plan-Pictures/b1_rNH39KG.png
+App 31254 output: Not Found: /media/Home/20200805-IMG_1180_AGD1hZv.jpg
+App 31254 output: [ pid=31254, time=2020-09-14 07:20:00,069 ]: Not Found: /media/Home/20200805-IMG_1180_AGD1hZv.jpg
+App 31254 output: Internal Server Error: /admin/horizonapp/
+App 31254 output: Traceback (most recent call last):
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 31254 output:     response = get_response(request)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 156, in _get_response
+App 31254 output:     response = self.process_exception_by_middleware(e, request)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 154, in _get_response
+App 31254 output:     response = response.render()
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 106, in render
+App 31254 output:     self.content = self.rendered_content
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+App 31254 output:     content = template.render(context, self._request)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+App 31254 output:     return self.template.render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 171, in render
+App 31254 output:     return self._render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 31254 output:     return self.nodelist.render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 31254 output:     bit = node.render_annotated(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 31254 output:     return self.render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 31254 output:     return compiled_parent._render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 31254 output:     return self.nodelist.render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 31254 output:     bit = node.render_annotated(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 31254 output:     return self.render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 31254 output:     return compiled_parent._render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 31254 output:     return self.nodelist.render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 31254 output:     bit = node.render_annotated(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 31254 output:     return self.render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 31254 output:     result = block.nodelist.render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 31254 output:     bit = node.render_annotated(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 31254 output:     return self.render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/library.py", line 192, in render
+App 31254 output:     output = self.func(*resolved_args, **resolved_kwargs)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/templatetags/jet_dashboard_tags.py", line 11, in get_dashboard
+App 31254 output:     dashboard_cls = get_current_dashboard(location)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/utils.py", line 17, in get_current_dashboard
+App 31254 output:     index_dashboard_cls = getattr(module, cls)
+App 31254 output: AttributeError: module 'dashboard' has no attribute 'CustomAppIndexDashboard'
+App 31254 output: [ pid=31254, time=2020-09-14 07:20:35,357 ]: Internal Server Error: /admin/horizonapp/
+App 31254 output: Traceback (most recent call last):
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/exception.py", line 34, in inner
+App 31254 output:     response = get_response(request)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 156, in _get_response
+App 31254 output:     response = self.process_exception_by_middleware(e, request)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/core/handlers/base.py", line 154, in _get_response
+App 31254 output:     response = response.render()
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 106, in render
+App 31254 output:     self.content = self.rendered_content
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/response.py", line 83, in rendered_content
+App 31254 output:     content = template.render(context, self._request)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/backends/django.py", line 61, in render
+App 31254 output:     return self.template.render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 171, in render
+App 31254 output:     return self._render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 31254 output:     return self.nodelist.render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 31254 output:     bit = node.render_annotated(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 31254 output:     return self.render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 31254 output:     return compiled_parent._render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 31254 output:     return self.nodelist.render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 31254 output:     bit = node.render_annotated(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 31254 output:     return self.render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 150, in render
+App 31254 output:     return compiled_parent._render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 163, in _render
+App 31254 output:     return self.nodelist.render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 31254 output:     bit = node.render_annotated(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 31254 output:     return self.render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/loader_tags.py", line 62, in render
+App 31254 output:     result = block.nodelist.render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 937, in render
+App 31254 output:     bit = node.render_annotated(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/base.py", line 904, in render_annotated
+App 31254 output:     return self.render(context)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/django/template/library.py", line 192, in render
+App 31254 output:     output = self.func(*resolved_args, **resolved_kwargs)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/templatetags/jet_dashboard_tags.py", line 11, in get_dashboard
+App 31254 output:     dashboard_cls = get_current_dashboard(location)
+App 31254 output:   File "/home/newhoriz/virtualenv/repositories/newhorizon/new_horizons/3.8/lib/python3.8/site-packages/jet/dashboard/utils.py", line 17, in get_current_dashboard
+App 31254 output:     index_dashboard_cls = getattr(module, cls)
+App 31254 output: AttributeError: module 'dashboard' has no attribute 'CustomAppIndexDashboard'
