@@ -8,7 +8,7 @@ from django.conf.urls.i18n import i18n_patterns
 
 
 urlpatterns = [  
-    path('rosetta/', include('rosetta.urls')),
+    path('translation/', include('rosetta.urls')),
     re_path(r'^jet/', include('jet.urls', 'jet')),
     re_path(r'^jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
     path('admin/', admin.site.urls),
