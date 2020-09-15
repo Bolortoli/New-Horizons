@@ -8,6 +8,19 @@ from urllib.parse import urljoin
 from django.conf import settings
 from django_ckeditor_5.fields import CKEditor5Field
 
+
+# class GuidePic(models.Model):
+#     pic_day = models.ImageField(verbose_name="Зураг-өдөр", upload_to="guide", default="settings/index.jpeg")
+#     pic_night = models.ImageField(verbose_name="Зураг-шөнө", upload_to="guide", default="settings/index.jpeg")
+
+#     def __str__(self):
+#         return 'Зураг солих'
+
+#     class Meta:
+#         verbose_name = 'Заавар хуудас зураг'
+#         verbose_name_plural = 'Заавар хуудас зураг'
+    
+
 class Three60Pic(models.Model):
      pic=models.ImageField(verbose_name="360 зураг", upload_to="three60pics", default="public_html/static/assets/360_one.jpg")
      
@@ -18,7 +31,8 @@ class Three60Pic(models.Model):
 
 class NewsCategory(models.Model):
 
-    name=models.CharField(max_length=255, verbose_name="Категорийн нэр", default='', unique=True)
+    name=models.CharField(max_length=255, verbose_name="Категорийн нэр(mon)", default='', unique=True)
+    name_eng=models.CharField(max_length=255, verbose_name="Категорийн нэр(eng)", default='', unique=True)
 
     def __str__(self):
         return self.name
@@ -29,13 +43,15 @@ class NewsCategory(models.Model):
 class News(models.Model):
 
     category=models.ForeignKey(NewsCategory, verbose_name="Мэдээний категори", on_delete=models.CASCADE)
-    title=models.CharField(max_length=255, verbose_name="Мэдээний гарчиг", default='')
-    pic=models.ImageField(verbose_name="Мэдээний зураг", upload_to="news/picture", default="")
-    content=CKEditor5Field('Text', config_name='extends')
+    title=models.CharField(max_length=255, verbose_name="Мэдээний гарчиг(mon)", default='')
+    pic=models.ImageField(verbose_name="Мэдээний зураг(mon)", upload_to="news/picture", default="")
+    content=CKEditor5Field('Контент(mon)', config_name='extends')
     published_date=models.DateField(verbose_name="Огноо", auto_now=True, editable=False)
     slug=models.CharField(max_length=255, verbose_name="Мэдээний зам", default='', editable=False)
     featured=models.BooleanField(verbose_name="Онцлох мэдээ", default=False)
     viewed=models.IntegerField(editable=False, default=0)
+    title_eng=models.CharField(max_length=255, verbose_name="Мэдээний гарчиг(eng)", default='')
+    content_eng=CKEditor5Field('Контент(eng)', config_name='extends')
 
     def __str__(self):
         return self.title
@@ -66,6 +82,7 @@ class BuildingRents(models.Model):
 
 class ReasonBoxes(models.Model):
 
+    language=models.CharField(max_length=255, verbose_name="Хэл", default='')
     box1_title=models.CharField(max_length=255, verbose_name="Box 1 гарчиг", default='Оруулаагүй', blank=True)
     box1_text=models.TextField(verbose_name="Box 1 текст", default='Оруулаагүй', blank=True)
     box2_title=models.CharField(max_length=255, verbose_name="Box 2 гарчиг", null=False, default='Оруулаагүй', blank=True)
@@ -90,9 +107,13 @@ class Settings(models.Model):
     phone=models.CharField(max_length=255, verbose_name="Холбоо барих утас",  blank=True, default='')
     mail=models.CharField(max_length=255, verbose_name="Компанийн э-мэйл хаяг",  blank=True, default='')
     location=models.CharField(max_length=255, verbose_name="Барилгын байршил",  blank=True, default='')
+    location_eng=models.CharField(max_length=255, verbose_name="Барилгын байршил(eng)",  blank=True, default='')
     facebook=models.CharField(max_length=255, verbose_name="Facebook хаяг",  blank=True, default='')
     instagram=models.CharField(max_length=255, verbose_name="Instagram хаяг",  blank=True, default='')
     twitter=models.CharField(max_length=255, verbose_name="Twitter хаяг",  blank=True, default='')
+    pic_day = models.ImageField(verbose_name="Зураг-өдөр", upload_to="settings", default="settings/index.jpeg")
+    pic_night = models.ImageField(verbose_name="Зураг-шөнө", upload_to="settings", default="settings/index.jpeg")
+    pic_footer = models.ImageField(verbose_name="Footer зураг", upload_to="settings", default="settings/index.jpeg")
 
 
     class Meta:
@@ -110,6 +131,8 @@ class PDFbrochure(models.Model):
 
 
 class FeatureCard(models.Model):
+
+    language=models.CharField(max_length=255, verbose_name="Хэл", default='')
     box1_title=models.CharField(max_length=255, verbose_name="Box 1 гарчиг", null=True, blank=True, default='Оруулаагүй')
     box1_text=models.TextField(verbose_name="Box 1 текст", null=True, blank=True, default='Оруулаагүй')
     box2_title=models.CharField(max_length=255, verbose_name="Box 2 гарчиг", null=True, blank=True, default='Оруулаагүй')
@@ -124,7 +147,9 @@ class FeatureCard(models.Model):
         verbose_name_plural = 'Санал болгох талбар'
   
 class OrganizationCategory(models.Model):
+
     category_name=models.CharField(max_length=255, verbose_name="Ангиллын нэр", null=True, blank=True, default=None, unique=True)
+    category_name_eng=models.CharField(max_length=255, verbose_name="Ангиллын нэр(eng)", null=True, blank=True, default=None, unique=True)
 
     def __str__(self):
         return self.category_name
@@ -134,7 +159,8 @@ class OrganizationCategory(models.Model):
 
 
 class Organization(models.Model):
-    or_name=models.CharField(max_length=255, verbose_name="Байгууллагын нэр", null=True, blank=True, default='', unique=True)
+    or_name=models.CharField(max_length=255, verbose_name="Байгууллагын нэр(mon)", null=True, blank=True, default='', unique=True)
+    or_name_eng=models.CharField(max_length=255, verbose_name="Байгууллагын нэр(eng)", null=True, blank=True, default='', unique=True)
     category=models.ForeignKey(OrganizationCategory, verbose_name="Байгуулагын категори", on_delete=models.CASCADE)
     pic=models.ImageField(upload_to="Organization/", verbose_name="Лого", default="", blank=True)
     special = models.BooleanField(verbose_name="Нүүр хуудсанд гаргах ", default=False)
@@ -147,8 +173,10 @@ class Organization(models.Model):
         verbose_name_plural = 'Байгууллагуудын жагсаалт'
 
 class OrganizationDetail(models.Model):
-    title=models.CharField(max_length=255, verbose_name="Гарчиг", null=True, blank=True, default=None)
-    desc=models.TextField(verbose_name="Тайлбар", null=True, blank=True, default=None) 
+    title=models.CharField(max_length=255, verbose_name="Гарчиг(mon)", null=True, blank=True, default=None)
+    title_eng=models.CharField(max_length=255, verbose_name="Гарчиг(eng)", null=True, blank=True, default=None)
+    desc=models.TextField(verbose_name="Тайлбар(mon)", null=True, blank=True, default=None) 
+    desc_eng=models.TextField(verbose_name="Тайлбар(eng)", null=True, blank=True, default=None) 
     pic=models.ImageField(upload_to="Organization/Detail/", verbose_name="Зураг", default="", blank=True)
     organization=models.ForeignKey(Organization, verbose_name="Байгуулага", on_delete=models.CASCADE, default='')
 
@@ -174,8 +202,10 @@ class ContactUs(models.Model):
 
 class BuildingIntro(models.Model):
         
-    title = models.CharField(max_length=255, verbose_name="Гарчиг", null=True, blank=True, default="Оруулаагүй")
-    text=models.TextField(verbose_name="Тайлбар", default='') 
+    title = models.CharField(max_length=255, verbose_name="Гарчиг(mon)", null=True, blank=True, default="Оруулаагүй")
+    title_eng = models.CharField(max_length=255, verbose_name="Гарчиг(eng)", null=True, blank=True, default="Unregistered")
+    text=models.TextField(verbose_name="Тайлбар(mon)", default='') 
+    text_eng=models.TextField(verbose_name="Тайлбар(eng)", default='') 
     pic=models.ImageField(upload_to="Home/building_intro/", verbose_name="Зураг", default="settings/horizon10.jpg", blank=True)
 
     class Meta:
@@ -184,9 +214,12 @@ class BuildingIntro(models.Model):
 
 
 class FloorPlan(models.Model):
-    floor = models.CharField(max_length=255, verbose_name="Давхар", null=True, blank=True, default="Оруулаагүй")
-    title = models.CharField(max_length=255, verbose_name="Гарчиг", null=True, blank=True, default="Оруулаагүй")
-    description = CKEditor5Field('Text', config_name='extends')
+    floor = models.CharField(max_length=255, verbose_name="Давхар(mon)", null=True, blank=True, default="Оруулаагүй")
+    floor_eng = models.CharField(max_length=255, verbose_name="Давхар(eng)", null=True, blank=True, default="Unregistered")
+    title = models.CharField(max_length=255, verbose_name="Гарчиг(mon)", null=True, blank=True, default="Оруулаагүй")
+    title_eng = models.CharField(max_length=255, verbose_name="Гарчиг(eng)", null=True, blank=True, default="unregistered")
+    description = CKEditor5Field('Text(mon)', config_name='extends')
+    description_eng = CKEditor5Field('Text(eng)', config_name='extends')
     pic = models.ImageField(upload_to="Home/Plan-Pictures", verbose_name="План зураг", default='settings/index.jpeg', blank=True)
 
 
@@ -203,8 +236,10 @@ class HomeSlider(models.Model):
     )
 
     button_choice = models.CharField(max_length=255, verbose_name="Товчны төрөл", default=CHOICES[0], choices=CHOICES)
-    text_lil = models.CharField(max_length=255, verbose_name="Текст", blank=True, default='Default')
-    title = models.CharField(max_length=255, verbose_name="Гарчиг", blank=True, default='Default')
+    text_lil = models.CharField(max_length=255, verbose_name="Текст(mon)", blank=True, default='Default')
+    text_lil_eng = models.CharField(max_length=255, verbose_name="Текст(eng)", blank=True, default='Default')
+    title = models.CharField(max_length=255, verbose_name="Гарчиг(mon)", blank=True, default='Default')
+    title_eng = models.CharField(max_length=255, verbose_name="Гарчиг(eng)", blank=True, default='Default')
     background_pic = models.ImageField(upload_to="Home", verbose_name="Зураг", default="settings/index.jpeg", blank=True)
 
     choice1 = models.BooleanField(editable=False, default=False)
@@ -212,7 +247,7 @@ class HomeSlider(models.Model):
     choice3 = models.BooleanField(editable=False, default=False)
 
     def save(self, *args, **kwargs):
-        print(self.button_choice)
+        # print(self.button_choice)
         # TODO remove hard code
         if self.button_choice is self.CHOICES[0][0]:
             self.choice1 = True
@@ -236,21 +271,30 @@ class HomeSlider(models.Model):
         verbose_name_plural = 'Нүүр хуудас - slider'
 
 class SubPage(models.Model):
-    page_title = models.CharField(max_length=255, verbose_name="Хуудас гарчиг", null=True,  default="")
-    lefty_title = models.CharField(max_length=255, verbose_name="Зүүн зурагтай - Гарчиг", null=True, blank=True, default="Оруулаагүй")
-    lefty_description = CKEditor5Field('Text', config_name='extends', blank=True)
+    page_title = models.CharField(max_length=255, verbose_name="Хуудас гарчиг(mon)", null=True,  default="")
+    page_title_eng = models.CharField(max_length=255, verbose_name="Хуудас гарчиг(eng)", null=True,  default="")
+    lefty_title = models.CharField(max_length=255, verbose_name="Зүүн зурагтай - Гарчиг(mon)", null=True, blank=True, default="Оруулаагүй")
+    lefty_title_eng = models.CharField(max_length=255, verbose_name="Зүүн зурагтай - Гарчиг(eng)", null=True, blank=True, default="Unregistered")
+    lefty_description = CKEditor5Field('Text(mon)', config_name='extends', blank=True)
+    lefty_description_eng = CKEditor5Field('Text(eng)', config_name='extends', blank=True)
     lefty_pic = models.ImageField(upload_to="Sub-pages/about-us", verbose_name="Зүүн зурагтай - зураг", default='settings/index.jpeg', blank=True)
 
-    notitledicon_left_title = models.CharField(max_length=255, verbose_name="NoTitledIcon left - Гарчиг", null=True, blank=True, default="Оруулаагүй")
-    notitledicon_left_description = CKEditor5Field('Text', config_name='extends', blank=True)
+    notitledicon_left_title = models.CharField(max_length=255, verbose_name="NoTitledIcon left - Гарчиг(mon)", null=True, blank=True, default="Оруулаагүй")
+    notitledicon_left_title_eng = models.CharField(max_length=255, verbose_name="NoTitledIcon left - Гарчиг(eng)", null=True, blank=True, default="Unregistered")
+    notitledicon_left_description = CKEditor5Field('Text(mon)', config_name='extends', blank=True)
+    notitledicon_left_description_eng = CKEditor5Field('Text(eng)', config_name='extends', blank=True)
 
-    righty_title = models.CharField(max_length=255, verbose_name="Баруун зурагтай - Гарчиг", null=True, blank=True, default="Оруулаагүй")
-    righty_description = CKEditor5Field('Text', config_name='extends', blank=True)
+    righty_title = models.CharField(max_length=255, verbose_name="Баруун зурагтай - Гарчиг(mon)", null=True, blank=True, default="Оруулаагүй")
+    righty_title_eng = models.CharField(max_length=255, verbose_name="Баруун зурагтай - Гарчиг(eng)", null=True, blank=True, default="Unregistered")
+    righty_description = CKEditor5Field('Text(mon)', config_name='extends', blank=True)
+    righty_description_eng = CKEditor5Field('Text(eng)', config_name='extends', blank=True)
     righty_pic = models.ImageField(upload_to="Sub-pages/about-us", verbose_name="Баруун зурагтай - зураг", default='settings/index.jpeg', blank=True)
  
     
-    notitledicon_right_title = models.CharField(max_length=255, verbose_name="NoTitledIcon right - Гарчиг", null=True, blank=True, default="Оруулаагүй")
-    notitledicon_right_description = CKEditor5Field('Text', config_name='extends', blank=True)
+    notitledicon_right_title = models.CharField(max_length=255, verbose_name="NoTitledIcon right - Гарчиг(mon)", null=True, blank=True, default="Оруулаагүй")
+    notitledicon_right_title_eng = models.CharField(max_length=255, verbose_name="NoTitledIcon right - Гарчиг(eng)", null=True, blank=True, default="Оруулаагүй")
+    notitledicon_right_description = CKEditor5Field('Text(mon)', config_name='extends', blank=True)
+    notitledicon_right_description_eng = CKEditor5Field('Text(eng)', config_name='extends', blank=True)
 
     righty_pic = models.ImageField(upload_to="Sub-pages/about-us", verbose_name="Зураг том", default='settings/index.jpeg', blank=True)
     
@@ -264,7 +308,8 @@ class SubPage(models.Model):
         verbose_name_plural = 'Дэд хуудас'
 
 class SubPages_NoTitleIcon_Rightpic(models.Model):
-    text = models.CharField(max_length=255, verbose_name="Текст", null=True, blank=True, default="")
+    text = models.CharField(max_length=255, verbose_name="Текст(mon)", null=True, blank=True, default="")
+    text_eng = models.CharField(max_length=255, verbose_name="Текст(eng)", null=True, blank=True, default="")
     icon = models.ImageField(upload_to="Sub-pages/notitledicon", verbose_name="Зураг", default='', blank=True)
     organization=models.ForeignKey(SubPage, verbose_name="a", on_delete=models.CASCADE, default='')
     
@@ -273,7 +318,8 @@ class SubPages_NoTitleIcon_Rightpic(models.Model):
         verbose_name_plural = 'No-Titled-Icon-right'
 
 class SubPages_NoTitleIcon_Leftpic(models.Model):
-    text = models.CharField(max_length=255, verbose_name="Текст", null=True, blank=True, default="")
+    text = models.CharField(max_length=255, verbose_name="Текст(mon)", null=True, blank=True, default="")
+    text_eng = models.CharField(max_length=255, verbose_name="Текст(eng)", null=True, blank=True, default="")
     icon = models.ImageField(upload_to="Sub-pages/notitledicon", verbose_name="Зураг", default='', blank=True)
     organization=models.ForeignKey(SubPage, verbose_name="a", on_delete=models.CASCADE, default='')
     
@@ -282,8 +328,10 @@ class SubPages_NoTitleIcon_Leftpic(models.Model):
         verbose_name_plural = 'No-Titled-Icon-left'
 
 class SubPages_TitleIcon(models.Model):
-    title = models.CharField(max_length=255, verbose_name="Гарчиг", null=True, blank=True, default="")
-    text = models.CharField(max_length=255, verbose_name="Текст", null=True, blank=True, default="")
+    title = models.CharField(max_length=255, verbose_name="Гарчиг(mon)", null=True, blank=True, default="")
+    title_eng = models.CharField(max_length=255, verbose_name="Гарчиг(eng)", null=True, blank=True, default="")
+    text = models.CharField(max_length=255, verbose_name="Текст(mon)", null=True, blank=True, default="")
+    text_eng = models.CharField(max_length=255, verbose_name="Текст(eng)", null=True, blank=True, default="")
     icon = models.ImageField(upload_to="Sub-pages/icon/notitledicon", verbose_name="Зураг", default='', blank=True)
     organization=models.ForeignKey(SubPage, verbose_name="a", on_delete=models.CASCADE, default='')
     
@@ -293,8 +341,10 @@ class SubPages_TitleIcon(models.Model):
         verbose_name_plural = 'Titled-Icon'
 
 class SubPages_Slider(models.Model):
-    title = models.CharField(max_length=255, verbose_name="Гарчиг", null=True, blank=True, default="")
-    text = models.CharField(max_length=255, verbose_name="Текст", null=True, blank=True, default="")
+    title = models.CharField(max_length=255, verbose_name="Гарчиг(mon)", null=True, blank=True, default="")
+    title_eng = models.CharField(max_length=255, verbose_name="Гарчиг(eng)", null=True, blank=True, default="")
+    text = models.CharField(max_length=255, verbose_name="Текст(mon)", null=True, blank=True, default="")
+    text_eng = models.CharField(max_length=255, verbose_name="Текст(eng)", null=True, blank=True, default="")
     icon = models.ImageField(upload_to="Sub-pages/icon/notitledicon", verbose_name="Зураг", default='', blank=True)
     organization=models.ForeignKey(SubPage, verbose_name="a", on_delete=models.CASCADE, default='')
     
@@ -304,11 +354,13 @@ class SubPages_Slider(models.Model):
         verbose_name_plural = 'Slider'
     
 class BuildingEnvironment(models.Model):
-    title = models.CharField(max_length=255, verbose_name="Гарчиг", null=True, blank=True, default="Манай орчин")
-    text = models.CharField(max_length=255, verbose_name="Текст", null=True, blank=True, default="")
+    title = models.CharField(max_length=255, verbose_name="Гарчиг(mon)", null=True, blank=True, default="Манай орчин")
+    title_eng = models.CharField(max_length=255, verbose_name="Гарчиг(eng)", null=True, blank=True, default="Building environment")
+    text = models.CharField(max_length=255, verbose_name="Текст(mon)", null=True, blank=True, default="")
+    text_eng = models.CharField(max_length=255, verbose_name="Текст(eng)", null=True, blank=True, default="")
 
     def __str__(self):
-        return 'Барилын орчин өөрчлөх'
+        return 'Барилгын орчин өөрчлөх'
 
     class Meta:
         verbose_name = 'Барилгын орчин'

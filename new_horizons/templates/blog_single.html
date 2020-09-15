@@ -1,161 +1,33 @@
+{% extends 'base.html' %}
 {% load static %}
-<!doctype html>
-<html class="no-js" lang="en">
-    <head>
-        <!-- title -->
-        <title>s</title>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
-    
-        <!-- favicon -->
-        <link rel="shortcut icon" href="images/favicon.png">
-        <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
-        
-        <!-- bootstrap -->
-        <link rel="stylesheet" href="{% static 'swiperjs.css' %}">
-        <!------------------------SWIPER JS-------------------------->
-        <link rel="stylesheet" href="{% static 'style.css' %}">
-        <script src="{% static 'js_libraries/fontawesome.js' %}" crossorigin="anonymous"></script>
-        <script src="{% static 'js_libraries/jquery.js' %}"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="{% static 'js_libraries/scrollmagic.js' %}"></script>
-        <script src="{% static 'js_libraries/scrollmagicIndicator.js' %}"></script>
-        <!------------------------GSAP onscroll END-------------------------->
-        <!------------------------SWIPER JS-------------------------->
-        <script src="{% static 'js_libraries/swiper.js' %}"></script>
-        <script src="{% static 'home.js' %}"></script>
-            
-        </head>
-    <body  class="home-body" id="homeBody">
-        <div class="contact-us-form" id="contactUsForm">
-            <div class="inner-contact-us-form">
-                <div class="contact-us-close-button" onclick="closeContactUsForm()">
-                    <i class="fas fa-times"></i>
-                </div>
-                <form action="">
-                    <div class="contact-us-input-field">
-                        <i class="fas fa-user-tie"></i>
-                        <input id="name-contact" type="text" placeholder="Нэр">
-                    </div>
-                    <div class="contact-us-input-field">
-                        <i class="fas fa-paper-plane"></i>
-                        <input id="mail-contact" type="email" placeholder="Цахим хаяг">
-                    </div>
-                    <div class="contact-us-input-field">
-                        <i class="fas fa-briefcase"></i>
-                        <input id="company-contact" type="text" placeholder="Компани">
-                    </div>
-                    <textarea name="" id="message-contact" cols="30" rows="10" placeholder="Энд бичнэ үү.."></textarea>
-                    <input id="submit-contact" type="submit" value="Илгээх">
-                </form>
-            </div>
-        </div>
-        <!-- start header -->
-        <header class="guide-desktop-header">
-            <div class="inner-header">
-                <div class="__left">
-                    <div class="desktop-logo-container">
-                        <img src="{% static 'assets/nh_logo.png' %}" alt="logo" height="60">
-                    </div>
-                    <nav class="desktop-nav">
-    
-                        <li><a href="{% url 'home' %}">нүүр</a></li>
-                        
-                        <li><a href="{% url 'home' %}#buildingFeature">Дадвуу тал</a></li>
-    
-                        <li><a href="{% url 'home' %}#miniBlog">Сүүлийн үеийн мэдээ</a></li>
-    
-                        <li><a href="{% url 'home' %}#buildingIntro">танилцуулга</a></li>
-    
-                        <li><a href="{% url 'home' %}#service">үйлчилгээ</a></li>
-    
-                        <li><a href="{% url 'home' %}#floorInfo">давхарийн мэдээлэл</a></li>
-    
-                        <li><a href="{% url 'home' %}#sevenReason">Давуу тал</a></li>
-                        
-                        <li><a href="{% url 'home' %}#panaromaSection">360 зураг</a></li>
-    
-                        <li><a href="{% url 'home' %}#nearbyPlaces">Ойр хавийн барилгууд</a></li>
-    
-                    </nav>
-                </div>
-                <div class="__mid" onclick="showContactUsForm()">
-                    <a href="#">Бидэнтэй харилцах</a>
-                </div>
-                <div class="__right">
-                    <div class="select-language"><a href="#">mn</a></div>
-                    <div class="select-language"><a href="#">en</a></div>
-                </div>
-            </div>
-        </header>  
-        <header class="mobile-header">
-            <div class="side-nav">
-                <div onclick="showMobileNav()" class="menu-container">
-                    <i class="fas fa-bars menu-icon" id="mobileBarsIcon" style="color:black"></i>
-                </div>
-                <nav id="mobileNav" onclick="showMobileNav()">
-                    <img src="{{ global_setings.logo.url }}" alt="logo">
-    
-                    <div class="contactUsAnchor"><a href="{% url 'home' %}#contactUsFooter">Бидэнтэй холбогдох</a></div>
-    
-                    <li><a href="{% url 'home' %}#home">нүүр</a></li>
-    
-                    <li><a href="{% url 'home' %}#miniBlog">Сүүлийн үеийн мэдээ</a></li>
-    
-                    <li><a href="{% url 'home' %}#buildingIntro">танилцуулга</a></li>
-    
-                    <li><a href="{% url 'home' %}#service">үйлчилгээ</a></li>
-    
-                    <li><a href="{% url 'home' %}#floorInfo">давхарийн мэдээлэл</a></li>
-    
-                    <li><a href="{% url 'home' %}#sevenReason">7 шалтгаан</a></li>
-    
-                    <li><a href="{% url 'home' %}#panaromaSection">360 зураг</a></li>
-    
-                    <li><a href="{% url 'home' %}#nearbyPlaces">Ойр хавийн барилгууд</a></li>
-                    <div class="__right">
-                        <a href="#">mn</a>
-                        <a href="#">en</a>
-                    </div>
-                </nav>
-            </div>
-        </header>
-        <!-- end header -->
+{% load i18n %}
+{% block content %}
+    <body class="home-body" id="homeBody">
         <!-- start post content section --> 
         <section class="blog-styling">
             <div class="container">
                 <div class="row">
                     <main class="col-12 col-lg-9 right-sidebar md-margin-60px-bottom sm-margin-40px-bottom pl-0 md-no-padding-right">
+
+                        {% if 'mn' in LANGUAGE_CODE %}
                         <h1>{{ news.title }}</h1>
                         <p>{{ news.content | safe }}</p>
-                        <!-- <div class="col-12 blog-details-text last-paragraph-no-margin">
-                            <img src="http://placehold.it/900x631" alt="" class="width-100 margin-45px-bottom">
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. <strong class="text-extra-dark-gray">Lorem Ipsum has been the industry's</strong> standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more <u>recently with desktop publishing</u> software like aldus pagemaker including versions.</p>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the lorem ipsum generators on the internet tend to repeat predefined chunks as necessary, making this the <strong class="text-extra-dark-gray">first true generator on the internet.</strong> It uses a dictionary of over 200 Latin words, combined with a <u>handful of model sentence structures,</u> to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour.</p>
-                            <blockquote class="border-color-deep-pink">
-                                <p>Reading is not only informed by what’s going on with us at that moment, but also governed by how our eyes and brains work to process information. What you see and what you’re experiencing as you read these words is quite different.</p>
-                                <footer>Jason Maria</footer>
-                            </blockquote> -->
-                            <!-- <img src="http://placehold.it/900x600" alt="" class="width-100 margin-45px-bottom"> -->    
-                            <!-- dropcaps -->
-                            <!-- <p><span class="first-letter first-letter-block bg-extra-dark-gray text-white-2">M</span>Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries. Simply dummy text of the printing and typesetting industry. It has survived not only five centuries. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p> -->
-                            <!-- end dropcaps -->
-                             <!-- <figure class="wp-caption alignleft"><img alt="" src="http://placehold.it/350x255"><figcaption class="wp-caption-text">There is no sincerer love than the love of food.</figcaption></figure>
-                            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the lorem ipsum generators on the internet tend to repeat predefined chunks as necessary, making this the first true generator on the internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour.</p>
-                            <span class="text-extra-dark-gray font-weight-500 margin-15px-bottom d-block text-medium">You can never quit. Winners never quit, and quitters never win</span>
-                            <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the lorem ipsum generators on the internet tend to repeat predefined chunks as necessary, making this the first true generator on the internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour.</p>
-                        </div> -->
+                        {% else %}
+                        <h1>{{ news.title_eng }}</h1>
+                        <p>{{ news.content_eng | safe }}</p>
+                        {% endif %}            
                         <div class="col-12 margin-seven-bottom margin-eight-top">
                             <div class="divider-full bg-medium-light-gray"></div>
                         </div>
                         <div class="row mx-0">
                             <div class="col-12 col-lg-6 text-center text-lg-left">
-                                <div class="tag-cloud margin-20px-bottom">
-                                    <a href="{% url 'news' cat_id=news.category.id %}">{{ news.category }}</a>
-                                    <!-- <a href="blog-grid.html">сонин хачин</a> -->
+                                <div class="tag-cloud margin-20px-bottom">     
+                                {% if 'mn' in LANGUAGE_CODE %}
+                                <a href="{% url 'news' cat_id=news.category.id %}">{{ news.category }}</a>
+                                {% else %}
+                                <a href="{% url 'news' cat_id=news.category.id %}">{{ news.category.name_eng }}</a>
+                                {% endif %}            
+                                <!-- <a href="blog-grid.html">сонин хачин</a> -->
                                   
                                 </div>
                             </div>
@@ -175,7 +47,7 @@
                         <div class="col-12 d-flex flex-wrap p-0">
                             <div class="col-12 mx-auto text-center margin-80px-tb md-margin-50px-tb sm-margin-30px-tb">
                                 <div class="position-relative overflow-hidden width-100">
-                                    <span class="text-small text-outside-line-full alt-font font-weight-600 text-uppercase text-extra-dark-gray">Холбоотой мэдээлэл</span>
+                                    <span class="text-small text-outside-line-full alt-font font-weight-600 text-uppercase text-extra-dark-gray">{% trans "Холбоотой мэдээлэл" %}</span>
                                 </div>
                             </div>
                             <!-- start post item  -->
@@ -189,9 +61,12 @@
                                     </div>
                                     <div class="post-details">
                                         <span class="post-author text-extra-small text-medium-gray text-uppercase d-block margin-10px-bottom sm-margin-5px-bottom">{{ news.published_date }}</span>
+                                        {% if 'mn' in LANGUAGE_CODE %}
                                         <a href="{% url 'blog' slug=news.slug %}" class="post-title text-medium text-extra-dark-gray width-90 d-block md-width-100">{{news.title}}</a>
+                                        {% else %}
+                                        <a href="{% url 'blog' slug=news.slug %}" class="post-title text-medium text-extra-dark-gray width-90 d-block md-width-100">{{news.title_eng}}</a>
+                                        {% endif %}       
                                         <div class="separator-line-horrizontal-full bg-medium-light-gray margin-20px-tb md-margin-15px-tb"></div>
-                                        <!-- <p class="width-90 sm-width-100">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum text...</p> -->
                                     </div>
                                 </div>
                             </div>
@@ -288,7 +163,7 @@
                             </form>
                         </div> -->
                         <div class="margin-50px-bottom">
-                            <div class="text-extra-dark-gray margin-20px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>Биднийг дагаарай</span></div>
+                            <div class="text-extra-dark-gray margin-20px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>{% trans "Биднийг дагаарай" %}</span></div>
                             <div class="social-icon-style-1 text-center">
                                 <ul class="extra-small-icon">
                                     <li><a class="facebook" href="{{ global_settings.facebook }}" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
@@ -300,27 +175,42 @@
                             </div>
                         </div>
                         <div class="margin-45px-bottom sm-margin-25px-bottom">
-                            <div class="text-extra-dark-gray margin-20px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>Мэдээний төрөл</span></div>
+                            <div class="text-extra-dark-gray margin-20px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>{% trans "Мэдээний төрөл" %}</span></div>
                             <ul class="list-style-6 margin-50px-bottom text-small">
                                 {% for category in categories %}
+                                {% comment %}
                                 {% if category.cat_id is none %}
                                 <li><a href="{% url 'news' %}">{{ category.category }}</a><span>{{ category.news_count }}</span></li>
                                 {% else %}
                                 <li><a href="{% url 'news' cat_id=category.cat_id %}">{{ category.category }}</a><span>{{ category.news_count }}</span></li>
                                 {% endif %}
+                                {% endcomment %}
+                                {% if category.cat_id is none and 'mn' in LANGUAGE_CODE %}
+                                    <li><a href="{% url 'news' %}">{{ category.category }}</a><span>{{ category.news_count }}</span></li>
+                                    {% elif category.cat_id is none and 'en' in LANGUAGE_CODE %}
+                                    <li><a href="{% url 'news' %}">{{ category.category_eng }}</a><span>{{ category.news_count }}</span></li>
+                                    {% elif category.cat_id is not none and 'en' in LANGUAGE_CODE %}
+                                    <li><a href="{% url 'news' cat_id=category.cat_id %}">{{ category.category_eng }}</a><span>{{ category.news_count }}</span></li>
+                                    {% elif category.cat_id is not none and 'mn' in LANGUAGE_CODE %}
+                                    <li><a href="{% url 'news' cat_id=category.cat_id %}">{{ category.category }}</a><span>{{ category.news_count }}</span></li>
+                                    {% endif %}
                                 {% endfor %}
                                 <!-- <li><a href="#">Сонин хачин</a><span>05</span></li> -->
                             </ul>   
-                        </div>
+                        </div>  
                         <div class="margin-45px-bottom sm-margin-25px-bottom">
-                            <div class="text-extra-dark-gray margin-25px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>Онцлох мэдээ</span></div>
+                            <div class="text-extra-dark-gray margin-25px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>{% trans "Онцлох мэдээ" %}</span></div>
                             <ul class="latest-post position-relative">
                                 {% for news in featured_news %}
                                 <li class="media">
                                     <figure>
                                         <a href="{% url 'blog' slug=news.slug %}"><img src="{{ news.pic.url }}" alt=""></a>
                                     </figure>
+                                    {% if 'mn' in LANGUAGE_CODE %}
                                     <div class="media-body text-small"><a href="{% url 'blog' slug=news.slug %}" class="text-extra-dark-gray"><span class="d-block margin-5px-bottom">{{ news.title }}</span></a> <span class="d-block text-medium-gray text-small">{{ news.published_date}}</span></div>
+                                    {% else %}
+                                    <div class="media-body text-small"><a href="{% url 'blog' slug=news.slug %}" class="text-extra-dark-gray"><span class="d-block margin-5px-bottom">{{ news.title_eng }}</span></a> <span class="d-block text-medium-gray text-small">{{ news.published_date}}</span></div>
+                                    {% endif %}     
                                 </li>
                                 {% endfor %}
                                 <!-- <li class="media">
@@ -354,9 +244,9 @@
                             </ul>   
                         </div> -->
                         <div class="margin-45px-bottom sm-margin-25px-bottom">
-                            <div class="text-extra-dark-gray margin-25px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>Брошур авах</span></div>
+                            <div class="text-extra-dark-gray margin-25px-bottom alt-font text-uppercase font-weight-600 text-small aside-title"><span>{% trans "Брошур авах" %}</span></div>
                             <div class="d-inline-block width-100">
-                                <a href="{{ pdf_url }}" style="background: cornflowerblue;border: 0.1vw solid cornflowerblue;color: white;">Боршуур авах</a>
+                                <a href="{{ pdf_url }}" style="background: cornflowerblue;border: 0.1vw solid cornflowerblue;color: white;">{% trans "Боршуур авах" %}</a>
                             </div>
                         </div>
                         <div class="margin-45px-bottom sm-margin-25px-bottom">
@@ -367,140 +257,6 @@
             </div>
         </section>
         <!-- end blog content section -->  
-        <!-- start footer --> 
-        <footer class="desktop-footer" id="desktop-footer">
-            <img class="footer-bg" src="{% static 'assets/IMG_72561.jpg' %}" alt="footer building">
-            <div class="inner-footer">
-                <div class="footer-mini-info">
-                    <img src="{% static 'assets/nh_logo.png' %}" alt="logo">
-    
-                    <div class="icons-container">
-                        <a href="{{ global_settings.facebook }}"><i class="fab fa-facebook-f"></i></a>
-                        <a href="{{ global_settings.instagram }}"><i class="fab fa-instagram"></i></a>
-                        <a href="{{ global_settings.twitter }}"><i class="fab fa-twitter"></i></a>
-                    </div>
-                </div>
-                <div class="sub-pages-title">
-                    <h3>дэд хуудас</h3>
-                    <div class="sub-pages-list">
-                        <a href="{% url 'building-structure' %}">
-                            <p><i class="fas fa-angle-double-right"></i>барилгын төлөвлөлт</p>
-                        </a>
-                        <a href="{% url 'security' %}">
-                            <p><i class="fas fa-angle-double-right"></i>Аюулгүй байдал</p>
-                        </a>
-                        <a href="{% url 'user-experience' %}">
-                            <p><i class="fas fa-angle-double-right"></i>тав тух</p>
-                        </a>
-                        <a href="{% url 'news' %}">
-                            <p><i class="fas fa-angle-double-right"></i>мэдээ мэдээлэл</p>
-                        </a>
-                        <a href="{% url 'about-us' %}">
-                            <p><i class="fas fa-angle-double-right"></i>хамт олон</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="footer-contact-us">
-                    <h3>Бидэнтэй холбогдох</h3>
-                    <div class="inner-footer-contact-us">
-                        <div class="inner-footer-contact-us-text">
-                            <p><i class="fas fa-phone-alt"></i>{{ global_settings.phone }}</p>
-                            <p><i class="far fa-envelope"></i>{{ global_settings.mail }}</p>
-                            <p><i class="fas fa-map-marker-alt"></i>{{ global_settings.location }}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="footer-contact-us-form" id="contactUsFooter">
-                    <h3>Бидэнтэй харилцах</h3>
-                    <div class="inner-footer-contact-us-form">
-                        <form action="">
-                            <div class="contact-us-form-left">
-                                <div class="contact-us-input-field">
-                                    <i class="fas fa-user-tie"></i>
-                                    <input id="name-contact" type="text" placeholder="Нэр">
-                                </div>
-                                <div class="contact-us-input-field">
-                                    <i class="fas fa-paper-plane"></i>
-                                    <input id="mail-contact" type="email" placeholder="Цахим хаяг">
-                                </div>
-                                <div class="contact-us-input-field">
-                                    <i class="fas fa-briefcase"></i>
-                                    <input id="company-contact" type="text" placeholder="Компани">
-                                </div>
-                                <input id="submit-contact" type="submit" value="Илгээх">
-                            </div>
-                            <div class="contact-us-form-right">
-                                <textarea name="" id="message-contact" cols="30" rows="10"
-                                    placeholder="Энд бичнэ үү.."></textarea>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </footer>
-        <!-- end footer -->
-        <!-- scroll to top -->
-        <a class="scroll-top-arrow" href="javascript:void(0);"><i class="ti-arrow-up"></i></a>
-        <!-- end scroll to top  -->
-        <!-- javascript libraries -->
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/modernizr.js"></script>
-        <script type="text/javascript" src="js/bootstrap.bundle.js"></script>
-        <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
-        <script type="text/javascript" src="js/skrollr.min.js"></script>
-        <script type="text/javascript" src="js/smooth-scroll.js"></script>
-        <script type="text/javascript" src="js/jquery.appear.js"></script>
-        <!-- menu navigation -->
-        <script type="text/javascript" src="js/bootsnav.js"></script>
-        <script type="text/javascript" src="js/jquery.nav.js"></script>
-        <!-- animation -->
-        <script type="text/javascript" src="js/wow.min.js"></script>
-        <!-- page scroll -->
-        <script type="text/javascript" src="js/page-scroll.js"></script>
-        <!-- swiper carousel -->
-        <script type="text/javascript" src="js/swiper.min.js"></script>
-        <!-- counter -->
-        <script type="text/javascript" src="js/jquery.count-to.js"></script>
-        <!-- parallax -->
-        <script type="text/javascript" src="js/jquery.stellar.js"></script>
-        <!-- magnific popup -->
-        <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
-        <!-- portfolio with shorting tab -->
-        <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
-        <!-- images loaded -->
-        <script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
-        <!-- pull menu -->
-        <script type="text/javascript" src="js/classie.js"></script>
-        <script type="text/javascript" src="js/hamburger-menu.js"></script>
-        <!-- counter  -->
-        <script type="text/javascript" src="js/counter.js"></script>
-        <!-- fit video  -->
-        <script type="text/javascript" src="js/jquery.fitvids.js"></script>
-        <!-- skill bars  -->
-        <script type="text/javascript" src="js/skill.bars.jquery.js"></script> 
-        <!-- justified gallery  -->
-        <script type="text/javascript" src="js/justified-gallery.min.js"></script>
-        <!--pie chart-->
-        <script type="text/javascript" src="js/jquery.easypiechart.min.js"></script>
-        <!-- instagram -->
-        <script type="text/javascript" src="js/instafeed.min.js"></script>
-        <!-- retina -->
-        <script type="text/javascript" src="js/retina.min.js"></script>
-        <!-- revolution -->
-        <script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js"></script>
-        <script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script>
-        <!-- revolution slider extensions (load below extensions JS files only on local file systems to make the slider work! The following part can be removed on server for on demand loading) -->
-        <!--<script type="text/javascript" src="revolution/js/extensions/revolution.extension.actions.min.js"></script>
-        <script type="text/javascript" src="revolution/js/extensions/revolution.extension.carousel.min.js"></script>
-        <script type="text/javascript" src="revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
-        <script type="text/javascript" src="revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
-        <script type="text/javascript" src="revolution/js/extensions/revolution.extension.migration.min.js"></script>
-        <script type="text/javascript" src="revolution/js/extensions/revolution.extension.navigation.min.js"></script>
-        <script type="text/javascript" src="revolution/js/extensions/revolution.extension.parallax.min.js"></script>
-        <script type="text/javascript" src="revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-        <script type="text/javascript" src="revolution/js/extensions/revolution.extension.video.min.js"></script>-->
-        <!-- setting -->
-        <script type="text/javascript" src="js/main.js"></script>
     </body>
-</html>
+         
+{% endblock %}

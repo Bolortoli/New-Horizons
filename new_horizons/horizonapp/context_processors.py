@@ -17,22 +17,20 @@ def global_settings(request):
             FloorPlan(floor=i).save()
 
     if not ReasonBoxes.objects.exists():
-        ReasonBoxes().save()
+        ReasonBoxes(language='Монгол').save()
+        ReasonBoxes(language='English').save()
 
     if not HomeSlider.objects.exists():
         HomeSlider().save()
     
     if not FeatureCard.objects.exists():
-        FeatureCard().save()
+        FeatureCard(language='Монгол').save()
+        FeatureCard(language='English').save()
 
     if not BuildingIntro.objects.exists():
         BuildingIntro().save()
 
     if not SubPage.objects.exists():
-        # SubPage(page_title='Бидний тухай').save()
-        # SubPage(page_title='Аюулгүй байдал').save()
-        # SubPage(page_title='Барилгын төлөвлөлт').save()
-        # SubPage(page_title='Тав тух').save()
         SubPage(page_title='Бидний тухай', sign='1').save()
         SubPage(page_title='Аюулгүй байдал', sign='2').save()
         SubPage(page_title='Барилгын төлөвлөлт', sign='3').save()
@@ -43,6 +41,20 @@ def global_settings(request):
 
     if not Settings.objects.exists():
         Settings().save()
+
+    # if not GuidePic.objects.exists():
+    #     GuidePic().save()
+
+    subpages = []
+
+    for page in SubPage.objects.all():
+        subpages.append({
+            'title': page.page_title,
+            'sign': page.sign
+        })
+
+
     return {
-        'global_settings': Settings.objects.all().first()
+        'global_settings': Settings.objects.all().first(),
+        'subpages': subpages,
     }

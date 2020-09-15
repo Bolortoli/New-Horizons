@@ -147,17 +147,18 @@ MEDIA_URL = '/media/'
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 
 if DEV_ENV == 'cpanel' :
-  STATICFILES_DIRS = [
-      os.path.join(BASE_DIR, 'static')
-  ]
-  STATIC_ROOT = "/home/newhoriz/public_html/static/"
-  MEDIA_ROOT = "/home/newhoriz/public_html/media/"
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static')
+    ]
+    STATIC_ROOT = "/home/newhoriz/public_html/static/"
+    MEDIA_ROOT = "/home/newhoriz/public_html/media/"
 else:
-  STATICFILES_DIRS = [
-      os.path.join(BASE_DIR, 'assets')
-  ]
-  STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-  MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    print('local')
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'assets')
+    ]
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
   
   
   
@@ -356,30 +357,30 @@ ADMIN_REORDER = [
     },
 ]
 
-JET_SIDE_MENU_ITEMS = [  # A list of application or custom item dicts
-    {'label': 'Мэдээ мэдээлэл', 'app_label': 'horizonapp', 'items': [
-        {'name': 'NewsCategory', 'label': 'Мэдээний категори', 'url': 'http://newhorizons.mn/admin/horizonapp/newscategory/'},
-        {'name': 'News', 'label': 'Мэдээ', 'url': 'http://newhorizons.mn/admin/horizonapp/news/'},
-    ]},
-    {'label': 'Нүүр хуудас', 'app_label': 'horizonapp', 'items': [
-        {'name': 'HomeSlider', 'label': 'Нүүр хуудас слайдэр', 'url': 'http://newhorizons.mn/admin/horizonapp/homeslider/'},
-        {'name': 'BuildingIntro', 'label': 'Товч танилцуулга', 'url': 'http://newhorizons.mn/admin/horizonapp/buildingintro/'},
-        {'name': 'FeatureCard', 'label': '4 хайрцаг', 'url': 'http://newhorizons.mn/admin/horizonapp/featurecard/'},
-        {'name': 'FloorPlan', 'label': 'Давхарын план', 'url': 'http://newhorizons.mn/admin/horizonapp/FloorPlan/'},
-        {'name': 'ReasonBoxes', 'label': '7 шалтгаан', 'url': 'http://newhorizons.mn/admin/horizonapp/reasonboxes/'},
-        {'name': 'Three60Pic', 'label': '360 зураг', 'url': 'http://newhorizons.mn/admin/horizonapp/three60pic/'},
-    ]},
-    {'label': 'Түрээслэгч', 'app_label': 'horizonapp', 'items': [
-        {'name': 'OrganizationCategry', 'label': 'Байгууллагын төрөл', 'url': 'http://newhorizons.mn/admin/horizonapp/organization/'},
-        {'name': 'News', 'label': 'Байгууллага', 'url': 'http://newhorizons.mn/admin/horizonapp/organizationcategory/'},
-        {'name': 'BuildingRents', 'label': 'Түрээсийн мэдээлэл', 'url': 'http://newhorizons.mn/admin/horizonapp/buildingrents/'},
-    ]},
-    {'label': 'Бусад', 'app_label': 'horizonapp', 'items': [
-        {'name': 'PDFbrochure', 'label': 'PDF танилцуулга(линк)', 'url': 'http://newhorizons.mn/admin/horizonapp/pdfbrochure/'},
-        {'name': 'Settings', 'label': 'Вэб сайтын тохиргоо', 'url': 'http://newhorizons.mn/admin/horizonapp/settings/'},
-        {'name': 'ContactUs', 'label': 'Холбоо барих хүсэлтийн жагсаалт', 'url': 'http://newhorizons.mn/admin/horizonapp/contactus/'},
-    ]},
-]
+# JET_SIDE_MENU_ITEMS = [  # A list of application or custom item dicts
+#     {'label': 'Мэдээ мэдээлэл', 'app_label': 'horizonapp', 'items': [
+#         {'name': 'NewsCategory', 'label': 'Мэдээний категори', 'url': 'http://newhorizons.mn/admin/horizonapp/newscategory/'},
+#         {'name': 'News', 'label': 'Мэдээ', 'url': 'http://newhorizons.mn/admin/horizonapp/news/'},
+#     ]},
+#     {'label': 'Нүүр хуудас', 'app_label': 'horizonapp', 'items': [
+#         {'name': 'HomeSlider', 'label': 'Нүүр хуудас слайдэр', 'url': 'http://newhorizons.mn/admin/horizonapp/homeslider/'},
+#         {'name': 'BuildingIntro', 'label': 'Товч танилцуулга', 'url': 'http://newhorizons.mn/admin/horizonapp/buildingintro/'},
+#         {'name': 'FeatureCard', 'label': '4 хайрцаг', 'url': 'http://newhorizons.mn/admin/horizonapp/featurecard/'},
+#         {'name': 'FloorPlan', 'label': 'Давхарын план', 'url': 'http://newhorizons.mn/admin/horizonapp/FloorPlan/'},
+#         {'name': 'ReasonBoxes', 'label': '7 шалтгаан', 'url': 'http://newhorizons.mn/admin/horizonapp/reasonboxes/'},
+#         {'name': 'Three60Pic', 'label': '360 зураг', 'url': 'http://newhorizons.mn/admin/horizonapp/three60pic/'},
+#     ]},
+#     {'label': 'Түрээслэгч', 'app_label': 'horizonapp', 'items': [
+#         {'name': 'OrganizationCategry', 'label': 'Байгууллагын төрөл', 'url': 'http://newhorizons.mn/admin/horizonapp/organization/'},
+#         {'name': 'News', 'label': 'Байгууллага', 'url': 'http://newhorizons.mn/admin/horizonapp/organizationcategory/'},
+#         {'name': 'BuildingRents', 'label': 'Түрээсийн мэдээлэл', 'url': 'http://newhorizons.mn/admin/horizonapp/buildingrents/'},
+#     ]},
+#     {'label': 'Бусад', 'app_label': 'horizonapp', 'items': [
+#         {'name': 'PDFbrochure', 'label': 'PDF танилцуулга(линк)', 'url': 'http://newhorizons.mn/admin/horizonapp/pdfbrochure/'},
+#         {'name': 'Settings', 'label': 'Вэб сайтын тохиргоо', 'url': 'http://newhorizons.mn/admin/horizonapp/settings/'},
+#         {'name': 'ContactUs', 'label': 'Холбоо барих хүсэлтийн жагсаалт', 'url': 'http://newhorizons.mn/admin/horizonapp/contactus/'},
+#     ]},
+# ]
 
 LOCALE_PATHS = (
       os.path.join(BASE_DIR,'locale/'),

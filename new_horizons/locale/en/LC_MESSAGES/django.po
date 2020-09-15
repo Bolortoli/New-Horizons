@@ -9,14 +9,15 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-09-14 15:31+0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2020-09-15 04:46+0000\n"
+"Last-Translator: b'  <horizon@gmail.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.4\n"
 
 #: horizon_env/lib/python3.8/site-packages/ckeditor_uploader/forms.py:8
 #: horizon_env/lib64/python3.8/site-packages/ckeditor_uploader/forms.py:8
@@ -149,8 +150,8 @@ msgstr ""
 #: horizon_env/lib/python3.8/site-packages/django/core/validators.py:237
 #: horizon_env/lib64/python3.8/site-packages/django/core/validators.py:237
 msgid ""
-"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
-"hyphens."
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or"
+" hyphens."
 msgstr ""
 
 #: horizon_env/lib/python3.8/site-packages/django/core/validators.py:246
@@ -374,16 +375,16 @@ msgstr ""
 #: horizon_env/lib64/python3.8/site-packages/django/db/models/fields/__init__.py:1239
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
-"uuuuuu]][TZ] format."
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ] format."
 msgstr ""
 
 #: horizon_env/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1243
 #: horizon_env/lib64/python3.8/site-packages/django/db/models/fields/__init__.py:1243
 #, python-format
 msgid ""
-"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
-"[TZ]) but it is an invalid date/time."
+"“%(value)s” value has the correct format (YYYY-MM-DD "
+"HH:MM[:ss[.uuuuuu]][TZ]) but it is an invalid date/time."
 msgstr ""
 
 #: horizon_env/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1247
@@ -406,8 +407,8 @@ msgstr ""
 #: horizon_env/lib64/python3.8/site-packages/django/db/models/fields/__init__.py:1536
 #, python-format
 msgid ""
-"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
-"uuuuuu] format."
+"“%(value)s” value has an invalid format. It must be in [DD] "
+"[[HH:]MM:]ss[.uuuuuu] format."
 msgstr ""
 
 #: horizon_env/lib/python3.8/site-packages/django/db/models/fields/__init__.py:1539
@@ -602,7 +603,8 @@ msgid "Many-to-many relationship"
 msgstr ""
 
 #. Translators: If found as last label character, these punctuation
-#. characters will prevent the default label_suffix to be appended to the label
+#. characters will prevent the default label_suffix to be appended to the
+#. label
 #: horizon_env/lib/python3.8/site-packages/django/forms/boundfield.py:150
 #: horizon_env/lib64/python3.8/site-packages/django/forms/boundfield.py:150
 msgid ":?.!"
@@ -666,7 +668,8 @@ msgstr ""
 #: horizon_env/lib/python3.8/site-packages/django/forms/fields.py:549
 #: horizon_env/lib64/python3.8/site-packages/django/forms/fields.py:549
 #, python-format
-msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid ""
+"Ensure this filename has at most %(max)d character (it has %(length)d)."
 msgid_plural ""
 "Ensure this filename has at most %(max)d characters (it has %(length)d)."
 msgstr[0] ""
@@ -795,7 +798,8 @@ msgstr ""
 
 #: horizon_env/lib/python3.8/site-packages/django/forms/models.py:1180
 #: horizon_env/lib64/python3.8/site-packages/django/forms/models.py:1180
-msgid "Select a valid choice. That choice is not one of the available choices."
+msgid ""
+"Select a valid choice. That choice is not one of the available choices."
 msgstr ""
 
 #: horizon_env/lib/python3.8/site-packages/django/forms/models.py:1298
@@ -1355,11 +1359,11 @@ msgstr ""
 #: horizon_env/lib/python3.8/site-packages/django/views/csrf.py:124
 #: horizon_env/lib64/python3.8/site-packages/django/views/csrf.py:124
 msgid ""
-"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
-"including the “Referrer-Policy: no-referrer” header, please remove them. The "
-"CSRF protection requires the “Referer” header to do strict referer checking. "
-"If you’re concerned about privacy, use alternatives like <a rel=\"noreferrer"
-"\" …> for links to third-party sites."
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or"
+" including the “Referrer-Policy: no-referrer” header, please remove them. "
+"The CSRF protection requires the “Referer” header to do strict referer "
+"checking. If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
 msgstr ""
 
 #: horizon_env/lib/python3.8/site-packages/django/views/csrf.py:132
@@ -1423,8 +1427,8 @@ msgstr ""
 #: horizon_env/lib64/python3.8/site-packages/django/views/generic/dates.py:589
 #, python-format
 msgid ""
-"Future %(verbose_name_plural)s not available because %(class_name)s."
-"allow_future is False."
+"Future %(verbose_name_plural)s not available because "
+"%(class_name)s.allow_future is False."
 msgstr ""
 
 #: horizon_env/lib/python3.8/site-packages/django/views/generic/dates.py:623
@@ -1581,27 +1585,27 @@ msgstr "Contact Us"
 
 #: templates/guide.html:71
 msgid "нүүр"
-msgstr ""
+msgstr "Home"
 
 #: templates/guide.html:81
 msgid "7 шалтгаан"
-msgstr ""
+msgstr "Reasons"
 
 #: templates/guide.html:113
 msgid "Нэр"
-msgstr ""
+msgstr "Name"
 
 #: templates/guide.html:117
 msgid "Цахим хаяг"
-msgstr ""
+msgstr "E-mail"
 
 #: templates/guide.html:121
 msgid "Компани"
-msgstr ""
+msgstr "Company"
 
 #: templates/guide.html:123
 msgid "Энд бичнэ үү.."
-msgstr ""
+msgstr "Write here"
 
 #: templates/guide.html:124
 msgid "Илгээх"

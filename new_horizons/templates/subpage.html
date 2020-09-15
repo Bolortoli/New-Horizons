@@ -1,0 +1,265 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Horizons</title>
+    <link rel="stylesheet" href="{% static 'sub_pages.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="{% static 'fontawesome.js' %}" crossorigin="anonymous"></script>
+</head>
+
+<body class="sp-pages-body">
+    {% get_current_language as LANGUAGE_CODE %}
+    {% get_available_languages as LANGUAGES %}
+
+    {% get_language_info_list for LANGUAGES as languages %}
+
+    <div class="menu-container" onclick="showSpagesMenu(this)">
+        <i class="fas fa-bars menu-icon" id="mobileBarsIcon"></i>
+    </div>
+    <div class="sp-sidebar" id="spSideBar">
+        <div class="inner-sidebar">
+            <div class="logo-container">
+                <img src="{{ global_settings.logo.url }}" alt="logo">
+            </div>
+            <div class="sub-pages-lists">
+                <div class="list-container">
+                    <a href="{% url 'home' %}">{% trans "Нүүр" %}</a>
+                </div>
+                {% for page in pages %}
+                <div class="list-container">
+                    {% if 'mn' in LANGUAGE_CODE %}
+                    <a href="{% url 'subpage' sign=page.sign %}">{{ page.title }}</a>
+                    {% else %}
+                    <a href="{% url 'subpage' sign=page.sign %}">{{ page.title_eng }}</a>
+                    {% endif %}
+                </div>
+                {% endfor %}
+                <div class="list-container">
+                    <a href="{% url 'news' %}">{% trans "Мэдээ мэдээлэл" %}</a>
+                </div>
+            </div>
+            <div class="icons-container">
+                <a href="{{ global_settings.facebook }}"><i class="fab fa-facebook-f"></i></a>
+                <a href="{{ global_settings.instagram }}"><i class="fab fa-instagram"></i></a>
+                <a href="{{ global_settings.twitter }}"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="inner-building-structure">
+        {% if 'mn' in LANGUAGE_CODE %}
+        <h1>{{ page_obj.page_title }}</h1>
+        {% else %}
+        <h1>{{ page_obj.page_title_eng }}</h1>
+        {% endif %}
+
+        <div class="building-structure-cards-container">
+            {% if page_obj.lefty_title and 'mn' in LANGUAGE_CODE %}
+            <div class="sp-long-card">
+                <img src="{{ page_obj.lefty_pic.url }}" alt="structure">
+                <div class="sp-long-card-description">
+                    <h3>{{ page_obj.lefty_title }}</h3>
+                    <p>{{ page_obj.lefty_description | safe }}
+                    </p>
+                </div>
+            </div>
+            {% elif page_obj.lefty_title and 'en' in LANGUAGE_CODE %}
+            <div class="sp-long-card">
+                <img src="{{ page_obj.lefty_pic.url }}" alt="structure">
+                <div class="sp-long-card-description">
+                    <h3>{{ page_obj.lefty_title_eng }}</h3>
+                    <p>{{ page_obj.lefty_description_eng | safe }}
+                    </p>
+                </div>
+            </div>
+            {% endif %}
+
+        {% if 'mn' in LANGUAGE_CODE %}
+        {% else %}
+        {% endif %}
+            {% if page_obj.notitledicon_left_title and 'mn' in LANGUAGE_CODE %}
+            <div class="sp-iconed-card">
+                <div class="inner-iconed-card-left-side">
+                    <h3>{{ page_obj.notitledicon_left_title }}</h3>
+                    <p>{{ page_obj.notitledicon_left_description | safe }}
+                    </p>
+                </div>
+                {% for obj in notitlediconleft %}
+                <div class="inner-iconed-card-right-side">
+                    <div class="iconed-little-card">
+                        <img src="{{ obj.icon.url }}" alt="icon">
+                        <p>
+                          {{ obj.text }}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% elif page_obj.notitledicon_left_title and 'en' in LANGUAGE_CODE %}
+            <div class="sp-iconed-card">
+                <div class="inner-iconed-card-left-side">
+                    <h3>{{ page_obj.notitledicon_left_title_eng }}</h3>
+                    <p>{{ page_obj.notitledicon_left_description_eng | safe }}
+                    </p>
+                </div>
+                {% for obj in notitlediconleft %}
+                <div class="inner-iconed-card-right-side">
+                    <div class="iconed-little-card">
+                        <img src="{{ obj.icon.url }}" alt="icon">
+                        <p>
+                          {{ obj.text_eng }}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if page_obj.righty_title and 'mn' in LANGUAGE_CODE %}
+            <div class="sp-long-card sp-long-reverse">
+                <img src="{{ page_obj.righty_pic.url }}" alt="structure">
+                <div class="sp-long-card-description">
+                    <h3>{{ page_obj.righty_title }}</h3>
+                    <p>{{ page_obj.righty_description | safe }}
+                    </p>
+                </div>
+            </div>
+            {% elif page_obj.righty_title and 'en' in LANGUAGE_CODE %}
+            <div class="sp-long-card sp-long-reverse">
+                <img src="{{ page_obj.righty_pic.url }}" alt="structure">
+                <div class="sp-long-card-description">
+                    <h3>{{ page_obj.righty_title_eng }}</h3>
+                    <p>{{ page_obj.righty_description_eng | safe }}
+                    </p>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if page_obj.notitledicon_right_title and 'mn' in LANGUAGE_CODE %}
+            <div class="sp-iconed-card iconed-card-reverse">
+                <div class="inner-iconed-card-left-side">
+                    <h3>{{ page_obj.notitledicon_right_title }}</h3>
+                    <p>{{ page_obj.notitledicon_right_description | safe }}
+                    </p>
+                </div>
+                {% for obj in notitlediconleft %}
+                <div class="inner-iconed-card-right-side">
+                    <div class="iconed-little-card">
+                        <img src="{{ obj.icon.url }}" alt="icon">
+                        <p>
+                            {{ obj.text }}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% elif page_obj.notitledicon_right_title and 'en' in LANGUAGE_CODE %}
+            <div class="sp-iconed-card iconed-card-reverse">
+                <div class="inner-iconed-card-left-side">
+                    <h3>{{ page_obj.notitledicon_right_title_eng }}</h3>
+                    <p>{{ page_obj.notitledicon_right_description_eng | safe }}
+                    </p>
+                </div>
+                {% for obj in notitlediconleft %}
+                <div class="inner-iconed-card-right-side">
+                    <div class="iconed-little-card">
+                        <img src="{{ obj.icon.url }}" alt="icon">
+                        <p>
+                            {{ obj.text_eng }}
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if slider and 'mn' in LANGUAGE_CODE %}
+            <div class="sub-pages-swiper-container">
+                <div class="sp-swiper-container">
+                    <div class="swiper-wrapper">
+                        {% for slide in slider %}
+                        <div class="swiper-slide">
+                            <div class="product-card">
+                                <img src="{{ slide.icon.url }}" alt="building">
+                                <div class="product-description">
+                                    <h3>{{ slide.title }}</h3>
+                                    <p>{{ slide.text }} </p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="swiper-component-container">
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+            {% elif slider and 'en' in LANGUAGE_CODE %}
+            <div class="sub-pages-swiper-container">
+                <div class="sp-swiper-container">
+                    <div class="swiper-wrapper">
+                        {% for slide in slider %}
+                        <div class="swiper-slide">
+                            <div class="product-card">
+                                <img src="{{ slide.icon.url }}" alt="building">
+                                <div class="product-description">
+                                    <h3>{{ slide.title_eng }}</h3>
+                                    <p>{{ slide.text_eng }} </p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="swiper-component-container">
+                    <!-- Add Pagination -->
+                    <div class="swiper-pagination"></div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+            {% endif %}
+
+            {% if titledicon and 'mn' in LANGUAGE_CODE %}
+            <div class="iconed-container">
+                {% for icon in titledicon %}
+                <div class="iconed-card">
+                    <img src="{{ icon.icon.url }}" alt="">
+                    <div class="inconed-card-description">
+                        <h3>{{ icon.title }}</h3>
+                        <p>{{ icon.text }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% elif titledicon and 'en' in LANGUAGE_CODE %}
+            <div class="iconed-container">
+                {% for icon in titledicon %}
+                <div class="iconed-card">
+                    <img src="{{ icon.icon.url }}" alt="">
+                    <div class="inconed-card-description">
+                        <h3>{{ icon.title_eng }}</h3>
+                        <p>{{ icon.text_eng }}</p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="{% static 'sub_pages.js' %}"></script>
+</body>
+
+</html>

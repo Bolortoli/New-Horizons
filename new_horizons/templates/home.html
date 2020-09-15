@@ -1,105 +1,13 @@
+{% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
-{% load static %}
-<!DOCTYPE html>
-<html lang="mn">
+{% block content %}
+<body class="home-body" id="homeBody">    
+    {% get_current_language as LANGUAGE_CODE %}
+    {% get_available_languages as LANGUAGES %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <!------------------------SWIPER JS-------------------------->
-    <link rel="stylesheet" href="{% static 'swiperjs.css' %}">
-    <!------------------------SWIPER JS-------------------------->
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <script src="{% static 'js_libraries/fontawesome.js' %}" crossorigin="anonymous"></script>
-    <script src="{% static 'js_libraries/jquery.js' %}"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!----------------------------360 photo library------------------------>
-</head>
-
-<body class="home-body" id="homeBody">
-    <!--------------------------HOME1 HEADER----------------------------->
-
-
-    <header class="home-desktop-header" id="desktopHeader">
-        <div class="header-inner">
-            <div class="__left">
-                <div class="desktop-logo-container">
-                    <img src="{{ global_settings.logo.url }}" alt="logo">
-                </div>
-                <nav class="desktop-nav">
-
-                    <li><a href="{% url 'home' %}#home">нүүр</a></li>
-
-                    <li><a href="{% url 'home' %}#miniBlog">Сүүлийн үеийн мэдээ</a></li>
-
-                    <li><a href="{% url 'home' %}#buildingIntro">танилцуулга</a></li>
-
-                    <li><a href="{% url 'home' %}#service">үйлчилгээ</a></li>
-
-                    <li><a href="{% url 'home' %}#floorInfo">давхарийн мэдээлэл</a></li>
-
-                    <li><a href="{% url 'home' %}#sevenReason">Давуу тал</a></li>
-
-                    <li><a href="{% url 'home' %}#panaromaSection">360 зураг</a></li>
-
-                </nav>
-            </div>
-            <div class="__mid" onclick="showContactUsForm()">
-                <a href="#">Бидэнтэй харилцах</a>
-            </div>
-            <div class="__right">
-                    {% get_current_language as LANGUAGE_CODE %}
-                    {% get_available_languages as LANGUAGES %}
-
-                    {% get_language_info_list for LANGUAGES as languages %}
-
-                    {% for lan in languages %}
-                    <div class="select-language"><a href="/{{ lan.code }}/">{{ lan.name_local }}</a></div>
-                    {% endfor %}
-            </div>
-        </div>
-    </header>
-    <header class="mobile-header">
-        <div class="side-nav">
-            <div onclick="showMobileNav()" class="menu-container">
-                <i class="fas fa-bars menu-icon" id="mobileBarsIcon"></i>
-            </div>
-            <nav id="mobileNav" onclick="showMobileNav()">
-                <img src="{{ global_setings.logo.url }}" alt="logo">
-
-                <div class="contactUsAnchor"><a href="{% url 'home' %}#contactUsFooter">Бидэнтэй холбогдох</a></div>
-
-                <li><a href="{% url 'home' %}#home">нүүр</a></li>
-
-                <li><a href="{% url 'home' %}#miniBlog">Сүүлийн үеийн мэдээ</a></li>
-
-                <li><a href="{% url 'home' %}#buildingIntro">танилцуулга</a></li>
-
-                <li><a href="{% url 'home' %}#service">үйлчилгээ</a></li>
-
-                <li><a href="{% url 'home' %}#floorInfo">давхарийн мэдээлэл</a></li>
-
-                <li><a href="{% url 'home' %}#sevenReason">7 шалтгаан</a></li>
-
-                <li><a href="{% url 'home' %}#panaromaSection">360 зураг</a></li>
-
-                <li><a href="{% url 'home' %}#nearbyPlaces">Ойр хавийн барилгууд</a></li>
-                <div class="__right">
-                    {% get_current_language as LANGUAGE_CODE %}
-                    {% get_available_languages as LANGUAGES %}
-
-                    {% get_language_info_list for LANGUAGES as languages %}
-
-                    {% for lan in languages %}
-                    <a href="/{{lan.code }}/">{{ lan.name_local }}</a>
-                    {% endfor %}
-                </div>
-            </nav>
-        </div>
-    </header>
-    <div class="send-information" id="sendInformationForm">
+    {% get_language_info_list for LANGUAGES as languages %}
+    <!-- <div class="send-information" id="sendInformationForm">
 
         <form class="inner-send-information">
             <div class="close-button" onclick="hideSendInformationForm()"></div>
@@ -111,30 +19,7 @@
                 <div class="ripples buttonRipples"><span class="ripplesCircle"></span></div>
             </button>
         </form>
-    </div>
-    <div class="contact-us-form" id="contactUsForm">
-        <div class="inner-contact-us-form">
-            <div class="contact-us-close-button" onclick="closeContactUsForm()">
-                <i class="fas fa-times"></i>
-            </div>
-            <form action="">
-                <div class="contact-us-input-field">
-                    <i class="fas fa-user-tie"></i>
-                    <input id="name-contact" type="text" placeholder="Нэр">
-                </div>
-                <div class="contact-us-input-field">
-                    <i class="fas fa-paper-plane"></i>
-                    <input id="mail-contact" type="email" placeholder="Цахим хаяг">
-                </div>
-                <div class="contact-us-input-field">
-                    <i class="fas fa-briefcase"></i>
-                    <input id="company-contact" type="text" placeholder="Компани">
-                </div>
-                <textarea name="" id="message-contact" cols="30" rows="10" placeholder="Энд бичнэ үү.."></textarea>
-                <input id="submit-contact" type="submit" value="Илгээх">
-            </form>
-        </div>
-    </div>
+    </div> -->
     <!--------------------------HOME1 HEADER END----------------------------->
     <section class="home-section" id="home">
         <div class="swiper-container">
@@ -143,15 +28,20 @@
                 <div class="swiper-slide">
                     <div class="inner-swiper-slide">
                         <img src="{{ obj.background_pic.url }}" alt="building">
+                        {% if 'mn' in LANGUAGE_CODE %}
                         <p>{{ obj.text_lil }}</p>
                         <h3>{{ obj.title }}</h3>
+                        {% else %}
+                        <p>{{ obj.text_lil_eng }}</p>
+                        <h3>{{ obj.title_eng }}</h3>
+                        {% endif %}
                         <!-- <p></p> -->
                         {% if obj.choice1 %}
-                        <a href="{{ pdf_url.pdf }}">Танилуулга авах</a>
+                        <a href="{{ pdf_url.pdf }}">{% trans "Танилцуулга авах" %}</a>
                         {% elif obj.choice2 %}
-                        <a href="#" onclick="showContactUsForm()">Бидэнтэй холбогдох</a>
+                        <a href="#" onclick="showContactUsForm()">{% trans "Бидэнтэй холбогдох" %}</a>
                         {% elif obj.choice3 %}
-                        <a href="{% url 'home' %}#floorInfo">Давхарын мэдээлэл</a>
+                        <a href="{% url 'home' %}#floorInfo">{% trans "Давхарын мэдээлэл" %}</a>
                         {% endif %}
                     </div>
                 </div>
@@ -167,94 +57,105 @@
     </section>
 
     <section class="building-features-section" id="buildingFeature">
+        {% if 'mn' in LANGUAGE_CODE %}
         <div class="inner-features">
             <div class="feature-card">
                 <i class="far fa-building"></i>
-                <p>{{ feature_boxes.box1_title }}</p>
-                <p>{{ feature_boxes.box1_text }}</p>
+                <p>{% trans feature_boxes_mon.box1_title %}</p>
+                <p>{% trans feature_boxes_mon.box1_text %}</p>
             </div>
             <div class="feature-card">
                 <i class="far fa-building"></i>
-                <p>{{ feature_boxes.box2_title }}</p>
-                <p>{{ feature_boxes.box2_text }} </p>
+                <p>{% trans feature_boxes_mon.box2_title %}</p>
+                <p>{% trans feature_boxes_mon.box2_text %} </p>
             </div>
             <div class="feature-card">
                 <i class="far fa-building"></i>
-                <p>{{ feature_boxes.box3_title }}</p>
+                <p>{% trans feature_boxes_mon.box3_title %}</p>
             
-                    <p>{{ feature_boxes.box3_text }}</p>
+                    <p>{% trans feature_boxes_mon.box3_text %}</p>
             </div>
             <div class="feature-card">
                 <i class="far fa-building"></i>
-                <p>{{ feature_boxes.box4_title }}</p>
+                <p>{% trans feature_boxes_mon.box4_title %}</p>
                 
-                    <p>{{ feature_boxes.box4_text }}</p>
+                    <p>{% trans feature_boxes_mon.box4_text %}</p>
             </div>
-
         </div>
+        {% else %}
+        <div class="inner-features">
+            <div class="feature-card">
+                <i class="far fa-building"></i>
+                <p>{% trans feature_boxes_eng.box1_title %}</p>
+                <p>{% trans feature_boxes_eng.box1_text %}</p>
+            </div>
+            <div class="feature-card">
+                <i class="far fa-building"></i>
+                <p>{% trans feature_boxes_eng.box2_title %}</p>
+                <p>{% trans feature_boxes_eng.box2_text %} </p>
+            </div>
+            <div class="feature-card">
+                <i class="far fa-building"></i>
+                <p>{% trans feature_boxes_eng.box3_title %}</p>
+            
+                    <p>{% trans feature_boxes_eng.box3_text %}</p>
+            </div>
+            <div class="feature-card">
+                <i class="far fa-building"></i>
+                <p>{% trans feature_boxes_eng.box4_title %}</p>
+                
+                    <p>{% trans feature_boxes_eng.box4_text %}</p>
+            </div>
+        </div>
+        {% endif %}
     </section>
 
     <section class="mini-blog-section" id="miniBlog">
         <div class="inner-mini-blog-section">
-            <h3>Сүүлийн үеийн мэдээ</h3>
+            <h3>{% trans "Сүүлийн үеийн мэдээ" %}</h3>
             <div class="mini-blog-cards-container">
                 {% for news in news_list %}
                 <a href="{% url 'blog' slug=news.slug %}" class="mini-blog-card">
                     <img src="{{ news.pic.url }}" alt="bulding photo">
-                    <h4>{{ news.title}}</h4>
+                    
+                    {% if 'mn' in LANGUAGE_CODE %}
+                    <h4>{% trans news.title %}</h4>
+                    {% else %}
+                    <h4>{% trans news.title_eng %}</h4>
+                    {% endif %}
                     <div class="blog-status">
-                        <p><i class="fas fa-clock"></i>{{ news.published_date }}</p>
-                        <p><i class="far fa-user"></i>Нийтэлсэн: {{ news.publisher }}</p>
-                        <p><i class="far fa-comment"></i>Үзэлт: {{ news.viewed }}</p>
+                        <p><i class="fas fa-clock"></i>{% trans news.published_date %}</p>
+                        <p><i class="far fa-user"></i>{% trans "Нийтэлсэн" %}: {% trans news.publisher %}</p>
+                        <p><i class="far fa-comment"></i>{% trans "Үзэлт" %}: {% trans news.viewed %}</p>
                     </div>
                     <hr>
-                    <p class="little-article">Цааш унших
+                    <p class="little-article">{% trans "Цааш унших" %}
                     </p>
+                    
                 </a>
                 {% endfor %}
-                <!-- <a href="#" class="mini-blog-card">
-                    <img src="{% static 'assets/IMG_7249.JPG' %}" alt="bulding photo">
-                    <h4>Улаанбаатар хотын шилдэг байгууламж</h4>
-                    <div class="blog-status">
-                        <p><i class="fas fa-clock"></i>2020/7/20</p>
-                        <p><i class="far fa-user"></i>Нийтэлсэн: 290</p>
-                        <p><i class="far fa-comment"></i>25</p>
-                    </div>
-                    <hr>
-                    <p class="little-article">"ХАН" ХХК нь ISO 9001,ISO 14001,ОНSAS 18001 стандартуудыг хангасан
-                        Хөрөнгийн менежментийн үйлчилгээг үзүүлнэ.
-                    </p>
-                </a>
-                <a href="#" class="mini-blog-card">
-                    <img src="{% static 'assets/IMG_7256.JPG' %}" alt="bulding photo">
-                    <h4>New Horizons ашиглалтанд орлоо
-                    </h4>
-                    <div class="blog-status">
-                        <p><i class="fas fa-clock"></i>2020/7/20</p>
-                        <p><i class="far fa-user"></i>Нийтэлсэн: 290</p> -->
-                <!-- <p><i class="far fa-comment"></i>25</p>
-                    </div>
-                    <hr>
-                    <p class="little-article">Агааржуулалт, агаар сэлгэлт, хөргөлтийн гурвалсан
-                        системийг ашиглаж офисийн агвар дахь утаа, тоос, бактерийг устган ямагт
-                        эрүүл цэвэр орчинг бүрдүүлнэ.
-                    </p>
-                </a> -->
-
             </div>
         </div>
     </section>
 
+    
     <section class="building-introduction-section" id="buildingIntro">
         <div class="__left">
             <img src="{{ intro.pic.url }}" alt="building photo1">
         </div>
         <div class="__right">
             <div class="intro-text">
-                <h1>{{ intro.title }}</h1>
+            {% if 'mn' in LANGUAGE_CODE %}
+            <h1>{% trans intro.title %}</h1>
                 <p>
                     {{ intro.text | safe }}
                 </p>
+            {% else %}
+            <h1>{% trans intro.title_eng %}</h1>
+                <p>
+                    {{ intro.text_eng | safe }}
+                </p>
+            {% endif %}
             </div>
         </div>
     </section>
@@ -265,16 +166,26 @@
                 <!-- Leaseholders start -->
                 {% for leaseholder in leaseholders %}
                 <li class="service-title">
-                    <div class="inner-service-title"> {{ leaseholder.category}} </div>
+                {% if 'mn' in LANGUAGE_CODE %}
+                    <div class="inner-service-title"> {% trans leaseholder.category %} </div>
+                {% else %}
+                <div class="inner-service-title"> {% trans leaseholder.category.category_name_eng %} </div>
+                {% endif %}
+
                     <div class="sub-service-list-container">
                         {% for i in leaseholder.leaseholder %}
-                        <a class='leaseholder-name' href="{% url 'home' company=i.id %}#service">{{ i }}</a>
+                        {% if 'mn' in LANGUAGE_CODE %}
+                        <a class='leaseholder-name' href="{% url 'home' company=i.id %}#service">{% trans i %}</a>
+                        {% else %}
+                        <a class='leaseholder-name' href="{% url 'home' company=i.id %}#service">{% trans i.or_name_eng %}</a>
+                        {% endif %}
                         {% endfor %}
                     </div>
                 </li>
                 {% endfor %}
             </ul>
         </div>
+        
         <div class="__right">
             <div class="swiper-container-two">
                 <div class="swiper-wrapper" id="getPictures">
@@ -282,9 +193,13 @@
                     {% for obj in lesaeholder_slider %}
                     <div class="swiper-slide">
                         <div class="slide-left">
-                            <h3>{{ obj.title }}</h3>
-                            <p> {{ obj.desc }}
-                            </p>
+                        {% if 'mn' in LANGUAGE_CODE %}
+                            <h3>{% trans obj.title %}</h3>
+                            <p> {% trans obj.desc %}</p>
+                        {% else %}
+                        <h3>{% trans obj.title_eng %}</h3>
+                        <p> {% trans obj.desc_eng %}</p>
+                        {% endif %}
                         </div>
                         <div class="slide-right">
                             <img class="get-photos" src="{{ obj.pic.url }}" alt="slide photo">
@@ -351,7 +266,7 @@
             </ul>
         </div>
         <div class="plan-photos-container" id="planPhotosContainer" onclick="showFixedInfo()">
-            <div class="plan-photo-hover">ҮЗЭХ</div>
+            <div class="plan-photo-hover">{% trans "ҮЗЭХ" %}</div>
             {% for plan in floor_plan %}
             <img src="{{ plan.pic.url }}" alt="floor one svg">
             <!-- <img src="{{ plan.pic.url }}" alt="floor one svg"> -->
@@ -363,92 +278,174 @@
             <div class="invisible-plan-photo-info">
                 <div class="inner-plan-photo-info">
                     <div class="photo-description">
-                        <h3>{{ plan.title }}</h3>
+                        {% if 'mn' in LANGUAGE_CODE %}
+                        <h3>{% trans plan.title %}</h3>
                         {{ plan.description | safe }}
+                        {% else %}
+                        <h3>{% trans plan.title_eng %}</h3>
+                        {{ plan.description_eng | safe }}
+                        {% endif %}
                     </div>
                     <img src="{{ plan.pic.url }}" alt="floor one svg">
                 </div>
             </div>
             {% endfor %}
         </div>
-
     </section>
-    {% if reason_boxes%}
+  
+    {% if reason_boxes and 'mn' in LANGUAGE_CODE %}
     <section class="seven-reason-section" id="sevenReason">
-        <h3>new horizon ОФИСИЙГ СОНГОХ 7 ШАЛТГААН</h3>
+        <h3>{% trans "new horizon ОФИСИЙГ СОНГОХ 7 ШАЛТГААН" %}</h3>
         <div class="top-section">
             <div class="reason-card">
                 <i class="fas fa-location-arrow"></i>
                 <div>
-                    <h4>{{ reason_boxes.box1_title }}</h4>
+                    <h4>{% trans reason_boxes.box1_title %}</h4>
                     <p>
-                        {{ reason_boxes.box1_text}}
+                        {% trans reason_boxes.box1_text %}
                     </p>
                 </div>
             </div>
             <div class="reason-card">
                 <i class="fas fa-award"></i>
                 <div>
-                    <h4>{{ reason_boxes.box2_title }}</h4>
+                    <h4>{% trans reason_boxes.box2_title %}</h4>
                     <p>
-                        {{ reason_boxes.box2_text }}
+                        {% trans reason_boxes.box2_text %}
                     </p>
                 </div>
             </div>
             <div class="reason-card">
                 <i class="fas fa-tools"></i>
                 <div>
-                    <h4>{{ reason_boxes.box3_title }}</h4>
+                    <h4>{% trans reason_boxes.box3_title %}</h4>
                     <p>
-                        {{ reason_boxes.box3_text }}
+                        {% trans reason_boxes.box3_text %}
                     </p>
                 </div>
             </div>
             <div class="reason-card">
                 <i class="fas fa-hard-hat"></i>
                 <div>
-                    <h4> {{ reason_boxes.box4_title }}</h4>
+                    <h4> {% trans reason_boxes.box4_title %}</h4>
                     <p>
-                        {{ reason_boxes.box4_text }}
+                        {% trans reason_boxes.box4_text %}
                     </p>
                 </div>
             </div>
             <div class="reason-card">
                 <i class="fas fa-wind"></i>
                 <div>
-                    <h4> {{ reason_boxes.box5_title }}</h4>
+                    <h4> {% trans reason_boxes.box5_title %}</h4>
                     <p>
-                        {{ reason_boxes.box5_text }}
+                        {% trans reason_boxes.box5_text %}
                     </p>
                 </div>
             </div>
             <div class="reason-card">
                 <i class="fas fa-tree"></i>
                 <div>
-                    <h4>{{ reason_boxes.box6_title }}</h4>
+                    <h4>{% trans reason_boxes.box6_title %}</h4>
                     <p>
-                        {{ reason_boxes.box6_text }}
+                        {% trans reason_boxes.box6_text %}
                     </p>
                 </div>
             </div>
             <div class="reason-card">
                 <i class="fas fa-tasks"></i>
                 <div>
-                    <h4>{{ reason_boxes.box7_title }}</h4>
+                    <h4>{% trans reason_boxes.box7_title %}</h4>
                     <p>
-                        {{ reason_boxes.box7_text }}
+                        {% trans reason_boxes.box7_text %}
                     </p>
                 </div>
             </div>
         </div>
 
     </section>
+    {% elif reason_boxes %}
+    <section class="seven-reason-section" id="sevenReason">
+        <h3>{% trans "new horizon ОФИСИЙГ СОНГОХ 7 ШАЛТГААН" %}</h3>
+        <div class="top-section">
+            <div class="reason-card">
+                <i class="fas fa-location-arrow"></i>
+                <div>
+                    <h4>{% trans reason_boxes.box1_title_eng %}</h4>
+                    <p>
+                        {% trans reason_boxes.box1_text_eng %}
+                    </p>
+                </div>
+            </div>
+            <div class="reason-card">
+                <i class="fas fa-award"></i>
+                <div>
+                    <h4>{% trans reason_boxes.box2_title_eng %}</h4>
+                    <p>
+                        {% trans reason_boxes.box2_text_eng %}
+                    </p>
+                </div>
+            </div>
+            <div class="reason-card">
+                <i class="fas fa-tools"></i>
+                <div>
+                    <h4>{% trans reason_boxes.box3_title_eng %}</h4>
+                    <p>
+                        {% trans reason_boxes.box3_text_eng %}
+                    </p>
+                </div>
+            </div>
+            <div class="reason-card">
+                <i class="fas fa-hard-hat"></i>
+                <div>
+                    <h4> {% trans reason_boxes.box4_title_eng %}</h4>
+                    <p>
+                        {% trans reason_boxes.box4_text_eng %}
+                    </p>
+                </div>
+            </div>
+            <div class="reason-card">
+                <i class="fas fa-wind"></i>
+                <div>
+                    <h4> {% trans reason_boxes.box5_title_eng %}</h4>
+                    <p>
+                        {% trans reason_boxes.box5_text_eng %}
+                    </p>
+                </div>
+            </div>
+            <div class="reason-card">
+                <i class="fas fa-tree"></i>
+                <div>
+                    <h4>{% trans reason_boxes.box6_title_eng %}</h4>
+                    <p>
+                        {% trans reason_boxes.box6_text_eng %}
+                    </p>
+                </div>
+            </div>
+            <div class="reason-card">
+                <i class="fas fa-tasks"></i>
+                <div>
+                    <h4>{% trans reason_boxes.box7_title_eng %}</h4>
+                    <p>
+                        {% trans reason_boxes.box7_text_eng %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
     {% endif %}
     <section class="carousel-section">
+        {% if 'mn' in LANGUAGE_CODE %}
         <div class="carousel-description">
-            <h3>{{ env_obj.title }}</h3>
-            <p>{{ env_obj.text }}</p>
+            <h3>{% trans env_obj.title %}</h3>
+            <p>{% trans env_obj.text %}</p>
         </div>
+        {% else %}
+        <div class="carousel-description">
+            <h3>{% trans env_obj.title_eng %}</h3>
+            <p>{% trans env_obj.text_eng %}</p>
+        </div>
+        {% endif %}
+   
         <div class="swiper-container-three">
             <div class="swiper-wrapper">
 
@@ -468,185 +465,28 @@
         </div>
     </section>
     <section class="panaroma-picture-section" id="panaromaSection">
-        <h3>360 зураг</h3>
+        <h3>{% trans "360 зураг" %}</h3>
         <div class="blured-360" id="bluredPanaroma">
             <img src="{{ three60pic.pic.url }}" alt="blured 360">
-            <p onclick="showPanaroma()">360 зураг үзэх</p>
+            <p onclick="showPanaroma()">{% trans "360 зураг үзэх" %}</p>
         </div>
     </section>
 
     <section class="nearby-place-section" id="nearbyPlaces">
         <div class="inner-nearby-place">
-            <h3>ойр байрлах байгууламж</h3>
+            <h3>{% trans "ойр байрлах байгууламж" %}</h3>
             <div class="google-map-container" id="googleMapContainer">
                 <div class="places-list">
                     <ul id="listOfMarkers">
-                        <li><a id="busStation"> <b>Автобусны буудал</b></a></li>
-                        <li><a id="government"><b>Улсын байгууллага</b></a></li>
-                        <li><a id="medical"><b>Эмнэлэг</b></a></li>
-                        <li><a id="business"><b>Бизнесийн байгууллага</b></a></li>
+                        <li><a id="busStation"> <b>{% trans "Автобусны буудал" %}</b></a></li>
+                        <li><a id="government"><b>{% trans "Улсын байгууллага" %}</b></a></li>
+                        <li><a id="medical"><b>{% trans "Эмнэлэг" %}</b></a></li>
+                        <li><a id="business"><b>{% trans "Бизнесийн байгууллага" %}</b></a></li>
                     </ul>
                 </div>
                 <div id="map"></div>
             </div>
         </div>
     </section>
-
-    <footer class="desktop-footer" id="desktop-footer">
-        <img class="footer-bg" src="{% static 'assets/IMG_72561.jpg' %}" alt="footer building">
-        <div class="inner-footer">
-            <div class="footer-mini-info">
-                <img src="{% static 'assets/nh_logo.png' %}" alt="logo">
-
-                <div class="icons-container">
-                    <a href="{{ global_settings.facebook }}"><i class="fab fa-facebook-f"></i></a>
-                    <a href="{{ global_settings.instagram }}"><i class="fab fa-instagram"></i></a>
-                    <a href="{{ global_settings.twitter }}"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="sub-pages-title">
-                <h3>дэд хуудас</h3>
-                <div class="sub-pages-list">
-                    <a href="{% url 'building-structure' %}">
-                        <p><i class="fas fa-angle-double-right"></i>барилгын төлөвлөлт</p>
-                    </a>
-                    <a href="{% url 'security' %}">
-                        <p><i class="fas fa-angle-double-right"></i>Аюулгүй байдал</p>
-                    </a>
-                    <a href="{% url 'user-experience' %}">
-                        <p><i class="fas fa-angle-double-right"></i>тав тух</p>
-                    </a>
-                    <a href="{% url 'news' %}">
-                        <p><i class="fas fa-angle-double-right"></i>мэдээ мэдээлэл</p>
-                    </a>
-                    <a href="{% url 'about-us' %}">
-                        <p><i class="fas fa-angle-double-right"></i>хамт олон</p>
-                    </a>
-                </div>
-            </div>
-            <div class="footer-contact-us">
-                <h3>Бидэнтэй холбогдох</h3>
-                <div class="inner-footer-contact-us">
-                    <div class="inner-footer-contact-us-text">
-                        <p><i class="fas fa-phone-alt"></i>{{ global_settings.phone }}</p>
-                        <p><i class="far fa-envelope"></i>{{ global_settings.mail }}</p>
-                        <p><i class="fas fa-map-marker-alt"></i>{{ global_settings.location }}
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-contact-us-form" id="contactUsFooter">
-                <h3>Бидэнтэй харилцах</h3>
-                <div class="inner-footer-contact-us-form">
-                    <form action="">
-                        <div class="contact-us-form-left">
-                            <div class="contact-us-input-field">
-                                <i class="fas fa-user-tie"></i>
-                                <input id="name-contact-footer" type="text" placeholder="Нэр">
-                            </div>
-                            <div class="contact-us-input-field">
-                                <i class="fas fa-paper-plane"></i>
-                                <input id="mail-contact-footer" type="email" placeholder="Цахим хаяг">
-                            </div>
-                            <div class="contact-us-input-field">
-                                <i class="fas fa-briefcase"></i>
-                                <input id="company-contact-footer" type="text" placeholder="Компани">
-                            </div>
-                            <input id="submit-contact-footer" type="submit" value="Илгээх">
-                        </div>
-                        <div class="contact-us-form-right">
-                            <textarea name="" id="message-contact-footer" cols="30" rows="10"
-                                placeholder="Энд бичнэ үү.."></textarea>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-    <!------------------------GSAP onscroll-------------------------->
-    <script src="{% static 'js_libraries/scrollmagic.js' %}"></script>
-    <script src="{% static 'js_libraries/scrollmagicIndicator.js' %}"></script>
-    <!------------------------GSAP onscroll END-------------------------->
-    <!------------------------SWIPER JS-------------------------->
-    <script src="{% static 'js_libraries/swiper.js' %}"></script>
-    <script src="{% static 'home.js' %}"></script>
-
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBm1tPYEg_dlAcUQ1PZ4vbCtgGMJNjm4jE&callback=initMap">
-    </script>
-    <!------------------------SWIPER JS-------------------------->
-    <script>
-        function showPanaroma() {
-            document.getElementById("bluredPanaroma").classList.toggle("removeBlur");
-            var iframe = document.createElement("iframe");
-            iframe.setAttribute("src", "{% url 'panaroma' %}");
-            document.getElementById("panaromaSection").appendChild(iframe);
-        }
-    </script>
-    <script>
-        $(document).ready(function () {
-            $('#submit-contact').on("click", function () {
-                console.log("asdasdasdasdasd")
-                var name = $('#name-contact').val();
-                var email = $('#mail-contact').val();
-                var company = $('#company-contact').val();
-                var text = $('#message-contact').val();
-
-                $.ajax({
-                    method: 'post',
-                    url: "{% url 'register-contact-request' %}",
-                    data: {
-                        name: name,
-                        email: email,
-                        company: company,
-                        text: text
-                    },
-                    success: function (message) {
-                        // alert('success');
-                        closeContactUsForm();
-                        $('#name-contact').val('');
-                        $('#mail-contact').val('');
-                        $('#company-contact').val('');
-                        $('#message-contact').val('');
-                    },
-                    error: function (message) {
-                        alert('Дахин оролдоно уу...');
-                    },
-                });
-            });
-            $('#submit-contact-footer').on("click", function () {
-                console.log("asdasdasdasdasd")
-                var name = $('#name-contact-footer').val();
-                var email = $('#mail-contact-footer').val();
-                var company = $('#company-contact-footer').val();
-                var text = $('#message-contact-footer').val();
-
-                $.ajax({
-                    method: 'post',
-                    url: "{% url 'register-contact-request' %}",
-                    data: {
-                        name: name,
-                        email: email,
-                        company: company,
-                        text: text
-                    },
-                    success: function (message) {
-                        // alert('success');
-                        closeContactUsForm();
-                        $('#name-contact-footer').val('');
-                        $('#mail-contact-footer').val('');
-                        $('#company-contact-footer').val('');
-                        $('#message-contact-footer').val('');
-                    },
-                    error: function (message) {
-                        alert('Дахин оролдоно уу...');
-                    },
-                });
-            });
-        });
-    </script>
 </body>
-
-</html>
+{% endblock %}

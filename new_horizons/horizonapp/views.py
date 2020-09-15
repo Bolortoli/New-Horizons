@@ -13,8 +13,20 @@ FEATURE_NEWS_ON_HOME = 3
 
 def guide(request):
     pdf = PDFbrochure.objects.all().first()
+    pages = []
+    # pics = GuidePic.objects.all().first()
+
+    for page in SubPage.objects.all():
+        pages.append({
+            'title': page.page_title,
+            'sign': str(page.sign)
+        }.copy())
+
+        print(pages)
     context = {
         'pdf_url': pdf,
+        'sub_pages': pages,
+        # 'pics': pics,
     }
     return render(request, 'guide.html', context)
 
@@ -45,9 +57,11 @@ def register_contact_request(request):
 
 @xframe_options_exempt
 def home(request, company=None):
-    reason_boxes = ReasonBoxes.objects.all().first() if ReasonBoxes.objects.count() != 0 else ReasonBoxes.objects.all()
+    reason_boxes_eng = ReasonBoxes.objects.get(language='Монгол')
+    reason_boxes_mon = ReasonBoxes.objects.get(language='English')
     pdf_url = PDFbrochure.objects.all().first()
-    feature_boxes = FeatureCard.objects.all().first() if FeatureCard.objects.count() != 0 else FeatureCard.objects.all()
+    feature_boxes_mon = FeatureCard.objects.get(language='Монгол')
+    feature_boxes_eng = FeatureCard.objects.get(language='English')
     home_sliders = HomeSlider.objects.all()
     building_intro = BuildingIntro.objects.all().first() if BuildingIntro.objects.count() != 0 else None
 
@@ -155,9 +169,11 @@ def home(request, company=None):
     three60pic = Three60Pic.objects.all().first()
 
     context = {
-        'reason_boxes': reason_boxes,
+        'reason_boxes_eng': reason_boxes_eng,
+        'reason_boxes_mon': reason_boxes_mon,
         'pdf_url': pdf_url,
-        'feature_boxes': feature_boxes,
+        'feature_boxes_eng': feature_boxes_eng,
+        'feature_boxes_mon': feature_boxes_mon,
         'home_sliders': home_sliders,
         'lesaeholder_slider': leaseholder_slider,
         'leaseholders': orgs,
@@ -225,8 +241,8 @@ def news_blog_archive_category(request, cat_id):
     }
     return render(request, 'blog.html', context)
 
-def aboutUs(request):
-    page_obj = SubPage.objects.get(sign='1')
+def subpage(request, sign):
+    page_obj = SubPage.objects.get(sign=sign)
     notitlediconleft = SubPages_NoTitleIcon_Leftpic.objects.filter(organization=page_obj)
     print(notitlediconleft)
     if not notitlediconleft:
@@ -234,9 +250,17 @@ def aboutUs(request):
     notitlediconright = SubPages_NoTitleIcon_Rightpic.objects.filter(organization=page_obj)
     titledicon = SubPages_TitleIcon.objects.filter(organization=page_obj)
     slider = SubPages_Slider.objects.filter(organization=page_obj)
-    security = SubPage.objects.get(sign='2').page_title
-    building_structure = SubPage.objects.get(sign='3').page_title
-    user_experience = SubPage.objects.get(sign='4').page_title
+    # security = SubPage.objects.get(sign='2').page_title
+    # building_structure = SubPage.objects.get(sign='3').page_title
+    # user_experience = SubPage.objects.get(sign='4').page_title
+    pages = []
+
+    for page in SubPage.objects.all().exclude(sign=sign):
+        pages.append({
+            'title': page.page_title,
+            'title_eng': page.page_title_eng,
+            'sign': page.sign
+        })
 
     context = {
         'page_obj': page_obj,
@@ -244,78 +268,77 @@ def aboutUs(request):
         'notitlediconright': notitlediconright,
         'titledicon': titledicon,
         'slider': slider,
-        'security': security,
-        'building_structure': building_structure,
-        'user_experience': user_experience,
+        'pages': pages
     }
-    return render(request, 'about_us.html', context)
-def building_structure(request):
-    page_obj = SubPage.objects.get(sign='3')
-    notitlediconleft = SubPages_NoTitleIcon_Leftpic.objects.filter(organization=page_obj)
-    notitlediconright = SubPages_NoTitleIcon_Rightpic.objects.filter(organization=page_obj)
-    titledicon = SubPages_TitleIcon.objects.filter(organization=page_obj)
-    slider = SubPages_Slider.objects.filter(organization=page_obj)
-    security = SubPage.objects.get(sign='2').page_title
-    about_us = SubPage.objects.get(sign='1').page_title
-    user_experience = SubPage.objects.get(sign='4').page_title
+    return render(request, 'subpage.html', context)
 
-    context = {
-        'page_obj': page_obj,
-        'notitlediconleft': notitlediconleft,
-        'notitlediconright': notitlediconright,
-        'titledicon': titledicon,
-        'slider': slider,
-        'security': security,
-        'about_us': about_us,
-        'user_experience': user_experience,
-    }
-    return render(request, 'building_structure.html', context)
-def user_experience(request):
+# def building_structure(request):
+#     page_obj = SubPage.objects.get(sign='3')
+#     notitlediconleft = SubPages_NoTitleIcon_Leftpic.objects.filter(organization=page_obj)
+#     notitlediconright = SubPages_NoTitleIcon_Rightpic.objects.filter(organization=page_obj)
+#     titledicon = SubPages_TitleIcon.objects.filter(organization=page_obj)
+#     slider = SubPages_Slider.objects.filter(organization=page_obj)
+#     security = SubPage.objects.get(sign='2').page_title
+#     about_us = SubPage.objects.get(sign='1').page_title
+#     user_experience = SubPage.objects.get(sign='4').page_title
 
-    page_obj = SubPage.objects.get(sign='4')
-    notitlediconleft = SubPages_NoTitleIcon_Leftpic.objects.filter(organization=page_obj)
-    notitlediconright = SubPages_NoTitleIcon_Rightpic.objects.filter(organization=page_obj)
-    titledicon = SubPages_TitleIcon.objects.filter(organization=page_obj)
-    slider = SubPages_Slider.objects.filter(organization=page_obj)
-    security = SubPage.objects.get(sign='2').page_title
-    about_us = SubPage.objects.get(sign='1').page_title
-    building_structure = SubPage.objects.get(sign='3').page_title
+#     context = {
+#         'page_obj': page_obj,
+#         'notitlediconleft': notitlediconleft,
+#         'notitlediconright': notitlediconright,
+#         'titledicon': titledicon,
+#         'slider': slider,
+#         'security': security,
+#         'about_us': about_us,
+#         'user_experience': user_experience,
+#     }
+#     return render(request, 'building_structure.html', context)
+# def user_experience(request):
 
-    context = {
-        'page_obj': page_obj,
-        'notitlediconleft': notitlediconleft,
-        'notitlediconright': notitlediconright,
-        'titledicon': titledicon,
-        'slider': slider,
-        'security': security,
-        'about_us': about_us,
-        'building_structure': building_structure,
-    }
+#     page_obj = SubPage.objects.get(sign='4')
+#     notitlediconleft = SubPages_NoTitleIcon_Leftpic.objects.filter(organization=page_obj)
+#     notitlediconright = SubPages_NoTitleIcon_Rightpic.objects.filter(organization=page_obj)
+#     titledicon = SubPages_TitleIcon.objects.filter(organization=page_obj)
+#     slider = SubPages_Slider.objects.filter(organization=page_obj)
+#     security = SubPage.objects.get(sign='2').page_title
+#     about_us = SubPage.objects.get(sign='1').page_title
+#     building_structure = SubPage.objects.get(sign='3').page_title
 
-    return render(request, 'user_experience.html', context)
-def security(request):
+#     context = {
+#         'page_obj': page_obj,
+#         'notitlediconleft': notitlediconleft,
+#         'notitlediconright': notitlediconright,
+#         'titledicon': titledicon,
+#         'slider': slider,
+#         'security': security,
+#         'about_us': about_us,
+#         'building_structure': building_structure,
+#     }
 
-    page_obj = SubPage.objects.get(sign='2')
-    notitlediconleft = SubPages_NoTitleIcon_Leftpic.objects.filter(organization=page_obj)
-    notitlediconright = SubPages_NoTitleIcon_Rightpic.objects.filter(organization=page_obj)
-    titledicon = SubPages_TitleIcon.objects.filter(organization=page_obj)
-    slider = SubPages_Slider.objects.filter(organization=page_obj)
-    user_experience = SubPage.objects.get(sign='4').page_title
-    about_us = SubPage.objects.get(sign='1').page_title
-    building_structure = SubPage.objects.get(sign='3').page_title
+#     return render(request, 'user_experience.html', context)
+# def security(request):
 
-    context = {
-        'page_obj': page_obj,
-        'notitlediconleft': notitlediconleft,
-        'notitlediconright': notitlediconright,
-        'titledicon': titledicon,
-        'slider': slider,
-        'user_experience': user_experience,
-        'about_us': about_us,
-        'building_structure': building_structure,
-    }
+#     page_obj = SubPage.objects.get(sign='2')
+#     notitlediconleft = SubPages_NoTitleIcon_Leftpic.objects.filter(organization=page_obj)
+#     notitlediconright = SubPages_NoTitleIcon_Rightpic.objects.filter(organization=page_obj)
+#     titledicon = SubPages_TitleIcon.objects.filter(organization=page_obj)
+#     slider = SubPages_Slider.objects.filter(organization=page_obj)
+#     user_experience = SubPage.objects.get(sign='4').page_title
+#     about_us = SubPage.objects.get(sign='1').page_title
+#     building_structure = SubPage.objects.get(sign='3').page_title
 
-    return render(request, 'security.html', context)
+#     context = {
+#         'page_obj': page_obj,
+#         'notitlediconleft': notitlediconleft,
+#         'notitlediconright': notitlediconright,
+#         'titledicon': titledicon,
+#         'slider': slider,
+#         'user_experience': user_experience,
+#         'about_us': about_us,
+#         'building_structure': building_structure,
+#     }
+
+#     return render(request, 'security.html', context)
 
 def blog(request, slug=None):
     if slug is not None:

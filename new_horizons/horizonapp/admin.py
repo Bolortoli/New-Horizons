@@ -10,6 +10,19 @@ admin.site.unregister(User)
 admin.site.site_header = 'New Hozirons Dashboard'
 
 
+# @admin.register(GuidePic)
+# class GuidePic(admin.ModelAdmin):
+
+#     list_display = ['pic_day', 'pic_night']
+#     list_editable = ['pic_day', 'pic_night']
+#     list_display_links = None
+      
+#     def has_add_permission(self, request):
+#         return False
+
+#     def has_delete_permission(self, request, obj=None):
+#         return False
+
 admin.site.register(NewsCategory)
 admin.site.register(OrganizationCategory)
 admin.site.register(HomeSlider)
@@ -102,8 +115,8 @@ class OrganizationAdmin(admin.ModelAdmin):
 
 @admin.register(ReasonBoxes)
 class ReasonBoxesAdmin(admin.ModelAdmin):
-    list_display = [f.name for f in ReasonBoxes._meta.get_fields()]
-    list_editable = [f.name for f in ReasonBoxes._meta.get_fields() if f.name != "id" and f.name != "title"]
+    list_display = [f.name for f in ReasonBoxes._meta.get_fields() if f.name != "id"]
+    list_editable = [f.name for f in ReasonBoxes._meta.get_fields() if f.name != "id" and f.name != "language"]
     list_display_links = None
 
     formfield_overrides = {
@@ -112,10 +125,10 @@ class ReasonBoxesAdmin(admin.ModelAdmin):
     }
 
     def has_add_permission(self, request):
-            return False
+        return False
 
     def has_delete_permission(self, request, obj=None):
-        return False
+        return True
 
     
 @admin.register(Settings)
@@ -163,7 +176,7 @@ class FeatureCardAdmin(admin.ModelAdmin):
         return False
 
     def has_delete_permission(self, request, obj=None):
-        return False
+        return True
 
 @admin.register(FloorPlan)
 class FloorPlanAdmin(admin.ModelAdmin):
