@@ -1,4 +1,4 @@
-from .models import FloorPlan, SubPage, PDFbrochure, Settings, ReasonBoxes, HomeSlider, FeatureCard, BuildingIntro, BuildingRents, BuildingEnvironment, Three60Pic
+from .models import *
 
 def global_settings(request):
 
@@ -52,6 +52,14 @@ def global_settings(request):
             'title': page.page_title,
             'sign': page.sign
         })
+
+    if not NewsCategory.objects.exists():
+      shineTalbai = NewsCategory(name="Шинэ Талбай",name_eng="Available Floor")
+      shineTalbai.save()
+      ulsTur = NewsCategory(name="Улс Төр",name_eng="Government")
+      ulsTur.save()
+      niigem = NewsCategory(name="Нийгэм",name_eng="Economy")
+      niigem.save()
 
 
     return {
