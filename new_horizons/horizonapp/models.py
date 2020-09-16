@@ -117,9 +117,9 @@ class Settings(models.Model):
     facebook=models.CharField(max_length=255, verbose_name="Facebook хаяг",  blank=True, default="https://www.facebook.com/newhorizonsofficetower")
     instagram=models.CharField(max_length=255, verbose_name="Instagram хаяг",  blank=True, default="https://www.instagram.com")
     twitter=models.CharField(max_length=255, verbose_name="Twitter хаяг",  blank=True, default="https://www.twitter.com")
-    pic_day = models.ImageField(verbose_name="Зураг-өдөр", upload_to="settings", default="settings/default_building1.jpeg")
-    pic_night = models.ImageField(verbose_name="Зураг-шөнө", upload_to="settings", default="settings/default_building2.jpeg")
-    pic_footer = models.ImageField(verbose_name="Footer зураг", upload_to="settings", default="settings/index.jpeg")
+    pic_day = models.ImageField(verbose_name="Зураг-өдөр", upload_to="settings", default="settings/default_building1.jpg")
+    pic_night = models.ImageField(verbose_name="Зураг-шөнө", upload_to="settings", default="settings/default_building2.jpg")
+    pic_footer = models.ImageField(verbose_name="Footer зураг", upload_to="settings", default="settings/index.jpg")
 
 
     class Meta:

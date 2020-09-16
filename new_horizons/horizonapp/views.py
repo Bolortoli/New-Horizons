@@ -12,7 +12,14 @@ FEATURE_NEWS_ON_BLOGS = 4
 FEATURE_NEWS_ON_HOME = 3
 
 def guide(request):
-    pdf = PDFbrochure.objects.all().first()
+
+    try :
+      pdf = PDFbrochure.objects.all().first()
+    except:
+      new_pdf_obj = PDFbrochure.objects.create(pdf="https://drive.google.com/file/d/1X7DCnk5kRnHOjiVvGe32TOWqAk2M2isu/view?ts=5f0287df")
+      new_pdf_obj.save()
+      pdf = PDFbrochure.objects.all().first()
+
     pages = []
     # pics = GuidePic.objects.all().first()
 
