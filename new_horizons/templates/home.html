@@ -9,11 +9,16 @@
 <script src="{% static 'js_libraries/fontawesome.js' %}" crossorigin="anonymous"></script>
 <script src="{% static 'js_libraries/jquery.js' %}"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<style type="text/css" media="screen">
+.home-body .home-desktop-header .header-inner{
+  background: transparent !important;
+}   
+</style>
+
 {% endblock %}
 
-{% block bodyClass %}
-  class="home-body" id="homeBody"
-{% endblock %}
+{% block bodyClass %} home-body homeBody {% endblock %}
 
 {% block content %}
     <div class="contact-us-form" id="contactUsForm">

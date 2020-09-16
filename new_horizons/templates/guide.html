@@ -1,20 +1,16 @@
+{% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New Horizons</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-    <script src="{% static 'js_libraries/fontawesome.js' %}" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
+{% block cssPackage %}
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<script src="{% static 'js_libraries/fontawesome.js' %}" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+{% endblock %}
 
-<body class="get-body-cursor guide-body">
-    <!-- HOME1 HEADER -->
+{% block bodyClass %} get-body-cursor guide-body {% endblock %}
 
+{% block content %}
     <header class="guide-desktop-header">
         <div class="inner-header">
             <div class="__left">
@@ -154,39 +150,42 @@
             <li><a href="{% url 'news' %}">{% trans "Мэдээ мэдээлэл" %}</a></li>
         </ul>
     </section>
-</body>
-<script src="{% static 'guide.js' %}"></script>
-<script>
-    $(document).ready(function () {
-        $('#submit-contact').on("click", function () {
-            console.log("asdasdasdasdasd")
-            var name = $('#name-contact').val();
-            var email = $('#mail-contact').val();
-            var company = $('#company-contact').val();
-            var text = $('#message-contact').val();
+{% endblock %}
 
-            $.ajax({
-                method: 'post',
-                url: "{% url 'register-contact-request' %}",
-                data: {
-                    name: name,
-                    email: email,
-                    company: company,
-                    text: text
-                },
-                success: function (message) {
-                    // alert('success');
-                    closeContactUsForm();
-                    $('#name-contact').val('');
-                    $('#mail-contact').val('');
-                    $('#company-contact').val('');
-                    $('#message-contact').val('');
-                },
-                error: function (message) {
-                    alert('Дахин оролдоно уу...');
-                },
-            });
-        });
-    });
-</script>
-</html>
+
+{% block js %}
+  <script src="{% static 'guide.js' %}"></script>
+  <script>
+      $(document).ready(function () {
+          $('#submit-contact').on("click", function () {
+              console.log("asdasdasdasdasd")
+              var name = $('#name-contact').val();
+              var email = $('#mail-contact').val();
+              var company = $('#company-contact').val();
+              var text = $('#message-contact').val();
+
+              $.ajax({
+                  method: 'post',
+                  url: "{% url 'register-contact-request' %}",
+                  data: {
+                      name: name,
+                      email: email,
+                      company: company,
+                      text: text
+                  },
+                  success: function (message) {
+                      // alert('success');
+                      closeContactUsForm();
+                      $('#name-contact').val('');
+                      $('#mail-contact').val('');
+                      $('#company-contact').val('');
+                      $('#message-contact').val('');
+                  },
+                  error: function (message) {
+                      alert('Дахин оролдоно уу...');
+                  },
+              });
+          });
+      });
+  </script>
+{% endblock %}

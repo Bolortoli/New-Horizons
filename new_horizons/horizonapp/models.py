@@ -119,7 +119,7 @@ class Settings(models.Model):
     twitter=models.CharField(max_length=255, verbose_name="Twitter хаяг",  blank=True, default="https://www.twitter.com")
     pic_day = models.ImageField(verbose_name="Зураг-өдөр", upload_to="settings", default="settings/default_building1.jpg")
     pic_night = models.ImageField(verbose_name="Зураг-шөнө", upload_to="settings", default="settings/default_building2.jpg")
-    pic_footer = models.ImageField(verbose_name="Footer зураг", upload_to="settings", default="settings/index.jpg")
+    pic_footer = models.ImageField(verbose_name="Footer зураг", upload_to="settings", default="settings/index.jpeg")
 
 
     class Meta:
