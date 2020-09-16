@@ -1,6 +1,9 @@
 from django.urls import path, include
 from . import views
 from django.views.generic import TemplateView
+from django.conf.urls.static import static
+from django.conf import settings
+
 urlpatterns = [
     path('', views.guide, name="guide"),
     path('home/', views.home, name="home"),
@@ -20,4 +23,4 @@ urlpatterns = [
     # path('sub/security', views.security, name='security'),
     path('sub/<str:sign>', views.subpage, name='subpage'),
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

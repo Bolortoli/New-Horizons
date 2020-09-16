@@ -103,16 +103,22 @@ class ReasonBoxes(models.Model):
         verbose_name_plural = '7 шалтгаан'
 
 class Settings(models.Model):
-    logo=models.ImageField(upload_to="settings", verbose_name="Барилгын лого", default="settings/nh_logo.png", blank=True)
-    phone=models.CharField(max_length=255, verbose_name="Холбоо барих утас",  blank=True, default='')
-    mail=models.CharField(max_length=255, verbose_name="Компанийн э-мэйл хаяг",  blank=True, default='')
-    location=models.CharField(max_length=255, verbose_name="Барилгын байршил",  blank=True, default='')
-    location_eng=models.CharField(max_length=255, verbose_name="Барилгын байршил(eng)",  blank=True, default='')
-    facebook=models.CharField(max_length=255, verbose_name="Facebook хаяг",  blank=True, default='')
-    instagram=models.CharField(max_length=255, verbose_name="Instagram хаяг",  blank=True, default='')
-    twitter=models.CharField(max_length=255, verbose_name="Twitter хаяг",  blank=True, default='')
-    pic_day = models.ImageField(verbose_name="Зураг-өдөр", upload_to="settings", default="settings/index.jpeg")
-    pic_night = models.ImageField(verbose_name="Зураг-шөнө", upload_to="settings", default="settings/index.jpeg")
+    logo=models.ImageField(upload_to="settings", verbose_name="Барилгын лого", default="settings/website_logo.png", blank=True)
+    phone=models.CharField(max_length=255, verbose_name="Холбоо барих утас",  blank=True, default="+976 11 310-050")
+    mail=models.CharField(max_length=255, verbose_name="Компанийн э-мэйл хаяг",  blank=True, default="info@newhorizons.mn")
+    location=models.CharField(max_length=255, verbose_name="Барилгын байршил", 
+        blank=True, 
+        default="14210 Улаанбаатар хот Сүхбаатар дүүрэг, 1-р хороо, Олимпийн гудамж-4, New Horizons Tower")
+
+    location_eng=models.CharField(max_length=255, 
+        verbose_name="Барилгын байршил(eng)",  
+        blank=True, default="14210 Ulaanbaatar city, Sukhbaatar district, 1st khoroo, Olympic street-4, New Horizons Tower")
+
+    facebook=models.CharField(max_length=255, verbose_name="Facebook хаяг",  blank=True, default="https://www.facebook.com/newhorizonsofficetower")
+    instagram=models.CharField(max_length=255, verbose_name="Instagram хаяг",  blank=True, default="https://www.instagram.com")
+    twitter=models.CharField(max_length=255, verbose_name="Twitter хаяг",  blank=True, default="https://www.twitter.com")
+    pic_day = models.ImageField(verbose_name="Зураг-өдөр", upload_to="settings", default="settings/default_building1.jpeg")
+    pic_night = models.ImageField(verbose_name="Зураг-шөнө", upload_to="settings", default="settings/default_building2.jpeg")
     pic_footer = models.ImageField(verbose_name="Footer зураг", upload_to="settings", default="settings/index.jpeg")
 
 
