@@ -53,14 +53,6 @@ def global_settings(request):
             'sign': page.sign
         })
 
-    if not NewsCategory.objects.exists():
-      shineTalbai = NewsCategory(name="Шинэ Талбай",name_eng="Available Floor")
-      shineTalbai.save()
-      ulsTur = NewsCategory(name="Улс Төр",name_eng="Government")
-      ulsTur.save()
-      niigem = NewsCategory(name="Нийгэм",name_eng="Economy")
-      niigem.save()
-
 
     return {
         'global_settings': Settings.objects.all().first(),

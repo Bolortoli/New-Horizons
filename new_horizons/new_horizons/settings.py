@@ -25,6 +25,7 @@ else :
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'ckeditor',
     'django_ckeditor_5',
     'jet.dashboard',

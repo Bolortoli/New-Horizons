@@ -3,6 +3,7 @@ from .models import *
 from django.forms import Textarea, TextInput
 from django.contrib.auth.models import Group, User
 from django.utils.html import format_html
+from modeltranslation.admin import TranslationAdmin
 
 
 admin.site.unregister(Group)
@@ -23,7 +24,13 @@ admin.site.site_header = 'New Hozirons Dashboard'
 #     def has_delete_permission(self, request, obj=None):
 #         return False
 
-admin.site.register(NewsCategory)
+
+
+class NewsCategoryAdmin(TranslationAdmin):
+    pass
+
+admin.site.register(NewsCategory, NewsCategoryAdmin)
+
 admin.site.register(OrganizationCategory)
 admin.site.register(HomeSlider)
 

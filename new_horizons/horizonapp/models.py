@@ -30,9 +30,7 @@ class Three60Pic(models.Model):
     
 
 class NewsCategory(models.Model):
-
-    name=models.CharField(max_length=255, verbose_name="Категорийн нэр(mon)", default='', unique=True)
-    name_eng=models.CharField(max_length=255, verbose_name="Категорийн нэр(eng)", default='', unique=True)
+    name=models.CharField(max_length=255, verbose_name="Категорийн нэр", default='', unique=True)
 
     def __str__(self):
         return self.name
