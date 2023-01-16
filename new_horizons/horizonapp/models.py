@@ -170,7 +170,7 @@ class Organization(models.Model):
     special = models.BooleanField(verbose_name="Нүүр хуудсанд гаргах ", default=False)
 
     def __str__(self):
-        return self.or_name
+        return self.or_name or ''
 
     class Meta:
         verbose_name = 'Байгууллагууд'

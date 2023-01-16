@@ -1549,11 +1549,11 @@ msgstr ""
 
 #: templates/guide.html:28
 msgid "Дадвуу тал"
-msgstr "Oppertunity"
+msgstr "Opportunity"
 
 #: templates/guide.html:30 templates/guide.html:73
 msgid "Сүүлийн үеийн мэдээ"
-msgstr "Laters News"
+msgstr "Latest News"
 
 #: templates/guide.html:32 templates/guide.html:75
 msgid "танилцуулга"
@@ -1569,7 +1569,7 @@ msgstr "Floor Information"
 
 #: templates/guide.html:38
 msgid "Давуу тал"
-msgstr "Oppertunity"
+msgstr "Opportunity"
 
 #: templates/guide.html:40 templates/guide.html:83
 msgid "360 зураг"

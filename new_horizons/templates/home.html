@@ -52,7 +52,7 @@
                 </div>
                 <nav class="desktop-nav">
 
-                    <li><a href="{% url 'home' %}#buildingFeature">{% trans "Дадвуу тал" %}</a></li>
+                    <li><a href="{% url 'home' %}#buildingFeature">{% trans "Давуу тал" %}</a></li>
 
                     <li><a href="{% url 'home' %}#miniBlog">{% trans "Сүүлийн үеийн мэдээ" %}</a></li>
 
@@ -300,7 +300,7 @@
                     <div class="sub-service-list-container">
                         {% for i in leaseholder.leaseholder %}
                         {% if 'mn' in LANGUAGE_CODE %}
-                        <a class='leaseholder-name' href="{% url 'home' company=i.id %}#service">{% trans i %}</a>
+                        <a class='leaseholder-name' href="{% url 'home' company=i.id %}#service">{% trans i.or_name %}</a>
                         {% else %}
                         <a class='leaseholder-name' href="{% url 'home' company=i.id %}#service">{% trans i.or_name_eng %}</a>
                         {% endif %}
