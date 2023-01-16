@@ -63,7 +63,9 @@ var swiper2 = new Swiper('.swiper-container-two', {
         clickable: true,
         // slideriin zurguudiig avaad jijig huvilbariin pagination helbereer ashiglav
         renderBullet: function (index, className) {
-
+            if (!serviceSliderImgs?.length) {
+                return `<span></span>`;
+            }
             var miniImgSource = serviceSliderImgs[index].getAttribute("src");
             return '<span class="' + className + '">' + '<img style="height: 10vh;margin: 0vw;object-fit: cover;border-radius: 3px;" src="' + miniImgSource + '">' + '</span>';
         },
