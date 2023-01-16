@@ -122,13 +122,13 @@ def home(request, company=None):
         for obj in OrganizationCategory.objects.all():
             org_cats = {
                 'category': obj.category_name,
+                'category_eng': obj.category_name_eng,
                 'leaseholder': []
             }
             for org in Organization.objects.filter(category=obj):
-                org_cats['leaseholder'].append(Organization.objects.get(or_name=org.or_name))
-                # orgs.append()
+                o = Organization.objects.get(or_name=org.or_name)
+                org_cats['leaseholder'].append(o)
             orgs.append(org_cats)
-
     # LEASEHOLDERS on building
     leaseholder_per_floor = []
     # if RentedFloor.objects.exists():

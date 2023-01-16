@@ -48,7 +48,7 @@
         <div class="header-inner" style="background-color: black;">
             <div class="__left">
                 <div class="desktop-logo-container">
-                    <img src="{{ global_settings.logo.url }}" alt="logo">
+                    <a href="/"><img src="{{ global_settings.logo.url }}" alt="logo"></a>
                 </div>
                 <nav class="desktop-nav">
 
@@ -249,9 +249,9 @@
                     <h4>{% trans news.title_eng %}</h4>
                     {% endif %}
                     <div class="blog-status">
-                        <p><i class="fas fa-clock"></i>{% trans news.published_date %}</p>
+                        {# <p><i class="fas fa-clock"></i>{% trans news.published_date %}</p> #}
                         <p><i class="far fa-user"></i>{% trans "Нийтэлсэн" %}: {% trans news.publisher %}</p>
-                        <p><i class="far fa-comment"></i>{% trans "Үзэлт" %}: {% trans news.viewed %}</p>
+                        {# <p><i class="far fa-comment"></i>{% trans "Үзэлт" %}: {% 0 %}</p> #}
                     </div>
                     <hr>
                     <p class="little-article">{% trans "Цааш унших" %}
@@ -292,9 +292,9 @@
                 {% for leaseholder in leaseholders %}
                 <li class="service-title">
                 {% if 'mn' in LANGUAGE_CODE %}
-                    <div class="inner-service-title"> {% trans leaseholder.category %} </div>
+                    <div class="inner-service-title"> {{ leaseholder.category }} </div>
                 {% else %}
-                <div class="inner-service-title"> {% trans leaseholder.category.category_name_eng %} </div>
+                <div class="inner-service-title"> {{ leaseholder.category_eng }} </div>
                 {% endif %}
 
                     <div class="sub-service-list-container">
@@ -713,7 +713,6 @@
       <script>
           $(document).ready(function () {
               $('#submit-contact').on("click", function () {
-                  console.log("asdasdasdasdasd")
                   var name = $('#name-contact').val();
                   var email = $('#mail-contact').val();
                   var company = $('#company-contact').val();

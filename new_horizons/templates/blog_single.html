@@ -1,7 +1,113 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load i18n %}
+
+{% block cssPackage %}
+<link rel="stylesheet" href="{% static 'swiperjs.css' %}">
+
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<script src="{% static 'js_libraries/fontawesome.js' %}" crossorigin="anonymous"></script>
+<script src="{% static 'js_libraries/jquery.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<style type="text/css" media="screen">
+.home-body .home-desktop-header .header-inner{
+  background: black !important;
+}   
+#desktopHeader {
+    background-color: black !important;
+}
+</style>
+{% endblock %}
+{% block bodyClass %} home-body homeBody {% endblock %}
+
+{% get_current_language as LANGUAGE_CODE %}
+{% get_available_languages as LANGUAGES %}
+
 {% block content %}
+    <header class="home-desktop-header" id="desktopHeader">
+        <div class="header-inner" style="background-color: black;">
+            <div class="__left">
+                <div class="desktop-logo-container">
+                    <a href="/"><img src="{{ global_settings.logo.url }}" alt="logo"></a>
+                </div>
+                <nav class="desktop-nav">
+
+                    <li><a href="{% url 'home' %}#buildingFeature">{% trans "Давуу тал" %}</a></li>
+
+                    <li><a href="{% url 'home' %}#miniBlog">{% trans "Сүүлийн үеийн мэдээ" %}</a></li>
+
+                    <li><a href="{% url 'home' %}#buildingIntro">{% trans "танилцуулга" %}</a></li>
+
+                    <li><a href="{% url 'home' %}#service">{% trans "үйлчилгээ" %}</a></li>
+
+                    <li><a href="{% url 'home' %}#floorInfo">{% trans "давхарийн мэдээлэл" %}</a></li>
+
+                    <li><a href="{% url 'home' %}#sevenReason">{% trans "Давуу тал" %}</a></li>
+                            
+                    <li><a href="{% url 'home' %}#panaromaSection">{% trans "360 зураг" %}</a></li>
+
+                    <li><a href="{% url 'home' %}#nearbyPlaces">{% trans "Ойр хавийн барилгууд" %}</a></li>
+
+                </nav>
+            </div>
+            <div class="__mid" onclick="showContactUsForm()">
+                <a href="#">Бидэнтэй харилцах</a>
+            </div>
+            <div class="__right">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+
+                    {% get_language_info_list for LANGUAGES as languages %}
+
+                    {% if 'mn' in LANGUAGE_CODE %}
+                    {{ LANGUAGE_CODE }}
+                    {% endif %}
+                    {% for lan in languages %}
+                    <div class="select-language"><a class='hrefer' onclick="splitter('{{lan.code}}')">{{ lan.name_local }}</a></div>
+                    {% endfor %}
+            </div>
+        </div>
+        
+    </header>
+    <header class="mobile-header">
+        <div class="side-nav">
+            <div onclick="showMobileNav()" class="menu-container">
+                <i class="fas fa-bars menu-icon" id="mobileBarsIcon"></i>
+            </div>
+            <nav id="mobileNav" onclick="showMobileNav()">
+                <img src="{{ global_setings.logo.url }}" alt="logo">
+
+                <div class="contactUsAnchor"><a href="{% url 'home' %}#contactUsFooter">Бидэнтэй холбогдох</a></div>
+
+                <li><a href="{% url 'home' %}#home">нүүр</a></li>
+
+                <li><a href="{% url 'home' %}#miniBlog">Сүүлийн үеийн мэдээ</a></li>
+
+                <li><a href="{% url 'home' %}#buildingIntro">танилцуулга</a></li>
+
+                <li><a href="{% url 'home' %}#service">үйлчилгээ</a></li>
+
+                <li><a href="{% url 'home' %}#floorInfo">давхарийн мэдээлэл</a></li>
+
+                <li><a href="{% url 'home' %}#sevenReason">7 шалтгаан</a></li>
+
+                <li><a href="{% url 'home' %}#panaromaSection">360 зураг</a></li>
+
+                <li><a href="{% url 'home' %}#nearbyPlaces">Ойр хавийн барилгууд</a></li>
+                <div class="__right">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+
+                    {% get_language_info_list for LANGUAGES as languages %}
+
+                    {% for lan in languages %}
+                    <a class='hrefer' onclick="splitter('{{lan.code}}')">{{ lan.name_local }}</a>
+                    {% endfor %}
+                </div>
+            </nav>
+        </div>
+    </header>
     <body class="home-body" id="homeBody">
         <!-- start post content section --> 
         <section class="blog-styling">
@@ -257,6 +363,80 @@
             </div>
         </section>
         <!-- end blog content section -->  
+        <footer class="desktop-footer" id="desktop-footer">
+            <img class="footer-bg" src="{{ global_settings.pic_footer.url }}" alt="footer building">
+            <div class="inner-footer">
+                <div class="footer-mini-info">
+                    <img src="{{ global_settings.logo.url }}" alt="logo">
+    
+                    <div class="icons-container">
+                        <a href="{{ global_settings.facebook }}"><i class="fab fa-facebook-f"></i></a>
+                        <a href="{{ global_settings.instagram }}"><i class="fab fa-instagram"></i></a>
+                        <a href="{{ global_settings.twitter }}"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="sub-pages-title">
+                    <h3>{% trans "дэд хуудас" %}</h3>
+                    <div class="sub-pages-list">
+                        {% for page in subpages %}
+                        {% if 'mn' in LANGUAGE_CODE %}
+                        <a href="{% url 'subpage' sign=page.sign %}">
+                            <p><i class="fas fa-angle-double-right"></i>{% trans page.title %}</p>
+                        </a>
+                        {% else %}
+                        <a href="{% url 'subpage' sign=page.sign %}">
+                            <p><i class="fas fa-angle-double-right"></i>{% trans page.title_eng %}</p>
+                        </a>
+                        {% endif %}
+                        {% endfor %}
+                        <a href="{% url 'news' %}">
+                            <p><i class="fas fa-angle-double-right"></i>мэдээ мэдээлэл</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-contact-us">
+                    <h3>{% trans "Бидний хаяг" %}</h3>
+                    <div class="inner-footer-contact-us">
+                        <div class="inner-footer-contact-us-text">
+                            <p><i class="fas fa-phone-alt"></i>{{ global_settings.phone }}</p>
+                            <p><i class="far fa-envelope"></i>{{ global_settings.mail }}</p>
+                            {% if 'mn' in LANGUAGE_CODE %}
+                            <p><i class="fas fa-map-marker-alt"></i>{{ global_settings.location }}
+                            {% else %}
+                            <p><i class="fas fa-map-marker-alt"></i>{{ global_settings.location_eng }}
+                            {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-contact-us-form" id="contactUsFooter">
+                    <h3>{% trans "Бидэнтэй холбогдох" %}</h3>
+                    <div class="inner-footer-contact-us-form">
+                        <form action="">
+                            <div class="contact-us-form-left">
+                                <div class="contact-us-input-field">
+                                    <i class="fas fa-user-tie"></i>
+                                    <input id="name-contact-footer" type="text" placeholder="{% trans 'Нэр' %}">
+                                </div>
+                                <div class="contact-us-input-field">
+                                    <i class="fas fa-paper-plane"></i>
+                                    <input id="mail-contact-footer" type="email" placeholder="{% trans 'Цахим хаяг' %}">
+                                </div>
+                                <div class="contact-us-input-field">
+                                    <i class="fas fa-briefcase"></i>
+                                    <input id="company-contact-footer" type="text" placeholder="{% trans 'Компани' %}">
+                                </div>
+                                <input id="submit-contact-footer" type="submit" value="Илгээх">
+                            </div>
+                            <div class="contact-us-form-right">
+                                <textarea name="" id="message-contact-footer" cols="30" rows="10"
+                                    placeholder="{% trans 'Энд бичнэ үү..' %}"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </body>
          
 {% endblock %}
