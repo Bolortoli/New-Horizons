@@ -17,6 +17,9 @@
 #desktopHeader {
     background-color: black !important;
 }
+.mobile-header .menu-container {
+    color: black !important;
+}
 </style>
 {% endblock %}
 {% block bodyClass %} home-body homeBody {% endblock %}
@@ -439,4 +442,94 @@
         </footer>
     </body>
          
+{% endblock %}
+
+{% block js %}
+      <script src="{% static 'js_libraries/scrollmagic.js' %}"></script>
+      <script src="{% static 'js_libraries/scrollmagicIndicator.js' %}"></script>
+
+      <script>
+          $(document).ready(function () {
+              $('#submit-contact').on("click", function () {
+                  console.log("asdasdasdasdasd")
+                  var name = $('#name-contact').val();
+                  var email = $('#mail-contact').val();
+                  var company = $('#company-contact').val();
+                  var text = $('#message-contact').val();
+  
+                  $.ajax({
+                      method: 'post',
+                      url: "{% url 'register-contact-request' %}",
+                      data: {
+                          name: name,
+                          email: email,
+                          company: company,
+                          text: text
+                      },
+                      success: function (message) {
+                          // alert('success');
+                          closeContactUsForm();
+                          $('#name-contact').val('');
+                          $('#mail-contact').val('');
+                          $('#company-contact').val('');
+                          $('#message-contact').val('');
+                      },
+                      error: function (message) {
+                          alert('Дахин оролдоно уу...');
+                      },
+                  });
+              });
+              $('#submit-contact-footer').on("click", function () {
+                  console.log("asdasdasdasdasd")
+                  var name = $('#name-contact-footer').val();
+                  var email = $('#mail-contact-footer').val();
+                  var company = $('#company-contact-footer').val();
+                  var text = $('#message-contact-footer').val();
+  
+                  $.ajax({
+                      method: 'post',
+                      url: "{% url 'register-contact-request' %}",
+                      data: {
+                          name: name,
+                          email: email,
+                          company: company,
+                          text: text
+                      },
+                      success: function (message) {
+                          // alert('success');
+                          closeContactUsForm();
+                          $('#name-contact-footer').val('');
+                          $('#mail-contact-footer').val('');
+                          $('#company-contact-footer').val('');
+                          $('#message-contact-footer').val('');
+                      },
+                      error: function (message) {
+                          alert('Дахин оролдоно уу...');
+                      },
+                  });
+              });
+          });
+    </script>
+
+    <script type="text/javascript">
+        function showMobileNav() {
+            document.getElementById("mobileNav").classList.toggle("showMobileNav");
+            document.getElementById("menuBarIcon").classList.toggle("whiteMenuBar")
+        }
+        function splitter(code) {
+            var sppath = '{{ request.path }}'.split('/');
+            var hrefpath = '/' + code;
+            if(sppath[1] == 'en' || sppath[1] == 'mn') {
+                for(var i = 2; i < sppath.length; i++) hrefpath += '/' + sppath[i]; 
+            }
+            else {
+                hrefpath += '/' + sppath[1]
+            }
+            document.getElementsByClassName("hrefer")[0].setAttribute("href", hrefpath)
+            document.getElementsByClassName("hrefer")[1].setAttribute("href", hrefpath)
+            document.getElementsByClassName("hrefer")[2].setAttribute("href", hrefpath)
+            document.getElementsByClassName("hrefer")[3].setAttribute("href", hrefpath)
+            // alert(sppath)
+        }
+</script>
 {% endblock %}

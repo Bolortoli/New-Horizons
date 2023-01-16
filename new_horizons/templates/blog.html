@@ -409,8 +409,13 @@
                   });
               });
           });
-      </script>
-      <script>
+    </script>
+
+    <script type="text/javascript">
+        function showMobileNav() {
+            document.getElementById("mobileNav").classList.toggle("showMobileNav");
+            document.getElementById("menuBarIcon").classList.toggle("whiteMenuBar")
+        }
         function splitter(code) {
             var sppath = '{{ request.path }}'.split('/');
             var hrefpath = '/' + code;
@@ -426,6 +431,5 @@
             document.getElementsByClassName("hrefer")[3].setAttribute("href", hrefpath)
             // alert(sppath)
         }
-    </script>
-  
+</script>
 {% endblock %}
