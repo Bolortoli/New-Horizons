@@ -632,16 +632,16 @@
                     {% for page in subpages %}
                     {% if 'mn' in LANGUAGE_CODE %}
                     <a href="{% url 'subpage' sign=page.sign %}">
-                        <p><i class="fas fa-angle-double-right"></i>{% trans page.title %}</p>
+                        <p><i class="fas fa-angle-double-right"></i>{{ page.title }}</p>
                     </a>
                     {% else %}
                     <a href="{% url 'subpage' sign=page.sign %}">
-                        <p><i class="fas fa-angle-double-right"></i>{% trans page.title_eng %}</p>
+                        <p><i class="fas fa-angle-double-right"></i>{{ page.title_eng }}</p>
                     </a>
                     {% endif %}
                     {% endfor %}
                     <a href="{% url 'news' %}">
-                        <p><i class="fas fa-angle-double-right"></i>мэдээ мэдээлэл</p>
+                        <p><i class="fas fa-angle-double-right"></i>{% trans "Мэдээ мэдээлэл" %}</p>
                     </a>
                 </div>
             </div>

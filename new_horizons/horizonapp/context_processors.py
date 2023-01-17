@@ -50,6 +50,7 @@ def global_settings(request):
     for page in SubPage.objects.all():
         subpages.append({
             'title': page.page_title,
+            'title_eng': page.page_title_eng,
             'sign': page.sign
         })
 
